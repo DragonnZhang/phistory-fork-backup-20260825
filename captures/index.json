@@ -1,7 +1,7 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, and Oh My Pi.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-08-27T01:00:25.426632Z",
+  "updated_at": "2026-08-27T11:58:14.415109Z",
   "agents": [
     {
       "agent_id": "claude-code",
@@ -15,11 +15,11 @@
     {
       "agent_id": "codex",
       "agent": "Codex CLI",
-      "latest_version": "0.150.0",
-      "latest_published_at": "2026-08-26T19:43:31.702Z",
-      "latest_captured_at": "2026-08-26T21:01:05.577474+00:00",
-      "versions": 78,
-      "snapshots": 92
+      "latest_version": "0.150.1",
+      "latest_published_at": "2026-08-27T02:01:46.851Z",
+      "latest_captured_at": "2026-08-27T11:57:23.152571+00:00",
+      "versions": 79,
+      "snapshots": 95
     },
     {
       "agent_id": "dsh",
@@ -33,11 +33,11 @@
     {
       "agent_id": "antigravity",
       "agent": "Antigravity CLI",
-      "latest_version": "1.1.21",
-      "latest_published_at": "2026-08-26T02:21:06Z",
-      "latest_captured_at": "2026-08-26T03:34:11.596380+00:00",
-      "versions": 35,
-      "snapshots": 35
+      "latest_version": "1.1.22",
+      "latest_published_at": "2026-08-27T04:03:21Z",
+      "latest_captured_at": "2026-08-27T11:57:32.265832+00:00",
+      "versions": 36,
+      "snapshots": 36
     },
     {
       "agent_id": "grok",
@@ -51,20 +51,20 @@
     {
       "agent_id": "minimax-code",
       "agent": "MiniMax Code",
-      "latest_version": "3.0.67",
-      "latest_published_at": "2026-08-21T09:06:37.728Z",
-      "latest_captured_at": "2026-08-21T09:31:10.048921+00:00",
-      "versions": 31,
-      "snapshots": 31
+      "latest_version": "3.0.68",
+      "latest_published_at": "2026-08-27T11:29:02.417Z",
+      "latest_captured_at": "2026-08-27T11:57:50.418498+00:00",
+      "versions": 32,
+      "snapshots": 32
     },
     {
       "agent_id": "kimi-code",
       "agent": "Kimi Code",
-      "latest_version": "0.38.0",
-      "latest_published_at": "2026-08-20T13:13:41.488Z",
-      "latest_captured_at": "2026-08-20T13:28:57.849570+00:00",
-      "versions": 66,
-      "snapshots": 66
+      "latest_version": "0.39.0",
+      "latest_published_at": "2026-08-27T11:36:25.525Z",
+      "latest_captured_at": "2026-08-27T11:58:02.873661+00:00",
+      "versions": 67,
+      "snapshots": 67
     },
     {
       "agent_id": "mimo",
@@ -123,11 +123,11 @@
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.0.6",
-      "latest_published_at": "2026-08-26T08:28:41.651Z",
-      "latest_captured_at": "2026-08-26T09:21:42.221445+00:00",
-      "versions": 71,
-      "snapshots": 71
+      "latest_version": "18.0.7",
+      "latest_published_at": "2026-08-27T11:08:50.396Z",
+      "latest_captured_at": "2026-08-27T11:58:14.415109+00:00",
+      "versions": 72,
+      "snapshots": 72
     }
   ],
   "captures": [
@@ -7064,6 +7064,61 @@
     {
       "agent_id": "codex",
       "agent": "Codex CLI",
+      "version": "0.150.1",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-5.6-sol",
+        "tool_count": 2
+      },
+      "published_at": "2026-08-27T02:01:46.851Z",
+      "captured_at": "2026-08-27T11:57:23.152571+00:00",
+      "prompt": "captures/codex/0.150.1/variants/default/prompt.md",
+      "trace": "captures/codex/0.150.1/variants/default/trace.jsonl",
+      "meta": "captures/codex/0.150.1/variants/default/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
+      "version": "0.150.1",
+      "variant_id": "gpt-5.6",
+      "variant_label": "GPT-5.6",
+      "variant_dimensions": {
+        "model": "gpt-5.6"
+      },
+      "observed": {
+        "model": "gpt-5.6",
+        "tool_count": 14
+      },
+      "published_at": "2026-08-27T02:01:46.851Z",
+      "captured_at": "2026-08-27T11:57:27.670600+00:00",
+      "prompt": "captures/codex/0.150.1/variants/gpt-5.6/prompt.md",
+      "trace": "captures/codex/0.150.1/variants/gpt-5.6/trace.jsonl",
+      "meta": "captures/codex/0.150.1/variants/gpt-5.6/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
+      "version": "0.150.1",
+      "variant_id": "gpt-5.5",
+      "variant_label": "GPT-5.5",
+      "variant_dimensions": {
+        "model": "gpt-5.5"
+      },
+      "observed": {
+        "model": "gpt-5.5",
+        "tool_count": 15
+      },
+      "published_at": "2026-08-27T02:01:46.851Z",
+      "captured_at": "2026-08-27T11:57:25.575151+00:00",
+      "prompt": "captures/codex/0.150.1/variants/gpt-5.5/prompt.md",
+      "trace": "captures/codex/0.150.1/variants/gpt-5.5/trace.jsonl",
+      "meta": "captures/codex/0.150.1/variants/gpt-5.5/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
       "version": "0.150.0",
       "variant_id": "default",
       "variant_label": "Default",
@@ -9407,6 +9462,22 @@
       "prompt": "captures/dsh/0.0.1-rc.2/variants/headless/prompt.md",
       "trace": "captures/dsh/0.0.1-rc.2/variants/headless/trace.jsonl",
       "meta": "captures/dsh/0.0.1-rc.2/variants/headless/meta.json"
+    },
+    {
+      "agent_id": "antigravity",
+      "agent": "Antigravity CLI",
+      "version": "1.1.22",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "MODEL_PLACEHOLDER_M50"
+      },
+      "published_at": "2026-08-27T04:03:21Z",
+      "captured_at": "2026-08-27T11:57:32.265832+00:00",
+      "prompt": "captures/antigravity/1.1.22/variants/default/prompt.md",
+      "trace": "captures/antigravity/1.1.22/variants/default/trace.jsonl",
+      "meta": "captures/antigravity/1.1.22/variants/default/meta.json"
     },
     {
       "agent_id": "antigravity",
@@ -12157,6 +12228,23 @@
     {
       "agent_id": "minimax-code",
       "agent": "MiniMax Code",
+      "version": "3.0.68",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "minimax-code-capture",
+        "tool_count": 20
+      },
+      "published_at": "2026-08-27T11:29:02.417Z",
+      "captured_at": "2026-08-27T11:57:50.418498+00:00",
+      "prompt": "captures/minimax-code/3.0.68/variants/default/prompt.md",
+      "trace": "captures/minimax-code/3.0.68/variants/default/trace.jsonl",
+      "meta": "captures/minimax-code/3.0.68/variants/default/meta.json"
+    },
+    {
+      "agent_id": "minimax-code",
+      "agent": "MiniMax Code",
       "version": "3.0.67",
       "variant_id": "default",
       "variant_label": "Default",
@@ -12680,6 +12768,23 @@
       "prompt": "captures/minimax-code/3.0.33/variants/default/prompt.md",
       "trace": "captures/minimax-code/3.0.33/variants/default/trace.jsonl",
       "meta": "captures/minimax-code/3.0.33/variants/default/meta.json"
+    },
+    {
+      "agent_id": "kimi-code",
+      "agent": "Kimi Code",
+      "version": "0.39.0",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "kimi-for-coding",
+        "tool_count": 25
+      },
+      "published_at": "2026-08-27T11:36:25.525Z",
+      "captured_at": "2026-08-27T11:58:02.873661+00:00",
+      "prompt": "captures/kimi-code/0.39.0/variants/default/prompt.md",
+      "trace": "captures/kimi-code/0.39.0/variants/default/trace.jsonl",
+      "meta": "captures/kimi-code/0.39.0/variants/default/meta.json"
     },
     {
       "agent_id": "kimi-code",
@@ -18562,6 +18667,23 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.0.7",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-08-27T11:08:50.396Z",
+      "captured_at": "2026-08-27T11:58:14.415109+00:00",
+      "prompt": "captures/omp/18.0.7/variants/default/prompt.md",
+      "trace": "captures/omp/18.0.7/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.0.7/variants/default/meta.json"
     },
     {
       "agent_id": "omp",
