@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-08-31 07:32 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-08-31 21:01 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -73,11 +73,11 @@ uv run phistory render-site
 
 ## 抓取状态
 
-最近抓取更新：2026-08-31 07:32 UTC
+最近抓取更新：2026-08-31 21:01 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.251 - 2026-08-28](captures/claude-code/2.1.251/variants/default/prompt.md) | 402 | 402 | 2026-08-28 18:57 UTC |
+| Claude Code | [2.1.252 - 2026-08-31](captures/claude-code/2.1.252/variants/default/prompt.md) | 403 | 403 | 2026-08-31 21:01 UTC |
 | Codex CLI | [0.151.0 - 2026-08-29](captures/codex/0.151.0/variants/default/prompt.md) | 80 | 98 | 2026-08-29 14:39 UTC |
 | DeepSeek Harness | [0.1.1-rc.2 - 2026-08-21](captures/dsh/0.1.1-rc.2/variants/default/prompt.md) | 8 | 39 | 2026-08-21 13:43 UTC |
 | Antigravity CLI | [1.1.22 - 2026-08-27](captures/antigravity/1.1.22/variants/default/prompt.md) | 36 | 36 | 2026-08-27 11:57 UTC |
@@ -86,7 +86,7 @@ uv run phistory render-site
 | Kimi Code | [0.39.1 - 2026-08-28](captures/kimi-code/0.39.1/variants/default/prompt.md) | 68 | 68 | 2026-08-28 18:58 UTC |
 | MiMo Code | [0.1.13 - 2026-08-19](captures/mimo/0.1.13/variants/default/prompt.md) | 13 | 13 | 2026-08-19 11:53 UTC |
 | OpenClaw | [2026.8.1 - 2026-08-31](captures/openclaw/2026.8.1/variants/default/prompt.md) | 70 | 70 | 2026-08-31 07:32 UTC |
-| Hermes Agent | [v2026.8.27 - 2026-08-27](captures/hermes/v2026.8.27/variants/default/prompt.md) | 28 | 28 | 2026-08-27 22:31 UTC |
+| Hermes Agent | [v2026.8.31 - 2026-08-31](captures/hermes/v2026.8.31/variants/default/prompt.md) | 29 | 29 | 2026-08-31 21:01 UTC |
 | Kimi CLI | [1.49.0 - 2026-07-16](captures/kimi/1.49.0/variants/default/prompt.md) | 21 | 21 | 2026-07-16 11:21 UTC |
 | opencode | [1.18.25 - 2026-08-28](captures/opencode/1.18.25/variants/default/prompt.md) | 109 | 109 | 2026-08-28 06:15 UTC |
 | Pi | [0.84.4 - 2026-08-28](captures/pi/0.84.4/variants/default/prompt.md) | 43 | 43 | 2026-08-29 02:24 UTC |
