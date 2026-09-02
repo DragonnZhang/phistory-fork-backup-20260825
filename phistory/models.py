@@ -24,6 +24,11 @@ HomeProfile = Literal[
 ]
 TapMode = Literal["auto", "reverse", "forward"]
 _VARIANT_ID_RE = re.compile(r"[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\Z")
+_VERSION_PART_RE = re.compile(r"\d+|[A-Za-z]+")
+
+
+def _version_key(version: str) -> tuple[tuple[int, int | str], ...]:
+    return tuple((1, int(part)) if part.isdigit() else (0, part) for part in _VERSION_PART_RE.findall(version))
 
 
 @dataclass(frozen=True)
@@ -34,6 +39,10 @@ class CaptureVariant:
     dimensions: dict[str, str] = field(default_factory=dict)
     driver: CaptureDriver = "oneshot"
     extra_env: dict[str, str] = field(default_factory=dict)
+    min_version: str | None = None
+
+    def supports_version(self, version: str) -> bool:
+        return self.min_version is None or _version_key(version) >= _version_key(self.min_version)
 
 
 @dataclass(frozen=True)
@@ -45,6 +54,7 @@ class AgentSpec:
     fake_env: dict[str, str]
     default_variant: CaptureVariant = field(default_factory=lambda: CaptureVariant("default", "Default"))
     variants: tuple[CaptureVariant, ...] = ()
+    hidden_capture_variants: tuple[str, ...] = ()
     executable: str | None = None
     source: PackageSource = "npm"
     install_command: tuple[str, ...] = ("npm", "install", "--no-audit", "--no-fund")
@@ -71,6 +81,13 @@ class AgentSpec:
         for variant_id in ids:
             if _VARIANT_ID_RE.fullmatch(variant_id) is None:
                 raise ValueError(f"{self.id}: invalid capture variant id {variant_id!r}")
+        for variant_id in self.hidden_capture_variants:
+            if _VARIANT_ID_RE.fullmatch(variant_id) is None:
+                raise ValueError(f"{self.id}: invalid hidden capture variant id {variant_id!r}")
+        overlapping_variants = sorted(set(ids) & set(self.hidden_capture_variants))
+        if overlapping_variants:
+            names = ", ".join(overlapping_variants)
+            raise ValueError(f"{self.id}: active capture variants cannot also be hidden: {names}")
 
     @property
     def capture_variants(self) -> tuple[CaptureVariant, ...]:

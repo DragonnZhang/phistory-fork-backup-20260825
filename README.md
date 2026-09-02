@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-02 06:21 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-02 08:42 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -39,7 +39,7 @@ uv sync --all-groups
 uv run phistory capture --latest --agents claude-code,codex,dsh,antigravity,grok,minimax-code,kimi-code,mimo,openclaw,hermes,kimi,opencode,pi,omp
 
 # Capture only selected Codex snapshots.
-uv run phistory capture --latest --agents codex --variants default,gpt-5.5,gpt-5.6
+uv run phistory capture --latest --agents codex --variants default,gpt-5.6-sol,gpt-5.6-terra,gpt-5.6-luna,gpt-5.5
 
 # Capture a historical version range for one agent.
 uv run phistory backfill claude-code --from 2.1.113 --to latest
@@ -73,12 +73,12 @@ uv run phistory render-site
 
 ## Capture Status
 
-Last capture update: 2026-09-02 06:21 UTC
+Last capture update: 2026-09-02 08:42 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
 | Claude Code | [2.1.258 - 2026-09-01](captures/claude-code/2.1.258/variants/default/prompt.md) | 405 | 405 | 2026-09-01 22:46 UTC |
-| Codex CLI | [0.152.1 - 2026-09-01](captures/codex/0.152.1/variants/default/prompt.md) | 82 | 104 | 2026-09-01 22:46 UTC |
+| Codex CLI | [0.152.1 - 2026-09-01](captures/codex/0.152.1/variants/default/prompt.md) | 82 | 107 | 2026-09-01 22:46 UTC |
 | DeepSeek Harness | [0.1.1-rc.2 - 2026-08-21](captures/dsh/0.1.1-rc.2/variants/default/prompt.md) | 8 | 39 | 2026-08-21 13:43 UTC |
 | Antigravity CLI | [1.1.24 - 2026-09-02](captures/antigravity/1.1.24/variants/default/prompt.md) | 38 | 38 | 2026-09-02 06:21 UTC |
 | Grok Build | [1.0.13 - 2026-08-28](captures/grok/1.0.13/variants/default/prompt.md) | 131 | 131 | 2026-08-29 02:24 UTC |
