@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-09-01 22:47 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-09-02 06:21 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -73,17 +73,17 @@ uv run phistory render-site
 
 ## 抓取状态
 
-最近抓取更新：2026-09-01 22:47 UTC
+最近抓取更新：2026-09-02 06:21 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
 | Claude Code | [2.1.258 - 2026-09-01](captures/claude-code/2.1.258/variants/default/prompt.md) | 405 | 405 | 2026-09-01 22:46 UTC |
 | Codex CLI | [0.152.1 - 2026-09-01](captures/codex/0.152.1/variants/default/prompt.md) | 82 | 104 | 2026-09-01 22:46 UTC |
 | DeepSeek Harness | [0.1.1-rc.2 - 2026-08-21](captures/dsh/0.1.1-rc.2/variants/default/prompt.md) | 8 | 39 | 2026-08-21 13:43 UTC |
-| Antigravity CLI | [1.1.23 - 2026-09-01](captures/antigravity/1.1.23/variants/default/prompt.md) | 37 | 37 | 2026-09-01 06:43 UTC |
+| Antigravity CLI | [1.1.24 - 2026-09-02](captures/antigravity/1.1.24/variants/default/prompt.md) | 38 | 38 | 2026-09-02 06:21 UTC |
 | Grok Build | [1.0.13 - 2026-08-28](captures/grok/1.0.13/variants/default/prompt.md) | 131 | 131 | 2026-08-29 02:24 UTC |
 | MiniMax Code | [3.0.68 - 2026-08-27](captures/minimax-code/3.0.68/variants/default/prompt.md) | 32 | 32 | 2026-08-27 11:57 UTC |
-| Kimi Code | [0.39.1 - 2026-08-28](captures/kimi-code/0.39.1/variants/default/prompt.md) | 68 | 68 | 2026-08-28 18:58 UTC |
+| Kimi Code | [0.40.0 - 2026-09-02](captures/kimi-code/0.40.0/variants/default/prompt.md) | 69 | 69 | 2026-09-02 06:21 UTC |
 | MiMo Code | [0.1.13 - 2026-08-19](captures/mimo/0.1.13/variants/default/prompt.md) | 13 | 13 | 2026-08-19 11:53 UTC |
 | OpenClaw | [2026.8.2 - 2026-09-01](captures/openclaw/2026.8.2/variants/default/prompt.md) | 71 | 71 | 2026-09-01 17:25 UTC |
 | Hermes Agent | [v2026.8.31 - 2026-08-31](captures/hermes/v2026.8.31/variants/default/prompt.md) | 29 | 29 | 2026-08-31 21:01 UTC |
