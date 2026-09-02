@@ -129,7 +129,12 @@ def test_backfill_starts_a_variant_at_its_minimum_version(monkeypatch, tmp_path:
         fake_env={},
         variants=(CaptureVariant("future", "Future", min_version="1.1.0"),),
     )
-    versions = [VersionInfo("1.0.0"), VersionInfo("1.1.0"), VersionInfo("1.2.0")]
+    versions = [
+        VersionInfo("1.0.0"),
+        VersionInfo("1.1.0-alpha.1"),
+        VersionInfo("1.1.0"),
+        VersionInfo("1.2.0"),
+    ]
     monkeypatch.setattr("phistory.workflow.get_agent", lambda _agent_id: agent)
     monkeypatch.setattr("phistory.workflow.packages.versions_between", lambda *_args, **_kwargs: versions)
     monkeypatch.setattr(
@@ -149,6 +154,7 @@ def test_backfill_starts_a_variant_at_its_minimum_version(monkeypatch, tmp_path:
 
     assert results == [
         ("1.0.0", "default"),
+        ("1.1.0-alpha.1", "default"),
         ("1.1.0", "default"),
         ("1.1.0", "future"),
         ("1.2.0", "default"),

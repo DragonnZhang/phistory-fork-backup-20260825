@@ -25,10 +25,31 @@ HomeProfile = Literal[
 TapMode = Literal["auto", "reverse", "forward"]
 _VARIANT_ID_RE = re.compile(r"[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\Z")
 _VERSION_PART_RE = re.compile(r"\d+|[A-Za-z]+")
+_SEMVER_RE = re.compile(
+    r"[vV]?(?P<release>\d+(?:\.\d+)*)"
+    r"(?:(?:-(?P<semver_prerelease>[0-9A-Za-z][0-9A-Za-z.-]*))|"
+    r"(?P<compact_prerelease>[A-Za-z][0-9A-Za-z.-]*))?"
+    r"(?:\+[0-9A-Za-z.-]+)?\Z"
+)
 
 
-def _version_key(version: str) -> tuple[tuple[int, int | str], ...]:
-    return tuple((1, int(part)) if part.isdigit() else (0, part) for part in _VERSION_PART_RE.findall(version))
+def _version_key(version: str) -> tuple:
+    match = _SEMVER_RE.fullmatch(version)
+    if match is None:
+        natural = tuple(
+            (1, int(part)) if part.isdigit() else (0, part.casefold()) for part in _VERSION_PART_RE.findall(version)
+        )
+        return (0, natural)
+
+    release = tuple(int(part) for part in match.group("release").split("."))
+    prerelease = match.group("semver_prerelease") or match.group("compact_prerelease")
+    if prerelease is None:
+        return (1, release, 1, ())
+
+    prerelease_key = tuple(
+        (0, int(part)) if part.isdigit() else (1, part.casefold()) for part in re.split(r"[.-]", prerelease)
+    )
+    return (1, release, 0, prerelease_key)
 
 
 @dataclass(frozen=True)
