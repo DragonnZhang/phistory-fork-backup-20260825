@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-09-03 06:24 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-09-03 16:38 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -73,7 +73,7 @@ uv run phistory render-site
 
 ## 抓取状态
 
-最近抓取更新：2026-09-03 06:24 UTC
+最近抓取更新：2026-09-03 16:38 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
@@ -90,7 +90,7 @@ uv run phistory render-site
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.27 - 2026-09-02](captures/opencode/1.18.27/variants/default/prompt.md) | 111 | 111 | 2026-09-02 22:48 UTC |
 | Pi | [0.84.4 - 2026-08-28](captures/pi/0.84.4/variants/default/prompt.md) | 43 | 43 | 2026-08-29 02:24 UTC |
-| Oh My Pi | [18.1.5 - 2026-09-03](captures/omp/18.1.5/variants/default/prompt.md) | 81 | 81 | 2026-09-03 06:24 UTC |
+| Oh My Pi | [18.1.6 - 2026-09-03](captures/omp/18.1.6/variants/default/prompt.md) | 82 | 82 | 2026-09-03 16:38 UTC |
 
 ## 项目趋势
 
