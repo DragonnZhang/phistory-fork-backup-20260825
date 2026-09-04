@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-03 22:46 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-04 01:15 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -73,12 +73,12 @@ uv run phistory render-site
 
 ## Capture Status
 
-Last capture update: 2026-09-03 22:46 UTC
+Last capture update: 2026-09-04 01:15 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.259 - 2026-09-02](captures/claude-code/2.1.259/variants/default/prompt.md) | 406 | 406 | 2026-09-02 22:48 UTC |
-| Codex CLI | [0.153.1 - 2026-09-03](captures/codex/0.153.1/variants/default/prompt.md) | 84 | 110 | 2026-09-03 22:46 UTC |
+| Claude Code | [2.1.260 - 2026-09-03](captures/claude-code/2.1.260/variants/default/prompt.md) | 407 | 407 | 2026-09-04 01:15 UTC |
+| Codex CLI | [0.153.2 - 2026-09-03](captures/codex/0.153.2/variants/default/prompt.md) | 85 | 113 | 2026-09-04 01:15 UTC |
 | DeepSeek Harness | [0.1.1-rc.2 - 2026-08-21](captures/dsh/0.1.1-rc.2/variants/default/prompt.md) | 8 | 39 | 2026-08-21 13:43 UTC |
 | Antigravity CLI | [1.1.25 - 2026-09-03](captures/antigravity/1.1.25/variants/default/prompt.md) | 39 | 39 | 2026-09-03 06:24 UTC |
 | Grok Build | [1.0.13 - 2026-08-28](captures/grok/1.0.13/variants/default/prompt.md) | 131 | 131 | 2026-08-29 02:24 UTC |
@@ -90,7 +90,7 @@ Last capture update: 2026-09-03 22:46 UTC
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.27 - 2026-09-02](captures/opencode/1.18.27/variants/default/prompt.md) | 111 | 111 | 2026-09-02 22:48 UTC |
 | Pi | [0.84.4 - 2026-08-28](captures/pi/0.84.4/variants/default/prompt.md) | 43 | 43 | 2026-08-29 02:24 UTC |
-| Oh My Pi | [18.1.6 - 2026-09-03](captures/omp/18.1.6/variants/default/prompt.md) | 82 | 82 | 2026-09-03 16:38 UTC |
+| Oh My Pi | [18.1.8 - 2026-09-04](captures/omp/18.1.8/variants/default/prompt.md) | 83 | 83 | 2026-09-04 01:15 UTC |
 
 ## Project Trend
 
