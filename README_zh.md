@@ -47,7 +47,7 @@ uv run phistory backfill claude-code --from 2.1.113 --to latest
 # 重建最近 10 个已捕获 Claude Code 版本的静态 prompt 文件。
 uv run phistory extract-static claude-code --latest-captured 10
 
-# 重新生成 README.md、README_zh.md、docs/captures.md 和 captures/index.json。
+# 重新生成 README.md、README_zh.md、docs/captures.md、captures/index.json 和 llms.txt。
 uv run phistory render-index
 
 # 重新生成静态网页查看器 index.html。

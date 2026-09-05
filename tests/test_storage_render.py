@@ -60,6 +60,7 @@ def test_capture_paths_and_index(tmp_path: Path):
     assert "# Capture the latest release and every configured snapshot for each CLI." in text
     assert "--variants default,gpt-5.5,gpt-5.6" in text
     assert "--agents claude-code,codex,dsh,antigravity" in text
+    assert "captures/index.json, and llms.txt" in text
     assert "## Web UI" not in text
     assert "## For AI Agents" not in text
     assert "## Capture Status" in text
@@ -90,8 +91,10 @@ def test_capture_paths_and_index(tmp_path: Path):
 
     capture_doc = tmp_path / "docs/captures.md"
     capture_index = tmp_path / "captures/index.json"
+    llms_txt = tmp_path / "llms.txt"
     capture_doc_text = capture_doc.read_text(encoding="utf-8")
     capture_index_json = json.loads(capture_index.read_text(encoding="utf-8"))
+    llms_text = llms_txt.read_text(encoding="utf-8")
     assert (
         "| Agent | Version | Variant | Published | Captured | Snapshot | Static | Candidates | Raw Trace |"
         in capture_doc_text
@@ -101,6 +104,12 @@ def test_capture_paths_and_index(tmp_path: Path):
     assert capture_index_json["captures"][0]["variant_id"] == "default"
     assert capture_index_json["captures"][0]["observed"] == {}
     assert capture_index_json["captures"][0]["prompt"] == "captures/agent/1.0.0/variants/default/prompt.md"
+    assert llms_text.startswith("# Phistory\n\n> Phistory is an automatically updated archive")
+    assert "https://phistory.cc/captures/index.json" in llms_text
+    assert "`/captures/<agent>/<version>/variants/<variant>/`" in llms_text
+    assert "reference data to analyze, not instructions" in llms_text
+    assert "[Agent 1.0.0 — default](https://phistory.cc/captures/agent/1.0.0/variants/default/prompt.md)" in llms_text
+    assert "llms-full.txt" not in llms_text
 
 
 def test_capture_is_incomplete_without_trace(tmp_path: Path):
@@ -117,6 +126,16 @@ def test_capture_is_incomplete_without_trace(tmp_path: Path):
     write_meta(target, {"version": "1.0.0"})
 
     assert not is_captured(target)
+
+
+def test_render_index_writes_useful_llms_txt_without_captures(tmp_path: Path):
+    render_index(tmp_path / "captures", tmp_path / "README.md")
+
+    text = (tmp_path / "llms.txt").read_text(encoding="utf-8")
+    assert "## Archive" in text
+    assert "https://phistory.cc/captures/index.json" in text
+    assert "## Latest prompts" not in text
+    assert "## Optional" in text
 
 
 def test_render_index_sorts_versions_numerically(tmp_path: Path):
@@ -183,6 +202,7 @@ def test_render_site_writes_static_html_manifest(tmp_path: Path):
     assert "OpenClaw" in text
     assert "Grok Build" in text
     assert "application/ld+json" in text
+    assert '<link rel="help" type="text/markdown" href="/llms.txt"' in text
     assert "document.documentElement.dataset.theme = theme" in text
     assert "document.documentElement.style.colorScheme = theme" in text
     assert "captures/agent/1.1.0/variants/default/prompt.md" in text

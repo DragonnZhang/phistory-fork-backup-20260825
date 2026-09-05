@@ -12,7 +12,7 @@ This file is for future coding agents. Read it before changing the project.
 - `phistory/capture.py`: installs an agent, creates an isolated HOME, runs `claude-tap`, exports `prompt.md`, copies `trace.jsonl`, writes `meta.json`, and normalizes volatile text in prompt Markdown only.
 - `phistory/workflow.py`: orchestration for latest captures and backfills.
 - `phistory/storage.py`: capture directory preparation, cleanup, trace copying, and metadata writing.
-- `phistory/render.py`: regenerates `README.md` from capture metadata.
+- `phistory/render.py`: regenerates `README.md`, capture indexes, and the agent-facing `llms.txt` from capture metadata.
 - `phistory/site.py`: regenerates the single-file static web UI in `index.html`.
 - `phistory/static_prompts/`: static prompt extraction for package-embedded prompt strings. It currently targets Claude Code and is structured so other agents can be added later.
 - `phistory/cli.py`: CLI entrypoint for `capture`, `backfill`, `extract-static`, `render-index`, and `render-site`.
@@ -29,6 +29,8 @@ captures/<agent>/<version>/variants/<variant>/meta.json
 ```
 
 `prompt.md` is normalized for human reading and diffs. `trace.jsonl` is raw evidence and should not be rewritten for presentation-only cleanup.
+
+`llms.txt` is the concise machine-readable entry point for the hosted archive. Keep it generated from the same capture rows as `captures/index.json`; do not hand-maintain snapshot links or duplicate the full archive into `llms-full.txt`.
 
 Claude Code captures may also include:
 

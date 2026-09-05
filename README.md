@@ -47,7 +47,7 @@ uv run phistory backfill claude-code --from 2.1.113 --to latest
 # Rebuild static prompt files for the latest 10 captured Claude Code versions.
 uv run phistory extract-static claude-code --latest-captured 10
 
-# Regenerate README.md, README_zh.md, docs/captures.md, and captures/index.json.
+# Regenerate README.md, README_zh.md, docs/captures.md, captures/index.json, and llms.txt.
 uv run phistory render-index
 
 # Regenerate the static web viewer at index.html.

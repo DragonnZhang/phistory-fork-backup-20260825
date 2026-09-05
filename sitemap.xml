@@ -11,6 +11,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://phistory.cc/llms.txt</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://phistory.cc/captures/index.json</loc>
     <changefreq>hourly</changefreq>
     <priority>0.3</priority>

@@ -51,7 +51,7 @@ jobs:
       - run: uv run phistory render-site
       - name: Commit capture updates
         run: |
-          git add README.md README_zh.md index.html docs captures
+          git add README.md README_zh.md index.html llms.txt docs captures
           if git diff --cached --quiet; then
             echo "No capture changes."
             exit 0
