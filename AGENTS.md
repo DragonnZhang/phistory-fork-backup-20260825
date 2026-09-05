@@ -17,7 +17,7 @@ This file is for future coding agents. Read it before changing the project.
 - `phistory/static_prompts/`: static prompt extraction for package-embedded prompt strings. It currently targets Claude Code and is structured so other agents can be added later.
 - `phistory/cli.py`: CLI entrypoint for `capture`, `backfill`, `extract-static`, `render-index`, and `render-site`.
 - `tests/`: focused unit and local integration tests for package sources, registry contracts, capture behavior, and rendering.
-- `.github/workflows/capture.yml`: hourly capture workflow. It runs lint, tests, build, latest smoke capture for all agents, real latest capture, Claude Code static prompt extraction for the latest captured versions, renders artifacts, and commits updates.
+- `.github/workflows/capture.yml`: hourly capture workflow. It runs lint, tests, build, real latest capture, Claude Code static prompt extraction for the latest captured versions, renders artifacts, and commits updates. Manual runs also perform a fresh latest smoke capture for all agents.
 - `.github/workflows/pages.yml`: GitHub Pages deployment for the static site.
 
 Generated capture artifacts live in:
@@ -85,6 +85,8 @@ Current agents are defined in `phistory/registry.py`:
 - `opencode`: npm package `opencode-ai`, tap client `opencode`, reverse tap mode so opencode can fetch its model registry while the model request is redirected locally.
 - `pi`: npm package `@earendil-works/pi-coding-agent`, tap client `pi`, isolated Pi provider config.
 - `omp`: npm package `@oh-my-pi/pi-coding-agent` for version discovery, official `can1357/oh-my-pi` release binary for installation, tap client `omp`, isolated Oh My Pi provider config.
+
+The DSH Web driver exchanges the printed local launch URL for a session cookie when authentication is required. It supports Remote RPC and legacy RPC by endpoint discovery. The PTC archive variant remains `code`; current releases call its preset `ptc`, and older releases can use the archive variant ID when the server reports it as available. Driver-observed preset IDs are saved in `meta.json` alongside model and tool observations.
 
 When adding another CLI, prefer extending the existing abstractions:
 

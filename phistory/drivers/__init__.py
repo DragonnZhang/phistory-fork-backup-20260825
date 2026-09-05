@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from phistory.models import CaptureTarget, CommandResult
@@ -20,6 +20,7 @@ class CaptureRunContext:
 class CaptureExecution:
     command: tuple[str, ...]
     result: CommandResult
+    observed: dict[str, object] = field(default_factory=dict)
 
 
 CaptureRunner = Callable[[CaptureRunContext], CaptureExecution]

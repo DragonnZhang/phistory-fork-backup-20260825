@@ -139,7 +139,7 @@ def capture_target(
                     "dimensions": target.variant.dimensions,
                 },
                 "requested": target.variant.dimensions,
-                "observed": _trace_observation(working_target.trace_path),
+                "observed": {**_trace_observation(working_target.trace_path), **execution.observed},
                 "published_at": target.version.published_at,
                 "tarball_url": target.version.tarball_url,
                 "binary_version": binary_version,
