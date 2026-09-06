@@ -9,7 +9,6 @@ from phistory import __version__, packages
 from phistory.models import CaptureTarget
 from phistory.registry import AGENT_ORDER, AGENTS, parse_agent_ids
 from phistory.render import render_index
-from phistory.site import render_site
 from phistory.static_prompts.extract import StaticSourceUnavailable, extract_static_prompts
 from phistory.workflow import capture_latest, iter_backfill
 
@@ -49,8 +48,8 @@ def build_parser() -> argparse.ArgumentParser:
     index = sub.add_parser("render-index", help="render capture index")
     index.add_argument("-o", "--output", default="README.md", help="index markdown path")
 
-    site = sub.add_parser("render-site", help="render static HTML site")
-    site.add_argument("-o", "--output", default="index.html", help="site HTML path")
+    site = sub.add_parser("build-site", help="build the complete static site without translation API calls")
+    site.add_argument("-o", "--output", type=Path, help="publish directory (default: <cache-dir>/site)")
 
     static = sub.add_parser("extract-static", help="extract static prompts from installed agent packages")
     static.add_argument("agent", choices=sorted(AGENTS), help="agent id")
@@ -66,6 +65,26 @@ def build_parser() -> argparse.ArgumentParser:
         "--refresh-candidates",
         action="store_true",
         help="reinstall packages and regenerate the static candidate archive instead of replaying it",
+    )
+
+    translate = sub.add_parser("translate", help="translate archived prose using shared Chinese dictionaries")
+    translate.add_argument("--agents", help="comma-separated agent ids (default: all archived agents)")
+    translate.add_argument(
+        "--latest-captured", type=int, metavar="N", help="process the latest N captured versions per agent"
+    )
+    translate.add_argument("--locale", choices=["zh-CN"], default="zh-CN")
+    translate.add_argument("--all-captured", action="store_true", help="process every archived version (the default)")
+    translate.add_argument(
+        "--dry-run", action="store_true", help="report missing segments without calling an API or writing files"
+    )
+    translate.add_argument(
+        "--usage-log", type=Path, help="request usage JSONL (default: .phistory-cache/translation-usage.jsonl)"
+    )
+    translate.add_argument("--config", type=Path, help="private translation TOML config path")
+    translate.add_argument("--model", help="override the configured translation model")
+    translate.add_argument("--concurrency", type=int, help="maximum concurrent translation requests")
+    translate.add_argument(
+        "--max-batches", type=int, help="limit API batches per agent; unfinished segments remain resumable"
     )
 
     return parser
@@ -113,9 +132,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote {args.output}")
         return 0
 
-    if args.command == "render-site":
-        render_site(root, Path(args.output))
-        print(f"wrote {args.output}")
+    if args.command == "build-site":
+        from phistory.build import build_site
+
+        output = args.output or cache_dir / "site"
+        try:
+            build_site(root, output)
+        except (ValueError, OSError) as exc:
+            print(f"site build failed: {exc}", file=sys.stderr)
+            return 1
+        print(f"built {output}")
         return 0
 
     if args.command == "extract-static":
@@ -127,6 +153,43 @@ def main(argv: list[str] | None = None) -> int:
             cache_dir=cache_dir,
             refresh_candidates=args.refresh_candidates,
         )
+
+    if args.command == "translate":
+        from phistory.translation.config import load_config
+        from phistory.translation.workflow import translate_archive
+
+        if args.latest_captured is not None and (args.latest_captured < 1 or args.all_captured):
+            parser_error = "use a positive --latest-captured N or --all-captured, not both"
+            raise SystemExit(parser_error)
+        if args.max_batches is not None and args.max_batches < 1:
+            raise SystemExit("--max-batches must be greater than zero")
+        try:
+            config = None if args.dry_run else load_config(args.config, model=args.model, concurrency=args.concurrency)
+            results = translate_archive(
+                root,
+                agent_ids=parse_agent_ids(args.agents) if args.agents else None,
+                latest_captured=args.latest_captured,
+                dry_run=args.dry_run,
+                config=config,
+                max_batches=args.max_batches,
+                usage_log=args.usage_log,
+                progress=lambda message: print(message, flush=True),
+            )
+        except (ValueError, OSError, RuntimeError) as exc:
+            print(f"translation failed: {exc}", file=sys.stderr)
+            return 1
+        remaining = sum(item.total - item.reused - item.translated for item in results)
+        message = f"Translation: {sum(item.translated for item in results)} new, {sum(item.reused for item in results)} reused, {remaining} remaining."
+        message += (
+            f" Requests: {sum(item.requests for item in results)}; "
+            f"input tokens: {sum(item.input_tokens for item in results)}; "
+            f"output tokens: {sum(item.output_tokens for item in results)}."
+        )
+        print(message, flush=True)
+        if summary := os.environ.get("GITHUB_STEP_SUMMARY"):
+            with Path(summary).open("a", encoding="utf-8") as output:
+                output.write("\n## Chinese translations\n\n" + message + "\n")
+        return 1 if remaining and not args.dry_run else 0
 
     return 2
 

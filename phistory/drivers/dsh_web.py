@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import signal
 import socket
 import subprocess
@@ -9,6 +10,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from phistory.drivers import CaptureExecution, CaptureRunContext
 from phistory.drivers.common import tap_command
@@ -17,6 +19,12 @@ from phistory.models import CommandResult
 SERVER_TIMEOUT_SECONDS = 60
 CAPTURE_TIMEOUT_SECONDS = 90
 PROMPT = "Reply with one short sentence."
+
+
+class DshRpcError(RuntimeError):
+    def __init__(self, method: str, error: dict[str, object]):
+        super().__init__(f"DSH {method} failed: {error}")
+        self.error = error
 
 
 def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
@@ -37,7 +45,7 @@ def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
             start_new_session=True,
         )
         try:
-            _create_and_prompt_session(context, port, process)
+            observed = _create_and_prompt_session(context, port, process)
             _wait_for_prompt_trace(context.tap_output_dir, process)
         finally:
             _stop_process(process)
@@ -45,10 +53,11 @@ def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
     if time.monotonic() - started > CAPTURE_TIMEOUT_SECONDS:
         stdout += "\nDSH Web capture exceeded its timeout."
     result = CommandResult(tuple(argv), process.returncode or 0, stdout, "")
-    return CaptureExecution(tuple(argv), result)
+    return CaptureExecution(tuple(argv), result, observed)
 
 
-def _create_and_prompt_session(context: CaptureRunContext, port: int, process: subprocess.Popen) -> None:
+def _create_and_prompt_session(context: CaptureRunContext, port: int, process: subprocess.Popen) -> dict[str, object]:
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), urllib.request.HTTPCookieProcessor())
     payload: dict[str, object] = {
         "sessionId": f"phistory-{context.target.variant.id}",
         "cwd": str(context.work_dir),
@@ -56,17 +65,36 @@ def _create_and_prompt_session(context: CaptureRunContext, port: int, process: s
     mode = context.target.variant.dimensions.get("mode")
     if mode:
         payload["agentPreset"] = mode
-    created = _rpc_when_ready(port, "session.create", payload, process)
+    try:
+        created = _rpc_when_ready(
+            port, "session.create", payload, process, opener, context.tap_output_dir / "client.log"
+        )
+    except DshRpcError as exc:
+        details = exc.error.get("details") or {}
+        available = details.get("available", []) if isinstance(details, dict) else []
+        if (
+            not mode
+            or mode == context.target.variant.id
+            or exc.error.get("code") not in ("agent-preset/not-found", "agent-preset-not-found")
+            or context.target.variant.id not in available
+        ):
+            raise
+        payload["agentPreset"] = context.target.variant.id
+        created = _rpc(port, "session.create", payload, opener)
     session_id = str(created["sessionId"])
     _rpc(
         port,
         "session.prompt",
         {
+            "requestId": f"phistory-{context.target.variant.id}-prompt",
             "sessionId": session_id,
             "mode": "queue",
             "content": [{"type": "text", "text": PROMPT}],
         },
+        opener,
     )
+    preset = created.get("agentPreset") or payload.get("agentPreset")
+    return {"mode": preset} if preset else {}
 
 
 def _rpc_when_ready(
@@ -74,6 +102,8 @@ def _rpc_when_ready(
     method: str,
     payload: dict[str, object],
     process: subprocess.Popen,
+    opener: urllib.request.OpenerDirector,
+    log_path: Path,
 ) -> dict[str, object]:
     deadline = time.monotonic() + SERVER_TIMEOUT_SECONDS
     last_error: Exception | None = None
@@ -81,31 +111,61 @@ def _rpc_when_ready(
         if process.poll() is not None:
             raise RuntimeError(f"DSH Web exited before becoming ready ({process.returncode})")
         try:
-            return _rpc(port, method, payload)
+            return _rpc(port, method, payload, opener)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 401:
+                if _authenticate_web(opener, log_path, port):
+                    return _rpc(port, method, payload, opener)
+            elif exc.code not in (404, 503):
+                raise
+            last_error = exc
         except (OSError, urllib.error.URLError, TimeoutError) as exc:
             last_error = exc
-            time.sleep(0.25)
+        time.sleep(0.25)
     raise RuntimeError(f"DSH Web did not become ready: {last_error}")
 
 
-def _rpc(port: int, method: str, payload: dict[str, object]) -> dict[str, object]:
-    envelope = {
-        "type": "client-request",
-        "rpcId": f"phistory-{method}",
-        "method": method,
-        "payload": payload,
-    }
-    request = urllib.request.Request(
-        f"http://127.0.0.1:{port}/api/{method}",
-        data=json.dumps(envelope).encode("utf-8"),
-        headers={"content-type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(request, timeout=5) as response:
-        body = json.loads(response.read())
+def _authenticate_web(opener: urllib.request.OpenerDirector, log_path: Path, port: int) -> bool:
+    try:
+        log = log_path.read_text(encoding="utf-8", errors="replace")
+    except FileNotFoundError:
+        return False
+    for url in re.findall(r"(?m)^dsh web: (http://\S+)", log):
+        parsed = urlsplit(url)
+        if parsed.netloc != f"127.0.0.1:{port}" or parsed.path not in ("", "/"):
+            continue
+        with opener.open(url, timeout=5) as response:
+            response.read()
+        return True
+    return False
+
+
+def _rpc(
+    port: int, method: str, payload: dict[str, object], opener: urllib.request.OpenerDirector
+) -> dict[str, object]:
+    for endpoint, arguments in ((method.replace(".", "/"), {"args": {"request": payload}}), (method, payload)):
+        envelope = {
+            "type": "client-request",
+            "rpcId": f"phistory-{method}",
+            "method": endpoint,
+            "payload": arguments,
+        }
+        request = urllib.request.Request(
+            f"http://127.0.0.1:{port}/api/{endpoint}",
+            data=json.dumps(envelope).encode("utf-8"),
+            headers={"content-type": "application/json"},
+            method="POST",
+        )
+        try:
+            with opener.open(request, timeout=5) as response:
+                body = json.loads(response.read())
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code != 404 or endpoint == method:
+                raise
     result = body.get("result") or {}
     if not result.get("ok"):
-        raise RuntimeError(f"DSH {method} failed: {result.get('error')}")
+        raise DshRpcError(method, result.get("error") or {})
     return result.get("value") or {}
 
 

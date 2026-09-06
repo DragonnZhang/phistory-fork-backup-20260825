@@ -4,6 +4,12 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 *.egg-info/
+.env
+.env.*
+
+# Website HTML and source indexes belong to build-site output, never to Git.
+/index.html
+/translations/sources/
 
 captures/**/.home/
 captures/**/.tap/

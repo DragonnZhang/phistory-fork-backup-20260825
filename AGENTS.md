@@ -12,13 +12,14 @@ This file is for future coding agents. Read it before changing the project.
 - `phistory/capture.py`: installs an agent, creates an isolated HOME, runs `claude-tap`, exports `prompt.md`, copies `trace.jsonl`, writes `meta.json`, and normalizes volatile text in prompt Markdown only.
 - `phistory/workflow.py`: orchestration for latest captures and backfills.
 - `phistory/storage.py`: capture directory preparation, cleanup, trace copying, and metadata writing.
-- `phistory/render.py`: regenerates `README.md` from capture metadata.
-- `phistory/site.py`: regenerates the single-file static web UI in `index.html`.
+- `phistory/render.py`: regenerates `README.md`, capture indexes, and the agent-facing `llms.txt` from capture metadata.
+- `phistory/build.py`: assembles public archives, dictionaries and generated translation assets into the disposable site directory.
+- `phistory/site.py`: renders the single-file static web UI for the site build.
 - `phistory/static_prompts/`: static prompt extraction for package-embedded prompt strings. It currently targets Claude Code and is structured so other agents can be added later.
-- `phistory/cli.py`: CLI entrypoint for `capture`, `backfill`, `extract-static`, `render-index`, and `render-site`.
+- `phistory/cli.py`: CLI entrypoint for `capture`, `backfill`, `extract-static`, `translate`, `render-index`, and `build-site`.
 - `tests/`: focused unit and local integration tests for package sources, registry contracts, capture behavior, and rendering.
-- `.github/workflows/capture.yml`: hourly capture workflow. It runs lint, tests, build, latest smoke capture for all agents, real latest capture, Claude Code static prompt extraction for the latest captured versions, renders artifacts, and commits updates.
-- `.github/workflows/pages.yml`: GitHub Pages deployment for the static site.
+- `.github/workflows/capture.yml`: hourly capture workflow. It runs lint, tests, build, real latest capture, Claude Code static prompt extraction for the latest captured versions, renders artifacts, and commits updates. Manual runs also perform a fresh latest smoke capture for all agents.
+- `.github/workflows/pages.yml`: builds the static site from archived data and deploys only the build output to GitHub Pages.
 
 Generated capture artifacts live in:
 
@@ -29,6 +30,8 @@ captures/<agent>/<version>/variants/<variant>/meta.json
 ```
 
 `prompt.md` is normalized for human reading and diffs. `trace.jsonl` is raw evidence and should not be rewritten for presentation-only cleanup.
+
+`llms.txt` is the concise machine-readable entry point for the hosted archive. Keep it generated from the same capture rows as `captures/index.json`; do not hand-maintain snapshot links or duplicate the full archive into `llms-full.txt`.
 
 Claude Code captures may also include:
 
@@ -61,7 +64,20 @@ For each agent/version/variant, the flow is:
 7. For Claude Code, also extract package-embedded static prompt candidates and matched static prompts.
 8. Remove temporary tap output unless `--keep-tap` is used.
 
-Do not add direct model API calls to Phistory. The capture boundary is `claude-tap`.
+Do not call model providers during capture. The capture boundary is `claude-tap`. The separate `translate` command may call the configured translation provider to translate already archived text.
+
+## Chinese Translations
+
+- `phistory/translation/` extracts source spans, calls the translation provider, and maintains shared Chinese dictionaries.
+- `translations/zh-CN/<agent>/runtime.json` is shared across all versions and both runtime views. These dictionaries are the only translation data committed to Git. Do not generate a complete translated prompt for every version.
+- `build-site` generates content-addressed source indexes with offsets into all archived runtime Prompt and Trace files under the output directory's `translations/sources/`. Indexes and the generated `index.html` are disposable build artifacts; never commit them. Building does not call a provider or require translation credentials.
+- Static archives are not translated. Keep their original browser and diff, without translation assets or a language control. Opening Static must preserve the runtime language preference for returning to Diff or Trace.
+- Raw capture files and static candidates remain unchanged. Translate human prose, including tool and schema descriptions; preserve technical identifiers, code, paths and placeholders.
+- Translation credentials belong in `~/.config/phistory/translation.toml` or translation-step-only environment variables. Never commit keys or pass them to captured CLIs.
+- Language is a browser preference, not a URL parameter. Original text determines diff changes. Missing, stale or invalid translation data falls back to original text.
+- `uv run phistory translate --all-captured --dry-run` reports missing work without API calls. Normal translation resumes automatically from dictionaries; successful batches are saved atomically.
+- CI retains `translation-usage` and `translation-dictionaries` artifacts for 30 days before rendering and publishing. If publishing fails after translation, recover missing dictionary entries from that run before retrying paid requests; retain current entries on matching source IDs.
+- Test real translation prompt changes on representative old/new archive samples before backfilling. Keep evaluation evidence in `docs/translation-evaluation.md`; store verbose trial outputs only under the ignored cache directory.
 
 Static prompt extraction is separate from request capture. It parses installed package code, keeps plausible prompt-like string/template candidates, matches known catalog entries by hash or anchor, and writes deterministic Markdown/JSON. Prefer improving general filters and catalog anchors over adding version-specific special cases.
 
@@ -85,6 +101,8 @@ Current agents are defined in `phistory/registry.py`:
 - `pi`: npm package `@earendil-works/pi-coding-agent`, tap client `pi`, isolated Pi provider config.
 - `omp`: npm package `@oh-my-pi/pi-coding-agent` for version discovery, official `can1357/oh-my-pi` release binary for installation, tap client `omp`, isolated Oh My Pi provider config.
 
+The DSH Web driver exchanges the printed local launch URL for a session cookie when authentication is required. It supports Remote RPC and legacy RPC by endpoint discovery. The PTC archive variant remains `code`; current releases call its preset `ptc`, and older releases can use the archive variant ID when the server reports it as available. Driver-observed preset IDs are saved in `meta.json` alongside model and tool observations.
+
 When adding another CLI, prefer extending the existing abstractions:
 
 - Add a `PackageSource` only if `npm`, `pypi`, or `github-release` cannot model the release channel.
@@ -99,7 +117,7 @@ When adding another CLI, prefer extending the existing abstractions:
 - Do not add one-off version maps unless there is a stable upstream rule behind them.
 - Prefer official release metadata: npm registry for npm packages, PyPI JSON for Python packages, GitHub Releases for release-tagged projects.
 - Keep raw traces raw. Normalize only `prompt.md` via the sanitizer in `capture.py`.
-- Keep generated files deterministic enough for CI and GitHub Pages. After changing capture, render, registry, or package logic, run both render commands.
+- Keep generated files deterministic enough for CI and GitHub Pages. After changing capture, render, registry, or package logic, run `render-index` and `build-site`.
 - Avoid “insert-only” changes. If a new agent exposes a weakness in the architecture, refactor the shared abstraction cleanly instead of stacking special cases.
 - Keep the CLI boring and scriptable. The GitHub Action depends on predictable exit codes and printed result lines.
 - Keep comments sparse and useful. Prefer clear names and small helpers over explanatory comments.
@@ -124,7 +142,14 @@ For generated artifacts:
 
 ```bash
 uv run phistory render-index
-uv run phistory render-site
+uv run phistory build-site --output .phistory-cache/site
+uv run python scripts/audit_translations.py --site-dir .phistory-cache/site
+```
+
+For local preview, serve the same build output that Pages deploys:
+
+```bash
+python -m http.server --directory .phistory-cache/site
 ```
 
 For Claude Code static prompt artifacts:
@@ -156,19 +181,19 @@ These should remain normal failed captures, not Phistory compatibility branches,
 
 ## Web UI Notes
 
-The site is a single generated `index.html` using manifest data embedded by `phistory/site.py`. It is intentionally static so GitHub Pages can serve it directly.
+The site is a single generated `index.html` using manifest data embedded by `phistory/site.py`. `build-site` assembles this HTML, public archive assets, shared dictionaries and regenerated source indexes into an ignored output directory. GitHub Pages serves that directory directly. `captures/index.json` remains the archive metadata; translation availability is joined into the page manifest only during the build.
 
 When modifying UI:
 
 - Keep the diff view as the primary experience.
 - Preserve mobile usability.
 - Do not add frameworks or build steps unless there is a strong reason.
-- Regenerate `index.html` with `uv run phistory render-site`.
+- Rebuild and preview with `uv run phistory build-site --output .phistory-cache/site`; do not serve the repository root.
 - Keep SEO metadata aligned with the project description in `README.md`.
 
 ## Git Hygiene
 
 - The repository may contain many generated capture files. Do not delete or rewrite existing captures unless the task explicitly requires it.
 - Ignore unrelated dirty files if present; do not revert user work.
-- Commit generated `README.md`, `index.html`, and `captures/` changes together when they are part of the same capture/update.
+- Commit generated `README.md`, `README_zh.md`, `llms.txt`, `captures/`, and shared dictionary changes together when they are part of the same capture/update. Keep site HTML and source indexes out of Git.
 - Prefer small, focused commits. For large backfills, one generated-data commit is acceptable after validation.
