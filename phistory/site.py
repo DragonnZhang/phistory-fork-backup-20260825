@@ -1,6 +1,7 @@
 import difflib
 import hashlib
 import json
+from collections.abc import Callable
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -30,11 +31,15 @@ CHANGE_FULL_SCALE_RATIO = 0.30
 CHANGE_MIN_SCALE = 14
 
 
-def render_site(root: Path, output: Path) -> None:
-    output.write_text(_HTML.replace("__PHISTORY_MANIFEST__", _json_for_script(_build_manifest(root))), encoding="utf-8")
+def render_site(root: Path, output: Path, *, translations: Callable[[dict], dict] | None = None) -> None:
+    html = _HTML.replace("__PHISTORY_MANIFEST__", _json_for_script(_build_manifest(root, translations=translations)))
+    for suffix in ("css", "js"):
+        asset = Path(__file__).with_name("web") / f"translation.{suffix}"
+        html = html.replace(f"__TRANSLATION_{suffix.upper()}__", asset.read_text(encoding="utf-8"))
+    output.write_text(html, encoding="utf-8")
 
 
-def _build_manifest(root: Path) -> dict:
+def _build_manifest(root: Path, *, translations: Callable[[dict], dict] | None = None) -> dict:
     rows = read_capture_rows(root)
     agents = []
     for agent_id in sorted({row["agent_id"] for row in rows}, key=agent_sort_key):
@@ -50,7 +55,7 @@ def _build_manifest(root: Path) -> dict:
                 key=lambda row: _version_key(row["version"]),
                 reverse=True,
             )
-            versions = _site_versions(variant_rows)
+            versions = _site_versions(variant_rows, root.parent, translations=translations)
             first = variant_rows[0]
             variants.append(
                 {
@@ -86,18 +91,22 @@ def _variant_sort_key(agent_id: str, variant_id: str) -> tuple[int, str]:
     return (positions.get(variant_id, len(positions)), variant_id)
 
 
-def _site_versions(rows: list[dict]) -> list[dict]:
+def _site_versions(rows: list[dict], base: Path, *, translations: Callable[[dict], dict] | None = None) -> list[dict]:
     versions = []
     for index, row in enumerate(rows):
         previous = rows[index + 1] if index + 1 < len(rows) else None
-        item = _site_row(row)
+        item = _site_row(row, base)
+        item["translations"] = translations(row) if translations else {}
         item["change"] = _change_summary(row, previous)
         versions.append(item)
     _add_relative_change_scale(versions)
     return versions
 
 
-def _site_row(row: dict) -> dict:
+def _site_row(row: dict, base: Path) -> dict:
+    def asset_path(key: str) -> str:
+        return row[key].relative_to(base).as_posix() if row.get(key) else ""
+
     return {
         "agent_id": row["agent_id"],
         "agent": row["agent"],
@@ -109,14 +118,14 @@ def _site_row(row: dict) -> dict:
         "published_compact": _compact_date(row["published_at"]),
         "published_display": _display_time(row["published_at"]),
         "captured_display": _display_time(row.get("captured_at") or ""),
-        "prompt": row["prompt"].as_posix(),
+        "prompt": asset_path("prompt"),
         "prompt_fingerprint": _file_fingerprint(row["prompt"]),
-        "trace": row["trace"].as_posix(),
+        "trace": asset_path("trace"),
         "trace_fingerprint": _file_fingerprint(row["trace"]),
-        "static_prompts": row["static_prompts"].as_posix() if row.get("static_prompts") else "",
+        "static_prompts": asset_path("static_prompts"),
         "static_prompts_fingerprint": _file_fingerprint(row["static_prompts"]) if row.get("static_prompts") else "",
-        "static_prompts_json": row["static_prompts_json"].as_posix() if row.get("static_prompts_json") else "",
-        "static_candidates_json": row["static_candidates_json"].as_posix() if row.get("static_candidates_json") else "",
+        "static_prompts_json": asset_path("static_prompts_json"),
+        "static_candidates_json": asset_path("static_candidates_json"),
     }
 
 
@@ -255,6 +264,7 @@ _HTML = r"""<!doctype html>
 <meta name="twitter:description" content="Automatically archived system prompt snapshots and diffs for agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, and Oh My Pi.">
 <meta name="twitter:image" content="https://phistory.cc/docs/screenshot.png">
 <link rel="canonical" href="https://phistory.cc/">
+<link rel="help" type="text/markdown" href="/llms.txt" title="LLM-readable archive guide">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1115'/%3E%3Cpath d='M8 10h16M8 16h10M8 22h14' stroke='%237cc7ff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <title>Phistory - Agent CLI System Prompt Diff History</title>
 <script>
@@ -1673,6 +1683,7 @@ a:hover { text-decoration: none; }
     height: 3px;
   }
 }
+__TRANSLATION_CSS__
 </style>
 </head>
 <body>
@@ -1690,6 +1701,7 @@ a:hover { text-decoration: none; }
       <button id="to" class="control version-control" type="button" aria-haspopup="listbox"></button>
     </div>
     <div class="actions">
+      <button id="language" class="icon-button language-button" type="button" aria-label="Switch content language" aria-pressed="false">中文</button>
       <button id="view-toggle" class="icon-button view-button" type="button" title="Open trace detail">Trace</button>
       <button id="theme" class="icon-button" type="button" title="Toggle theme"></button>
       <a class="icon-button" href="https://github.com/WEIFENG2333/phistory" target="_blank" rel="noreferrer" aria-label="Open GitHub project" title="Open GitHub project">
@@ -1728,6 +1740,7 @@ const els = {
   from: document.getElementById('from'),
   to: document.getElementById('to'),
   viewToggle: document.getElementById('view-toggle'),
+  language: document.getElementById('language'),
   theme: document.getElementById('theme'),
   diff: document.getElementById('diff'),
   editor: document.querySelector('.editor'),
@@ -1757,6 +1770,11 @@ const state = {
   followLatest: true,
   normalizeQuery: false,
   theme: storedTheme(),
+  language: storedLanguage(),
+  translationCache: new Map(),
+  translationComparison: null,
+  translationPosition: null,
+  translationDecorations: [],
   picker: null,
   cache: new Map(),
   traceCache: new Map(),
@@ -1770,10 +1788,14 @@ const state = {
   traceRawSections: new Set(),
   traceWrappedSections: new Set(),
   editor: null,
+  editorViewModel: null,
   monaco: null,
   monacoPromise: null,
+  monacoDiffReady: false,
   renderSequence: 0
 };
+
+__TRANSLATION_JS__
 
 boot();
 
@@ -1876,6 +1898,7 @@ function bindEvents() {
   els.to.addEventListener('click', () => togglePicker('to', els.to));
   els.viewToggle.addEventListener('click', toggleView);
   els.theme.addEventListener('click', toggleTheme);
+  els.language.addEventListener('click', toggleLanguage);
   els.diff.addEventListener('focusin', guardMobileEditorFocus);
   els.staticOutline.addEventListener('click', event => {
     const filter = event.target.closest?.('.static-filter');
@@ -1923,14 +1946,21 @@ function bindEvents() {
     toggleTracePanel(summary);
   });
   addEventListener('click', event => {
-    if (!els.popover.contains(event.target) && !event.target.closest('.control')) closePicker();
+    // Variant selection replaces the popup's contents before this click reaches the document.
+    if (!event.composedPath().includes(els.popover) && !event.target.closest('.control')) closePicker();
   });
   addEventListener('keydown', event => {
     if (event.key === 'Escape') closePicker();
   });
   addEventListener('resize', debounce(() => {
     closePicker();
+    const narrow = matchMedia('(max-width: 880px)').matches;
+    state.editor?.updateOptions({
+      renderSideBySide: !narrow, domReadOnly: narrow, minimap: { enabled: !narrow },
+      fontSize: narrow ? 12 : 13, lineHeight: narrow ? 19 : 20
+    });
     state.editor?.layout();
+    hardenMobileEditorInputs();
   }, 100));
   els.trace.addEventListener('scroll', debounce(saveTraceState, 150));
   addEventListener('beforeunload', saveTraceState);
@@ -1958,6 +1988,10 @@ function renderControls() {
   const next = nextView();
   els.viewToggle.textContent = next === 'diff' ? 'Diff' : (next === 'trace' ? 'Trace' : 'Static');
   els.viewToggle.title = next === 'diff' ? 'Open prompt diff' : (next === 'trace' ? 'Open trace detail' : 'Open static prompts');
+  els.language.hidden = state.view === 'static';
+  els.language.textContent = state.language === 'zh-CN' ? '原文' : '中文';
+  els.language.setAttribute('aria-pressed', String(state.language === 'zh-CN'));
+  els.language.title = state.language === 'zh-CN' ? '显示原文' : '阅读中文翻译';
 }
 
 function agentControlNameHtml(agent) {
@@ -2150,6 +2184,7 @@ function refresh() {
 
 function refreshView() {
   const sequence = ++state.renderSequence;
+  state.translationComparison = null;
   showLoading();
   renderView(sequence);
 }
@@ -2158,6 +2193,7 @@ async function renderView(sequence) {
   try {
     if (state.view === 'trace') {
       snapshotTraceState();
+      disposeEditor();
       await renderTrace(sequence);
       return;
     }
@@ -2326,26 +2362,26 @@ async function renderDiff(sequence) {
   const [original, modified] = await Promise.all([loadPrompt(from), loadPrompt(to)]);
   if (!isCurrentRender(sequence)) return;
   renderMonacoDiff(original, modified);
+  await prepareTranslationComparison(from, to, original, modified, sequence);
 }
 
 function renderMonacoDiff(original, modified) {
   if (!state.monaco) return;
   const monaco = state.monaco;
-  const originalModel = monaco.editor.createModel(original, 'markdown');
-  const modifiedModel = monaco.editor.createModel(modified, 'markdown');
 
-  disposeEditor();
-
-  els.diff.innerHTML = '';
   const isNarrow = matchMedia('(max-width: 880px)').matches;
-  state.editor = monaco.editor.createDiffEditor(els.diff, {
+  const options = {
     automaticLayout: true,
     renderSideBySide: !isNarrow,
+    // Legacy handles large, repetitive Static archives without collapsing their changes into one hunk.
+    diffAlgorithm: state.view === 'static' ? 'legacy' : 'advanced',
+    maxComputationTime: state.view === 'static' ? 20000 : 5000,
     readOnly: true,
     domReadOnly: isNarrow,
     minimap: { enabled: !isNarrow },
     scrollBeyondLastLine: false,
     wordWrap: 'on',
+    unicodeHighlight: { allowedLocales: { 'zh-hans': true, 'zh-hant': true } },
     originalEditable: false,
     contextmenu: !isNarrow,
     links: !isNarrow,
@@ -2369,8 +2405,34 @@ function renderMonacoDiff(original, modified) {
       horizontalScrollbarSize: isNarrow ? 8 : 10
     },
     padding: { top: isNarrow ? 10 : 12, bottom: 12 }
+  };
+  if (!state.editor) {
+    els.diff.innerHTML = '';
+    state.editor = monaco.editor.createDiffEditor(els.diff, options);
+    state.editor.onDidUpdateDiff(() => {
+      state.monacoDiffReady = true;
+      renderTranslationComparison();
+    });
+    state.translationDecorations = [state.editor.getOriginalEditor(), state.editor.getModifiedEditor()]
+      .map(editor => editor.createDecorationsCollection());
+  } else {
+    state.editor.updateOptions(options);
+  }
+  state.translationDecorations.forEach(collection => collection.clear());
+  // Give each comparison immutable source models so late worker results cannot read newer text.
+  const models = state.editor.getModel();
+  const previousViewModel = state.editorViewModel;
+  state.monacoDiffReady = false;
+  state.editorViewModel = state.editor.createViewModel({
+    original: monaco.editor.createModel(original, 'markdown'),
+    modified: monaco.editor.createModel(modified, 'markdown')
   });
-  state.editor.setModel({ original: originalModel, modified: modifiedModel });
+  state.editor.setModel(state.editorViewModel);
+  // Cancel the previous view's pending work before disposing the models it still references.
+  previousViewModel?.dispose();
+  models?.original.dispose();
+  models?.modified.dispose();
+  restoreTranslationPosition();
   hardenMobileEditorInputs();
   requestAnimationFrame(hardenMobileEditorInputs);
 }
@@ -2378,10 +2440,15 @@ function renderMonacoDiff(original, modified) {
 function disposeEditor() {
   if (!state.editor) return;
   const model = state.editor.getModel();
+  state.editor.setModel(null);
   state.editor.dispose();
+  state.editorViewModel?.dispose();
+  state.editorViewModel = null;
   model?.original?.dispose();
   model?.modified?.dispose();
   state.editor = null;
+  state.translationDecorations = [];
+  state.monacoDiffReady = false;
 }
 
 function hardenMobileEditorInputs() {
@@ -2420,6 +2487,7 @@ async function loadTrace(item) {
   if (!response.ok) throw new Error(`Unable to load ${item.trace}`);
   const text = await response.text();
   const records = text.split(/\n+/).filter(Boolean).map(line => JSON.parse(line));
+  state.cache.set(url, text);
   state.traceCache.set(url, records);
   return records;
 }
@@ -2461,7 +2529,11 @@ async function renderTrace(sequence) {
     els.trace.innerHTML = '<div class="empty">No prompt-bearing trace request found.</div>';
     return;
   }
-  const detail = normalizeTraceRecord(selected.record, selected.index, records.length);
+  let detail = normalizeTraceRecord(selected.record, selected.index, records.length);
+  if (state.language === 'zh-CN') {
+    detail = await translateTraceDetail(item, records, selected, detail);
+    if (!isCurrentRender(sequence)) return;
+  }
   loadStoredTraceState();
   els.trace.innerHTML = traceDetailHtml(item, detail);
   restoreTraceState();
@@ -2959,6 +3031,7 @@ function traceDetailHtml(item, detail) {
       <div class="trace-title"><h2>${escapeHtml(title)}</h2><span>${escapeHtml(item.published_compact)}</span></div>
       <div class="trace-meta">${metaItem('Provider', detail.provider)}${metaItem('Model', detail.model || 'unknown')}${metaItem('Endpoint', `${detail.method} ${detail.path}`)}${item.published_display ? metaItem('Published', item.published_display) : ''}${item.captured_display ? metaItem('Captured', item.captured_display) : ''}</div>
     </header>
+    ${detail.translation ? translationNoticeHtml(detail.translation) : ''}
     ${traceJumpbarHtml(detail)}
     ${blocksSectionHtml('System Prompt', detail.systemBlocks, true)}
     ${blocksSectionHtml('Developer Prompt', detail.developerBlocks, false)}
@@ -2984,7 +3057,7 @@ function metaItem(label, value) {
 
 function traceSummaryHtml(title, open, extra = '', modeToggle = false, wrapToggle = false) {
   const mode = modeToggle
-    ? '<button class="trace-mode" type="button">View source</button>'
+    ? '<button class="trace-mode" type="button">Markdown source</button>'
     : '';
   const wrap = wrapToggle
     ? '<button class="trace-wrap" type="button" aria-pressed="false">Wrap lines</button>'
@@ -2999,7 +3072,7 @@ function chevronIcon() {
 function updateTraceModeLabel(section) {
   const mode = section?.querySelector(':scope > .trace-summary .trace-mode');
   if (!mode) return;
-  mode.textContent = section.classList.contains('is-raw') ? 'View rendered' : 'View source';
+  mode.textContent = section.classList.contains('is-raw') ? 'View rendered' : 'Markdown source';
 }
 
 function updateTraceWrapLabel(section) {
@@ -3017,14 +3090,14 @@ function blocksSectionHtml(title, blocks, open) {
     const origin = block.title === 'System Message'
       ? '<div class="prompt-block-origin">In-conversation message · <code>role: system</code></div>'
       : '';
-    return `<div class="prompt-block">${origin}<div class="trace-rendered">${markdownHtml(block.text)}</div><pre class="trace-text trace-raw">${escapeHtml(block.text)}</pre></div>`;
+    return `<div class="prompt-block">${origin}<div class="trace-rendered">${markdownHtml(block.text)}${originalTextHtml(block.text, block.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(block.text)}</pre></div>`;
   }).join('');
   return `<section class="trace-section${open ? ' is-open' : ''}" data-section="${section}">${traceSummaryHtml(title, open, '', true)}<div class="trace-content"><div class="trace-body">${body}</div></div></section>`;
 }
 
 function messagesSectionHtml(messages) {
   if (!messages.length) return '';
-  const body = messages.map(message => `<div class="trace-message"><div class="trace-role">${escapeHtml(message.role)}</div><div class="trace-rendered">${markdownHtml(message.text)}</div><pre class="trace-text trace-raw">${escapeHtml(message.text)}</pre></div>`).join('');
+  const body = messages.map(message => `<div class="trace-message"><div class="trace-role">${escapeHtml(message.role)}</div><div class="trace-rendered">${markdownHtml(message.text)}${originalTextHtml(message.text, message.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(message.text)}</pre></div>`).join('');
   return `<section class="trace-section" data-section="messages">${traceSummaryHtml('Messages', false, '', true)}<div class="trace-content"><div class="trace-body">${body}</div></div></section>`;
 }
 
@@ -3066,7 +3139,7 @@ function namespaceLabel(namespace) {
 function toolHtml(tool) {
   const params = schemaParameters(tool.schema);
   const description = tool.description
-    ? `<div class="tool-detail-label">Description</div><div class="tool-description-shell" tabindex="0" aria-label="${escapeHtml(`${tool.name} description`)}"><div class="tool-description trace-rendered">${markdownHtml(tool.description)}</div></div>`
+    ? `<div class="tool-detail-label">Description</div><div class="tool-description-shell" tabindex="0" aria-label="${escapeHtml(`${tool.name} description`)}"><div class="tool-description trace-rendered">${markdownHtml(tool.description)}${originalTextHtml(tool.description, tool.originalDescription)}</div></div>`
     : '';
   const raw = tool.raw || tool.schema || tool.format || {};
   return `<section class="tool-card" data-tool="${escapeHtml(tool.key || tool.name)}">${traceSummaryHtml(tool.name, false, `<small>${escapeHtml(toolSummary(tool, params))}</small>`)}<div class="trace-content"><div class="trace-body">${description}${toolInputHtml(tool, params)}<section class="trace-section tool-raw">${traceSummaryHtml('Raw definition', false)}<div class="trace-content"><div class="trace-body"><pre class="raw-json" tabindex="0" aria-label="${escapeHtml(`${tool.name} raw definition`)}">${escapeHtml(JSON.stringify(raw, null, 2))}</pre></div></div></section></div></div></section>`;
@@ -3098,7 +3171,8 @@ function toolInputHtml(tool, params) {
     const rows = params.map(param => {
       const nestedClass = param.depth ? ' is-nested' : '';
       const nestedStyle = param.depth ? ` style="--tool-depth:${Math.min(param.depth, 4)}"` : '';
-      return `<div class="tool-param"><div class="tool-param-name${nestedClass}"${nestedStyle} title="${escapeHtml(param.name)}">${escapeHtml(param.name)}</div><div class="tool-param-type">${escapeHtml(param.type)}${param.required ? ' <span class="tool-param-required">required</span>' : ''}</div><div class="tool-param-desc">${escapeHtml(param.description)}</div></div>`;
+      const original = tool.originalParameters?.find(value => value.name === param.name)?.description;
+      return `<div class="tool-param"><div class="tool-param-name${nestedClass}"${nestedStyle} title="${escapeHtml(param.name)}">${escapeHtml(param.name)}</div><div class="tool-param-type">${escapeHtml(param.type)}${param.required ? ' <span class="tool-param-required">required</span>' : ''}</div><div class="tool-param-desc">${escapeHtml(param.description)}${originalTextHtml(param.description, original)}</div></div>`;
     }).join('');
     return `<div class="tool-detail-label">Parameters <small>${params.length}</small></div><div class="tool-params">${rows}</div>`;
   }
@@ -3224,8 +3298,11 @@ function sectionId(title) {
 function markdownHtml(text) {
   const source = String(text || '');
   if (window.marked && window.DOMPurify) {
-    const html = window.marked.parse(source, { gfm: true, breaks: false });
-    return window.DOMPurify.sanitize(html);
+    // Archived image references are examples, not assets to fetch while reading a trace.
+    const renderer = new window.marked.Renderer();
+    renderer.image = (href, title, label) => renderer.link(href, title, label || escapeHtml(href));
+    const html = window.marked.parse(source, { gfm: true, breaks: false, renderer });
+    return window.DOMPurify.sanitize(html, { FORBID_TAGS: ['img', 'picture', 'video', 'audio', 'source', 'track'] });
   }
   return fallbackMarkdownHtml(source);
 }
@@ -3406,6 +3483,7 @@ function compactSnapshotLabel(item, variant) {
 
 function showError(error) {
   const target = state.view === 'trace' ? els.trace : els.diff;
+  if (target === els.diff) disposeEditor();
   target.innerHTML = `<div class="empty">${escapeHtml(error.message || error)}</div>`;
 }
 
