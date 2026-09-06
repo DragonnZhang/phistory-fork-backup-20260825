@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-06 03:36 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-06 17:18 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -23,7 +23,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 For each supported release, Phistory installs the exact CLI package and runs each configured snapshot through [`claude-tap`](https://github.com/WEIFENG2333/claude-tap), captures the prompt-bearing HTTP request without calling the real model provider, and stores the result under `captures/<agent>/<version>/variants/<variant>/` with `prompt.md`, `trace.jsonl`, and `meta.json`. Capture configurations use a `default` snapshot as their baseline; selected models or modes are stored as additional variants.
 
-For recent Claude Code releases, Phistory also extracts static prompt-like strings from the installed package and stores them under `captures/<agent>/<version>/static/`. The candidate archive keeps the raw extraction input so matching rules can be improved later without reinstalling every historical package.
+For recent Claude Code releases, Phistory also extracts static prompt-like strings from the installed package and stores them under `captures/<agent>/<version>/static/`. The candidate archive preserves extracted text after resource filtering, so filters and matching rules can be reapplied without reinstalling historical packages. See [Static extraction and cleanup](docs/static-prompts.md).
 
 GitHub Actions checks automatically tracked CLI releases every hour and commits new snapshots when they appear.
 
@@ -80,7 +80,7 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-06 03:36 UTC
+Last capture update: 2026-09-06 17:18 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
@@ -97,7 +97,7 @@ Last capture update: 2026-09-06 03:36 UTC
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.29 - 2026-09-04](captures/opencode/1.18.29/variants/default/prompt.md) | 113 | 113 | 2026-09-05 00:25 UTC |
 | Pi | [0.85.1 - 2026-09-05](captures/pi/0.85.1/variants/default/prompt.md) | 45 | 45 | 2026-09-05 13:05 UTC |
-| Oh My Pi | [18.1.11 - 2026-09-05](captures/omp/18.1.11/variants/default/prompt.md) | 85 | 85 | 2026-09-05 16:18 UTC |
+| Oh My Pi | [18.1.12 - 2026-09-06](captures/omp/18.1.12/variants/default/prompt.md) | 86 | 86 | 2026-09-06 17:18 UTC |
 | Qwen Code | [0.22.3 - 2026-08-28](captures/qwen-code/0.22.3/variants/default/prompt.md) | 1 | 1 | 2026-09-02 08:33 UTC |
 
 ## Project Trend

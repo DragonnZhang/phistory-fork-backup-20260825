@@ -1,7 +1,7 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, Oh My Pi, and Qwen Code.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-09-06T03:36:24.625046Z",
+  "updated_at": "2026-09-06T17:18:52.640028Z",
   "agents": [
     {
       "agent_id": "claude-code",
@@ -123,11 +123,11 @@
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.1.11",
-      "latest_published_at": "2026-09-05T16:06:19.814Z",
-      "latest_captured_at": "2026-09-05T16:18:15.181778+00:00",
-      "versions": 85,
-      "snapshots": 85
+      "latest_version": "18.1.12",
+      "latest_published_at": "2026-09-06T14:30:39.970Z",
+      "latest_captured_at": "2026-09-06T17:18:52.640028+00:00",
+      "versions": 86,
+      "snapshots": 86
     },
     {
       "agent_id": "qwen-code",
@@ -19853,6 +19853,23 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.1.12",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-09-06T14:30:39.970Z",
+      "captured_at": "2026-09-06T17:18:52.640028+00:00",
+      "prompt": "captures/omp/18.1.12/variants/default/prompt.md",
+      "trace": "captures/omp/18.1.12/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.1.12/variants/default/meta.json"
     },
     {
       "agent_id": "omp",

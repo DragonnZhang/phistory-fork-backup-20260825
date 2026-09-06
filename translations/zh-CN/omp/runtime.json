@@ -708,6 +708,13 @@
       "text": "增量式推进：一次调用做导入，下一次做定义，再测试，然后使用——每一步都是独立的 eval 调用。仅在 `reset`、内核崩溃，或 `NameError`/`ReferenceError` 证明状态已丢失之后，才重新运行 setup。使用 `parallel(thunks)` 辅助函数在单元格*内部*并行处理工作，而不是靠批量执行多个步骤。",
       "thinking_budget": 4096
     },
+    "0ebe09e8de356ffe2ee4ddae3b761ec37b960324b1f3aff8019317de89eec7bb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-06；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "0f75eb6ae6e7ed8a6997ffec3dde1b07fa1cc4d61f1e6af8eda1989958f994f3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
