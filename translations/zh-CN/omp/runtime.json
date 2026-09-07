@@ -8622,6 +8622,13 @@
       "text": "不要推断额外范围——比如“顺手”加上重试、验证、遥测或抽象——因为这会改变契约。",
       "thinking_budget": 4096
     },
+    "d9bf106d0a0968c5f81e5dbb68797fc11e5719b63ffc7c41c5629ba297b0717c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-07；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "d9cb184ecdc72e24ab94110ce79c1baaccccee280132a370e338a66c31883993": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
