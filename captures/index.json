@@ -1,7 +1,7 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, Oh My Pi, and Qwen Code.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-09-07T01:16:23.557127Z",
+  "updated_at": "2026-09-08T00:39:16.505012Z",
   "agents": [
     {
       "agent_id": "claude-code",
@@ -87,11 +87,11 @@
     {
       "agent_id": "hermes",
       "agent": "Hermes Agent",
-      "latest_version": "v2026.8.31",
-      "latest_published_at": "2026-08-31T19:29:49Z",
-      "latest_captured_at": "2026-08-31T21:01:58.085923+00:00",
-      "versions": 29,
-      "snapshots": 29
+      "latest_version": "v2026.9.7",
+      "latest_published_at": "2026-09-07T22:17:01Z",
+      "latest_captured_at": "2026-09-08T00:39:16.505012+00:00",
+      "versions": 30,
+      "snapshots": 30
     },
     {
       "agent_id": "kimi",
@@ -123,11 +123,11 @@
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.1.13",
-      "latest_published_at": "2026-09-07T00:50:09.083Z",
-      "latest_captured_at": "2026-09-07T01:16:23.557127+00:00",
-      "versions": 87,
-      "snapshots": 87
+      "latest_version": "18.1.14",
+      "latest_published_at": "2026-09-07T18:46:59.646Z",
+      "latest_captured_at": "2026-09-07T21:44:40.989328+00:00",
+      "versions": 88,
+      "snapshots": 88
     },
     {
       "agent_id": "qwen-code",
@@ -16304,6 +16304,23 @@
     {
       "agent_id": "hermes",
       "agent": "Hermes Agent",
+      "version": "v2026.9.7",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "phistory-dummy",
+        "tool_count": 20
+      },
+      "published_at": "2026-09-07T22:17:01Z",
+      "captured_at": "2026-09-08T00:39:16.505012+00:00",
+      "prompt": "captures/hermes/v2026.9.7/variants/default/prompt.md",
+      "trace": "captures/hermes/v2026.9.7/variants/default/trace.jsonl",
+      "meta": "captures/hermes/v2026.9.7/variants/default/meta.json"
+    },
+    {
+      "agent_id": "hermes",
+      "agent": "Hermes Agent",
       "version": "v2026.8.31",
       "variant_id": "default",
       "variant_label": "Default",
@@ -19853,6 +19870,23 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.1.14",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-09-07T18:46:59.646Z",
+      "captured_at": "2026-09-07T21:44:40.989328+00:00",
+      "prompt": "captures/omp/18.1.14/variants/default/prompt.md",
+      "trace": "captures/omp/18.1.14/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.1.14/variants/default/meta.json"
     },
     {
       "agent_id": "omp",

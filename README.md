@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-07 01:16 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-08 00:39 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -80,7 +80,7 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-07 01:16 UTC
+Last capture update: 2026-09-08 00:39 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
@@ -93,11 +93,11 @@ Last capture update: 2026-09-07 01:16 UTC
 | Kimi Code | [0.41.0 - 2026-09-04](captures/kimi-code/0.41.0/variants/default/prompt.md) | 71 | 71 | 2026-09-04 11:44 UTC |
 | MiMo Code | [0.1.14 - 2026-09-02](captures/mimo/0.1.14/variants/default/prompt.md) | 14 | 14 | 2026-09-02 11:39 UTC |
 | OpenClaw | [2026.9.2 - 2026-09-05](captures/openclaw/2026.9.2/variants/default/prompt.md) | 73 | 73 | 2026-09-05 20:40 UTC |
-| Hermes Agent | [v2026.8.31 - 2026-08-31](captures/hermes/v2026.8.31/variants/default/prompt.md) | 29 | 29 | 2026-08-31 21:01 UTC |
+| Hermes Agent | [v2026.9.7 - 2026-09-07](captures/hermes/v2026.9.7/variants/default/prompt.md) | 30 | 30 | 2026-09-08 00:39 UTC |
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.29 - 2026-09-04](captures/opencode/1.18.29/variants/default/prompt.md) | 113 | 113 | 2026-09-05 00:25 UTC |
 | Pi | [0.85.1 - 2026-09-05](captures/pi/0.85.1/variants/default/prompt.md) | 45 | 45 | 2026-09-05 13:05 UTC |
-| Oh My Pi | [18.1.13 - 2026-09-07](captures/omp/18.1.13/variants/default/prompt.md) | 87 | 87 | 2026-09-07 01:16 UTC |
+| Oh My Pi | [18.1.14 - 2026-09-07](captures/omp/18.1.14/variants/default/prompt.md) | 88 | 88 | 2026-09-07 21:44 UTC |
 | Qwen Code | [0.22.3 - 2026-08-28](captures/qwen-code/0.22.3/variants/default/prompt.md) | 1 | 1 | 2026-09-02 08:33 UTC |
 
 ## Project Trend

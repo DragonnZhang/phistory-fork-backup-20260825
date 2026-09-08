@@ -9098,6 +9098,13 @@
       "text": "杀死挂起的后台作业",
       "thinking_budget": 4096
     },
+    "e5ac3b207d3a6eb4d6478ea2c73b3ed349cdea9886592dc08e878ce618cca388": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "页面执行：`evaluate`。`tab.evaluate(string)` 会将字符串作为页面全局表达式求值；顶层的 `return` 无效。传入函数或调用 IIFE 字符串来使用 `return`。",
+      "thinking_budget": 4096
+    },
     "e5d3583d38b86c162b08bc7fd6a806912285e1e791467dac601037bd7b1e223d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
