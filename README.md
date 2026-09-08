@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-08 20:10 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-08 22:56 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -79,11 +79,11 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-08 20:10 UTC
+Last capture update: 2026-09-08 22:56 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.263 - 2026-09-06](captures/claude-code/2.1.263/variants/default/prompt.md) | 409 | 409 | 2026-09-06 03:36 UTC |
+| Claude Code | [2.1.265 - 2026-09-08](captures/claude-code/2.1.265/variants/default/prompt.md) | 410 | 410 | 2026-09-08 22:55 UTC |
 | Codex CLI | [0.153.4 - 2026-09-04](captures/codex/0.153.4/variants/default/prompt.md) | 87 | 119 | 2026-09-05 00:19 UTC |
 | DeepSeek Harness | [0.1.2-rc.1 - 2026-09-03](captures/dsh/0.1.2-rc.1/variants/default/prompt.md) | 9 | 45 | 2026-09-05 18:39 UTC |
 | Antigravity CLI | [1.1.27 - 2026-09-05](captures/antigravity/1.1.27/variants/default/prompt.md) | 41 | 41 | 2026-09-05 20:14 UTC |
@@ -96,7 +96,7 @@ Last capture update: 2026-09-08 20:10 UTC
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.29 - 2026-09-04](captures/opencode/1.18.29/variants/default/prompt.md) | 113 | 113 | 2026-09-05 00:25 UTC |
 | Pi | [0.85.1 - 2026-09-05](captures/pi/0.85.1/variants/default/prompt.md) | 45 | 45 | 2026-09-05 13:05 UTC |
-| Oh My Pi | [18.1.14 - 2026-09-07](captures/omp/18.1.14/variants/default/prompt.md) | 88 | 88 | 2026-09-07 21:44 UTC |
+| Oh My Pi | [18.1.15 - 2026-09-08](captures/omp/18.1.15/variants/default/prompt.md) | 89 | 89 | 2026-09-08 22:56 UTC |
 
 ## Project Trend
 

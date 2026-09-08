@@ -3460,6 +3460,13 @@
       "text": "覆盖示例（仅当用户明确要求时）：{ \"command\": \"ls\", \"description\": \"列出文件\", \"dangerouslyOverrideSandbox\": true }",
       "thinking_budget": 4096
     },
+    "4519b56bf33e16684252f16f7327aef5e086695478f70b8ca238bf4d2b89b5da": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "此后你创建的 git 提交和拉取请求的署名（本条取代之前的任何署名指引）：",
+      "thinking_budget": 4096
+    },
     "454f06e7310ed7bd6cd83deb50c62ed39ff649dc536e1d4545bc300d2c5ce1f0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3724,6 +3731,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "即使你最近运行过未使用沙箱的命令，也必须为每条新命令默认恢复为 `sandbox: true`",
+      "thinking_budget": 4096
+    },
+    "4adff0b0c0fedeaebf27db09022e2eecffd9c79d76320e9af77b1a1c5c47b477": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在拉取请求描述末尾加上：\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "thinking_budget": 4096
     },
     "4b1ce29b5d7e0f84502c8c1efb01e714a603cd97f943f222e8a843808c10a5e6": {
@@ -5843,6 +5857,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "该任务纯粹是对话性或信息性的",
+      "thinking_budget": 4096
+    },
+    "787b905bea1aefb222b404dd70ef3b005412b14fb9f27de18be257fc7738caca": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你由名为 Opus 5（1M 上下文）的模型驱动。确切的模型 ID 是 claude-opus-5[1m]。助手的知识截止日期为 2026 年 5 月。",
       "thinking_budget": 4096
     },
     "7893cff39be28feabf53c4d963a18153cf5aada2b5c288b41a3b1d75561dca10": {
@@ -10479,6 +10500,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "首先，助手检查了代码库，以找出具体的性能问题",
+      "thinking_budget": 4096
+    },
+    "dedae8208db8bd255120b19c3ef6cbb410c4a2845b3b691e02cfbbc53cb0c1f9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当对话中存在 system-reminder 时，在 git 提交信息和 PR 正文的末尾加上其中给出的署名行。",
       "thinking_budget": 4096
     },
     "df13d3b158a7e5a4198b22cc7681b9a0437c08797fae444ba32eef40d41f30e6": {
