@@ -196,6 +196,13 @@
       "text": "应当重新查询的临时事实（实时指标、易失输出），",
       "thinking_budget": 4096
     },
+    "07a02221be3236d208588ccf36803972c6f4158a47c7befcece692828ffdbd03": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "示例：\ntask({\n  description: \"Verify M3 thinking\",\n  prompt: \"Inspect the child Session's final model request and confirm MiniMax M3 uses thinking effort on.\",\n  agent_name: \"verifier\",\n  model: \"minimax/MiniMax-M3\",\n  effort: \"on\",\n  run_in_background: false\n})",
+      "thinking_budget": 4096
+    },
     "07d65e094e436d534809f398e0747cc2f351fee85b4c5fa59f6a58bc86f95957": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -826,6 +833,13 @@
       "text": "任务管理",
       "thinking_budget": 4096
     },
+    "17c82ad4a761fef221626d3a84b0cd9d2ad9f0a01a114e420a6f2ce58412b206": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "description 会成为子 Session 的标题。prompt 仅为执行内容\n并成为子 Session 的第一条用户消息；绝不要把 prompt 复制到\ndescription 中。",
+      "thinking_budget": 4096
+    },
     "17cc2d1e8135745cdb32c4341d180c402c9a0699c1302b7402a107900333f111": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1393,11 +1407,25 @@
       "text": "默认由你自己完成任何能在你自己的上下文内做完的事情，包括低复杂度的工作。",
       "thinking_budget": 4096
     },
+    "27ca9e3764a8bd1d41831c346e2b22a335e5434495a1498af0896c9c8c23b6f8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "所解析模型支持的思考力度（thinking effort）。对 MiniMax M3 使用 on 或 off。它可以与 model 一起提供，也可以单独用于覆盖所继承模型的 effort。",
+      "thinking_budget": 4096
+    },
     "282c1f219b64646d247fd1d96434fadac261e7fda11760c50b839b6ae47d7af4": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在这句问候之后，请跟随用户的实际语言；如果不确定，默认使用英语。",
+      "thinking_budget": 4096
+    },
+    "2835c9f1d9aa245da0a990c7be632b090a81b430a4ef1ef1c5cc907613474ba8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "minimax-code-product：使用此技能来路由关于 MiniMax Code 或 Mavis 产品本身的问题：产品身份与归属；Desktop/Electron、Web/H5、CLI/TUI 界面形态；安装、卸载、升级、发布、下载、版本与平台支持；产品工作流；Agents、Sessions、Memory、Teams、Skills、Plugins 和 MCP；账户、Token Plan、订阅、额度（credits）、API 密钥、BYOK、模型、定价、配额；以及 MiniMax Code 的图像、音频、音乐或视频能力。即使用户请求的是具体的本地操作，也应将 \"MiniMax Code\"、\"Mavis\"、\"mcode\"、\"mcode tui\" 等提法，或产品功能与设置，视为产品路由信号。当请求的操作涉及产品自身的安装、配置、行为或文档时，应在通用编码、shell 或 web 技能之前使用此技能。不要仅仅因为某个无关的编码任务是在此工作区中执行的，就使用此技能。",
       "thinking_budget": 4096
     },
     "28cb476d6f11fe6bb4e7a689da07f47b2269216cbea38adb39354222f8443049": {
@@ -2821,6 +2849,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "代码引用",
+      "thinking_budget": 4096
+    },
+    "5423c6686c89bf04221f1a68aaff852eec9abcbd9cfc55ba0c1f7b3693a2bb59": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "覆盖思考模型时，必须同时传入 model 和 effort。只传 model\n而不传 effort 会重置模型组，且不会继承父 Session 的\neffort。可以只传 effort，用于覆盖所继承模型的 effort。",
       "thinking_budget": 4096
     },
     "5429f992dc12d403e8a386adf3be90cb42fcb3a954acceb6253ab1d8378fce4e": {
@@ -4455,6 +4490,13 @@
       "text": "session — 本地桌面对话\n  session list      args: { agent_name?: string, parent_session_id?: string, archive_filter?: \"Unarchived\"|\"Archived\", cursor?: string, limit?: number }\n  session get       args: { session_id: string }\n  session update    args: { session_id: string, title?: string, archived?: boolean }\n  session delete    args: { session_id: string }\n  session messages  args: { session_id: string, limit?: number, before?: string }\n  session help      args: {}",
       "thinking_budget": 4096
     },
+    "888bc04830dc76bfabab9d7270dd47f467b82f431b5fb9eb7d13ac786685f9ac": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "带来源限定的确切模型键，例如 minimax/MiniMax-M3。省略则使用目标 Agent 或继承的 Session 模型。",
+      "thinking_budget": 4096
+    },
     "89056362de374b275b5277dfe5ade5e62b0469a7da306f03575b157ccd5e88ce": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4733,6 +4775,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**任务复杂度低**——你能在脑中描述完整的交付物，无论涉及多少文件或来源，工作都\n  很直接。例如：跨 \n  10 个文件批量重命名、单文件 bug 修复、一次配置/文档/提示词编辑、一份快速草稿。",
+      "thinking_budget": 4096
+    },
+    "9195a46a297938c6b10f90a9690c8b661219a48edfc0c5b5daffce906b6dfa93": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "作为子 Session 第一条用户消息发送的完整执行简报。包含目标及缘由、已知事实与已排除的路径、确切范围与归属、预期交付物、约束与范围外操作、验收标准，以及期望的输出格式和长度。它绝不会用作 Session 标题。",
       "thinking_budget": 4096
     },
     "91c1cd9cefe3ea7d24b857704524995f66dd0650b522abe83392354f9e87dc5e": {
@@ -6505,6 +6554,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "触发此任务的命令",
+      "thinking_budget": 4096
+    },
+    "c669197afd3c938324fc8224b2d0cdaa25795727d963dd337e2e5f08b55b9e4e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "agent: Mavis  # 显示名称（如何向用户称呼你自己）\n  agentName: mavis  # 智能体 ID（用于 CLI/路由/存储；不是你的角色）\n  agentRole: orchestrator  # 智能体类型分类（orchestrator | worker）\n  SESSION ROLE: root  # root | branch —— 你在此会话树中的角色\n  YOUR SESSION ID: $PHISTORY_SESSION\n  YOUR WORKSPACE DIRECTORY: $PHISTORY_HOME/.minimax-code/sessions/mvs_a1fe7ef26f634dc58ab9e699185684bc/workspace\n  IS_DEFAULT_WORKSPACE: true\n  YOUR AGENT CONFIG DIRECTORY: $PHISTORY_HOME/.minimax-code/agents/mavis\n  platform: linux\n  date: $PHISTORY_DATETIME\n  systemLocale: en\n  region: en\n  dataDir: $PHISTORY_HOME/.minimax-code",
       "thinking_budget": 4096
     },
     "c6cca5a055eaba4536039729243c0fbc05027619c419b74f91120b7dfa0ed1a7": {
