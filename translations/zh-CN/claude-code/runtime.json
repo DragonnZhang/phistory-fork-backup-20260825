@@ -3570,6 +3570,13 @@
       "text": "在引用特定函数或代码片段时，请包含 file_path:line_number 这一格式，以便用户轻松跳转到源代码位置。",
       "thinking_budget": 4096
     },
+    "46e206dd8b0fd64cf201f72bbbe179aba076f26fe02a26dfe7db7f3a313acf38": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用通俗的话说明这条命令做什么：不要复述命令的文本、标志或文件路径——用户阅读这段描述时，往往看不到命令本身。",
+      "thinking_budget": 4096
+    },
     "47a640b77b20f49b997ddf8ceda839be71960403895eb4249c99b667bbb61980": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
