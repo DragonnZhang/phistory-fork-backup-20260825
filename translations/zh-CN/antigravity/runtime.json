@@ -569,6 +569,13 @@
       "text": "> [!CAUTION]\n  > 可能导致数据丢失或安全漏洞的高风险操作",
       "thinking_budget": 4096
     },
+    "358781f0a03566e2c0aa409785faa492d4dad171191ce8719b6a9f3d9a19f3fa": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "所有其他图表类型均不受支持。对于日程安排、时间线或路线图，请改用有向流程图（`flowchart LR` / `flowchart TD`）或 Markdown 表格。",
+      "thinking_budget": 4096
+    },
     "362ec47fd3c372bd9cfb87419ab2a09bcb387b761c14c52b1fa391d28c17ef98": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -750,6 +757,13 @@
       "text": "设置为 true，以请求用户对此 artifact 的反馈。",
       "thinking_budget": 4096
     },
+    "4c66759208bd13b7963e70db569e70ee589c0c199bc4e3209c67519ccea9e3b5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "时序图：`sequenceDiagram`",
+      "thinking_budget": 4096
+    },
     "4cef58030658a52809305768e7189e51992dd4ef2bfc1561a552ffca93978389": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -809,6 +823,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "不要为自填回答添加 'other' 选项；UI 中默认总会提供一个。",
+      "thinking_budget": 4096
+    },
+    "53d96fcf800df84551cc56287c5e7d7730fbc59f28e1cbb50d31351eec90f20c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅使用受支持的图表类型：",
       "thinking_budget": 4096
     },
     "559a6a376dd653400361dccbd35b79a28ee3eddc99d3e14f22273db8ad1ee597": {
@@ -908,6 +929,13 @@
       "text": "**不使用无纹理表面**：容器和视觉元素缺乏纹理或深度。",
       "thinking_budget": 4096
     },
+    "612989f974f65d204a4116caa3fd1f97e6195bcd951fb0a731371284fecbbf86": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "状态图：`stateDiagram-v2` 或 `stateDiagram`",
+      "thinking_budget": 4096
+    },
     "6229cfc59c050858ca73dcc0b0de1b3d230f812be144861931c839876f4d2322": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -918,6 +946,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "省略 StartLine 和 EndLine 即可查看文件的前 800 行。如果文件不足 800 行，则显示整个文件。",
+      "thinking_budget": 4096
+    },
+    "63424ab56f25875a81fcfffae2e7de15ec2d87731af11a1d8e12945e19990231": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "使用语言为 `mermaid` 的围栏代码块创建 mermaid 图表，以可视化复杂的关系、工作流和架构。",
       "thinking_budget": 4096
     },
     "65153721df7aa10a06153e8a7c8c1bf45fa7dd1267674a30080fc91008944397": {
@@ -1015,6 +1050,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "警示",
+      "thinking_budget": 4096
+    },
+    "6f16a5e5ba0bbd9202696a44b5883225323ad107ecac5992d41569d5f3251762": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "实体关系图：`erDiagram`",
       "thinking_budget": 4096
     },
     "6f186e846202110d8d35ee7cb185f52f25d65e2fced0adf0b0e42c8ebdeb4836": {
@@ -1151,6 +1193,13 @@
       "text": "/grill-me：当用户希望通过交互式访谈就计划达成一致，以解决设计决策时，推荐此命令。",
       "thinking_budget": 4096
     },
+    "7e2122146219a61495808f632d82eb4b8c10a5d329a95f5b03dfd1a734a5adcf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "为防止语法错误：",
+      "thinking_budget": 4096
+    },
     "7ec8027efb406a060fbf0ea2dca0f53126d2f96f374efa8a2af9cb871191484d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1192,6 +1241,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "要在文件中查找的搜索词或模式。",
+      "thinking_budget": 4096
+    },
+    "82857b1bcc19183a5cbe8c84c5e8f90ce070a61d609577c3b4227eb0540d94c6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "流程图 / 图：`flowchart TD` / `flowchart LR` / `graph TD` / `graph LR`",
       "thinking_budget": 4096
     },
     "829c4361a232d9f291688552b85a1398bef055a616141013cfd7c0bbbea18495": {
@@ -1278,6 +1334,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "你必须为所有文件和代码符号（类、类型、函数、结构体）创建可点击的链接。使用 `file://` 方案的 github 风格 markdown 链接（例如 [filename](file:///path/to/file) 或 [ClassName](file:///path/to/file#L10-L20)`）。对于 Windows，路径使用正斜杠。",
+      "thinking_budget": 4096
+    },
+    "8a95afa34509cf167523e0c39428846c098b8d7667ddc9bac727c03cd66f02e3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "类图：`classDiagram`",
       "thinking_budget": 4096
     },
     "8a9ca7c514245ab06aa0730f4a276d2c712cd388a89077a7185740f367ad1799": {
@@ -1441,6 +1504,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "**元描述**：添加引人注目的元描述，准确概括页面内容，",
+      "thinking_budget": 4096
+    },
+    "9aedd12d7193165315eaadf57a4b213007def79d0014144ac521994dfbbdeae9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "XY 图表：`xychart-beta`",
       "thinking_budget": 4096
     },
     "9bc52b1144ad8b2c545e7def3d4057d2ec0185aa7d273e62208bc8a1638744d8": {

@@ -77,6 +77,13 @@
       "text": "其他细节：",
       "thinking_budget": 4096
     },
+    "04ed6a5f259a501a6d285518f3763581ca18a8e7faca7f68367d8579d26d0609": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "其他：不属于上述任何类别的模型行为问题",
+      "thinking_budget": 4096
+    },
     "04f657110292e601f56795380d05ef9db8e8089a7cf85bf52c9cbb684bbf5c43": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -413,6 +420,13 @@
       "text": "规则部分包含若干你可能需要考虑的规则/记忆/上下文。在每个小节中，我们会说明该小节包含哪些信息，以及你应如何考虑/遵循该小节的内容。",
       "thinking_budget": 4096
     },
+    "103e0cfc843da5055316f59721d4df75de8d4279df839f4531858eee3b7179ff": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的模型行为失败模式；属于纯产品或工具 bug 时省略。",
+      "thinking_budget": 4096
+    },
     "105ca93a6445b69e4e57910552d8ad5a20a3d160b6f10a36c2dbacb2c117a1a9": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -439,6 +453,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果能合理推断出正确的方案，就跳过计划模式：",
+      "thinking_budget": 4096
+    },
+    "10d85e57a2f13c44876f843351b6623657099ef52201870a4686d782c84b0ade": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "反馈分类。",
       "thinking_budget": 4096
     },
     "120945a5e2b8296e792cae947a125c0156f0eda62bf65978163b4d659fe5e425": {
@@ -567,6 +588,13 @@
       "text": "不要在工具调用前使用冒号。你的工具调用可能不会直接显示在输出中，因此像“让我读取该文件：”这样后接读取工具调用的文本，应改为“让我读取该文件。”以句号结尾。",
       "thinking_budget": 4096
     },
+    "14b5f8c35676daa465afcff57f81ff36415c4d31af4022ec3b835ec85cc96fe1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "过多提问：在已有足够信息继续时仍提出澄清性问题",
+      "thinking_budget": 4096
+    },
     "14efcacf905bc0a2974cb5e6a837dd23d3b89eed62e53dc8aac9a0854262d4a6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -614,6 +642,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "任务管理",
+      "thinking_budget": 4096
+    },
+    "16cf74776e404057c80229e61a779673369391c6a42fabc47e373a55498b96d2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "调用方式",
       "thinking_budget": 4096
     },
     "1724011699720581b8882b2f514bb7544c055c923f493e57635746d78f4112bf": {
@@ -882,6 +917,13 @@
       "text": "何时使用子智能体",
       "thinking_budget": 4096
     },
+    "20649008198cf0adcf51dad4b6657365796338fb4d1d0d1b6659b86857c20c55": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "最长等待时间（毫秒），最大为 3600000（约 1 小时）。正值表示等待完成；省略或传入 0 则进行非阻塞的状态轮询。",
+      "thinking_budget": 4096
+    },
     "20966a2f44f245060194c5288d99efac96d63fbbf0116ac5457aebf8e097d860": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -980,6 +1022,13 @@
       "text": "在自然里程碑处的高层次状态更新",
       "thinking_budget": 4096
     },
+    "237112c58cc1f23cbc0752a3f8479b103430977ab3bd541ae0bc089e33b41621": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "不需要的范围：不停止",
+      "thinking_budget": 4096
+    },
     "242d5a14ec358f4e5b4a9f9ec7cf25bc371a409f7c1c592aad5f5b63b3661370": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1071,6 +1120,13 @@
       "text": "非简单且复杂的任务——需要仔细规划或多次操作的任务",
       "thinking_budget": 4096
     },
+    "26a9e02af359ce03d551ac76ea46ac360cfe753fa80843aaede0847af7a2a83d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "过度纠正：修正反馈时矫枉过正",
+      "thinking_budget": 4096
+    },
     "26abeeb5d9f717dead985caac60723b113b261abad2086b6e5c37f73b5ef1eb6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1160,6 +1216,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "查看常用库和工具的更新情况",
+      "thinking_budget": 4096
+    },
+    "2881e30dbf4dbde6f70b9b6ce1862a384b2da4d09eadb2d789e66989e2109c33": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "破坏性操作：执行了难以逆转的操作，或使其面临风险",
       "thinking_budget": 4096
     },
     "28b5ecead08f420027d6b94e600cd5009cbc5ec7cc6f59004d2199e899a24f10": {
@@ -1996,6 +2059,13 @@
       "text": "先前调用返回的现有标签页 ID。如果省略，则创建一个新标签页。",
       "thinking_budget": 4096
     },
+    "49a8d12136944d52afb7cfc5db7927a5460cad8bae386661c44c14ec8b98f4ec": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "确认",
+      "thinking_budget": 4096
+    },
     "49b6de46929c5307e8f9e77a87c3281d2899547edca9e262f6839280307b30f5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2214,6 +2284,13 @@
       "text": "单个问题及其选项。",
       "thinking_budget": 4096
     },
+    "50a51113e13ba682149301af99c88fc5fdf06feb08440f57d40fe4858ef1c33a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "杂项",
+      "thinking_budget": 4096
+    },
     "50ccd61ff703671fa7871db2de138d6f2231a7a20de6870a464ddbdb2eab3bdb": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2254,6 +2331,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "待办事项的描述/内容",
+      "thinking_budget": 4096
+    },
+    "5224c0a0270350b194ccd441c732bba61993833b404b8f8368d0b1e2d56314af": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "代码质量：有缺陷、草率或结构糟糕的代码",
       "thinking_budget": 4096
     },
     "52643b1c2ce68f8cbdea980c08a07f2f77a60fc16b21e0ff154346ffd5826d2d": {
@@ -2720,6 +2804,13 @@
       "text": "按 ID 取消计划任务。",
       "thinking_budget": 4096
     },
+    "62b3845bc0ec54981a479eab47f900e63f22e87c18a716c9c1026a96ec789137": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "超时执行：当显式 `background: true` 命令触发超时时，包装器会杀死子进程组（SIGTERM，约 1 秒宽限期后升级为 SIGKILL）。未通过 `setsid` / `nohup` 脱离的子进程也会被杀死。`timeout: 0` 在 `background: true` 模式下会完全禁用包装器超时；子进程的生命周期由模型通过 kill_command_or_subagent 掌控。",
+      "thinking_budget": 4096
+    },
     "62d7cc0319fad2e81a41c85bb8ed64084e61fd7369de45b87f5714dbb8054d66": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2832,6 +2923,13 @@
       "text": "至关重要的是，每完成一项任务，就要立即将相应的待办事项标记为已完成。不要把多项任务攒到一起才标记为已完成。完整的输入契约和具体示例请参见 todo_write 工具的说明。",
       "thinking_budget": 4096
     },
+    "661b2a9240741f4722781eb23617f077c74b1d606dcbf2463b820c222de6ad08": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "语气或说教：语气不当——说教、居高临下、谄媚、冗长",
+      "thinking_budget": 4096
+    },
     "661efeef2170929524f496fa0b2f77cca2115969852a00e658446a06bf857329": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2865,6 +2963,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**plan**：负责规划实现策略的软件架构师。只读——可访问除文件编辑之外的所有工具（search_replace 不可用）：read_file、list_dir、grep、web_search 和 todo_write。",
+      "thinking_budget": 4096
+    },
+    "6719a3c307e715deb196d07b02297225172fe89b44e05b79ef485ade3e8a5e09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用法",
       "thinking_budget": 4096
     },
     "6799c94f9a3d8fecf8c93b2ce123ae47ee5b93bb9a85b84fe153e52a0dfedfdf": {
@@ -2942,6 +3047,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "Shell 命令或脚本。stdout 的每一行都是一个事件；退出即结束监视。",
+      "thinking_budget": 4096
+    },
+    "6b95744706fe4ab5916aa3687e124edaca10c1126cea067454783f7a8488a8b9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "过度自信与幻觉：自信地陈述了错误或编造的内容",
       "thinking_budget": 4096
     },
     "6bbb09f98f7671b98681eae212fd33fbad8907ac5d382c472a0f10d3cc55cbe4": {
@@ -3231,6 +3343,13 @@
       "text": "传入 task_ids，包含来自 background=true 命令或 background=true 子智能体的一个或多个 id；单个任务请使用单元素数组。传入多个 id 且 timeout_ms 为正值时，会等待全部完成",
       "thinking_budget": 4096
     },
+    "76fbd4e449bd7078309c588917ad50f2e8b2ef9fde3e7a35e288af98d0341306": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作量不当",
+      "thinking_budget": 4096
+    },
     "7701620e661013e7349c7bbb325064417553adf10293ec1e60a966cfc298e750": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3420,6 +3539,13 @@
       "text": "不要暴露内部细节，如服务器名称、传输错误或协议细节。",
       "thinking_budget": 4096
     },
+    "7dc7899516034d245be335de168d72ea09aaa7913d1b72b1b83f643ab0f81c33": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的产品领域；不确定时省略。",
+      "thinking_budget": 4096
+    },
     "7de6c06829472446faaa835f4b4e40ab19a3b2a8c76bb583d7a8cba8fe93e824": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3553,6 +3679,13 @@
       "text": "创建时是立即触发（true）还是等待第一个间隔（false）。默认值：false。仅创建时生效：使用 task_id 时被忽略",
       "thinking_budget": 4096
     },
+    "81ce934271da36cee62683adc8d56a61eac2fa7c88056797bd1d0d4f8e7e8756": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "要更新的现有本地草稿。设置后，本次调用不会追加第二份草稿。",
+      "thinking_budget": 4096
+    },
     "81eff7a0563a5267727e798abc1c744da03dbf0c88bd91377e435480e2cba520": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3635,6 +3768,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果用户明确要求指定子智能体/任务的模型，只能使用此列表中的模型 slug：",
+      "thinking_budget": 4096
+    },
+    "8574908a785e28dee590c1250f89d82404432e040bb5973378472ebf050165bd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "草稿的简短摘要。",
       "thinking_budget": 4096
     },
     "857f38749b5e6daf8e81885443bb628ef0a147e9f00fa0ed9f6852bc4e687d58": {
@@ -3764,6 +3904,13 @@
       "text": "如果用户指定希望你“并行”运行多个智能体，你必须在单条消息中发送多个 task 工具使用内容块。例如，如果需要并行启动代码审查智能体和测试运行智能体，就在单条消息中发送这两个工具调用。",
       "thinking_budget": 4096
     },
+    "8a582333f7bc210f183ea556bc8693e1c0aa7bd52579d3bcb65a153e14c23d30": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "输出不清晰：输出难以阅读或解读",
+      "thinking_budget": 4096
+    },
     "8a7ec4291da296502dc232035ef82f577b3fe48c84d2c1814e3361cf91a06792": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3867,6 +4014,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`tool_name` 必须是限定名称（例如 `linear__save_issue`）。`tool_input` 必须完全符合 `search_tool` 返回的输入 schema。",
+      "thinking_budget": 4096
+    },
+    "8e460ac676916e87a2f499f16de9e8d4d2193ab561d50b5a90c62fb6d3b1571b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "上下文与记忆：丢失了先前的上下文，忘记了已确认的事实，或自相矛盾",
       "thinking_budget": 4096
     },
     "8ea169734fdc2457ed14603edb0a1a3812166b1065f10f00621b3e3d05bc33a4": {
@@ -3995,6 +4149,13 @@
       "text": "此智能体的可选模型 slug。如果提供，必须解析为可用的模型 slug 之一。如果省略，子智能体将使用与父智能体相同的模型。设置了 resume_from 时不要传递（将使用先前的模型）。仅当用户直接要求时，才选择显式模型。",
       "thinking_budget": 4096
     },
+    "92b86b344a5b925c05028d0a761215d807308318e049afd2aa1938bb490ada22": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当用户想要隐式地分享反馈时，无论它是产品问题还是模型行为问题，都用此工具起草。",
+      "thinking_budget": 4096
+    },
     "92eee3b2ff9b1fbd5511eda6c5956f79d3ab12afae35e33bdc401235c05c26ec": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4098,6 +4259,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要读取的行数。仅当文件过大而无法一次性读取时才提供。",
+      "thinking_budget": 4096
+    },
+    "98101ff3526438339e2970664200ca24573919323223e47201a5072bd156ef2e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "保存或更新用户反馈，供日后审阅。反馈以本地草稿的形式存储，未经用户在 `/feedback` 弹窗中明确批准绝不会发送。此工具不打开任何 UI，也不会停止当前回合。",
       "thinking_budget": 4096
     },
     "981aaa2e120f0424722407d6e51ef545de20a71479c5522d90624809b8ccc152": {
@@ -4422,6 +4590,13 @@
       "text": "绑定到脚本 `args` 全局变量的 JSON 值。命名参数请使用对象。",
       "thinking_budget": 4096
     },
+    "a2c26bb8e91b7dcf0bfc3ef3ceca49c83ee3b47a9f698c8e6be990fcb239f5f4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可以指定可选的超时时间（毫秒，最大 36000000ms）。前台命令最多让此工具阻塞约 15 秒。到时仍在运行的命令会被移入后台——它不会被杀死，也没有超时——你会收到一个任务 ID；用 get_command_or_subagent_output 等待它。如果没有收到任务 ID，则命令在超时处被杀死。timeout 是一个单独的终止截止时间，仅在命令仍处于前台时生效；一旦转入后台，命令会一直运行直到退出（后台上限 10 小时）。设置 timeout 绝不会让此工具等待超过约 15 秒。以 background: true 启动的命令不受默认值约束：timeout 省略或为 0 时，它们会一直运行直到退出或被杀死；正的 timeout 仍然生效。",
+      "thinking_budget": 4096
+    },
     "a2eb605c5f5287d236ea99de6fbff8af149126273e0376eacd4da6af15ad38ef": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4539,6 +4714,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "示例：“添加实时更新”——WebSockets、SSE 还是轮询",
+      "thinking_budget": 4096
+    },
+    "a5c982c9af3cb9c493c23400da5258ac0ad8e8283d76b148c2b5ac52820f316a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "概述",
       "thinking_budget": 4096
     },
     "a5f0cb9c1904cbdf4f58c99b160f55ade8f3ba61430aea4c7a350ae20346dee0": {
@@ -4674,6 +4856,13 @@
       "text": "timeout_ms：可选的最长等待时间，以毫秒为单位（默认 30 秒）",
       "thinking_budget": 4096
     },
+    "a9a5c9690648eb11719553fcf6b47bb944393b034e8b6715d70ffcf0e49e4d74": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "指令遵循：忽略或遗漏了明确的指令或约束",
+      "thinking_budget": 4096
+    },
     "a9a8eaefb2e497e34ad5dc57fe9e6ca367a93755d2332b321e5ceb3bff88c2f3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4751,6 +4940,13 @@
       "text": "简单直接，无需规划",
       "thinking_budget": 4096
     },
+    "ab1619cd320f20e7286d0598ad55704beab1c0c6652fd77ad2bb6a147f5f1803": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "起草反馈并结束回合后，告诉用户：他们可以输入 `/feedback` 打开弹窗并进入 Drafts 部分，在那里核实反馈并将其发送给团队。",
+      "thinking_budget": 4096
+    },
     "ab299cffe8916aae07a86ff6cb873f6af6766d3d2a0f75fb18a45e34615c5d19": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4765,11 +4961,25 @@
       "text": "传入要停止的后台任务、监视器或子智能体的 task_id（监视器的 task_id 由 monitor 返回）。",
       "thinking_budget": 4096
     },
+    "ab9bff49049aef1dd6d98bfa3e42186b51e8f32f3bcf06cc93c6db78156ee893": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "没有寻求帮助：卡住时没有向用户求助",
+      "thinking_budget": 4096
+    },
     "abbe0db8463c590235dcd7376aaf006cb4cf385f1acb2d796588d1b444cfc5e0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**plan**：软件架构师智能体，用于设计实现计划。当你需要为任务规划实现策略时使用。返回分步计划，识别关键文件，并权衡架构上的取舍。只读——可访问除文件编辑外的所有工具（search_replace 不可用）：run_command、read_file、list_dir、grep、web_search 和 todo_write。",
+      "thinking_budget": 4096
+    },
+    "abdcb1a4fd719d761da987efceac9149d59dc0d8a2974391a3bb3c404c3c9619": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本次会话的草稿文件是 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-28axclvz/01a083c6-bbca-72b3-b81e-97a10c66b1b7/feedback_drafts.json。\n如果用户的反馈可以从文档中得到解答（例如 UI 元素位置或安装设置），请在本地或在线阅读 Grok Build 文档，并连同已创建的草稿一起作答。",
       "thinking_budget": 4096
     },
     "ac10c5798d3da3f0248c0d6e2200fe6adee696c2131173dfd5bc0031234612eb": {
@@ -4812,6 +5022,20 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "向用户提出一个或多个选择题。",
+      "thinking_budget": 4096
+    },
+    "ad5cc5587ae518f786e65b693d742b1ca3fbb01b0987e5315573a7c299d3d226": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "过早停止：提前放弃，交回了本可以完成的工作",
+      "thinking_budget": 4096
+    },
+    "ad9bede527c13d3fafdc5bbe34525e2cfc9bf37e22c5f6e3cff96e0577454fdf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "模型退化：行为明显比之前的模型版本更差",
       "thinking_budget": 4096
     },
     "ae39a6684cb01e784e19970066d23d3be661bab0c3f45aacf2b8d769436a786d": {
@@ -4875,6 +5099,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 timeout_ms 限制阻塞时的等待时间（默认 30s）",
+      "thinking_budget": 4096
+    },
+    "afdd3078c34066a21b490bab47597660d942168c1ffd81be2d82af9e7e646380": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "过度积极：做了超出要求的事，未被告知就行动，信息不足就贸然介入",
       "thinking_budget": 4096
     },
     "afe423dde65b6bc0c01243394492c9506c8e2336e2f4c16ccf016af3af06d344": {
@@ -5192,6 +5423,13 @@
       "text": "传入 task_ids，包含来自 background=true 命令或 background=true 子智能体的一个或多个 id（monitor 的 task_id 由 monitor 返回）；单个任务使用单元素数组。多个 id 配合正数 timeout_ms 时会等待全部完成",
       "thinking_budget": 4096
     },
+    "bb6dad809243a96bcb43bba7690e782410ff253c0d71b35845c8817e6b45a272": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "子智能体生成过多：启动的子智能体数量超出了任务所需",
+      "thinking_budget": 4096
+    },
     "bb82ed084f9a1bf671c3ace2e410b0ae1f118c8f579b2eb91d41931c2e1143f0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5311,6 +5549,13 @@
       "text": "**general-purpose**：通用智能体，用于研究复杂问题、搜索代码和执行多步骤任务。当你正在搜索某个关键词或文件，且不确定前几次尝试就能找到正确匹配时，可使用该智能体代为搜索。可访问所有工具：run_terminal_command, read_file, search_replace, list_dir, grep, , and todo_write。",
       "thinking_budget": 4096
     },
+    "bd78b8cfd0f79290d22e58fbd07b955a35d63afbfabdc3b5d1b24d3172168720": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "争辩或拒绝：拒绝或反驳合理的请求",
+      "thinking_budget": 4096
+    },
     "bd7df45b3917c0b578f9a6e7cb6e7e60e0cd8163393ed930431daa5c31ebebfb": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5337,6 +5582,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "编辑文件前，先用 `read_file` 读取该文件。",
+      "thinking_budget": 4096
+    },
+    "bde7d219dd1a8899c46dbb58be68aa02fb8631d2ea65a660a19d7278985a9638": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "错误输出",
       "thinking_budget": 4096
     },
     "bdfe86d839f28bada845b21f4192e763b1c486f52ef2fb8c9607dec1824094e4": {
@@ -5409,6 +5661,13 @@
       "text": "创建一个按固定间隔重复运行提示词的定时任务。",
       "thinking_budget": 4096
     },
+    "c0701f300f105546a08ad0fcbac9c5ae543ef41b72f2190dd609a77222e48b00": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的超时时间（毫秒，最大 36000000）。默认值：120000。这是针对仍在前台运行的命令的终止截止时间。它不会延长工具等待的时长：前台命令运行约 15 秒后仍未结束就会被移入后台，你会收到一个任务 ID。一旦转入后台，命令就不再受此值约束；它会一直运行直到退出（后台上限 10 小时）。如果没有收到任务 ID，则命令在超时处被杀死。",
+      "thinking_budget": 4096
+    },
     "c07c7d1be5bc96366431e598982b7969f1a5f38add4b0ec893f80028a50f902f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5449,6 +5708,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "助手没有使用待办列表，因为这是一个仅限于代码中单一位置的简单任务。添加注释不需要跟踪多个步骤，也不需要系统化的组织。",
+      "thinking_budget": 4096
+    },
+    "c2e18321dcae36b9cb82a22472151ca81d0a19090a8ed8e31b47684f303bb5fc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "重复与循环：重复输出，或反复重试同一失败操作",
       "thinking_budget": 4096
     },
     "c321e8c49a23a4da58f3d0f60eddb52b656843880c3af54242f27565b148aeba": {
@@ -5498,6 +5764,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "计划模式说明：在计划模式下，请在最终确定计划之前使用此工具来澄清需求或在方案之间做出选择。不要使用此工具询问“我的计划准备好了吗？”或“我应该继续吗？”——计划批准请使用 exit_plan_mode。重要：不要在问题中提及“计划”（例如“你对计划有反馈吗？”、“计划看起来好吗？”），因为在调用 exit_plan_mode 之前，用户无法在 UI 中看到计划。如果需要批准计划，请改用 exit_plan_mode。",
+      "thinking_budget": 4096
+    },
+    "c5c20201ef931f1635545502a942142e1640b4b2fd97098b76b088a3cd4c39e6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "按此顺序列出简短的带标签要点：发生了什么、用户说了什么、复现步骤、可选的证据，然后是可选的已验证原因。每条控制在 1–3 行；不要使用叙述性段落。",
       "thinking_budget": 4096
     },
     "c613949d7f18b805fa4b7955af804284e445fa57dc9ab587b1e50fef1ac08533": {
@@ -5801,6 +6074,13 @@
       "text": "你可以选择使用  参数在后台运行智能体。智能体在后台运行时，完成后你需要使用 get_command_or_subagent_output 获取其结果。后台智能体运行期间你可以继续工作——当你需要它们的结果才能继续时，可以使用阻塞模式的 get_command_or_subagent_output 暂停并等待其结果。",
       "thinking_budget": 4096
     },
+    "d1b3f2a34e825d683ccdaf71895efa0b138a41b5e4bd1d447e5994907a74f16f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的任务类别；不确定时省略。",
+      "thinking_budget": 4096
+    },
     "d1b89a091cd9ac566a25ca77e84ac6966618c42790bb5063ede7a1de787cccc3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6044,6 +6324,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "可以在单条回复中调用多个工具。如果打算调用多个工具且它们之间没有依赖关系，请将所有独立的工具调用并行执行。尽可能多地使用并行工具调用以提高效率。但是，如果某些工具调用依赖之前的调用来确定后续取值，就不要并行调用这些工具，而应按顺序调用。例如，如果一个操作必须在另一个操作开始之前完成，就应顺序执行这些操作。绝不在工具调用中使用占位符或猜测缺失的参数。",
+      "thinking_budget": 4096
+    },
+    "d8b94a60a20b5f747d4c8ee6822550a30ee8f5f7dc4efca53a8ce205ee442c34": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "风格",
       "thinking_budget": 4096
     },
     "d8bb812b01914ef4a25c2ce7b25183a5a97579fd2a5043d26c0aeb595185822f": {
@@ -6641,6 +6928,13 @@
       "text": "使用 scheduler_delete 按 ID 取消任务",
       "thinking_budget": 4096
     },
+    "ed1b41971fdc9bdccaa7720542704b55347c9f4dc706502f3a17a4b49f744d73": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "按此顺序将详细信息写成带标签的简短要点：发生了什么、用户说了什么、复现，可选的证据，然后是可选的已验证原因。\n仅对模型行为反馈设置 failure_mode；纯产品或工具缺陷请省略它。\n只有当映射反馈极其不清楚时，才可以使用 ask_user_question 向用户确认歧义。请谨慎使用。",
+      "thinking_budget": 4096
+    },
     "ed2b79cf0b9946ba3f9e82a99a3ac8657784bc0519291b7570bd8496faf04137": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6655,11 +6949,25 @@
       "text": "如果你对需求或方案仍有未解决的问题，请先使用 ask_user_question（在更早的阶段）",
       "thinking_budget": 4096
     },
+    "ed4bcea874b8c52644413696b437cc28854822fc54fac6d757edc009f148adf9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "省略 timeout_ms 或传入 0 可进行非阻塞的状态快照；设置正的 timeout_ms 则最多等待相应的毫秒数，上限为 3600000（约 1 小时）",
+      "thinking_budget": 4096
+    },
     "ed520eecad4ba3a354ce6d83990c5d546f6a71d0b880ab6493083d15fd865563": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "已完成的 spawn_subagent 工具调用会返回一个 `subagent_id`。你可以把这个 id 传给 resume_from，以继续之前已完成的子智能体的对话。",
+      "thinking_budget": 4096
+    },
+    "eda7950bb7d67a0f997bd96279d69d084d060fc7c3c17820390f07c6635cfac6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当用户在提示栏中单独输入 `/feedback` 时，弹窗会打开并显示 Write 和 Drafts 两个标签页。Write 标签页仅供用户手写反馈。\n如果用户输入 `/feedback` 并附带内联文本，系统会像 skill 一样插入它。只有当反馈以这种方式请求，或用户明确希望你更新现有反馈草稿时，才可以使用 draft_id 字段。\n设置了 draft_id 时，就更新那份现有草稿。不要创建重复的草稿。draft_id 只是一个工具参数。绝不要把它写入 title、details 或 area。",
       "thinking_budget": 4096
     },
     "edd9c76ffbae65f35a4439426b53127a7f8a82d4e6e51652aa7c0674b81aaee1": {

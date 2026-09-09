@@ -708,6 +708,13 @@
       "text": "增量式推进：一次调用做导入，下一次做定义，再测试，然后使用——每一步都是独立的 eval 调用。仅在 `reset`、内核崩溃，或 `NameError`/`ReferenceError` 证明状态已丢失之后，才重新运行 setup。使用 `parallel(thunks)` 辅助函数在单元格*内部*并行处理工作，而不是靠批量执行多个步骤。",
       "thinking_budget": 4096
     },
+    "0ebe09e8de356ffe2ee4ddae3b761ec37b960324b1f3aff8019317de89eec7bb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-06；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "0f75eb6ae6e7ed8a6997ffec3dde1b07fa1cc4d61f1e6af8eda1989958f994f3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2482,6 +2489,13 @@
       "text": "正确——不要改动任何保留的行；新行就是整个 body。",
       "thinking_budget": 4096
     },
+    "3d3689b7465e01d06ea5208714c3bc06c9b1e6228404754b11286fda6261317d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-08；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "3d3e621e2f672b6bd3d880e4b86635e102c8ff84f982ed617dcdd3af4c9d2efe": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2606,6 +2620,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "错误 — 把纯插入写成扩大范围的 `SWAP`：重新输入的保留行会被丢弃（这里是第 4 行）。",
+      "thinking_budget": 4096
+    },
+    "41c7fe164bd4e48f43615d319d939d7115cc78ea5df6fd292d5af0731db99331": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "空闲标签页会在回合结束时自动冻结（动画页面不再消耗 CPU/GPU），并在下次使用时解冻；空闲超过 idle-close timeout 的标签页会被关闭。在 `open` 上传递 `persist: true` 可让标签页跨回合保持活跃（例如多步登录）；`browser.close` 仍会显式释放。",
       "thinking_budget": 4096
     },
     "421633f038907db4d7c179a8ae8128e5044847de399670706a686056d12a9b75": {
@@ -8615,6 +8636,13 @@
       "text": "不要推断额外范围——比如“顺手”加上重试、验证、遥测或抽象——因为这会改变契约。",
       "thinking_budget": 4096
     },
+    "d9bf106d0a0968c5f81e5dbb68797fc11e5719b63ffc7c41c5629ba297b0717c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-07；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "d9cb184ecdc72e24ab94110ce79c1baaccccee280132a370e338a66c31883993": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9082,6 +9110,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "杀死挂起的后台作业",
+      "thinking_budget": 4096
+    },
+    "e5ac3b207d3a6eb4d6478ea2c73b3ed349cdea9886592dc08e878ce618cca388": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "页面执行：`evaluate`。`tab.evaluate(string)` 会将字符串作为页面全局表达式求值；顶层的 `return` 无效。传入函数或调用 IIFE 字符串来使用 `return`。",
       "thinking_budget": 4096
     },
     "e5d3583d38b86c162b08bc7fd6a806912285e1e791467dac601037bd7b1e223d": {
