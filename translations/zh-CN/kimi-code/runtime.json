@@ -441,6 +441,13 @@
       "text": "修改文件时，始终使用 Edit；不要运行 Shell `sed` 命令来进行编辑。",
       "thinking_budget": 4096
     },
+    "13feb818d0090739b2d2b8945eb8873b2a4831599d03d5ceca0498b478825e58": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`node_modules/**/*.js`、`.venv/**/*.py`、`__pycache__/**`、`target/**` 可能产生数千条结果，浪费搜索时间和上下文。除非需要完整列表，否则优先使用 `node_modules/react/src/**/*.js` 这样的具体子路径。",
+      "thinking_budget": 4096
+    },
     "1456c4981903664d3d43b38159cba258b3d6987cee8bad662968d2412c3135c6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -621,6 +628,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "你能够在单次回复中输出任意数量的工具调用。如果预计要进行多个互不干扰的工具调用，强烈建议并行发出，以显著提高效率。这对你的性能非常重要。这一点尤其适用于只读调查——并行发出独立的 `Read`、`Grep` 和 `Glob` 调用，而不是一个接一个地调用。",
+      "thinking_budget": 4096
+    },
+    "1d071e15c2918d5e9c44c2a4db8118e9c50290aa0f5aaf260f1588ba2367aff3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "负数 `line_offset` 从文件末尾开始读取（例如，-100 读取最后 100 行）。如果请求的尾部范围超出字符预算，会先返回该范围内最新的完整行；`Next Read` 覆盖被省略的较早范围。如果放不下任何完整行，Read 会报告这一点，并为整个未读范围提供正向的 `Next Read` 参数。使用负数 `line_offset` 时省略 `column_offset`。",
       "thinking_budget": 4096
     },
     "1d24f056071ce66c9e322ecda44714996bc89e9c52a707716fddbf94f28840d0": {
@@ -1090,6 +1104,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "不要仅因为任务完成就主动创建文档文件（`*.md` 报告、`README`、总结）——只有当用户要求，或某项任务或项目指令要求时才创建（例如计划模式下的计划文件，在计划模式指示时用 Write 创建；或仓库强制要求的变更集）。",
+      "thinking_budget": 4096
+    },
+    "38ec979cd5142cee0ef423ca9f6ad3dd33adde89a1b82f6a3901621080af0a7b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "省略 `n_lines` 可读取到文件末尾。没有固定的行数上限。当任务需要大文件的完整文本时，请在第一次调用中请求更大的 `max_chars`，最大可达 500000。",
       "thinking_budget": 4096
     },
     "390135ea61af86f637d7970add3f1096127c73278be01d5e3726aae344bf97ec": {
@@ -1618,11 +1639,25 @@
       "text": "空情况返回 `cron_jobs: 0\\nNo cron jobs scheduled.`。Cron\n  任务在同一会话恢复后仍然存在，但不会蔓延到新\n  会话。",
       "thinking_budget": 4096
     },
+    "53cd15c698d68340b9e918d4719a679c57d9098cf48f7c9fd25823dcb70f23f1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "使用 `line_offset`（从 1 开始计数的起始行）和 `n_lines` 对较大的文件分页。如果结果不完整，请复制状态块中的 `Next Read` 参数，以无缝且不重叠地继续。当任务需要剩余内容时，不要基于部分页面作答。",
+      "thinking_budget": 4096
+    },
     "53d7bdac70e67e1772aebed09f9a50e75cd5fc1f4ff33ef16be94c11519e8d0b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "除非有明确指示，否则绝不运行需要超级用户权限的命令。",
+      "thinking_budget": 4096
+    },
+    "5400c19e4044cee8e8ac77e09dea7c2debebf0176f512f777aaa8339d21ce918": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`column_offset` 是首行显示文本中从 0 开始的位置，不含行号前缀。仅支持向前读取。超出该行范围或位于 Unicode 代理对内部的偏移量会返回错误。续读以当前文件内容为准；如果文件已更改，请重新开始读取。",
       "thinking_budget": 4096
     },
     "550ce45d704a898bb231ef17c873aaa79fa68ad6fd445d69762acc4b32baa0ee": {
@@ -2010,6 +2045,13 @@
       "text": "名为 `AGENTS.md` 的 Markdown 文件包含智能体专属的指令，例如项目结构、构建命令、编码风格、测试期望和用户偏好。`README.md` 文件对于面向人类的项目背景仍然有用；`AGENTS.md` 文件是面向编码智能体的专门指令来源。",
       "thinking_budget": 4096
     },
+    "6816059d99adde681b5247af031f3418e94589b05d8c2e0f37978382b0a0be1d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "正向读取时首行内从零开始的字符偏移量，不包括该行的行号前缀。按显示文本中的 JavaScript 字符串长度计算。从上一次结果复制续读参数，以继续读取长行。",
+      "thinking_budget": 4096
+    },
     "68a9a9f1a25b376d277425a86a3c4bf48edc21b2faa7ea486fed0b9d7cc6426f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2141,6 +2183,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "技能的可选参数字符串，写法类似命令行（例如 `-m \"fix bug\"`、`123`、某个文件路径）。它会按空白拆分（引号括起的部分算作一个 token），并展开填入技能的占位符（$NAME、$1、$ARGUMENTS）；如果技能正文没有占位符，整个字符串仍会作为末尾的 `ARGUMENTS:` 行追加。仅在没有可传递内容时才省略。",
+      "thinking_budget": 4096
+    },
+    "6ed99e1b7ee0838aad4e97b5035874ec7d95d7a438dd20904084997f9fabd6f5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "开始读取的行号。省略则从第 1 行开始。负值从文件末尾开始读取（例如，-100 读取最后 100 行）。",
       "thinking_budget": 4096
     },
     "6ef6f5d34e096cac55fa03b75417047cd9361d67e903bb338167e8c6c4361cbb": {
@@ -2323,6 +2372,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在 `Bash(run_in_background=true)` 或 `Agent(run_in_background=true)` 之后使用此工具来检查进度，或读取已完成的任务的输出。",
+      "thinking_budget": 4096
+    },
+    "7a9b0a17f84ad520a772e47d0d8b919afbce73760c9fee40fa1e06e5e4a641c1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "文件内容之后会附加一个 `<system>...</system>` 状态块。它报告实际返回的范围、总行数、有效字符预算、请求的范围是否完整，以及是否已到达 EOF。该状态块不属于文件本身。",
       "thinking_budget": 4096
     },
     "7b203553a1a74ee76bb04544c755bb98009d00204c7f3b2e538e77b94ec283db": {
@@ -2542,6 +2598,13 @@
       "text": "上下文管理",
       "thinking_budget": 4096
     },
+    "87628f7f041735408f5b9b9bc92a3475d79717e1f4f867cc915247c19dd0b53e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "偏移之后要返回的匹配路径的最大数量。默认为 100。传入 0 可移除匹配数量上限。字符上限仍然适用：较大的页面会保存供 Read 使用，还有剩余路径时会提供继续用的偏移量。搜索时间和输出捕获上限仍然适用。",
+      "thinking_budget": 4096
+    },
     "8773d7bdc9f1154b87ec5c27ec1182eca6d30f9696ce9ade0b81ae18145490a3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2701,6 +2764,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当没有后台任务在运行时，WaitFor 会立即返回，不进行等待。",
+      "thinking_budget": 4096
+    },
+    "8f38ece23ab3c57fe7a9e209dc673189affdefc997c872bde3673fa7df30a7ed": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "UTF-8 文本文件直接读取。UTF-16 LE/BE 文本文件（带或不带 BOM）会被自动检测，并先以严格解码进行检查。如果发现格式错误的序列，Read 会返回可读文本，其中以 U+FFFD 替换，并在每一页附带无损解码警告；不要将此视图视为精确的原始文本。状态块会注明检测到的编码，而对此类文件执行 Edit/Write 仍要求 UTF-8——请先转换其编码（例如使用 `iconv`）。其他编码（如 GBK）、二进制文件以及包含 NUL 字节的文件会被拒绝。",
       "thinking_budget": 4096
     },
     "8f573c48e47e958eecdb01df935bad631427c4343c197357b7296cff0bc536ef": {
@@ -3060,6 +3130,13 @@
       "text": "当前工作目录是 `$PHISTORY_WORKSPACE`。如果你被要求在项目上执行任务，应将其视为项目根目录。如果你没有显式指定绝对路径，所有文件系统操作都将相对于工作目录进行。某些工具的部分参数可能要求绝对路径，如果是这样，你必须为这些参数使用绝对路径。",
       "thinking_budget": 4096
     },
+    "9e7f1bd2ba0cc2088274f6c66c3e02fb5b06da982f8c9a02acaa1648e981154f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果单行无法完整放入一页，Read 会返回一个片段并报告其列范围。使用提供的 `column_offset` 在同一行内继续；不要在同一源行的各片段之间插入换行符。部分行仍计入剩余的 `n_lines`，直到其结尾被返回为止。",
+      "thinking_budget": 4096
+    },
     "9ece80609825252f3fa8e587f36af94a5082a9d2bc421e87288ca595327edfcc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3086,6 +3163,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "优先使用默认的 `active_only=true`，它只列出未终止的任务。\n  仅当你确实需要查看\n  已结束的任务时，才传入 `active_only=false`。使用 `active_only=false` 时，结果还可能包含\n  `lost` 任务——这些是先前进程遗留的任务，已无法再\n  检查或控制；请将它们视为已终止。",
+      "thinking_budget": 4096
+    },
+    "a03b0b80b4088a0b1781be831b88cd96c8abde1ca120063b25e6ef8df842d222": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "结果默认返回 100 个匹配路径。使用 `offset`（默认 0）和 `head_limit`（默认 100）对结果分页。还有更多匹配可用时，结果会给出下一个偏移量；保持其他搜索参数不变。设置 `head_limit=0` 可移除匹配数量上限。分页仍保持在字符保留上限之内，包括提示信息：达到上限时，只返回完整路径，并附上用于继续的下一个偏移量。较大的页面会保存到文件，并提供供 Read 使用的路径。",
       "thinking_budget": 4096
     },
     "a0526ba35aeb3b9ed528bf7a0c92c367393911c1efaa7aa2f9f658a9eb0ca976": {
@@ -4054,6 +4138,13 @@
       "text": "是否在返回前等待任务完成。不推荐使用——后台任务完成时会自动通知；仅在用户明确要求等待时使用。",
       "thinking_budget": 4096
     },
+    "d0cbe58c28c27052689bfcc723862ed60d98413c8d1e2e8e2c59866020476085": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "要跳过的匹配路径数量。默认为 0。每次调用都会重新搜索当前文件系统；文件变化可能使各页结果发生偏移。",
+      "thinking_budget": 4096
+    },
     "d159fc737b9e8bcc8d7f319585e937d68b195a101dd3a684276493b1532ff842": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4094,6 +4185,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "你的文本回复会在用户的终端中以 Markdown 渲染。保持结构轻量、层级浅——深层嵌套、大型表格和繁重的标题在那里读起来效果很差。以 `path/to/file.ts:42` 的形式引用代码位置，方便用户跳转到相应位置。除非用户先使用表情符号或主动要求，否则不要使用。",
+      "thinking_budget": 4096
+    },
+    "d21a2d4ff9debb29a6d9503d8294bd0f32ba3535a5b7a93fab75cc68a0dc511c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Kimi Code 智能体事件日志（sessions 目录下的 `wire.jsonl`）遵循相同的字符预算；用 Grep 定位记录，用 `n_lines=1` 读取，并跟随 `Next Read` 获取长记录的每个片段。",
       "thinking_budget": 4096
     },
     "d21fe35058aa784780287ce812e407d049b2c0986adf407044c88eecd282fe8d": {
@@ -4304,6 +4402,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "撰写提示词：",
+      "thinking_budget": 4096
+    },
+    "d835d994a8032848e27ee8dbda4f4790ea31806d669511dfe2408a8dd5b9274c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "返回 `max_chars` 以内的文本，包括行号和状态块，并优先保留完整行。配置的默认值为 100000 字符；调用最多可请求 500000。字符按 JavaScript 字符串长度计算，而不是 UTF-8 字节或 token。Read 的结果不会再被常规工具输出上限转存或截短。",
       "thinking_budget": 4096
     },
     "d878f04d9f16b4aac007e647b149f68b0bc0aee1c5c82b6a0962f370046774de": {
@@ -4565,6 +4670,13 @@
       "text": "覆盖现有文件之前，先执行 Read。",
       "thinking_budget": 4096
     },
+    "e839659f549830be35ab2429521506e41fb32539809f7d9817d7d81d2a2f69cd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每次调用都会重新搜索当前文件系统；分页不是快照，文件变化可能使各页结果发生偏移。要收集较大的列表，可使用 `head_limit=0`，读取已保存的输出，并在达到字符上限时跟随后续偏移量继续。搜索超时、遍历错误和输出捕获上限仍可能导致部分结果；结果会报告这些限制，而分页无法找回从未被收集的路径。结果不完整时，请缩小搜索范围并重试。",
+      "thinking_budget": 4096
+    },
     "e84fd731c724e10600f937b09cff76f1b250a836a6f6d9f145949633e762e1c9": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4626,6 +4738,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**这些操作请改用专用工具：**",
+      "thinking_budget": 4096
+    },
+    "ea3240beb9830a5547beebe4fd05b205b87c3d1744d64ccfc6fbc74473e968e2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "要读取的行数。省略则读取至文件末尾。结果受 max_chars 限制，请求的范围不完整时会附带续读参数。",
       "thinking_budget": 4096
     },
     "ea8ec87dc615c0d9e3d614182d521ce1575e41d504b1c49ceb88eaa24cb8d747": {
@@ -4843,6 +4962,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "启动一个子智能体来处理任务。该子智能体作为同进程的 loop 实例运行，拥有自己的上下文和 wire 文件。",
+      "thinking_budget": 4096
+    },
+    "f5b3669e41026a710c34855f7a6d09504acdb7585a0fb695668354293c826e08": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "返回文本中的最大字符数，包括行号和状态。省略则使用配置的默认值；超过所配置上限的请求会被限制在该上限。",
       "thinking_budget": 4096
     },
     "f5eb99bf5347c53cafd72613bfa274811a04f292c7eb4c7fd78fd5821078fa68": {
