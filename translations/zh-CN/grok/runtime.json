@@ -546,6 +546,13 @@
       "text": "如果这些命令相互独立且可以并行运行，请在同一条消息中多次调用此工具。",
       "thinking_budget": 4096
     },
+    "14088be5b848f1d7df53b45e3f85ba52794f11deae5aa64339d9b8424c1d1fda": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "按其 `run_id` 或显示名称，停止本会话启动的一个运行。其子智能体会被取消，该运行被标记为已取消（已结束）。它会保留日志，因此 `resume` 之后仍可继续它。",
+      "thinking_budget": 4096
+    },
     "140deb2da226f26163325710646c897f0ff0ea7b207a84f9f569d6321f594eb1": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1534,6 +1541,13 @@
       "text": "如果这些命令相互依赖且必须按顺序运行，请使用带 '&&' 的单次调用将它们串联起来（例如 `git add . && git commit -m \"message\" && git push`）。举例来说，如果某个操作必须在另一个操作开始之前完成（例如 mkdir 在 cp 之前、git 操作中 search_replace 先于此工具，或 git add 在 git commit 之前），请改为按顺序运行这些操作。",
       "thinking_budget": 4096
     },
+    "36ccb5c8a3d21335e53c2eb825e96ea6efc092b1c7ceab38ea25e75487f1d8b2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "恰好一个工作流来源。`type` 标签选择已注册名称、内联脚本、脚本路径、同进程恢复，或对本会话启动的某个运行进行暂停/停止。",
+      "thinking_budget": 4096
+    },
     "36e8cf0f86d3b7ab4c463ad448284c4290867769d9a41ba986e91a5f6b94b226": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1574,6 +1588,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "check-work：用验证子智能体检查你的工作。会启动一个验证器，审查 diff、运行构建和测试并评估正确性\n  Use when: Use when asked to \"check work\", \"verify changes\", \"self-verify\", \"/check-work\", \"/check\", \"/verify\", or \"/self-verify\".",
+      "thinking_budget": 4096
+    },
+    "386d183e8d5df8b08b73f4b095ec191d70ea81306a08f9ad10c5d68b7f0987bf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "已启动的运行会获得一个会话内唯一的显示名称（例如 `review-changes`、`review-changes-2`）——这是展示给用户的句柄，用户通过 `/workflow pause|resume|stop <name>` 管理运行；运行 ID 仅内部使用。要自行停止或暂停某个运行，请以 `source: { type: \"stop\", run_id }` 或 `{ type: \"pause\", run_id }` 调用此工具（运行 ID 或显示名称）；两者都会取消该运行的子智能体并保留其日志，因此之后都可以用 `resume` 继续。暂停仅适用于活跃的运行；停止适用于任何尚未完成或尚未达到智能体预算的运行（受预算限制的运行已处于停止状态，需要 `resume` 并配合更高的 `agent_budget`）。每次启动都会持久化一个可编辑的 `script_path`；编辑它并作为新运行启动，以便迭代。仅对同进程的已暂停运行使用 `resume` 来源（进程重启是终态）；它会复用该运行最初不可变的源和参数，而受预算限制的运行只有在更高的 `agent_budget` 下才会恢复。将可复用的脚本保存到 `.grok/workflows/<name>.rhai`。",
       "thinking_budget": 4096
     },
     "38b77e39973e0efbf237e988d41b568336b7e2f56583687f74f0cdaa535d91fe": {
@@ -2495,6 +2516,13 @@
       "text": "使用 model 为特定智能体覆盖模型（例如，为简单搜索使用更轻量的模型）。",
       "thinking_budget": 4096
     },
+    "57008b1a2cd98d05e43b2ad7fc81f6e5ce1643c812c1cba2f9079a0d09530e59": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本会话的草稿文件是 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-dow93mga/01a087c0-b4f8-73f0-aae0-f219c7786cae/feedback_drafts.json.\n如果用户的反馈可以从文档中得到解答（例如 UI 元素位置或设置），请在本地或在线阅读 Grok Build 文档，并随创建的草稿一并作答。",
+      "thinking_budget": 4096
+    },
     "57d09a33191b29cd132af3d1c147b5a0386b7551eed2e680ab4f4fc93746f454": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3026,6 +3054,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果为 true，则在执行 JS 或截取之前重新加载当前页面。",
+      "thinking_budget": 4096
+    },
+    "69d59dbbc23715c96a5c34c6e240ce528f075736f7a8c5a65d827649b8be6057": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "按其 `run_id` 或显示名称，暂停本会话启动的一个活跃运行。其子智能体会被取消，该运行被标记为已暂停；使用 `resume` 来源继续它。",
       "thinking_budget": 4096
     },
     "69fe190572d3e60c61d9b68347b0892ce4a3e45e058a3b4f35be83b58c4583df": {
@@ -4567,6 +4602,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "此工具只能读取文件，不能读取目录。要读取目录，请通过 run_terminal_command 工具使用 ls 命令。",
+      "thinking_budget": 4096
+    },
+    "a17bc3e5c391f20ff436187c52cbd5af2912172b63469447594c9473fae70dd2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "启动或控制一个工作流：一段将子智能体编排为单个后台运行的 Rhai 脚本。提供恰好一个 `source`：已注册的工作流 `name`、内联 `script`、`script_path`、同进程 `resume`，或对本会话启动的某个运行进行 `pause` / `stop`（按 `run_id` 或显示名称）。可选传入 `args`（绑定到脚本的 `args`）和 `agent_budget`，即对子智能体累计调用次数的绝对上限：每个 agent() 和 parallel() 项消耗一个名额（schema 重试不消耗）；默认 128。宿主还会限制每个运行的同时存活子智能体数（默认 32，由宿主配置）——更大的 parallel() 面板会排队，且仍起到屏障作用。调用立即返回；进度会显示在 `/workflow runs` 中，完成时会自动报告——不要轮询或休眠等待。",
       "thinking_budget": 4096
     },
     "a22049e36bc9ec12009dd2477c0dbda51453764e85007d01d68d1275964a0488": {

@@ -8671,6 +8671,13 @@
       "text": "**缺陷修复** → 复现该缺陷，应用修复，确认复现不再触发。",
       "thinking_budget": 4096
     },
+    "da5db07930e1575367c2f2bf121c57ec56c30fcc2a21f649dfccd38637dbacbe": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-09；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "dac95b7ba887e599b77e0048ec9ff494de055f78df2763cb4052635441c93e83": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

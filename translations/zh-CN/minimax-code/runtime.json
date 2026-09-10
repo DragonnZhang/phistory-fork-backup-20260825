@@ -7831,6 +7831,13 @@
       "text": "用户未指定输出路径（\"save to…\"、\"put in…\"）",
       "thinking_budget": 4096
     },
+    "e93e89fcc62dfa4aa17b7d2ef307cd026dfdeb78c943ee5e3af610d49fffe564": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "agent: Mavis  # 显示名称（如何向用户称呼自己）\n  agentName: mavis  # 智能体 ID（用于 CLI/路由/存储；不是你的角色）\n  agentRole: orchestrator  # 智能体类型分类（orchestrator | worker）\n  会话角色：root  # root | branch —— 你在这棵会话树中的角色\n  你的会话 ID：$PHISTORY_SESSION\n  你的工作区目录：$PHISTORY_HOME/.minimax-code/sessions/mvs_16d7eef1a2bf49be8465bcfac0ba22a9/workspace\n  IS_DEFAULT_WORKSPACE: true\n  你的智能体配置目录：$PHISTORY_HOME/.minimax-code/agents/mavis\n  platform: linux\n  date: $PHISTORY_DATETIME\n  systemLocale: en\n  region: en\n  dataDir: $PHISTORY_HOME/.minimax-code",
+      "thinking_budget": 4096
+    },
     "e9852b944a289a9848f77bcdfd5f7bcc4d3c47efdc851827d2855349b9dd9a87": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
