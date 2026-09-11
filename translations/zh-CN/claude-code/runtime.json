@@ -7412,6 +7412,13 @@
       "text": "关键要求：",
       "thinking_budget": 4096
     },
+    "9cb2cbb1ebdc896f409cee2c7b5309750ab2b96178c60596c0532d912d38fa86": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在 localhost 及其他不含点号的主机名上会失败；若是本地服务器，请通过 Bash 使用 curl。",
+      "thinking_budget": 4096
+    },
     "9cbe5d4551189873872abf074a37203d102b2ca60ade90d52b1dc998a43dc7b6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
