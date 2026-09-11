@@ -981,6 +981,13 @@
       "text": "**为节点命名。** 捕获每个 `agent(…, handle=True{ handle: true })` 的结果；其中携带 `handle`（`agent://<id>`）+ `output`。",
       "thinking_budget": 4096
     },
+    "154cb148178603ab3db6137fc50fff067f0fc36e26a42988052ed0e629282385": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-10；当前工作目录：'$PHISTORY_WORKSPACE'。回复中不要重复此信息。",
+      "thinking_budget": 4096
+    },
     "154dcbf79390d7c4836e473f852d965d271152c5992a44691bd0b7c69e2b5ea5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3846,6 +3853,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**任务通过逐字内容字符串引用，绝不使用自动生成的 ID——不存在 \"task-1\"/\"task-N\"。请在 `task` 字段中传入内容文本。**",
+      "thinking_budget": 4096
+    },
+    "61d7db3edd3dbaa6faa5e2796b2401c46286327ab1bd8ceaefb1a4912b48dc58": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "裸图像路径 → 当前模型支持图像输入时，直接发送给该模型。",
       "thinking_budget": 4096
     },
     "61db800010f89f67c79410e4b12401b3850839809df3a93d44d850f8a629261a": {
@@ -7222,6 +7236,13 @@
       "text": "**快照：** 传入 `list: true`，无需等待即可获取所有作业的当前状态。该列表还会列出没有作业条目的正在运行的子智能体（例如通过 `irc` 唤醒的智能体，或由其他智能体拥有的派生子智能体）——它们通过 `irc` 协调，而不是通过本工具。",
       "thinking_budget": 4096
     },
+    "b4684e2769075c5c4cc0be8146fed62026e75c0fe461a09eec67746815d8eabc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`?q=<question>` — 仅图像（还有 `.svg:img?q=`、`attachment://N?q=`、`local://…?q=`）：以文本而非像素的形式给出视觉模型的回答（在任何模型上都可用）；当前模型支持图像输入时，优先使用裸图像路径。",
+      "thinking_budget": 4096
+    },
     "b4ab2feae5de2811b0455c5ca66a65d69283eec423851436c7e88e7523466a4f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8361,6 +8382,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "进程",
+      "thinking_budget": 4096
+    },
+    "d213070da1587cfb41372e5925da224a72a1fdb2d57c0c6f3b32e62dab850bed": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "文档 → 提取出的文本。Notebook → 可编辑的单元格。图像 → 为具备视觉能力的模型解码并内联（优先使用裸图像路径）；`img.png?q=<question>` 会询问视觉模型并返回文本（节省上下文；在任何模型上都可用）。视频 → 预览网格加元数据。SVG 按文本读取，除非指定了 `:img`；`:raw` 会绕过转换器。",
       "thinking_budget": 4096
     },
     "d216a2f0455085dee80a89bda41b1c237706b520d8f80e639ea7b7e36b873286": {

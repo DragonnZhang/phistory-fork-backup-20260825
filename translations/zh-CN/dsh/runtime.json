@@ -257,6 +257,13 @@
       "text": "字面替换文本。使用空字符串可删除匹配内容。",
       "thinking_budget": 4096
     },
+    "1e669997560d9dcb32b52bf782f97556ff34c5f2665c48ad87e2f25241b21968": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "网络访问取决于任务环境。有已配置的镜像/代理可用时，优先使用它们。",
+      "thinking_budget": 4096
+    },
     "1e6922a3c7975fa12e9036bf0d7f73920cd0da846544048abe3c7adc890dd088": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -553,6 +560,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "更新会在启动目标 Package 之前停止旧的 Run。失败不会自动重启旧版本；应使用 update 重试 next，或使用 run 回滚到 current。",
+      "thinking_budget": 4096
+    },
+    "407eec7169e1564f62e2e260fdd67176132d10b338b89db76695bfc3c39d391d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "现有常规文件的路径。相对路径基于 Session 工作目录。",
       "thinking_budget": 4096
     },
     "4080fc08572d46fe7f3731c172cd959695e024e59eadd3a824d7acc83661faec": {
@@ -1089,6 +1103,13 @@
       "text": "两个层面决定一处编辑归属何处。HOST 组合保存各注册表以及跨会话共享的一切——持久化、沙箱与审批栈、模型路由、子智能体注册表及其后端。AGENT PRESET 保存单个会话向这些注册表贡献的内容：它的工具、它的人设、它的提示词分节。发布服务的一行属于宿主组合；或者，如果该预设确实拥有这个服务，且没有任何单个智能体之外的东西读取它，则属于 `isolate` 领域之内。",
       "thinking_budget": 4096
     },
+    "769775d82d0f3aecaab5b64e158237d5c824ffb54718e9366e07311ffc450448": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "给用户的简要描述。",
+      "thinking_budget": 4096
+    },
     "76e4ba3c87e2e746ee5993610f3eda4997d48a40b538798950dadd9980859756": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1286,6 +1307,13 @@
       "text": "针对可用工具执行一个 TypeScript 程序。接受两个必填参数：`code`，即一个异步函数的函数体（仅限可擦除语法；顶层 `await` 和 `return` 可用），以及 `description`，即程序功能的简短摘要。按照系统提示词中的声明，以 `await tools.name(args)` 调用工具。只有你打印或返回的内容才会返回——请加以筛选。",
       "thinking_budget": 4096
     },
+    "98759ad2940a3a0777e02f2d9b8e9d8669290f2dae659341fd0a70d74ee55eb3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你是一个由 deepseek-flash 模型驱动、运行在 DeepSeek Harness 上的编程智能体。",
+      "thinking_budget": 4096
+    },
     "99063616320d1c50bc5f3801274e9314f0fa2486c6c596c04cd97b1dcc8bdbc5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1471,6 +1499,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "问题的可选简短标题，例如 \"Confirm\" 或 \"Choose Mode\"。",
+      "thinking_budget": 4096
+    },
+    "b155d5d93e750523c43176175d5a2bb3a53742527e71a150e40069437fe97664": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "DeepSeek Harness 实现的检出位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.5-rc.1/。检出位置与当前工作目录是两个独立的值，可能不同；绝不要根据此路径推断工作目录。使用 pwd 确定当前工作目录。此检出仅用于检查或扩展 DSH 本身。",
       "thinking_budget": 4096
     },
     "b17ffd26a4f399acb8de3860cf8c85dbd0daa4f5bf72f9c768c14d6186e7fc3d": {
@@ -1766,6 +1801,13 @@
       "text": "简短的面向用户的选项标签。",
       "thinking_budget": 4096
     },
+    "d139f8573f863391d8bff3d506300379472219742804cfcb07b8a9d221f7eff3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你是一个由 deepseek-flash 模型驱动的编程智能体。",
+      "thinking_budget": 4096
+    },
     "d13a369abcfef69c4d5ce7407ce837b7562f03089fa5d43aa92eac163d216b19": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1778,6 +1820,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "一句话解释其中的取舍或影响。",
+      "thinking_budget": 4096
+    },
+    "d49a8435cb63404ddfa020d10dafa6dc83f349ed101d1b6367b7b2be9693f117": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你的工作目录是 $PHISTORY_WORKSPACE。",
       "thinking_budget": 4096
     },
     "d5d3ce940adc65c122f495c1d8bb3f13b3a4fdbb83c4259d82c40db835fc10a6": {
@@ -2069,6 +2118,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "一句话的、面向用户的 Package 用途描述。",
+      "thinking_budget": 4096
+    },
+    "f5f4dca0595011c5146484de0ca431e97860e5b48471e9c835b29c4850cf9001": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将通过 Session 文件系统访问的现有文件声明为最终交付物。当你创建或更新的文件是用户要求接收的输出时，必须在写入该文件之后、给出最终回复之前调用 present，包括通过 Bash 或代码执行创建的文件。在回复中提及该文件的路径不能替代此调用。这些文件必须已经存在。用户打开的是当前源文件；其内容不会被复制或保留。",
       "thinking_budget": 4096
     },
     "f677ed04dbe5144e130e5f928ec6eaf210ae8b1972f82c435fd2307d02ac45ec": {
