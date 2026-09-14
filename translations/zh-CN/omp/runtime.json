@@ -7180,6 +7180,13 @@
       "text": "绝不把解决了一半的工作推回去。",
       "thinking_budget": 4096
     },
+    "b2429a4f853f4f40548634b0a7f74eb3ba2e59b5518c64a9270237c8592995a8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**`wait`**：仅在完全受阻、没有其他工作可做时使用。在以下最先发生的一项时返回：传入消息、被监视的作业完成、等待窗口到期（5 秒，连续等待逐次延长，最长 5 分钟），或 steering 中断——而不是在所有作业完成时返回；要继续等待，请再次发起调用。",
+      "thinking_budget": 4096
+    },
     "b276c657a258e729aba930fc776f60e32d2214ef7da2f444f0dcbbc760f2efd5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8501,6 +8508,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "软件架构师，用于复杂的多文件架构决策。不适用于简单任务、单文件改动，或可在 <5 次工具调用内完成的任务。",
+      "thinking_budget": 4096
+    },
+    "d4344eae8254803137f25865f85c46b51c75307d717679db03494e4873348617": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "hub(i=\"…\", op=\"wait\", from=\"AuthLoader\")",
       "thinking_budget": 4096
     },
     "d4765d6a44811be04a9b807547e291ec0959c235dda55c82045567c4b40240be": {

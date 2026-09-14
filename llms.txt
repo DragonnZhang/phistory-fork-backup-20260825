@@ -24,9 +24,9 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 - [OpenClaw 2026.9.4 — Default](https://phistory.cc/captures/openclaw/2026.9.4/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Hermes Agent v2026.9.14 — Default](https://phistory.cc/captures/hermes/v2026.9.14/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Kimi CLI 1.50.0 — Default](https://phistory.cc/captures/kimi/1.50.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [opencode 1.18.30 — Default](https://phistory.cc/captures/opencode/1.18.30/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [opencode 1.18.31 — Default](https://phistory.cc/captures/opencode/1.18.31/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Pi 0.85.1 — Default](https://phistory.cc/captures/pi/0.85.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Oh My Pi 18.1.21 — Default](https://phistory.cc/captures/omp/18.1.21/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Oh My Pi 18.1.22 — Default](https://phistory.cc/captures/omp/18.1.22/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 
 ## Optional
 
