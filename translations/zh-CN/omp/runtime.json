@@ -8552,6 +8552,13 @@
       "text": "你的补丁语言会指明要替换、删除或在其处插入的行，然后列出新内容。经验法则：以 `:` 结尾的头部后面跟 `+` 正文行；`DEL` 没有正文。",
       "thinking_budget": 4096
     },
+    "d5270bb904edf7a34effe250c5e49647827a121326d6499d907a2fff42ca05bc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-14；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "d54406eb1529dea5220d63c7e40aab270c263099cac19196f836332c71032713": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8914,6 +8921,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`hidden` 默认为 `true`；针对被忽略的点文件，将其与 `gitignore: false` 搭配使用。",
+      "thinking_budget": 4096
+    },
+    "df75da8312284730387d8267e6940c72a26276ac8d2190ccdb1cab5faa48e5dd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "关闭操作会释放托管的标签页。它从不关闭通过 relay/CDP 附加的页面。`kill: true` 仅终止由此进程派生的应用程序，从不终止复用的浏览器进程。",
       "thinking_budget": 4096
     },
     "dfaac7ae2efdfb651974d1cf1331ef4b1bc17d29d6572ce693973aebff4bfb6d": {
@@ -9742,6 +9756,13 @@
       "text": "任何计算默认使用 `eval` 单元。Bash 是例外——仅限单个二进制调用或简短的事实计算管道（`wc -l`、`sort | uniq -c`、`diff`、校验和）。一旦命令出现循环、条件、heredoc、`-e`/`-c` 脚本、`$(…)` 嵌套或超过 2 个管道阶段，它就是一个程序 → `eval`。绝不编写多行 bash 或内联脚本 bash。",
       "thinking_budget": 4096
     },
+    "f31728be5a44a7959bb22325a23fa8d2dd2b0e4a770aa80c48711fe2e8223815": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "省略 `app` 即采用默认自动化；无需可执行文件路径。托管的 Chromium 会在首次使用时自动安装。",
+      "thinking_budget": 4096
+    },
     "f3373729f8e11d78d019ca1033dd47698a0dba74a2d98228defeb3cb42793856": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9936,6 +9957,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**仅限依赖。** 只有 B 确实需要 A 时才让 A 排在 B 前面；共享的前置步骤先内联完成，再扇出。“并行化”＝独立切片的并行执行，而不是让智能体来调度串行工作。缺一小块时：并行运行，让 B 通过 `hub` 去问 A！",
+      "thinking_budget": 4096
+    },
+    "f88a28e1302692b05b82db5f0fe740c104fe5863cac78fa9f570ab005b7a57ba": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`app.path`：启动指定的浏览器或 Electron 可执行文件。Chromium 系浏览器使用由 omp 拥有的配置文件，除非 `args` 提供 `--user-data-dir`。",
       "thinking_budget": 4096
     },
     "f8b8adea3e66dc8c2b043ec98a922dea7b2d6602fd8124e5f10059a263bebc2f": {
