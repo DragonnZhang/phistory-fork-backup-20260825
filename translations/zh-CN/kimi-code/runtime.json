@@ -672,6 +672,13 @@
       "text": "防聚集抖动按任务 id 确定性地施加：",
       "thinking_budget": 4096
     },
+    "1e0aa1dabda2779c20b8e3209b48a995f6b7120214c51fa8bcc9828795d2f0b1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "指向文本文件或当前会话中 kimi-file:// 附件引用的路径。文件系统中的相对路径以工作目录为基准解析；工作目录之外的路径必须是绝对路径。不支持目录；对于已知目录，请通过 Bash 使用 `ls`，或使用 Glob 进行模式搜索。",
+      "thinking_budget": 4096
+    },
     "1e57d6227c2b7f7054030a6c5a2f102337dacfa71dec1ac06d55e37df059596f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1597,6 +1604,13 @@
       "text": "即使在大段英文工具输出之后，也用用户的语言思考和回复；进入仓库的产出物则遵循项目的惯例。",
       "thinking_budget": 4096
     },
+    "520bf6357fbc96a23390884a76e0c7baf088b53734ee63257f02f8eb20cd674e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "该路径可以是 `kimi-file://` 附件引用。其字节来自当前会话的存储，与工作区运行时无关。下一次 Read 会保留该引用，因此分页在 fork 之后仍然可用。对于二进制附件，如果可用，错误信息会包含服务器本地路径；转换器必须能够访问该文件系统。ReadMediaFile 对图片和视频接受同样的引用。",
+      "thinking_budget": 4096
+    },
     "520fdb38c09cf0c55acac76262c74e3adccae00b4f16978f8bfb2e7aabbd44f8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1854,6 +1868,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果摘要确实缺少你继续工作所需的内容，请询问用户或用工具恢复——不要猜测。",
+      "thinking_budget": 4096
+    },
+    "5d6ce39c64b858cac8e46a4c4d7837f5136c1f615c601f2e2ddbbe753651fb13": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "时间预算必须至少为 1 秒，并转换为有限的毫秒数。\n没有时长上限。轮次和 token 预算必须为正数，并舍入\n到最接近的整数（最小为 1）。",
       "thinking_budget": 4096
     },
     "5dadbc429099f01b12b278fb00b741e41a3e91e5b7af209a535f75e391655574": {
