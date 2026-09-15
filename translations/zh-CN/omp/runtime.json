@@ -203,6 +203,13 @@
       "text": "**阶段名称**：简短名词短语（例如 `Foundation`、`Auth`、`Verification`）。唯一标识符。绝不添加前缀 `1.`、`A)`、`Phase 1:`。",
       "thinking_budget": 4096
     },
+    "02ed7d53af94fdda497fcfedc0a3d5920c6db60fe760e69dd78c614d1598a1d2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Directory → 深度受限的 dirent 列表。根目录的列表是完整的；长列表使用 `:N-M`/`:-N` 分页。子目录最多列出 12 个条目（`… N more` 标记）——读取该子路径即可展开。",
+      "thinking_budget": 4096
+    },
     "0318272e21f82555a56b886d443ab10c4e5c70d8ddf9ab565859a59a4f537781": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2634,6 +2641,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "空闲标签页会在回合结束时自动冻结（动画页面不再消耗 CPU/GPU），并在下次使用时解冻；空闲超过 idle-close timeout 的标签页会被关闭。在 `open` 上传递 `persist: true` 可让标签页跨回合保持活跃（例如多步登录）；`browser.close` 仍会显式释放。",
+      "thinking_budget": 4096
+    },
+    "42044f10f921c8dbd2224f3396b0de3a25ffba9f06000ccde19e550a3557228d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-15；当前工作目录为 '$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "421633f038907db4d7c179a8ae8128e5044847de399670706a686056d12a9b75": {
