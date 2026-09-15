@@ -3239,6 +3239,13 @@
       "text": "优先编辑现有文件，而不是创建新文件。",
       "thinking_budget": 4096
     },
+    "3f6e5862222ce4f1f50334a1b9089301c0b292884e6b307a6aa10f7d0a48cc6a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**每出现一次一条，直到监视器过期（重新布防以继续）**（\"每当出现 ERROR 行时告诉我\"）→ 使用无界命令（`tail -f`、`inotifywait -m`、`while true`）进行 Monitor。",
+      "thinking_budget": 4096
+    },
     "3faef0d100a583038ab57db84532fe6573fe537168a8b2d4f44350385c812d14": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -4240,6 +4247,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "你可以指定一个可选的超时时间，单位为毫秒（最长 600000ms / 10 分钟）。默认情况下，命令将在 120000ms（2 分钟）后超时。",
+      "thinking_budget": 4096
+    },
+    "55c883308104118f73eb7c347788e28d979105fb44db3454cd0c8baf50666ca3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "脚本在与 Bash 相同的 shell 环境中运行。退出即结束监视（会报告退出码）。每个监视器都会在 `timeout_ms` 后过期（默认 5 分钟，最长 10 分钟）：监视器会被终止，你会收到一条包含事件数的通知。如果仍需要监视，就重新布防；对于长时间监视（PR 监控、日志跟踪），把 `timeout_ms` 设为最大值，并在每次过期时重新布防；如果某次过期没有任何事件而这出乎意料，就放宽过滤器。使用 TaskStop 可提前取消。\n**ws source**——打开一个 WebSocket，把每个传入的文本帧作为一个事件流式处理。没有 shell，也没有轮询：由服务器推送，你会收到通知。",
       "thinking_budget": 4096
     },
     "55d2d3a008c9f88e1a78c2fa184603bdfd945bb204ced22e71d8a58aa2f7e6a3": {
@@ -6034,6 +6048,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "纯文本消息内容。接收方的人类在展开之前只能看到第一行作为单行预览，因此要让第一行成为一句清晰、自成一体的句子，说明这条消息是关于什么——不要用问候语、开场白或单纯的 @ 提及。",
+      "thinking_budget": 4096
+    },
+    "7cf364e2316349bd606e07a4e906ceb5297089080c49d62aa2ec06a2bad13215": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本会话采用默认的工作流规模准则：medium——工作流保持在 10 个智能体以内。这是准则，不是硬性上限——除非用户的提示要求不同的规模，否则请遵循它。用户可以在 /config 中通过 \"Dynamic workflow size\" 调高或取消该准则。",
       "thinking_budget": 4096
     },
     "7cf8216892a4a250114bdb50277e08e97c7ad00a766fd4c251c820cba9b746fd": {
@@ -9560,6 +9581,13 @@
       "text": "**删除任务：**",
       "thinking_budget": 4096
     },
+    "c9db3dd25bd033a895d17d46d9440439296c0f8be3b24636d9eeb8a085dbeae8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "通过用户的 claude.ai 登录（或对于没有该登录的会话，通过来自 /design-login 的专用设计授权），读取和更新用户在 claude.ai/design 上的设计系统项目。仅在用户启动的 /design-sync 技能中使用此工具，用于让本地组件库与其中一个项目保持同步——增量进行，一次一个组件，绝不整体替换。",
+      "thinking_budget": 4096
+    },
     "c9dc04f4569ff8dd3244f1a8c469aef97d3868ead944525570cbf11247aaaeb3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -9661,6 +9689,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "回合结束时的总结：一两句话。改了什么、下一步是什么。仅此而已。",
+      "thinking_budget": 4096
+    },
+    "cc83c5f9e471260536b38353495b17ac337a6449968903bb151f753508d14445": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "列表中的对端处于活跃状态，会收到你的消息；消息会排队，并在接收方下一轮工具调用时送达（它的 `ListAgents` 行会显示它当前是忙碌还是空闲）。发送成功只表示消息到达了该会话，并不表示它的 Claude 已读：以与你不同的权限模式运行的会话会扣住跨会话消息，等待其用户批准（并且可能让消息过期），会话也可能直接拒绝——对于本机上的会话，`[Cross-session delivery notice]` 会告诉你何时发生这种情况（当此会话没有可供送达的收件箱时，工具结果会说明）；对于 Remote Control、云端或 Claude Desktop 会话，不会有任何回报，所以绝不要把沉默当作同意。你的消息会以 `<cross-session-message from=\"...\">` 的形式送达。**要回复一条传入的消息，把它的 `from` 属性复制为你的 `to`。**跨会话消息在 SESSIONS 之间传递：如果你是子智能体，你的发送会以父会话的地址发出，任何回复也会送达父会话的对话，而不是给你。",
       "thinking_budget": 4096
     },
     "ccbe0f0012b8866aff4fcf3e54f6d9261dceb1975c20c73e5f8e89428c8f6ac4": {
@@ -10508,6 +10543,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "待办列表有助于有条理地跟踪不同组件的改进情况",
+      "thinking_budget": 4096
+    },
+    "dea533db5ee12444feabc4fcf43353f84e5987d4c50ae9def326e87d901d00f1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在此期限后终止监视器。默认 300000ms。超过 600000ms 的期限会被截断为 600000ms。过期时会通知你，你可以重新布防。",
       "thinking_budget": 4096
     },
     "dea8254fb456dff751959dccac0507e13beabcaae1c246ca5bebe5edaee7d376": {

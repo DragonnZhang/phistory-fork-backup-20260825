@@ -203,6 +203,13 @@
       "text": "**阶段名称**：简短名词短语（例如 `Foundation`、`Auth`、`Verification`）。唯一标识符。绝不添加前缀 `1.`、`A)`、`Phase 1:`。",
       "thinking_budget": 4096
     },
+    "02ed7d53af94fdda497fcfedc0a3d5920c6db60fe760e69dd78c614d1598a1d2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Directory → 深度受限的 dirent 列表。根目录的列表是完整的；长列表使用 `:N-M`/`:-N` 分页。子目录最多列出 12 个条目（`… N more` 标记）——读取该子路径即可展开。",
+      "thinking_budget": 4096
+    },
     "0318272e21f82555a56b886d443ab10c4e5c70d8ddf9ab565859a59a4f537781": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2634,6 +2641,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "空闲标签页会在回合结束时自动冻结（动画页面不再消耗 CPU/GPU），并在下次使用时解冻；空闲超过 idle-close timeout 的标签页会被关闭。在 `open` 上传递 `persist: true` 可让标签页跨回合保持活跃（例如多步登录）；`browser.close` 仍会显式释放。",
+      "thinking_budget": 4096
+    },
+    "42044f10f921c8dbd2224f3396b0de3a25ffba9f06000ccde19e550a3557228d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-15；当前工作目录为 '$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "421633f038907db4d7c179a8ae8128e5044847de399670706a686056d12a9b75": {
@@ -7180,6 +7194,13 @@
       "text": "绝不把解决了一半的工作推回去。",
       "thinking_budget": 4096
     },
+    "b2429a4f853f4f40548634b0a7f74eb3ba2e59b5518c64a9270237c8592995a8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**`wait`**：仅在完全受阻、没有其他工作可做时使用。在以下最先发生的一项时返回：传入消息、被监视的作业完成、等待窗口到期（5 秒，连续等待逐次延长，最长 5 分钟），或 steering 中断——而不是在所有作业完成时返回；要继续等待，请再次发起调用。",
+      "thinking_budget": 4096
+    },
     "b276c657a258e729aba930fc776f60e32d2214ef7da2f444f0dcbbc760f2efd5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8503,6 +8524,13 @@
       "text": "软件架构师，用于复杂的多文件架构决策。不适用于简单任务、单文件改动，或可在 <5 次工具调用内完成的任务。",
       "thinking_budget": 4096
     },
+    "d4344eae8254803137f25865f85c46b51c75307d717679db03494e4873348617": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "hub(i=\"…\", op=\"wait\", from=\"AuthLoader\")",
+      "thinking_budget": 4096
+    },
     "d4765d6a44811be04a9b807547e291ec0959c235dda55c82045567c4b40240be": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8550,6 +8578,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "你的补丁语言会指明要替换、删除或在其处插入的行，然后列出新内容。经验法则：以 `:` 结尾的头部后面跟 `+` 正文行；`DEL` 没有正文。",
+      "thinking_budget": 4096
+    },
+    "d5270bb904edf7a34effe250c5e49647827a121326d6499d907a2fff42ca05bc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-14；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "d54406eb1529dea5220d63c7e40aab270c263099cac19196f836332c71032713": {
@@ -8914,6 +8949,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`hidden` 默认为 `true`；针对被忽略的点文件，将其与 `gitignore: false` 搭配使用。",
+      "thinking_budget": 4096
+    },
+    "df75da8312284730387d8267e6940c72a26276ac8d2190ccdb1cab5faa48e5dd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "关闭操作会释放托管的标签页。它从不关闭通过 relay/CDP 附加的页面。`kill: true` 仅终止由此进程派生的应用程序，从不终止复用的浏览器进程。",
       "thinking_budget": 4096
     },
     "dfaac7ae2efdfb651974d1cf1331ef4b1bc17d29d6572ce693973aebff4bfb6d": {
@@ -9742,6 +9784,13 @@
       "text": "任何计算默认使用 `eval` 单元。Bash 是例外——仅限单个二进制调用或简短的事实计算管道（`wc -l`、`sort | uniq -c`、`diff`、校验和）。一旦命令出现循环、条件、heredoc、`-e`/`-c` 脚本、`$(…)` 嵌套或超过 2 个管道阶段，它就是一个程序 → `eval`。绝不编写多行 bash 或内联脚本 bash。",
       "thinking_budget": 4096
     },
+    "f31728be5a44a7959bb22325a23fa8d2dd2b0e4a770aa80c48711fe2e8223815": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "省略 `app` 即采用默认自动化；无需可执行文件路径。托管的 Chromium 会在首次使用时自动安装。",
+      "thinking_budget": 4096
+    },
     "f3373729f8e11d78d019ca1033dd47698a0dba74a2d98228defeb3cb42793856": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9936,6 +9985,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**仅限依赖。** 只有 B 确实需要 A 时才让 A 排在 B 前面；共享的前置步骤先内联完成，再扇出。“并行化”＝独立切片的并行执行，而不是让智能体来调度串行工作。缺一小块时：并行运行，让 B 通过 `hub` 去问 A！",
+      "thinking_budget": 4096
+    },
+    "f88a28e1302692b05b82db5f0fe740c104fe5863cac78fa9f570ab005b7a57ba": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`app.path`：启动指定的浏览器或 Electron 可执行文件。Chromium 系浏览器使用由 omp 拥有的配置文件，除非 `args` 提供 `--user-data-dir`。",
       "thinking_budget": 4096
     },
     "f8b8adea3e66dc8c2b043ec98a922dea7b2d6602fd8124e5f10059a263bebc2f": {

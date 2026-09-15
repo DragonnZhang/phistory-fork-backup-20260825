@@ -686,6 +686,13 @@
       "text": "管理由 terminal(background=true) 启动的后台进程。操作：'list'（显示全部）、'poll'（检查状态和新输出）、'log'（带分页的完整输出）、'wait'（阻塞直到完成或超时）、'kill'（终止）、'write'（发送不带换行符的原始 stdin 数据）、'submit'（发送数据并按 Enter，用于回应提示）。",
       "thinking_budget": 4096
     },
+    "1db171539301d3d4f840278be263e55007db5f443d2510c5991d2c68a96d4926": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "该子智能体必须查看的可选图片（最多 8 张）：本地文件路径或 http(s) URL——例如用户发来的截图、设计稿或图表。具备视觉能力的子智能体在首轮就会收到像素；不具备视觉能力的子智能体会获得供 vision_analyze 使用的路径提示。文本文件不属于此处——请把路径放到 'context' 中。",
+      "thinking_budget": 4096
+    },
     "1e07ea94119a2521b0da3602384f1652278b43513a56ad78ac97b74ab67058cf": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
