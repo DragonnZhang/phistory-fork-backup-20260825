@@ -2611,6 +2611,13 @@
       "text": "“实现注册、目录、购物车、结账” -> 多个复杂功能",
       "thinking_budget": 4096
     },
+    "c55c994c49b58dc8e99a248d8f5f8063e71fce3e15e53db61165a41ee4684b39": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作目录：$PHISTORY_WORKSPACE\n  工作区根目录：/\n  该目录是否为 git 仓库：否\n  平台：linux\n  今天的日期：2026 年 9 月 14 日（星期一）",
+      "thinking_budget": 4096
+    },
     "c5f7fec65f73f67115673021af0c9aa5d6600398f83dde9eee35f7658815a37c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

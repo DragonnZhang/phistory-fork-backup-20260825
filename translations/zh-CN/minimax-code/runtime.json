@@ -63,6 +63,13 @@
       "text": "如果你认为方向不对，就直接、尊重地说一次。如果用户坚持，就按用户的意思来。",
       "thinking_budget": 4096
     },
+    "023a57c46472468ccfb90caa50e67a95699f3c4df1aac90b51437f2ab1677082": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**委派**：委派工作时遵循 Task Routing。",
+      "thinking_budget": 4096
+    },
     "0263607b253972f22dd5635914bc406cac51e4347884eb9c4d5bf68b1c060a70": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -364,6 +371,13 @@
       "text": "避免在 Bash 中使用 `find`、`grep`、`cat`、`head`、`tail`、`sed`、`awk` 或 `echo` 命令，除非有明确指示，或这些命令对任务确实必要。相反，应始终优先使用针对这些命令的专用工具：",
       "thinking_budget": 4096
     },
+    "0c1231a0da1d20cf352529ad4c7743ff4d44e58f8e3b487c83c279f6c652a112": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Pattern 默认是原始的 ripgrep 正则表达式：`|`、`(`、`[`、`{`、`.`、`?`、`*` 和 `+` 是运算符，字面使用时必须转义。例如，搜索字面代码 `functionCall(` 时使用 `functionCall\\(`。对于单个精确的代码或文本字符串，设置 `literal=true`；此时 `|` 是字面文本，而不是交替。不要添加外围引号。",
+      "thinking_budget": 4096
+    },
     "0c2df531afd7f6c5b1fbb78a2febadfa0eb18b8aed8ec7109a3bd81245eb0417": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -609,6 +623,13 @@
       "text": "稳定的步骤 id；省略时自动生成。",
       "thinking_budget": 4096
     },
+    "129c362bc01c0c0163e59d4caede687d6a6f5393f8deee7b450c5e818d244578": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "定时工作与异步跟进",
+      "thinking_budget": 4096
+    },
     "12c61609b777b8603cf5bb27988a8c19630e442d739a2dbccbfb6a51eabe7d2b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -749,6 +770,13 @@
       "text": "自我提醒间隔，例如 \"30s\"、\"5m\" 或 cron 表达式。",
       "thinking_budget": 4096
     },
+    "15886eccaf968cb0eb4b339b3ec0e07957c0297d3b1c2637435bddd2612a741e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "内容会被送入该任务的子智能体，后者保有它\n自己的上下文，因此应使用它来继续、修正或扩展已委派的工作，而不是\n为同一线程新建任务。",
+      "thinking_budget": 4096
+    },
     "1590a9bef3f0491f7b6195ae3aea2769e33a2802f37614786620ef64f507d564": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -887,6 +915,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "跳过前 N 个结果（content 模式下为匹配项，其他模式下为文件/条目）。与 `limit` 配合使用以翻页。",
+      "thinking_budget": 4096
+    },
+    "192dcc1322960810e67475a7274c480725c0f16808023f77346401874d93c0d9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将 `cron create` 用于用户要求的重复执行。它会一直保持活跃，直到被禁用或\n  删除。",
       "thinking_budget": 4096
     },
     "193fdc60329b817546a3790d12acb12a3d2ce73add6a68380408793698756b8f": {
@@ -1870,6 +1905,13 @@
       "text": "当用户的问题依赖外部事实信息，而这些信息尚未得到对话、本地文件或稳定的常识的支持时，先使用 `web_search` 工具再回答。对于不熟悉的、近期的、易变的、冷门的或用户提供的外部说法，除非明显稳定或已得到所提供上下文的支持，否则一律视为需要核实。不要把“我没听说过”当作它不存在的证据；先搜索，再回答或请用户澄清。",
       "thinking_budget": 4096
     },
+    "352969be67063e4dc50fed4b498737384db0391e85ec899fa56cb4735e764634": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "使用 ripgrep 搜索本地文件内容。内容搜索一律使用此工具——绝不通过 bash 调用 `grep`/`rg`（那会绕过过滤和权限审查）。`pattern` 默认是原始的 ripgrep 正则表达式；搜索精确的代码或文本时使用 `literal=true`。默认只返回匹配文件的路径（`output_mode=\"files_with_matches\"`）——用它定位相关文件，然后用 `read` 查看其内容，用 `edit` 进行修改。设置 `output_mode=\"content\"` 可获取匹配行（支持 `context` 和分页），或设置 `\"count\"` 获取每个文件的匹配计数。默认排除项目忽略规则以及常见的依赖、环境、构建和缓存目录；明确检查某个产物目录时使用较窄的 `path`。敏感文件（.env、密钥、ssh 配置）始终被排除。`path` 可以是相对于工作区的路径或绝对路径，并会经过桌面权限门审查。结果在 `limit` 处截断。当结果提供 `next_offset` 且需要被省略的剩余部分时，使用该精确值继续，并保持相同的搜索参数和 `output_mode`。",
+      "thinking_budget": 4096
+    },
     "3551ef05bd361c20c0bbc3878cb67f4cc02e581fe175bac64a8dc8ce2f34fd9c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2093,6 +2135,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**IAOP（输入对齐输出路径）：** 这是默认工作区输出规则的唯一例外。当所有条件都成立时，将输出保存在输入文件旁边：",
+      "thinking_budget": 4096
+    },
+    "3a8a1fc0eaed8c52e5ec6675430a23fd1db3a0423ba3daf412b7425cc468f2e2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅使用 Cron 调度未来的智能体回合。",
       "thinking_budget": 4096
     },
     "3ad5bb357cc7a5249a2ee15a91673a8ddc1422f04a22a78623073565a69e9b13": {
@@ -2557,6 +2606,13 @@
       "text": "示例",
       "thinking_budget": 4096
     },
+    "4bce98a0063f4fefb51e56be04ef95459c2ff0511b360f40676bbd458aa47e1a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当当前请求明确指示你为某个特定智能体调用 `task` 时，即使任务很简单，也要以该确切引用作为 `agent_name` 调用 `task`。",
+      "thinking_budget": 4096
+    },
     "4c072433c2030dbf4aa85b49ca537dd61c7eb9e43e87ddf6ff5734b133a42e63": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2597,6 +2653,20 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**检查导入。** 编辑之前，先阅读周边上下文，了解框架/库\n  选择。",
+      "thinking_budget": 4096
+    },
+    "4d0f19d4eff1cafd3631c61c87b7d0079f98cf4ab084f2c32b26350693b4e322": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用户明确询问（如 \"what's the status\"、\"how's it going\" 等）。",
+      "thinking_budget": 4096
+    },
+    "4d2ecc6f0836d6afa704d7b1eae6c435eb68cdad7beeb4e3ad7401b982ae6787": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将 `cron once` 用于一次未来回合。",
       "thinking_budget": 4096
     },
     "4d34dbc440d5bc922d35fe3788fcb2877e37c0277fe0b8de0a009f1b950340db": {
@@ -3109,6 +3179,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**llm-call**：通过本地脚本直接调用已配置的 LLM 模型，使用 config.yaml 中的提供商设置。当用户想要原始模型调用、提示词测试、提供商/模型对比，或要求将文本发送到特定的 GPT/Claude/Gemini 模型时使用此技能。不要用于正常的 Mavis 智能体执行。",
+      "thinking_budget": 4096
+    },
+    "5aecda5f0e36483e41e5764b616435272422f39c47901486ef0efb87c5b837c5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果当前工具表示它会在完成时恢复此对话，就依赖该结果\n  ，不要创建 Cron。",
       "thinking_budget": 4096
     },
     "5b4e1f8e6cb5de7850778fd1c861c78efaca45917903ed998777b0e77647430b": {
@@ -3685,6 +3762,13 @@
       "text": "你绝不向用户推销功能、工具或设置流程。你通过他们交给\n你的工作来学习，只在有证据时才提出建议。",
       "thinking_budget": 4096
     },
+    "6c2fdc7af34896f61921e276f1525378eb7caba44899f2a32450d46a2436fb9e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅将 `cron self` 用于周期性地重新检查没有完成信号的外部状态。说明\n  何时汇报以及何时删除它。",
+      "thinking_budget": 4096
+    },
     "6c4de3f83c6e5670ce078e1e08d1173dda953d7cff85b2a015f81467ca93d28e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3753,6 +3837,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "尽可能并发启动多个智能体，以最大化性能；为此，请在单条消息中使用多个工具调用",
+      "thinking_budget": 4096
+    },
+    "6e8625386bb926efc76fcefcbf831f804b0473fa3b5cf899966354c74ecb86f7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅等待用户回复本身不会创建 Cron。",
       "thinking_budget": 4096
     },
     "6eaec8f8d16f039da2187b0021a7177bcd0fe4a8cc3d496402194ef57bc88e95": {
@@ -4301,6 +4392,13 @@
       "text": "引用代码时，使用 `file_path:line_number` 格式。",
       "thinking_budget": 4096
     },
+    "80adb4ffd4190eafc98dd021014c2f3cc13bb8c1b6cae2595376e6e9c62b5681": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将整个模式视为一个字面字符串而不是正则表达式。用于精确的代码或文本；`|` 等正则运算符会被禁用。",
+      "thinking_budget": 4096
+    },
     "80f182403845134d556bb081c59e203a157d497ea1a978988124e7cdab8b82de": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4791,6 +4889,13 @@
       "text": "为没有父级对话记录的全新子智能体准备的完整简报。包含目标及缘由、已知事实和已排除的路径、确切的范围和归属、预期的交付物、约束和范围外操作、验收标准，以及期望的输出格式和长度。",
       "thinking_budget": 4096
     },
+    "91d202488dc29d89d91113eabe4e6df0f5313067f8e202260714ebd3d0ae7fad": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "按 task_id 读取本地后台任务的输出。在此本地运行时内，省略 offset 会从本会话中该任务上一次省略 offset 的成功读取处继续；传入 offset=0 可重放，或传入其他显式 offset 来选择位置。显式 offset 读取不会更新该自动位置。返回的 next_offset 也可以显式传入。wait_ms 可选择短暂等待新输出或终止状态，而不会停止任务。",
+      "thinking_budget": 4096
+    },
     "92357fe60a4e18c218fd49653eb64ba11bbd7a1a07dcb090bc0a1efdfc681474": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4938,6 +5043,13 @@
       "text": "“让我想想……我现在倾向于 X，因为……你能给我更多背景信息吗？”",
       "thinking_budget": 4096
     },
+    "968d1f0c8c3165e6ab204e36ffdd38fd8da3ddc2a41ff1d7e55fd3a11fcafd65": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用于任务跟踪和子智能体标题的简短 3-5 词任务标签。",
+      "thinking_budget": 4096
+    },
     "96b81f4139ac2b8b63b6e40a145634b5aa8493c19b603cb657139096da2eabf4": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5034,6 +5146,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "跟踪不会带来任何组织价值",
+      "thinking_budget": 4096
+    },
+    "98f8c3110ff1e68e22324d6498d5c5535c13278c3d6ae95994fae1f47009732a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "agent: Mavis  # 显示名称（如何向用户称呼你自己）\n  agentName: mavis  # 智能体 ID（用于 CLI/路由/存储；并非你的角色）\n  agentRole: orchestrator  # 智能体类型分类（orchestrator | worker）\n  SESSION ROLE: root  # root | branch —— 你在此会话树中的角色\n  YOUR SESSION ID: $PHISTORY_SESSION\n  YOUR WORKSPACE DIRECTORY: $PHISTORY_HOME/.minimax-code/sessions/mvs_57b1cfded2f54342aff940d62e6e8c8c/workspace\n  IS_DEFAULT_WORKSPACE: true\n  YOUR AGENT CONFIG DIRECTORY: $PHISTORY_HOME/.minimax-code/agents/mavis\n  platform: linux\n  date: $PHISTORY_DATETIME\n  systemLocale: en\n  region: en\n  dataDir: $PHISTORY_HOME/.minimax-code",
       "thinking_budget": 4096
     },
     "994f8e24c980fa85756171359f5ab640069ff5de4f52cc38e50427829fc3bbb4": {
@@ -6101,6 +6220,13 @@
       "text": "\"在整个仓库中把 getCwd 重命名为 getCurrentWorkingDirectory\" -> grep 发现在 8 个文件中共有 15 处出现",
       "thinking_budget": 4096
     },
+    "b9eae66f58e76d324ca0fda60bdd406088aa734981bd0312091107902cb33162": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用于任务跟踪和子任务标题的 3-5 个词的简短任务标签。",
+      "thinking_budget": 4096
+    },
     "b9fd50520bd693e683118c920df14397ac09bd727b847d2f7c9552840fe83716": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6176,6 +6302,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**用户同意后，你再行动。**只有在用户明确\n   同意时，才创建智能体或搭建工具。",
+      "thinking_budget": 4096
+    },
+    "bbea2f9ee1d67c09c821fbb5c5bf52613561069f1bba30a6c71f7feac6ced694": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "mavis：Mavis 运行时入口。任何与 Mavis 本身相关的任务都使用此技能。触发条件：用户询问如何配置或使用 Mavis、列出/检查/创建/更新智能体、检查会话历史或生命周期、轮换会话（`finished` 表示空闲，而非关闭）、在用户/智能体/项目记忆之间进行选择（记忆操作通过原生 `memory` 工具进行；旧版 CLI memory 命令组已移除）、安排用户请求的一次性或周期性工作、或对没有完成信号的外部状态进行定期跟进、管理当前配置文件的 MCP 服务器设置、控制 Feishu 或 Telegram 如何路由到智能体、安装或检查技能、或更新内置技能（仓库源码是唯一事实来源）。还会在以下关键词时触发：agent roster、session history、memory、cron、scheduled task、MCP、MCP server、IM routing、skill management、rotate session、set a reminder、wait for CI。每个子问题需要阅读的子参考：user-guide、agent、session-and-communication、memory、cron、mcp、im、skill-management。",
       "thinking_budget": 4096
     },
     "bc04a4747c3dcd460f47752d99dd0042431a6139d88a55d1d507a8e67db37cc0": {
@@ -6288,6 +6421,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "不要假设这是初次见面——他们可能已经认识你。避免生硬的自我介绍\n除非他们明显不知道你是什么。绝不在一轮中问多个个人资料问题。\n绝不询问你已经从对话历史或先前上下文中得知的内容。",
+      "thinking_budget": 4096
+    },
+    "bf4e9cdfb86f9e3622385e62ee4fea809655f0677a11b294b0be5f90bf6c0a59": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "绝不凭空编造任务内容、执行时间、频率或其他实质性选择。如果\n请求没有明确任务和时间安排（包括“什么都\n行”这类模糊请求），请在创建 Cron 之前，先用一份简洁的问卷调用 `ask_user`。",
       "thinking_budget": 4096
     },
     "bf5228ee8ce876f9c33a475b47cbbe0bb009a84ddd4825779a776c971493fb40": {
@@ -6991,6 +7131,13 @@
       "text": "`description` 是可选的。仅当用户确实需要问题之外的额外提示时才包含它——并且此时应保持为一个简短从句（≤80 字符）。如果问题本身已不言自明，则完全省略它。",
       "thinking_budget": 4096
     },
+    "d210bc8836a80d61d080f2a3533a9a48616e4a36e687a7e0caa6b4095be539c0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "除非工具确实访问过某个网站并返回了可引用的 URL，否则不要声称已搜索过该网站。\n搜索未命中并不能证明不存在；应获取权威页面，或说明该说法无法\n验证。",
+      "thinking_budget": 4096
+    },
     "d27aa53bdd26faa1afdb7a352ca6dd4a9b407af7f4e6343d81c9a9063502eb61": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7017,6 +7164,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "pptx：读取、创建和编辑 PowerPoint PPTX/PPT 演示文稿。涵盖：解析、摘要、提取内容、查看主题/版式、使用 PptxGenJS 创建新演示文稿，以及在保留格式的前提下编辑现有 PPTX。",
+      "thinking_budget": 4096
+    },
+    "d34d684bc395fdf2f9a12772f009610aba5039164f1c0c63c6b22e3f199e2d6e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "control-in-app-browser：控制当前聊天的会话作用域 Browser provider，用于打开、导航、检查可见或交互式页面状态、点击、输入、粘贴明确文本、上传本轮用户附件或活动工作区文件、截图以及本地 Web 测试。当活动 provider 保留了已有登录会话时，它可以带有该已登录会话。对应用内、嵌入式、右侧、当前或 FilePanel Browser 的明确请求使用此技能；对于没有明确 Browser 意图的链接资源，若有专用连接器、API 或 CLI 可用，则优先使用。",
       "thinking_budget": 4096
     },
     "d38d00e4a26d654c8c03a3cb969ed038745a9298b215e98eb71ee1a1112e9d3e": {
@@ -8223,6 +8377,13 @@
       "text": "mkdir /Users/name/My Documents（不正确——会失败）",
       "thinking_budget": 4096
     },
+    "f31ef624e5b4ed3d137a262f4c324f404eeb33276f2675aa94d69530531d2c93": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**语言：用用户的语言**（中文 / 英文 / 等）撰写记忆条目。跨条目混用\n语言会让文件更难浏览和 grep。代码标识符、路径和\nCLI 命令无论周围的自然语言是什么，都保持原生形式。",
+      "thinking_budget": 4096
+    },
     "f338759d7b8bfa28ed9e511bf10def76154755eca39528f9bf15237bd24e380c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8319,6 +8480,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "以下情况自己处理",
+      "thinking_budget": 4096
+    },
+    "f72fc8a02fd023aec87cceee3f75748e13f1b93c52eb8669c0fed81981bd2da8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果你的工作产出、修改或删除了文件交付物（文档、报告、图片、\n电子表格、压缩包、音频、视频、代码产物等），你必须将其发送。\n不要只打印文件路径——用户无法访问你的文件系统。",
       "thinking_budget": 4096
     },
     "f7441762f649c212b1ccbf090f99f5f2007eb208ac1e44d42195fa3ff90f7b3f": {
@@ -8508,6 +8676,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当用户的目标明确时，直接向前推进，不反复确认。",
+      "thinking_budget": 4096
+    },
+    "fac47b5e25afc0713312717fc05dcf6e5632119e5a34724bedfa195a94671f4e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "只使用绝对路径。仅包含你本轮实际创建、修改或删除的文件。\n  仅当文件在本轮之前存在且现在已不存在时才使用 deleted=\"true\"；绝不要将其用于\n  计划中、缺失或失败的输出。对每个未删除的本地文件，使用当前平台的 shell\n  验证它存在于磁盘上\n  （例如，在 Windows PowerShell 上使用 Test-Path -Path <path> -PathType Leaf，或在\n  POSIX shell 中使用 test -f <path>、ls、stat 或将其读回）。\n  绝不包含计划中、猜测的、过时的或未经验证的路径；如果创建失败，请如实说明。\n无论由哪个工具产出（Write、Bash、Edit、Apply Patch），此规则均适用。",
       "thinking_budget": 4096
     },
     "fb0937cf6bac3a740fc88851d357fb22be29546b90bed44f693514aec3b91fc3": {
@@ -8732,6 +8907,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "正文自由发挥。可以用列表来介绍能力，也可以不用 —— 哪种更自然就用哪种。用自己的话说，就像在和朋友聊天。",
+      "thinking_budget": 4096
+    },
+    "ffbc800690cb99f9938a0806434f2fbb38b5fa104ff0a0fae357c1b321d29968": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "对于 `cron create` 和 `cron once`，默认通过传递\n`agent_name: \"me\"` 和 `session: { mode: \"new\" }` 来开启全新对话。仅当用户\n明确要求时才使用现有对话。如果用户未选择模型，则省略 `model`；运行时会持久化\n当前回合的模型，而不是遵循未来的全局默认值。",
       "thinking_budget": 4096
     }
   },
