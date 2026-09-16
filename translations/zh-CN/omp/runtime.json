@@ -7530,6 +7530,13 @@
       "text": "不确定性：在论断处注明；点明权衡；选择保守/安全的选项。",
       "thinking_budget": 4096
     },
+    "b9726596214fd77fc64ff8168c980847479194996b219893103a351802456812": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "作业 ID 是进程局部的。结果已投递或已被快照恢复的 ID，会在之后不久（约 30 秒）过期；未消费的行在结算后最多五分钟内仍可查看。之后，请使用智能体 ID 配合 `hub send`、`agent://<id>` 或 `history://<id>`。",
+      "thinking_budget": 4096
+    },
     "b9b383b6fe6523a4ee65f8e5e0bee133ea0de7d64eb61ab1d9a3821bb0263002": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7885,6 +7892,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "Markdown 标题是块的开头。对 `##`/`###` 的块操作：覆盖整个小节，穿过更深层标题，直到下一个同级或更高级标题。小节 `PUT >N*:` 之后：正文以空行结尾，用于分隔下一个标题。",
+      "thinking_budget": 4096
+    },
+    "c42f9b9a44e8218383acff24d31f452381342386b4b189d530d4126ca35a3cd8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "作业行是进程局部的。结果已投递或已被快照恢复的行，会在之后不久（约 30 秒）过期；未消费的行在结算后最多五分钟内仍可查看。之后，请使用智能体 ID 配合 `send`、`agent://<id>` 或 `history://<id>`。",
       "thinking_budget": 4096
     },
     "c44e5cbbdb5426eb4620aed8645f4327cb6f96cf39b1c3b1af2015ada71466ce": {
