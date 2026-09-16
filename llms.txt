@@ -16,7 +16,7 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 - [Claude Code 2.1.273 — Default](https://phistory.cc/captures/claude-code/2.1.273/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Codex CLI 0.154.0 — Default](https://phistory.cc/captures/codex/0.154.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [DeepSeek Harness 0.1.5-rc.1 — Default](https://phistory.cc/captures/dsh/0.1.5-rc.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Antigravity CLI 1.2.3 — Default](https://phistory.cc/captures/antigravity/1.2.3/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Antigravity CLI 1.2.4 — Default](https://phistory.cc/captures/antigravity/1.2.4/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Grok Build 1.0.30 — Default](https://phistory.cc/captures/grok/1.0.30/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [MiniMax Code 3.0.72 — Default](https://phistory.cc/captures/minimax-code/3.0.72/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Kimi Code 0.43.1 — Default](https://phistory.cc/captures/kimi-code/0.43.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
