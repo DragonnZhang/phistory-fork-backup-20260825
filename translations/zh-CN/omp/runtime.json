@@ -1114,6 +1114,13 @@
       "text": "试金石：一次外部 CLI 调用，或返回计数、频率、集合差或校验和的简短管道 → bash。需要控制流、状态，或要与 shell 引用规则纠缠 → `eval`。只是移动、分页或裁剪某个工具本可获取的字节 → 使用该工具。",
       "thinking_budget": 4096
     },
+    "17f9bc3dcbfd2741cd0768d4e33d32806d8b6aa4c396e98459d3260db5f880a2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-16；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "17fd9e8d2b34a18b2cb5f150680764b6d8bc540672a2f00996378749d05ff10d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2247,6 +2254,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "宽高比",
+      "thinking_budget": 4096
+    },
+    "365a435a1ee0f87af22b8f75e2e021092c9edbe3cc7963981d1136a7f216d74a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "内部 URI 会自动解析为路径。",
       "thinking_budget": 4096
     },
     "3696ace881ba1760c1d4aa3538604cfff1df6935343f90528be7efd938f4c628": {
@@ -9089,6 +9103,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "wait：要监视的作业 ID（省略 = 所有正在运行的作业）；cancel：要终止的作业 ID",
+      "thinking_budget": 4096
+    },
+    "e2d1a55d9f8734b209cd543d8c74aee096736a6c81a84b13b6401b440e5b9ca6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本地路径、内部 URI 或 URL。支持内联选择器。",
       "thinking_budget": 4096
     },
     "e31b44cc57d9359d3018da0a73f09395b4cfb63278fcc286ffedc37d96031df8": {
