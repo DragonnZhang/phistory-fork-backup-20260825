@@ -3000,6 +3000,13 @@
       "text": "今天是 2026-08-29；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
+    "49cbcddcbced169704a5ca633c1654ad3d15983b0090277a37cecdb6fce6ae08": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-17；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "49f0d1988f8093816f5dcb0819087bf455ca9ac2e74293dc1c581ef86e6fef9c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

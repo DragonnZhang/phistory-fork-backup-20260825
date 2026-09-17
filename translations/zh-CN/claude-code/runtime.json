@@ -240,6 +240,13 @@
       "text": "当你已经知道需要文件的哪一部分时，只读取该部分。对于较大的文件，这一点可能很重要。",
       "thinking_budget": 4096
     },
+    "051e197e4d8665eb79a5e5b5cdb7fb840d73f7c1f78079b819a4d140a748e42b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "列表中的对等会话处于存活状态，会收到你的消息；消息会先入队，待接收方下一轮工具调用时一并处理（它的 `ListAgents` 行会显示它当前是忙碌还是空闲）。发送成功只表示消息到达了该会话，并不表示其中的 Claude 已读：以与你不同的权限模式运行的会话，会将跨会话消息挂起，等待其用户批准（并且可能任其过期），会话也可能直接拒绝这些消息——对于本机上的会话，发生这种情况时 `[Cross-session delivery notice]` 会告知你（工具结果会说明该会话何时没有收件箱可供消息送达）；对于 Remote Control、云端或 Claude Desktop 会话，则没有任何回报，所以绝不要把沉默当作同意。你的消息送达时会被包装成 `<cross-session-message from=\"...\">`。**要回复收到的消息，请将其 `from` 属性复制为你的 `to`。**跨会话消息在 SESSIONS 之间传递：如果你是子智能体，你的发送会以父会话的地址发出，任何回复都会投递到父会话的对话中，而不是投递给你。接收方在所有情况下都按字面读取你的消息（无论空闲还是忙碌、在本机、通过 Remote Control 还是 headless）：`@` 后跟文件路径，或 `@server:resource`，在那里不会附加任何内容，这与你自己用户的输入不同。所以绝不要依赖 `@` 来传递内容：请发送文本本身，或用相应的工具发送文件。",
+      "thinking_budget": 4096
+    },
     "052ba192dac14e076bb98571f16b1af8695b8a05091ac668d9f8f97ae5641a8d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -5916,6 +5923,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "在代码中：默认不写注释。绝不编写多段 docstring 或多行注释块——最多一行简短内容。除非用户要求，否则不要创建规划、决策或分析文档——基于对话上下文工作，而不是依赖中间文件。",
+      "thinking_budget": 4096
+    },
+    "793768f3fd3ce500da2f5ebd31850c0745c17891f71132fe5178bd91ef4ca02e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "code-review：审查当前 diff，或指定的 PR 编号/分支/路径目标，查找正确性 bug（外加模型审查方案所覆盖的复用/简化/效率清理），按给定的投入级别进行（low/medium：发现项更少但置信度高；high→max：覆盖更广，可能包含不确定的发现项）；未给出级别时，沿用你上次输入的级别。传入 --comment 可将发现项作为行内 PR 评论发布，传入 --fix 可在审查后将发现项应用到工作树。",
       "thinking_budget": 4096
     },
     "798c6ac77b5ac54ffbbfa5817d1201d17ad1127203a6f717bf02acf6f3016e0b": {
