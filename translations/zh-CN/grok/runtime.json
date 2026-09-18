@@ -2158,6 +2158,13 @@
       "text": "subagent_type=\"explore\", description=\"Find TODO comments in tests\", run_in_background=true\n]\nassistant: [收到两个 subagent_ids]\nassistant: [对第一个 subagent_id 调用 get_task_output 并设置 block=true]\nassistant: [对第二个 subagent_id 调用 get_task_output 并设置 block=true]\nassistant: [向用户总结两个结果]",
       "thinking_budget": 4096
     },
+    "4b1312133d8f6c2d83939c906fa79e833e0ec1d7900f7c9e827e62a7767654a7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "视频中段的关键帧锚点，最多 4 个条目；每个锚点将一幅图像固定为在严格位于片段内部的时间戳处原样出现（端点请使用 `first_frame` / `last_frame`）。时间戳会对齐到引擎的 1/3 秒网格，因此彼此间隔小于 1/3 秒的锚点会被拒绝。",
+      "thinking_budget": 4096
+    },
     "4b1ce29b5d7e0f84502c8c1efb01e714a603cd97f943f222e8a843808c10a5e6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2444,6 +2451,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "task_ids：要等待的任务 ID 列表（来自 is_background=true 的命令或 run_in_background=true 的子智能体）",
+      "thinking_budget": 4096
+    },
+    "54411b5f3c49868581d72169c851efffd34952544d0b6ac7bc0c977180d01765": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本次会话的草稿文件是 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-h6ti44gt/01a0ab36-a99b-7a60-93cd-b2c667728023/feedback_drafts.json.\n如果用户的反馈可以从文档中得到解答（例如界面元素位置或安装配置），请在本地或在线阅读 Grok Build 文档，并随所创建的草稿一并回答。",
       "thinking_budget": 4096
     },
     "545109d4afbb65ee36c599bfb1a2539708ca400c217144400296309ac5d7768b": {
@@ -2972,6 +2986,13 @@
       "text": "search_replace 工具的输入。",
       "thinking_budget": 4096
     },
+    "6507d615eaf7169e14f60106c4bfefd4baec5bad05371863b951b92bcfb8c1a0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在 `timestamp_s` 处原样出现的图像。绝对文件系统路径、HTTPS URL 或 `data:image/...;base64,...` URL。",
+      "thinking_budget": 4096
+    },
     "65cfa999039288cc2db4b05d9935b6a3895fb383c4c1ac9d8164437e12b3ccdc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3257,6 +3278,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "子智能体启动时没有父级对话历史，因此要像给一位没有任何背景信息的聪明同事做简报那样来编写。你的说明应包括：",
+      "thinking_budget": 4096
+    },
+    "70d4389de751c3e1a79b8c49387fa66d6c981d2f5a0461b62193d5c69c139396": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的图像，固定为视频的精确末帧——片段结束时正好到达该帧。格式与 `first_frame` 相同。将 `first_frame` 和 `last_frame` 设为同一图像可实现完美循环。",
       "thinking_budget": 4096
     },
     "7180763c3fbb1b99738fa84d3b24836d2c6facd9724caab349568452630c82dc": {
@@ -4275,6 +4303,13 @@
       "text": "先回答用户的实际问题——尤其是“为什么”类问题——再给出支撑细节。",
       "thinking_budget": 4096
     },
+    "94b51366859b9b6aa3098b20d8a2ec07e7b46bd253ad9a5b2ce00e7865797c40": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "根据参考图像、预设声音和/或固定的关键帧，在必需的文本提示词引导下生成视频；返回保存后视频的绝对路径。告诉用户视频保存位置时，请使用简短的会话相对路径（例如 `videos/1.mp4`）而非绝对路径来指代它，以便渲染为可点击并打开视频的链接。最多提供 14 个 `images`（风格/内容参考：人物、物体、服装、场景——它们会以重新渲染的形式出现，而非作为字面帧）和/或最多 3 个 `voices`（主体说话时使用的预设声音标识符）。若要改为固定精确帧，请设置 `first_frame` 和/或 `last_frame`（这些图像会原样作为视频的首帧/末帧出现；两者都设置可在两个精确帧之间插值，或设为同一图像以实现完美循环）和/或 `keyframes`（最多 4 个严格位于片段内部的 `{image, timestamp_s}` 锚点，对齐到 1/3 秒网格）。`images`、`voices`、`first_frame`、`last_frame` 或 `keyframes` 中至少需要提供一项。在提示词中用 `<IMAGE_i>` 标记参考图像，用 `<AUDIO_0>` 标记声音，依此类推；索引空间遵循上传顺序 `first_frame`、`images`、`keyframes`、`last_frame`——因此设置了 `first_frame` 时，第一个 `images` 条目是 `<IMAGE_1>`，而不是 `<IMAGE_0>`。固定的帧无需提示词标记（它们的时间点是明确的）。示例：reference_to_video(prompt=\"The person from <IMAGE_1> walks toward the camera, speaking with the voice from <AUDIO_0>\", first_frame=\"/Users/me/wide_shot.jpg\", images=[\"/Users/me/person.jpg\"], keyframes=[{\"image\": \"/Users/me/closeup.jpg\", \"timestamp_s\": 3.0}], last_frame=\"/Users/me/closeup.jpg\", voices=[\"eve\"], aspect_ratio=\"16:9\", duration=6, resolution_name=\"480p\")",
+      "thinking_budget": 4096
+    },
     "94b7e0a3db1371002c132f6afedc13ed01e73e2e0c1a18ca045abb1c68374f21": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5218,6 +5253,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "默认不写注释。仅当“为什么”不明显时才添加：隐藏的约束、微妙的不变量、针对特定 bug 的变通方案，或会让读者感到意外的行为。",
+      "thinking_budget": 4096
+    },
+    "b094cb1cc57055aca9b4009d50dad861f8a3b44cce03b5b923a7886293a0d72c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的图像，固定为视频的精确首帧——它会原样出现在开头（与 `images` 不同，后者会限定视频并以重新渲染的形式出现）。绝对文件系统路径、HTTPS URL 或 `data:image/...;base64,...` URL。与 `last_frame` 结合使用可在两个精确帧之间插值。",
       "thinking_budget": 4096
     },
     "b0f09ef74afd8f49252b5905f5352eda48b869a705ece0cb2b265eafb48e0ed7": {
@@ -6802,6 +6844,13 @@
       "text": "隔离模式：\"none\"（默认，共享工作区）或 \"worktree\"（隔离的 git 工作树）。工作树模式可防止子智能体的改动影响父工作区。",
       "thinking_budget": 4096
     },
+    "e6636a36a929239a5f8c51b5e449e795cfc484dbe80b44c362a14e1b35e9ca98": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "图像出现的时间（以秒计），严格位于片段内部（0 < t < duration）。在服务端对齐到引擎的 1/3 秒关键帧网格；两个锚点间隔小于 1/3 秒会被拒绝。",
+      "thinking_budget": 4096
+    },
     "e66c282e0e68ec8fb56df4122344352a979d721cb3e0f4424cc7e3131cefe749": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7346,6 +7395,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**部分更新与完整更新（`merge` 参数）**：",
+      "thinking_budget": 4096
+    },
+    "f7536be08253b722a8493a8ce8beb0d628cd6977e38a61b3096f6d87dea4fe11": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "参考图像，最多 14 个条目；这些图像用作生成视频的风格/内容参考（人物、物体、服装、场景）。每个条目可以是绝对文件系统路径、HTTPS URL 或 `data:image/...;base64,...` URL。在提示词中用 `<IMAGE_0>`、`<IMAGE_1>` 等引用它们。当提供了 `voices`、`first_frame`、`last_frame` 或 `keyframes` 时可以为空。",
       "thinking_budget": 4096
     },
     "f77869474fbf831b74a50059d0c9d8b72064a3db8bf2a81823889900a5d58dbb": {

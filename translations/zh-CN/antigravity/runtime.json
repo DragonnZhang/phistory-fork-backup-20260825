@@ -1609,6 +1609,13 @@
       "text": "你必须为所有文件和代码符号（类、类型、函数、结构体）创建可点击的链接。使用 `file://` 方案的 github 风格 markdown 链接（例如 [filename](file:///path/to/file) 或 [ClassName](file:///path/to/file#L10-L20)`）。对于 Windows，路径使用正斜杠。",
       "thinking_budget": 4096
     },
+    "8a4556c7c62afe4e187a4cdf553b9720bcc1c708715094f6fe15e6fe4a93d0cc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用简短的 2-5 词名词短语描述具体任务。像句子一样首字母大写。一些示例：'Directory analysis'、'Web search'、'Git status check'、'Test execution'、'Code search'。",
+      "thinking_budget": 4096
+    },
     "8a95afa34509cf167523e0c39428846c098b8d7667ddc9bac727c03cd66f02e3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2029,6 +2036,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "一次最多可查看 800 行",
+      "thinking_budget": 4096
+    },
+    "ae62c2af0e4cecb1ce3eba694f36f735179f42679e77acf7976d9e654943e243": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用 -ing 形式的简短 2-5 词短语描述具体动作。像句子一样首字母大写。一些示例：'Analyzing directory'、'Searching the web'、'Checking git status'、'Running tests'、'Searching code'。",
       "thinking_budget": 4096
     },
     "afe11a856bc57959b05e32a3ac3072dd1d29be4bc18986cf38cb0dfedc803de3": {
