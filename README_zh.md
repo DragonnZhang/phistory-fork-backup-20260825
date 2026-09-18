@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-09-17 13:45 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-09-18 00:44 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -79,12 +79,12 @@ python -m http.server --directory .phistory-cache/site
 
 ## 抓取状态
 
-最近抓取更新：2026-09-17 13:45 UTC
+最近抓取更新：2026-09-18 00:44 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.274 - 2026-09-16](captures/claude-code/2.1.274/variants/default/prompt.md) | 419 | 419 | 2026-09-17 01:39 UTC |
-| Codex CLI | [0.154.0 - 2026-09-09](captures/codex/0.154.0/variants/default/prompt.md) | 88 | 122 | 2026-09-09 22:42 UTC |
+| Claude Code | [2.1.275 - 2026-09-17](captures/claude-code/2.1.275/variants/default/prompt.md) | 420 | 420 | 2026-09-18 00:43 UTC |
+| Codex CLI | [0.155.0 - 2026-09-17](captures/codex/0.155.0/variants/default/prompt.md) | 89 | 125 | 2026-09-18 00:44 UTC |
 | DeepSeek Harness | [0.1.5-rc.2 - 2026-09-10](captures/dsh/0.1.5-rc.2/variants/default/prompt.md) | 11 | 57 | 2026-09-17 13:44 UTC |
 | Antigravity CLI | [1.2.5 - 2026-09-17](captures/antigravity/1.2.5/variants/default/prompt.md) | 48 | 48 | 2026-09-17 07:57 UTC |
 | Grok Build | [1.0.34 - 2026-09-16](captures/grok/1.0.34/variants/default/prompt.md) | 135 | 135 | 2026-09-16 17:14 UTC |
@@ -96,7 +96,7 @@ python -m http.server --directory .phistory-cache/site
 | Kimi CLI | [1.50.0 - 2026-09-01](captures/kimi/1.50.0/variants/default/prompt.md) | 22 | 22 | 2026-09-01 17:26 UTC |
 | opencode | [1.18.31 - 2026-09-14](captures/opencode/1.18.31/variants/default/prompt.md) | 115 | 115 | 2026-09-14 21:02 UTC |
 | Pi | [0.85.1 - 2026-09-05](captures/pi/0.85.1/variants/default/prompt.md) | 45 | 45 | 2026-09-05 13:05 UTC |
-| Oh My Pi | [18.2.4 - 2026-09-17](captures/omp/18.2.4/variants/default/prompt.md) | 101 | 101 | 2026-09-17 13:45 UTC |
+| Oh My Pi | [18.2.5 - 2026-09-17](captures/omp/18.2.5/variants/default/prompt.md) | 102 | 102 | 2026-09-18 00:44 UTC |
 
 ## 项目趋势
 

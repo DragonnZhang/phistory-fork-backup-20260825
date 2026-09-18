@@ -7705,6 +7705,13 @@
       "text": "错误 — `-` 行 / 裸上下文行并不存在；删除由范围完成，正文只是新内容。",
       "thinking_budget": 4096
     },
+    "bdd5c61d8dfa0e622725f028ad4808ab6fb71b9d50f940820786dc72926e8705": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-18；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "be56daec0bbbbc3013a3d8d8bb95858e6d34d69da412db423058c2a9be6aa08d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
