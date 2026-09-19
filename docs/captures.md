@@ -4,6 +4,7 @@ Full generated index of archived prompt snapshots. The short project overview li
 
 | Agent | Version | Variant | Published | Captured | Snapshot | Static | Candidates | Raw Trace |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Claude Code | `2.1.278` | `default` | 2026-09-19 01:48 UTC | 2026-09-19 06:29 UTC | [claude-code 2.1.278 [default], published 2026-09-19 01:48 UTC](../captures/claude-code/2.1.278/variants/default/prompt.md) |  |  | [trace.jsonl](../captures/claude-code/2.1.278/variants/default/trace.jsonl) |
 | Claude Code | `2.1.277` | `default` | 2026-09-18 16:22 UTC | 2026-09-18 19:55 UTC | [claude-code 2.1.277 [default], published 2026-09-18 16:22 UTC](../captures/claude-code/2.1.277/variants/default/prompt.md) |  |  | [trace.jsonl](../captures/claude-code/2.1.277/variants/default/trace.jsonl) |
 | Claude Code | `2.1.276` | `default` | 2026-09-18 01:39 UTC | 2026-09-18 06:31 UTC | [claude-code 2.1.276 [default], published 2026-09-18 01:39 UTC](../captures/claude-code/2.1.276/variants/default/prompt.md) |  |  | [trace.jsonl](../captures/claude-code/2.1.276/variants/default/trace.jsonl) |
 | Claude Code | `2.1.275` | `default` | 2026-09-17 20:20 UTC | 2026-09-18 00:43 UTC | [claude-code 2.1.275 [default], published 2026-09-17 20:20 UTC](../captures/claude-code/2.1.275/variants/default/prompt.md) |  |  | [trace.jsonl](../captures/claude-code/2.1.275/variants/default/trace.jsonl) |
