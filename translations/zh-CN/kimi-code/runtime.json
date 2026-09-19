@@ -2528,6 +2528,13 @@
       "text": "敏感文件（`.env` 文件、凭据存储、SSH 私钥及类似机密）会被拒绝读取，以保护机密；不要尝试读取它们。模板和公钥不受此限制：`.env.example` / `.env.sample` / `.env.template` 以及 `id_rsa.pub` 这类 SSH 公钥可正常读取。",
       "thinking_budget": 4096
     },
+    "80d0147b6aa76689b5f3568a9f6754e8fd959820b0f0b6cc2266b0c057180838": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当前工作目录是 `$PHISTORY_WORKSPACE`。专用工具会跳过 VCS 元数据，并拒绝处理 `.env` 和 SSH 私钥等广为人知的机密文件。`Bash` 不强制执行这些防护中的任何一项——切勿使用 shell 命令读取、复制或传输机密文件。",
+      "thinking_budget": 4096
+    },
     "811e2c15389bba097a4d72e1e4513750580c0f15580b210d74e4f849deaa443c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
