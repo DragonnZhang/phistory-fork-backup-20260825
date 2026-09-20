@@ -350,6 +350,13 @@
       "text": "传递给 ripgrep 的可选 glob 过滤器。",
       "thinking_budget": 4096
     },
+    "0fc8ec11204ca3faf22f659112dfed262ae0eddca0f563446663d78223c5308b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "完成被要求的工作。用户明确陈述的目标也算作要求的一部分。",
+      "thinking_budget": 4096
+    },
     "106cfcc0ef13ce258da834899d0df5b30dbca3a2d1afc945fac4d2cdf8d6f668": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -516,6 +523,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在现有代码库上工作时，你应当：",
+      "thinking_budget": 4096
+    },
+    "16a28a6152a4c565295cc41c057dfedad4fc8c4462d76198294839686a9a017f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "plan：只读的实现规划与架构设计。当父智能体需要在改动代码之前获得逐步实现计划、关键文件识别以及架构权衡分析时，使用该智能体。\n  工具：Read, Glob, Grep, WebSearch, FetchURL",
       "thinking_budget": 4096
     },
     "16a8e4890f10981f50c948d9a07997a591a1215dcdf0dfb03636f00ee3f4b282": {
@@ -833,6 +847,13 @@
       "text": "你的首要目标是帮助用户完成软件工程任务。",
       "thinking_budget": 4096
     },
+    "2568149abc6fea8c2e667340219d6c42948ea38f6bb7286f37b1a5ae6f92ee7e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "coder：通用软件工程智能体——唯一拥有文件编辑工具的子智能体类型；任何必须修改代码的委派任务都应使用它。对于非平凡的软件工程工作，使用该智能体；这类工作可能需要读取文件、编辑代码、运行命令，并向父智能体返回一份紧凑但技术上完整的摘要。\n  工具：Bash, CronCreate, CronDelete, CronList, Edit, EnterPlanMode, ExitPlanMode, Glob, Grep, Read, Skill, TaskList, TaskOutput, TaskStop, TodoList, WaitFor, WebSearch, FetchURL, Write, mcp__*",
+      "thinking_budget": 4096
+    },
     "257aa88d1ac09e8ea8ff92357834802d9af458b3892f4bf061300b41107138af": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -915,6 +936,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "系统提示词",
+      "thinking_budget": 4096
+    },
+    "285d57fe98140f27c1e048259062781bb8309fc3767b8cd725d6517325961917": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "explore：通过提示词强制只读行为的快速代码库探索。这是专门用于探索代码库的快速智能体。当你需要按模式快速查找文件（例如 \"src/**/*.yaml\"）、在代码中搜索关键词（例如 \"database connection\"），或回答关于代码库的问题（例如 \"auth 模块是如何工作的？\"）时，使用该智能体。调用该智能体时，请指定期望的细致程度：\"quick\" 用于基本搜索，\"medium\" 用于中等程度的探索，\"thorough\" 用于跨多个位置和命名约定的全面分析。对于任何明显需要超过 3 次搜索查询的只读探索，使用该智能体。调查相互独立的问题时，优先并发启动多个 explore 智能体。\n  工具：Bash, Read, Glob, Grep, WebSearch, FetchURL",
       "thinking_budget": 4096
     },
     "286f9b7babc4eefdb2c2db831a4076907b8dcdc29f5498f165054b867ddd61b6": {
@@ -2500,6 +2528,13 @@
       "text": "敏感文件（`.env` 文件、凭据存储、SSH 私钥及类似机密）会被拒绝读取，以保护机密；不要尝试读取它们。模板和公钥不受此限制：`.env.example` / `.env.sample` / `.env.template` 以及 `id_rsa.pub` 这类 SSH 公钥可正常读取。",
       "thinking_budget": 4096
     },
+    "80d0147b6aa76689b5f3568a9f6754e8fd959820b0f0b6cc2266b0c057180838": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当前工作目录是 `$PHISTORY_WORKSPACE`。专用工具会跳过 VCS 元数据，并拒绝处理 `.env` 和 SSH 私钥等广为人知的机密文件。`Bash` 不强制执行这些防护中的任何一项——切勿使用 shell 命令读取、复制或传输机密文件。",
+      "thinking_budget": 4096
+    },
     "811e2c15389bba097a4d72e1e4513750580c0f15580b210d74e4f849deaa443c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3198,6 +3233,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "用于匹配文件/目录的 glob 模式。",
+      "thinking_budget": 4096
+    },
+    "a0cd22f7d6bbfc604aa4fbb1d17f8a2aec2d77533404f44082161c9bf4fb975e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你正在 **Linux**上运行；Bash 工具使用 **bash (`/bin/bash`)**执行命令。该环境不是沙箱：你的操作会立即在用户的系统上生效。",
       "thinking_budget": 4096
     },
     "a15bf0cc2d08e4794601a77d24de8c1f672a40772342b30098e0e0f3fc2a11af": {
@@ -4612,6 +4654,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用本地时间的 5 字段 cron 表达式：\"M H DoM Mon DoW\"（例如 \"*/5 * * * *\" = 每 5 分钟一次；\"30 14 28 2 *\" = 本地时间 2 月 28 日下午 2:30——像这样固定的日期每年都会重复，除非同时传入 recurring: false）。",
+      "thinking_budget": 4096
+    },
+    "e29de63f8bd8a858f9139a8c1f9308bd6b9f2820186268e5decf42cfb72aee43": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "自动模式处于激活状态时，不要调用 AskUserQuestion；自行决定并继续。",
       "thinking_budget": 4096
     },
     "e3f6c1bf9d9865052300b493bc8b0dcb4ec03510c28fc46a2d29d17103635c6a": {

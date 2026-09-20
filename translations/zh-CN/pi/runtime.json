@@ -336,6 +336,13 @@
       "text": "示例：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.79.5/node_modules/@earendil-works/pi-coding-agent/examples（扩展、自定义工具、SDK）",
       "thinking_budget": 4096
     },
+    "3ad3cf2578e6577cbc13b4299ce2f2bbf2218870b1057966b43da461af704312": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "始终完整阅读 pi 的 .md 文件，并跟随链接查阅相关文档（例如，TUI API 详情可参见 tui.md）",
+      "thinking_budget": 4096
+    },
     "3e1722c821792d864e703a03b22ca4a055e0ffd012b0c44c1c2c7443fc4dda28": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -481,6 +488,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要写入文件的内容",
+      "thinking_budget": 4096
+    },
+    "55175dc5ead8da9898209298f2401000731ba8ff9e274a56f9dd77ee32274350": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "补充文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.0/node_modules/@earendil-works/pi-coding-agent/docs",
       "thinking_budget": 4096
     },
     "55dac85311dbe7bf34b93301728b7b5ab5e2b7a589e8c883300f271a12bf190a": {
@@ -1183,6 +1197,13 @@
       "text": "当被问及以下主题时：扩展（docs/extensions.md、examples/extensions/）、主题（docs/themes.md）、技能（docs/skills.md）、提示词模板（docs/prompt-templates.md）、TUI 组件（docs/tui.md）、按键绑定（docs/keybindings.md）、SDK 集成（docs/sdk.md）、自定义提供商（docs/custom-provider.md）、添加模型（docs/models.md）、pi 包（docs/packages.md）",
       "thinking_budget": 4096
     },
+    "d99d8883a275c19b7cbc3903224ac103efa45795b65dc74501b460503beeaf6e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "示例：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.0/node_modules/@earendil-works/pi-coding-agent/examples（扩展、自定义工具、SDK）",
+      "thinking_budget": 4096
+    },
     "db43645f94161134ab1ab4468e84bbbc3c60a1b310e5b992fe40c0909afe2185": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1244,6 +1265,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "附加文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/pi/0.75.3/node_modules/@earendil-works/pi-coding-agent/docs",
+      "thinking_budget": 4096
+    },
+    "e24f1ec90624a6b6e95bd976b95908667dad13f48698ddffc67236f71e8326c5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.0/node_modules/@earendil-works/pi-coding-agent/README.md",
       "thinking_budget": 4096
     },
     "e36aed1a7b19a4021f2845fe85dda8d4e1c1d5bfe0cbd2480d61d3a1462d4eae": {
