@@ -252,6 +252,13 @@
       "text": "补充文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.79.5/node_modules/@earendil-works/pi-coding-agent/docs",
       "thinking_budget": 4096
     },
+    "21f9cdb0385ab27aff70b63d416ee994feb2262ce48f45bec7ce53a30c6172bf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "示例：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.87.0/node_modules/@earendil-works/pi-coding-agent/examples（扩展、自定义工具、SDK）",
+      "thinking_budget": 4096
+    },
     "226077c16addccf54ba5aeb341a9e53430cdcb5e26927657a4cafe4556696489": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -742,6 +749,13 @@
       "text": "补充文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.80.5/node_modules/@earendil-works/pi-coding-agent/docs",
       "thinking_budget": 4096
     },
+    "81eb8175a74bb9bf75ded9e392f2f10cfa5838500819a4ae0f5927203e089ad7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "附加文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.87.0/node_modules/@earendil-works/pi-coding-agent/docs",
+      "thinking_budget": 4096
+    },
     "82936cb4be4b457bfcf6147dde5e38f3254bf177da628aacfa6d6ade6d896302": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -761,6 +775,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.75.5/node_modules/@earendil-works/pi-coding-agent/README.md",
+      "thinking_budget": 4096
+    },
+    "84565ca6351840546b2935bc753eb4c27f9240b5706be04888e7f1032c646034": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.87.0/node_modules/@earendil-works/pi-coding-agent/README.md",
       "thinking_budget": 4096
     },
     "85527818ca2846f603f872caf5f5ba7dc19b1f0db32fa77d980ddafaf6f650a9": {
