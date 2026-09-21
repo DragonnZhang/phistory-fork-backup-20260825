@@ -6,15 +6,18 @@ from phistory.models import AgentSpec, CaptureDriver, CaptureVariant
 def _default(
     run_args: tuple[str, ...] = (),
     *,
+    label: str = "Default",
     driver: CaptureDriver = "oneshot",
     dimensions: dict[str, str] | None = None,
+    pty_message: str = "",
 ) -> CaptureVariant:
     return CaptureVariant(
         id="default",
-        label="Default",
+        label=label,
         run_args=run_args,
         driver=driver,
         dimensions=dimensions or {},
+        pty_message=pty_message,
     )
 
 
@@ -25,6 +28,7 @@ def _variant(
     *,
     driver: CaptureDriver = "oneshot",
     dimensions: dict[str, str] | None = None,
+    pty_message: str = "",
 ) -> CaptureVariant:
     return CaptureVariant(
         id=variant_id,
@@ -32,6 +36,7 @@ def _variant(
         run_args=run_args,
         driver=driver,
         dimensions=dimensions or {},
+        pty_message=pty_message,
     )
 
 
@@ -44,16 +49,28 @@ CLAUDE_CODE = AgentSpec(
     extra_env={
         "DISABLE_AUTOUPDATER": "1",
         "DISABLE_UPDATES": "1",
-        "CI": "1",
     },
+    home_profile="claude",
     default_variant=_default(
-        (
-            "--no-yolo",
-            "--",
-            "--no-session-persistence",
-            "-p",
-            "Reply with one short sentence.",
-        )
+        ("--no-yolo",),
+        label="Terminal",
+        driver="pty",
+        dimensions={"surface": "terminal"},
+        pty_message="Reply with one short sentence.",
+    ),
+    variants=(
+        _variant(
+            "sdk",
+            "Headless (-p)",
+            (
+                "--no-yolo",
+                "--",
+                "--no-session-persistence",
+                "-p",
+                "Reply with one short sentence.",
+            ),
+            dimensions={"surface": "headless"},
+        ),
     ),
 )
 

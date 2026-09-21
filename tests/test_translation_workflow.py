@@ -82,35 +82,6 @@ def test_dry_run_does_not_call_api_or_write_translations(tmp_path, monkeypatch):
     assert not (tmp_path / "translations").exists()
 
 
-def test_static_archive_never_enters_runtime_translation_queue(tmp_path, monkeypatch):
-    from phistory.translation.storage import read_dictionary
-
-    root = tmp_path / "captures"
-    path = capture(root, "1.0", "Read the runtime prompt.")
-    static = path.parents[1] / "static" / "prompts.md"
-    static.parent.mkdir()
-    static.write_text("# Static Prompts\n\nThis package document must never be translated.")
-    original = static.read_bytes()
-    assert read_capture_rows(root)[0]["static_prompts"] == static
-    calls = []
-
-    def translate(self, segments):
-        calls.extend(segment.text for segment in segments)
-        return TranslationBatch({segment.id: "读取运行时提示词。" for segment in segments})
-
-    monkeypatch.setattr("phistory.translation.workflow.TranslationClient.translate", translate)
-    result = translate_archive(
-        root, config=TranslationConfig("https://example.test/v1", "model", "test"), progress=lambda _: None
-    )
-    assert calls == ["Read the runtime prompt."]
-    assert result[0].total == result[0].translated == 1
-    translations = tmp_path / "translations"
-    assert len(read_dictionary(translations, "agent")["entries"]) == 1
-    assert not list(translations.glob("zh-CN/*/static.json"))
-    assert not (translations / "sources").exists()
-    assert static.read_bytes() == original
-
-
 def test_trace_dynamic_values_reuse_existing_prompt_translation(tmp_path, monkeypatch):
     from phistory.translation.segments import extract_markdown
     from phistory.translation.storage import write_dictionary

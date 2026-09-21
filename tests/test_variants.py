@@ -27,7 +27,6 @@ def test_capture_target_keeps_variants_isolated_under_a_version(tmp_path: Path):
 
     assert default.variant_dir == tmp_path / "agent/1.0.0/variants/default"
     assert alternate.variant_dir == tmp_path / "agent/1.0.0/variants/alternate"
-    assert default.static_dir == alternate.static_dir == tmp_path / "agent/1.0.0/static"
 
 
 def test_agent_rejects_duplicate_variant_ids():
@@ -95,7 +94,7 @@ def test_dsh_web_default_does_not_override_mode(monkeypatch, tmp_path: Path):
 
     for variant_id in ("default", "code"):
         target = CaptureTarget(agent, VersionInfo("1.0.0"), agent.variant(variant_id), tmp_path)
-        context = CaptureRunContext(target, target.prompt_path, target.variant_dir / ".tap", tmp_path, {})
+        context = CaptureRunContext(target, target.variant_dir / ".tap", tmp_path, {})
         _create_and_prompt_session(context, 1234, object())
 
     assert "agentPreset" not in payloads[0]

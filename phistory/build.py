@@ -36,9 +36,6 @@ def build_site(root: Path, output: Path) -> None:
         for name in ("prompt.md", "trace.jsonl", "meta.json"):
             for path in root.glob(f"*/*/variants/*/{name}"):
                 _copy(path, captures / path.relative_to(root))
-        for name in ("candidates.json", "prompts.json", "prompts.md"):
-            for path in root.glob(f"*/*/static/{name}"):
-                _copy(path, captures / path.relative_to(root))
         for path in (base / "translations").glob("zh-CN/*/runtime.json"):
             _copy(path, public / path.relative_to(base))
         for name in PUBLIC_FILES:

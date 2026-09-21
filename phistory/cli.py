@@ -5,12 +5,10 @@ import os
 import sys
 from pathlib import Path
 
-from phistory import __version__, packages
-from phistory.models import CaptureTarget, VersionInfo
+from phistory import __version__
 from phistory.registry import AGENT_ORDER, AGENTS, parse_agent_ids
 from phistory.render import render_index
-from phistory.static_prompts.extract import StaticSourceUnavailable, extract_static_prompts
-from phistory.workflow import capture_latest, iter_backfill
+from phistory.workflow import capture_latest, iter_backfill, rerender_archive
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -38,6 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
     fill.add_argument("--limit", type=int, default=None, help="capture at most N versions from the range")
     fill.add_argument("--newest-first", action="store_true", help="capture the selected range from newest to oldest")
     fill.add_argument("--include-prerelease", action="store_true", help="include prerelease package versions")
+    fill.add_argument("--captured-only", action="store_true", help="only versions already present in the archive")
     fill.add_argument(
         "--variants", default=None, help="comma-separated variant ids (default: every configured variant)"
     )
@@ -45,27 +44,14 @@ def build_parser() -> argparse.ArgumentParser:
     fill.add_argument("--keep-tap", action="store_true", help="keep raw claude-tap output directories")
     fill.add_argument("--summary-title", default="Backfill results", help="GitHub Actions summary title")
 
+    rerender = sub.add_parser("rerender", help="rebuild archived prompt markdown from stored traces")
+    rerender.add_argument("--agents", default=None, help="comma-separated agent ids (default: every archived agent)")
+
     index = sub.add_parser("render-index", help="render capture index")
     index.add_argument("-o", "--output", default="README.md", help="index markdown path")
 
     site = sub.add_parser("build-site", help="build the complete static site without translation API calls")
     site.add_argument("-o", "--output", type=Path, help="publish directory (default: <cache-dir>/site)")
-
-    static = sub.add_parser("extract-static", help="extract static prompts from installed agent packages")
-    static.add_argument("agent", choices=sorted(AGENTS), help="agent id")
-    static.add_argument("versions", nargs="*", help="package versions to extract")
-    static.add_argument(
-        "--latest-captured",
-        type=int,
-        default=None,
-        metavar="N",
-        help="extract the latest N versions already present under the capture root",
-    )
-    static.add_argument(
-        "--refresh-candidates",
-        action="store_true",
-        help="reinstall packages and regenerate the static candidate archive instead of replaying it",
-    )
 
     translate = sub.add_parser("translate", help="translate archived prose using shared Chinese dictionaries")
     translate.add_argument("--agents", help="comma-separated agent ids (default: all archived agents)")
@@ -79,6 +65,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     translate.add_argument(
         "--usage-log", type=Path, help="request usage JSONL (default: .phistory-cache/translation-usage.jsonl)"
+    )
+    translate.add_argument(
+        "--prune", action="store_true", help="drop dictionary entries the archive no longer references"
     )
     translate.add_argument("--config", type=Path, help="private translation TOML config path")
     translate.add_argument("--model", help="override the configured translation model")
@@ -122,10 +111,21 @@ def main(argv: list[str] | None = None) -> int:
             limit=args.limit,
             newest_first=args.newest_first,
             include_prerelease=args.include_prerelease,
+            captured_only=args.captured_only,
         ):
             failed = _print_result(result) or failed
             _write_github_summary([result], args.summary_title)
         return 1 if failed else 0
+
+    if args.command == "rerender":
+        results = rerender_archive(root, _parse_csv(args.agents))
+        counts: dict[str, int] = {}
+        for item in results:
+            counts[item.status] = counts.get(item.status, 0) + 1
+            if item.status == "failed":
+                print(f"{item.agent_id} {item.version} [{item.variant_id}]: failed: {item.error}")
+        print(f"rerender: {', '.join(f'{k}={v}' for k, v in sorted(counts.items()))}")
+        return 1 if counts.get("failed") else 0
 
     if args.command == "render-index":
         render_index(root, Path(args.output))
@@ -144,16 +144,6 @@ def main(argv: list[str] | None = None) -> int:
         print(f"built {output}")
         return 0
 
-    if args.command == "extract-static":
-        versions = _resolve_static_versions(args.agent, args.versions, args.latest_captured, root=root)
-        return _extract_static(
-            args.agent,
-            versions,
-            root=root,
-            cache_dir=cache_dir,
-            refresh_candidates=args.refresh_candidates,
-        )
-
     if args.command == "translate":
         from phistory.translation.config import load_config
         from phistory.translation.workflow import translate_archive
@@ -170,6 +160,7 @@ def main(argv: list[str] | None = None) -> int:
                 agent_ids=parse_agent_ids(args.agents) if args.agents else None,
                 latest_captured=args.latest_captured,
                 dry_run=args.dry_run,
+                prune=args.prune,
                 config=config,
                 max_batches=args.max_batches,
                 usage_log=args.usage_log,
@@ -180,6 +171,8 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         remaining = sum(item.total - item.reused - item.translated for item in results)
         message = f"Translation: {sum(item.translated for item in results)} new, {sum(item.reused for item in results)} reused, {remaining} remaining."
+        if pruned := sum(item.pruned for item in results):
+            message += f" Pruned {pruned} unreferenced entries."
         message += (
             f" Requests: {sum(item.requests for item in results)}; "
             f"input tokens: {sum(item.input_tokens for item in results)}; "
@@ -192,86 +185,6 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if remaining and not args.dry_run else 0
 
     return 2
-
-
-def _resolve_static_versions(
-    agent_id: str, versions: list[str], latest_captured: int | None, *, root: Path
-) -> list[str]:
-    if latest_captured is not None:
-        if latest_captured < 1:
-            raise SystemExit("--latest-captured must be greater than zero")
-        if versions:
-            raise SystemExit("pass explicit versions or --latest-captured, not both")
-        versions = _latest_captured_versions(root, agent_id, latest_captured)
-    if not versions:
-        raise SystemExit("extract-static requires at least one version or --latest-captured N")
-    return versions
-
-
-def _latest_captured_versions(root: Path, agent_id: str, limit: int) -> list[str]:
-    agent_dir = root / agent_id
-    if not agent_dir.exists():
-        raise SystemExit(f"no captured versions found for {agent_id}: {agent_dir}")
-    versions = [
-        path.name
-        for path in agent_dir.iterdir()
-        if path.is_dir()
-        and (path / "variants" / "default" / "prompt.md").exists()
-        and (path / "variants" / "default" / "trace.jsonl").exists()
-    ]
-    versions.sort(key=_version_sort_key, reverse=True)
-    if not versions:
-        raise SystemExit(f"no complete captured versions found for {agent_id}: {agent_dir}")
-    return versions[:limit]
-
-
-def _version_sort_key(version: str) -> tuple[object, ...]:
-    parts: list[object] = []
-    for part in version.replace("-", ".").split("."):
-        parts.append(int(part) if part.isdigit() else part)
-    return tuple(parts)
-
-
-def _extract_static(
-    agent_id: str,
-    versions: list[str],
-    *,
-    root: Path,
-    cache_dir: Path,
-    refresh_candidates: bool = False,
-) -> int:
-    agent = AGENTS[agent_id]
-    failed = False
-    for version in versions:
-        install_dir = (cache_dir / "installs" / agent.id / version).resolve()
-        target = CaptureTarget(
-            agent=agent,
-            version=VersionInfo(version),
-            variant=agent.default_variant,
-            root=root,
-        )
-        target.static_dir.mkdir(parents=True, exist_ok=True)
-        if refresh_candidates and target.static_candidates_json_path.exists():
-            target.static_candidates_json_path.unlink()
-        if not target.static_candidates_json_path.exists():
-            packages.install_agent(agent, version, install_dir)
-        try:
-            result = extract_static_prompts(target, install_dir)
-        except StaticSourceUnavailable as exc:
-            print(f"{agent_id} {version}: skipped static extraction: {exc}", flush=True)
-            continue
-        except Exception as exc:
-            failed = True
-            print(f"{agent_id} {version}: failed static extraction: {exc}", file=sys.stderr, flush=True)
-            continue
-        if result is None:
-            print(f"{agent_id} {version}: static extraction unsupported", flush=True)
-            continue
-        print(
-            f"{agent_id} {version}: {len(result.matches)} static prompts ({result.known_count} known, {result.unknown_count} unknown)",
-            flush=True,
-        )
-    return 1 if failed else 0
 
 
 def _print_results(results, summary_title: str = "Capture results") -> int:

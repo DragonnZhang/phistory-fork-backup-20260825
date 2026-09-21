@@ -4,9 +4,22 @@ import sys
 from pathlib import Path
 
 from phistory.models import CaptureTarget
+from phistory.prompt import read_records, select_request_body
+from phistory.storage import latest_trace
 
 
-def tap_command(target: CaptureTarget, prompt_path: Path, tap_output_dir: Path) -> list[str]:
+def captured_prompt(tap_output_dir: Path) -> bool:
+    """A run succeeds when its trace holds a prompt-bearing request, whatever the client's exit code."""
+    try:
+        return select_request_body(read_records(latest_trace(tap_output_dir))) is not None
+    except (RuntimeError, OSError):
+        return False
+
+
+def tap_command(target: CaptureTarget, tap_output_dir: Path) -> list[str]:
+    # claude-tap only answers with dummy responses while an export path is set; the archive
+    # itself is rendered from the trace, so this export is a capture-only switch we discard.
+    tap_output_dir.mkdir(parents=True, exist_ok=True)
     return [
         sys.executable,
         "-m",
@@ -15,7 +28,7 @@ def tap_command(target: CaptureTarget, prompt_path: Path, tap_output_dir: Path) 
         target.agent.tap_client,
         *_tap_yolo_args(target),
         "--export-prompt",
-        str(prompt_path),
+        str(tap_output_dir / "tap-export.md"),
         "--no-live",
         "--no-open",
         "--no-update-check",

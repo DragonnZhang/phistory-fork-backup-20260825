@@ -29,7 +29,7 @@ class DshRpcError(RuntimeError):
 
 def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
     port = _free_port()
-    argv = tap_command(context.target, context.prompt_path, context.tap_output_dir)
+    argv = tap_command(context.target, context.tap_output_dir)
     argv.extend(("--host", "127.0.0.1", "--port", str(port)))
     context.tap_output_dir.mkdir(parents=True, exist_ok=True)
     log_path = context.tap_output_dir / "client.log"

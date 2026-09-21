@@ -58,7 +58,7 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
         "translation.toml",
         ".phistory-cache/private.json",
         "captures/agent/2.0/variants/default/.home/private.json",
-        "translations/zh-CN/agent/static.json",
+        "translations/zh-CN/agent/legacy.json",
     ):
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -70,9 +70,6 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
         "docs/screenshot.png",
         "docs/agent-icons/agent.svg",
         "docs/translations.md",
-        "captures/agent/1.0/static/prompts.md",
-        "captures/agent/1.0/static/prompts.json",
-        "captures/agent/1.0/static/candidates.json",
     ):
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -106,7 +103,6 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
             assert descriptor["source_hash"] == hashlib.sha256((public / item[kind]).read_bytes()).hexdigest()
     assert versions[0]["translations"] == versions[1]["translations"]
     assert len(list((public / "translations/sources").glob("*.json"))) == 2
-    assert "static" not in versions[1]["translations"]["zh-CN"]
     for name in (
         "index.html",
         "README.md",
@@ -119,8 +115,6 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
         "docs/screenshot.png",
         "docs/agent-icons/agent.svg",
         "docs/translations.md",
-        "captures/agent/1.0/static/prompts.md",
-        "captures/agent/1.0/static/candidates.json",
     ):
         assert (public / name).is_file(), name
     for name in (
@@ -128,7 +122,7 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
         "translation.toml",
         ".phistory-cache",
         "captures/agent/2.0/variants/default/.home",
-        "translations/zh-CN/agent/static.json",
+        "translations/zh-CN/agent/legacy.json",
     ):
         assert not (public / name).exists(), name
     assert "translations" not in json.loads((public / "captures/index.json").read_text())["captures"][0]

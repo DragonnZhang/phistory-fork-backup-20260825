@@ -95,10 +95,7 @@ def test_capture_paths_and_index(tmp_path: Path):
     capture_doc_text = capture_doc.read_text(encoding="utf-8")
     capture_index_json = json.loads(capture_index.read_text(encoding="utf-8"))
     llms_text = llms_txt.read_text(encoding="utf-8")
-    assert (
-        "| Agent | Version | Variant | Published | Captured | Snapshot | Static | Candidates | Raw Trace |"
-        in capture_doc_text
-    )
+    assert "| Agent | Version | Variant | Published | Captured | Snapshot | Raw Trace |" in capture_doc_text
     assert "[agent 1.0.0 [default], published 2026-05-22 00:00 UTC]" in capture_doc_text
     assert capture_index_json["agents"][0]["latest_version"] == "1.0.0"
     assert capture_index_json["captures"][0]["variant_id"] == "default"
@@ -163,7 +160,7 @@ def test_render_index_sorts_versions_numerically(tmp_path: Path):
     assert capture_doc_text.index("`2.1.146`") < capture_doc_text.index("`2.1.99`")
 
 
-def test_render_site_writes_static_html_manifest(tmp_path: Path):
+def test_render_site_writes_viewer_manifest(tmp_path: Path):
     assert AGENT_SHORT_NAMES["dsh"] == "DSH"
     agent = AgentSpec(
         id="agent",
@@ -177,10 +174,6 @@ def test_render_site_writes_static_html_manifest(tmp_path: Path):
         target.variant_dir.mkdir(parents=True)
         target.prompt_path.write_text(f"# Prompt {version}\n", encoding="utf-8")
         target.trace_path.write_text("{}\n", encoding="utf-8")
-        if version == "1.1.0":
-            target.static_dir.mkdir(parents=True)
-            target.static_prompts_path.write_text("# Static Prompts\n", encoding="utf-8")
-            target.static_prompts_json_path.write_text('{"schema_version":1}\n', encoding="utf-8")
         write_meta(
             target,
             {
@@ -218,13 +211,6 @@ def test_render_site_writes_static_html_manifest(tmp_path: Path):
     assert "mini-diffstat" in text
     assert '"trace":"' in text
     assert "captures/agent/1.1.0/variants/default/trace.jsonl" in text
-    assert "captures/agent/1.1.0/static/prompts.md" in text
-    assert "Open static prompts" in text
-    assert "renderStatic" in text
-    assert "static-outline" in text
-    assert "Static sections" in text
-    assert "buildStaticOutline" in text
-    assert "changedLineStats" in text
     assert "Trace detail" in text
     assert "Raw Request Body" in text
     assert "toolDeclarations" in text

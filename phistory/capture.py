@@ -3,7 +3,6 @@ from __future__ import annotations
 import base64
 import json
 import os
-import re
 import time
 from pathlib import Path
 from tempfile import TemporaryDirectory, mkdtemp
@@ -12,53 +11,10 @@ from phistory import packages
 from phistory.drivers import CaptureRunContext, run_capture
 from phistory.models import CaptureResult, CaptureTarget
 from phistory.packages import agent_executable
-from phistory.static_prompts.extract import extract_static_prompts
+from phistory.prompt import render_archive_markdown, snapshot_from_trace
+from phistory.sanitize import sanitize
 from phistory.storage import copy_trace, is_captured, latest_trace, prepare_version_dir, remove_if_exists, write_meta
 from phistory.subprocesses import run
-
-_VOLATILE_TEXT_PATTERNS = (
-    (re.compile(r"\bcch=[^;\s]+"), "cch=<normalized>"),
-    (re.compile(r"(?m)^ - OS Version: .+$"), " - OS Version: $PHISTORY_OS_VERSION"),
-    (re.compile(r" - OS Version: [^\\\n]*(?=\\n)"), " - OS Version: $PHISTORY_OS_VERSION"),
-    (re.compile(r"Today's date is \d{4}[-/]\d{2}[-/]\d{2}\."), "Today's date is $PHISTORY_DATE."),
-    (re.compile(r"Today's date: \d{4}[-/]\d{2}[-/]\d{2}"), "Today's date: $PHISTORY_DATE"),
-    (re.compile(r"http://(?:127\.0\.0\.1|localhost):\d+"), "http://127.0.0.1:$PHISTORY_PORT"),
-    (
-        re.compile(r"The current date and time in ISO format is `[^`]+`\."),
-        "The current date and time in ISO format is `$PHISTORY_DATETIME`.",
-    ),
-    (re.compile(r"The current local time is: [^\n]+"), "The current local time is: $PHISTORY_DATETIME."),
-    (re.compile(r"(?m)^Conversation started: .+$"), "Conversation started: $PHISTORY_DATETIME"),
-    (re.compile(r"Conversation ID: [0-9a-f-]{36}"), "Conversation ID: $PHISTORY_CONVERSATION"),
-    (re.compile(r"(?m)^(  YOUR SESSION ID:) mvs_[A-Za-z0-9_]+$"), r"\1 $PHISTORY_SESSION"),
-    (
-        re.compile(r"(?m)^(  YOUR SCRATCHPAD: .*/scratchpads/)mvs_[A-Za-z0-9_]+(/scratchpad\.md)$"),
-        r"\1$PHISTORY_SESSION\2",
-    ),
-    (re.compile(r"(?m)^(  daemonPort:) \d+$"), r"\1 $PHISTORY_PORT"),
-    (
-        re.compile(
-            r"(?m)^(  date:) (?:\d{4}-\d{2}-\d{2} .+ \(UTC, UTC[+-]\d+(?::\d+)?\)|"
-            r"(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) .+ GMT[+-]\d{4} \([^)]+\))$"
-        ),
-        r"\1 $PHISTORY_DATETIME",
-    ),
-    (re.compile(r"<current_date>\d{4}-\d{2}-\d{2}</current_date>"), "<current_date>$PHISTORY_DATE</current_date>"),
-    (re.compile(r"<timezone>[^<]+</timezone>"), "<timezone>$PHISTORY_TIMEZONE</timezone>"),
-    (
-        re.compile(r"\$PHISTORY_HOME/\.gemini/antigravity-cli/brain/[0-9a-f-]{36}"),
-        "$PHISTORY_HOME/.gemini/antigravity-cli/brain/$PHISTORY_CONVERSATION",
-    ),
-    (
-        re.compile(r"\$PHISTORY_HOME/\.claude/projects/-tmp-phistory-work-[^/\s]+"),
-        "$PHISTORY_HOME/.claude/projects/$PHISTORY_PROJECT",
-    ),
-    (
-        re.compile(r"\$PHISTORY_HOME/\.local/share/mimocode/memory/sessions/ses_[A-Za-z0-9_]+"),
-        "$PHISTORY_HOME/.local/share/mimocode/memory/sessions/$PHISTORY_SESSION",
-    ),
-    (re.compile(r"Bearer phistory-[A-Za-z0-9_-]+"), "Bearer <redacted>"),
-)
 
 
 def capture_target(
@@ -100,12 +56,11 @@ def capture_target(
             TemporaryDirectory(prefix="phistory-home-", ignore_cleanup_errors=True) as home_dir,
             TemporaryDirectory(prefix="phistory-work-", ignore_cleanup_errors=True) as work_dir,
         ):
-            env = _capture_env(working_target, bin_dir, Path(home_dir))
+            env = _capture_env(working_target, bin_dir, Path(home_dir), Path(work_dir))
             env["PWD"] = str(Path(work_dir))
             execution = run_capture(
                 CaptureRunContext(
                     target=working_target,
-                    prompt_path=prompt_path,
                     tap_output_dir=tap_output_dir,
                     work_dir=Path(work_dir),
                     env=env,
@@ -113,19 +68,17 @@ def capture_target(
             )
             argv = list(execution.command)
             result = execution.result
-        if not prompt_path.exists():
-            detail = (result.stderr or result.stdout).strip()[-4000:]
-            raise RuntimeError(f"capture command failed ({result.returncode})\n{detail}")
-
         if not working_target.trace_path.exists():
-            trace = latest_trace(tap_output_dir)
-            copy_trace(trace, working_target)
-        replacements = {
-            str(install_dir): "$PHISTORY_INSTALL",
-            str(home_dir): "$PHISTORY_HOME",
-            str(work_dir): "$PHISTORY_WORKSPACE",
-        }
-        _sanitize_file(prompt_path, replacements)
+            try:
+                copy_trace(latest_trace(tap_output_dir), working_target)
+            except RuntimeError as exc:
+                detail = (result.stderr or result.stdout).strip()[-4000:]
+                raise RuntimeError(f"capture produced no trace ({result.returncode}): {exc}\n{detail}") from exc
+        try:
+            prompt_path.write_text(render_archive_markdown(working_target.trace_path), encoding="utf-8")
+        except ValueError as exc:
+            detail = (result.stderr or result.stdout).strip()[-4000:]
+            raise RuntimeError(f"capture command failed ({result.returncode}): {exc}\n{detail}") from exc
         write_meta(
             working_target,
             {
@@ -139,7 +92,7 @@ def capture_target(
                     "dimensions": target.variant.dimensions,
                 },
                 "requested": target.variant.dimensions,
-                "observed": {**_trace_observation(working_target.trace_path), **execution.observed},
+                "observed": {**snapshot_from_trace(working_target.trace_path).observation, **execution.observed},
                 "published_at": target.version.published_at,
                 "tarball_url": target.version.tarball_url,
                 "binary_version": binary_version,
@@ -148,15 +101,13 @@ def capture_target(
                 "target": "claude-tap capture-only",
                 "client_exit_code": result.returncode,
                 "duration_seconds": round(time.time() - started, 3),
-                "command": [_replace_many(part, replacements) for part in _portable_command(argv, variant_dir)],
+                "command": [sanitize(part) for part in _portable_command(argv, variant_dir)],
             },
         )
         if not keep_tap:
             remove_if_exists(tap_output_dir)
         if staging_root is not None:
             _promote_staged_capture(working_target.variant_dir, target.variant_dir, staging_root)
-        if target.variant.id == "default":
-            _extract_static_best_effort(target, install_dir)
         return CaptureResult(
             target.agent.id,
             target.version.version,
@@ -201,12 +152,16 @@ def _promote_staged_capture(staged: Path, destination: Path, staging_root: Path)
     remove_if_exists(staging_root)
 
 
-def _capture_env(target: CaptureTarget, bin_dir: Path, home_dir: Path | None = None) -> dict[str, str]:
+def _capture_env(
+    target: CaptureTarget, bin_dir: Path, home_dir: Path | None = None, work_dir: Path | None = None
+) -> dict[str, str]:
     home = home_dir or target.version_dir / ".home"
     for path in (home, home / ".config", home / ".cache", home / ".local" / "share", home / ".codex", home / ".claude"):
         path.mkdir(parents=True, exist_ok=True)
     if target.agent.fake_chatgpt_auth:
         _write_fake_chatgpt_auth(home)
+    if target.agent.home_profile == "claude":
+        _write_claude_config(home, work_dir)
     if target.agent.home_profile == "antigravity":
         _write_antigravity_config(home)
     if target.agent.home_profile == "hermes":
@@ -277,103 +232,6 @@ def _capture_env(target: CaptureTarget, bin_dir: Path, home_dir: Path | None = N
     return env
 
 
-def _extract_static_best_effort(target: CaptureTarget, install_dir: Path) -> None:
-    if target.agent.id != "claude-code":
-        return
-    target.static_dir.mkdir(parents=True, exist_ok=True)
-    try:
-        extract_static_prompts(target, install_dir)
-    except Exception:
-        return
-
-
-def _trace_observation(trace_path: Path) -> dict[str, object]:
-    best: tuple[int, dict] | None = None
-    try:
-        lines = trace_path.read_text(encoding="utf-8").splitlines()
-    except OSError:
-        return {}
-    for line in lines:
-        try:
-            record = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        body = (record.get("request") or {}).get("body")
-        if isinstance(body, str):
-            try:
-                body = json.loads(body)
-            except json.JSONDecodeError:
-                continue
-        if not isinstance(body, dict):
-            continue
-        score = _prompt_request_score(body)
-        if best is None or score > best[0]:
-            best = (score, body)
-    if best is None:
-        return {}
-    body = best[1]
-    request = _prompt_request_body(body)
-    observed: dict[str, object] = {}
-    model = request.get("model")
-    if not isinstance(model, str):
-        model = body.get("model")
-    if isinstance(model, str):
-        observed["model"] = model
-    tool_count = _observed_tool_count(body)
-    if tool_count:
-        observed["tool_count"] = tool_count
-    return observed
-
-
-def _prompt_request_body(body: dict) -> dict:
-    # CloudCode keeps routing metadata outside the provider's prompt-bearing request.
-    return body["request"] if isinstance(body.get("request"), dict) else body
-
-
-def _observed_tool_count(body: dict) -> int:
-    body = _prompt_request_body(body)
-
-    def count_tools(value) -> int:
-        if isinstance(value, list):
-            return sum(count_tools(tool) for tool in value)
-        if not isinstance(value, dict):
-            return 0
-        for key in ("tools", "functionDeclarations", "function_declarations"):
-            if isinstance(value.get(key), list):
-                return count_tools(value[key])
-        return 1
-
-    count = count_tools(body.get("tools"))
-    inputs = body.get("input")
-    if isinstance(inputs, list):
-        for item in inputs:
-            if isinstance(item, dict) and item.get("type") == "additional_tools":
-                count += count_tools(item.get("tools"))
-    for key in ("toolConfig", "tool_config"):
-        config = body.get(key)
-        if isinstance(config, dict):
-            for field in ("tools", "function_declarations"):
-                if isinstance(config.get(field), list):
-                    count += count_tools(config[field])
-    return count
-
-
-def _prompt_request_score(body: dict) -> int:
-    body = _prompt_request_body(body)
-    weights = {
-        "system": 100,
-        "instructions": 100,
-        "system_instruction": 100,
-        "systemInstruction": 100,
-        "messages": 35,
-        "input": 35,
-        "contents": 35,
-        "tools": 20,
-        "toolConfig": 20,
-    }
-    return sum(weight for key, weight in weights.items() if body.get(key)) + _observed_tool_count(body)
-
-
 def _write_fake_chatgpt_auth(home: Path) -> None:
     codex_home = home / ".codex"
     codex_home.mkdir(parents=True, exist_ok=True)
@@ -412,6 +270,37 @@ def _write_openclaw_config(home: Path) -> None:
         },
     }
     (state_dir / "openclaw.json").write_text(json.dumps(config, indent=2), encoding="utf-8")
+
+
+def _write_claude_config(home: Path, work_dir: Path | None) -> None:
+    """Pre-answer first-run gates so an interactive session reaches the prompt."""
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "fake")
+    config = {
+        "hasCompletedOnboarding": True,
+        "installMethod": "npm",
+        "autoUpdates": False,
+        "numStartups": 5,
+        "theme": "dark",
+        "customApiKeyResponses": {"approved": [api_key[-20:]], "rejected": []},
+        "userID": "0" * 64,
+        "firstStartTime": "2026-01-01T00:00:00.000Z",
+        "projects": {
+            str(work_dir or home): {
+                "allowedTools": [],
+                "history": [],
+                "mcpServers": {},
+                "enabledMcpjsonServers": [],
+                "disabledMcpjsonServers": [],
+                "hasTrustDialogAccepted": True,
+                "hasClaudeMdExternalIncludesApproved": True,
+                "hasClaudeMdExternalIncludesWarningShown": True,
+            }
+        },
+    }
+    payload = json.dumps(config, indent=2)
+    for path in (home / ".claude.json", home / ".claude" / ".claude.json"):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(payload, encoding="utf-8")
 
 
 def _write_antigravity_config(home: Path) -> None:
@@ -632,26 +521,6 @@ def _portable_command(argv: list[str], version_dir: Path) -> list[str]:
                 pass
         out.append(arg)
     return out
-
-
-def _sanitize_file(path: Path, replacements: dict[str, str]) -> None:
-    text = path.read_text(encoding="utf-8")
-    path.write_text(_sanitize_text(text, replacements), encoding="utf-8")
-
-
-def _sanitize_text(text: str, replacements: dict[str, str]) -> str:
-    text = _replace_many(text, replacements)
-    for pattern, replacement in _VOLATILE_TEXT_PATTERNS:
-        text = pattern.sub(replacement, text)
-    text = re.sub(r"[ \t]+$", "", text, flags=re.MULTILINE)
-    text = re.sub(r"\n{3,}(```json)", r"\n\n\1", text)
-    return text
-
-
-def _replace_many(text: str, replacements: dict[str, str]) -> str:
-    for source, replacement in replacements.items():
-        text = text.replace(source, replacement)
-    return text
 
 
 def _iso_now() -> str:

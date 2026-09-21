@@ -6,9 +6,6 @@ from pathlib import Path
 import pytest
 
 from phistory.site import _HTML, render_site
-from phistory.translation.assets import TranslationAssets
-from phistory.translation.segments import extract_markdown, extract_trace
-from phistory.translation.storage import write_dictionary
 
 SCRIPT = Path(__file__).parents[1] / "phistory/web/translation.js"
 
@@ -458,107 +455,6 @@ assert.deepEqual(refreshes,reuse?[]:['zh-CN','original']);
     )
 
 
-def test_static_view_keeps_original_content_and_runtime_language_preference():
-    controls = (
-        "function renderControls()"
-        + _HTML.split("function renderControls()", 1)[1].split("\nfunction agentControlNameHtml", 1)[0]
-    )
-    render_static = (
-        "async function renderStatic(sequence)"
-        + _HTML.split("async function renderStatic(sequence)", 1)[1].split("\nfunction selectMainTraceRecord", 1)[0]
-    )
-    run_javascript(
-        controls
-        + render_static
-        + r"""
-const state={view:'diff',language:'zh-CN',translationCache:new Map()};
-const button=()=>({setAttribute(){}});
-const languages=[{value:'original',checked:true},{value:'zh-CN',checked:false}];
-const els={agent:button(),from:button(),to:button(),viewToggle:button(),
-  language:{querySelectorAll:()=>languages}};
-const document={querySelector:()=>null};
-const agent={name:'Agent',variants:[{}]};
-const currentAgent=()=>agent;
-const variantInfo=()=>({});
-const snapshot={version:'1.0',static_prompts:'static.md',translations:{'zh-CN':{
-  static:{index:'old-static-index.json'},static_dictionary:{path:'old-static-words.json'},
-  runtime:{path:'runtime.json'}}}};
-const snapshotInfo=()=>snapshot;
-const agentIconHtml=()=>'';
-const agentControlNameHtml=()=>'';
-const versionLabel=()=>'';
-const isLatestVersion=()=>true;
-const snapshotLabel=()=>'';
-const nextView=()=>state.view==='static'?'diff':'static';
-const stored=[];
-const localStorage={setItem:(...args)=>stored.push(args)};
-const requests=[];
-const loadStaticPrompts=async item=>{requests.push(item.static_prompts);return 'Read the original.';};
-const isCurrentRender=()=>true;
-const staticPromptBodyMarkdown=text=>text;
-const buildStaticOutline=(before,after)=>[{before,after}];
-const renderStaticOutline=()=>{};
-let comparison;
-const renderMonacoDiff=(before,after)=>{comparison=[before,after];};
-globalThis.fetch=()=>{throw new Error('Static must not fetch translation assets');};
-prepareTranslationComparison=()=>{throw new Error('Static must not prepare translations');};
-(async()=>{
-  renderControls();
-  assert.equal(els.language.hidden,false);
-  assert.deepEqual(languages.map(input=>input.checked),[false,true]);
-  state.view='static';
-  renderControls();
-  assert.equal(els.language.hidden,true);
-  setLanguage('original');
-  assert.equal(state.language,'zh-CN');
-  assert.deepEqual(stored,[]);
-  await renderStatic(1);
-  assert.deepEqual(comparison,['Read the original.','Read the original.']);
-  assert.deepEqual(requests,['static.md','static.md']);
-  assert.equal(await loadTranslation(snapshot,'static','Read the original.'),null);
-  for(const view of ['diff','trace']){
-    state.view=view;
-    renderControls();
-    assert.equal(els.language.hidden,false);
-    assert.deepEqual(languages.map(input=>input.checked),[false,true]);
-    assert.equal(state.language,'zh-CN');
-  }
-})().catch(error=>{console.error(error);process.exitCode=1;});
-"""
-    )
-
-
-def test_manifest_ignores_legacy_static_translations_and_keeps_runtime(tmp_path):
-    captures = tmp_path / "captures"
-    captures.mkdir()
-    root = tmp_path / "translations"
-    prompt = captures / "prompt.md"
-    trace = captures / "trace.jsonl"
-    static = captures / "static.md"
-    prompt.write_text("Read the file.")
-    trace.write_text(json.dumps({"request": {"body": {"instructions": "Read the file."}}}))
-    static.write_text("A static prompt.")
-    sources = [extract_markdown(prompt.read_text()), extract_trace(trace.read_text())]
-    entries = {
-        segment.id: {"text": "读取文件。", "model": "test", "prompt_version": "test"}
-        for source in sources
-        for segment in source.segments
-    }
-    dictionary = {"schema_version": 1, "locale": "zh-CN", "entries": entries}
-    write_dictionary(root, "agent", dictionary)
-    legacy_dictionary = root / "zh-CN" / "agent" / "static.json"
-    legacy_dictionary.write_text(json.dumps(dictionary))
-    assert not (root / "sources").exists()
-    metadata = TranslationAssets(tmp_path).for_row(
-        {"agent_id": "agent", "prompt": prompt, "trace": trace, "static_prompts": static}
-    )["zh-CN"]
-    assert set(metadata) == {"prompt", "trace", "runtime"}
-    assert metadata["runtime"]["path"] == "translations/zh-CN/agent/runtime.json"
-    assert metadata["prompt"]["translated"] == metadata["prompt"]["total"] == 1
-    assert metadata["trace"]["translated"] == metadata["trace"]["total"] == 1
-    assert len(list((root / "sources").glob("*.json"))) == 2
-
-
 def test_site_embeds_translation_assets_without_language_query_parameters(tmp_path: Path):
     node = shutil.which("node")
     if not node:
@@ -578,7 +474,7 @@ def test_site_embeds_translation_assets_without_language_query_parameters(tmp_pa
     script_path.write_text(script)
     result = subprocess.run([node, "--check", str(script_path)], capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
-    query_code = script.split("function writeQuery()")[1].split("function ensureAvailableView()")[0]
+    query_code = script.split("function writeQuery()")[1].split("function bindEvents()")[0]
     assert "language" not in query_code and "zh-CN" not in query_code
     manifest = json.loads(html.split('<script id="manifest" type="application/json">')[1].split("</script>")[0])
     assert manifest["agents"] == []

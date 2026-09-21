@@ -95,9 +95,6 @@ def main() -> int:
             "*/*/variants/*/prompt.md",
             "*/*/variants/*/trace.jsonl",
             "*/*/variants/*/meta.json",
-            "*/*/static/candidates.json",
-            "*/*/static/prompts.json",
-            "*/*/static/prompts.md",
         )
         for path in capture_root.glob(pattern)
     ]
