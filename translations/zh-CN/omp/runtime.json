@@ -112,6 +112,13 @@
       "text": "已完成任务的输出，或打断等待的消息及原因，会包含在下一轮中。",
       "thinking_budget": 4096
     },
+    "016b759d2fe969766e81a1f62f8f6a6753d1617848a56a97706b71f584730dfc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-21；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "0178d0e3d547b7bf0d2b6266c49ed257dda83741121a4fb2017e187bb3145f17": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -376,6 +383,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`task` 或 `phase`（可选）",
+      "thinking_budget": 4096
+    },
+    "076c1da3192602e58e19e8a04a0927c569c884fc070cc227ad694f8804e3a767": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "设置 `cwd` 而不是 `cd`。",
       "thinking_budget": 4096
     },
     "07719bc9c113ede181bef0bbe972fb99edf969bf37ace8af297f3adfa671f454": {
@@ -2937,6 +2951,13 @@
       "text": "同一元变量出现两次 → 两处必须匹配相同的代码（`$A == $A` 匹配 `x == x`，而不是 `x == y`）",
       "thinking_budget": 4096
     },
+    "47999702c36ce55017635f5c4047ba71c8e1d03107a8dfc793d194d291e66570": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "GPU: 00:02.0 Ethernet controller: Mellanox Technologies MT27710 Family [ConnectX-4 Lx Virtual Function] (rev 80)",
+      "thinking_budget": 4096
+    },
     "47e98e16b2b3cba9c51a14f2aedf0e432892831bd06f1e583cbc2554799d8d72": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3377,6 +3398,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "以 steering 形式到达的 **user** 消息并不是唤醒后继续轮询的理由：应在重新发出 `wait` 之前，先在文本块中回答它。父级/peer 的 steering 用 `send` 回答；advisor 和 budget 的 steer 无需回复。",
+      "thinking_budget": 4096
+    },
+    "53d8290ec6941e44cbec7b3ab643139d5386de0d5ca0fa61cb57506d74e1e10e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "任何排队的完成通知（未受监视的作业完成、受监督的进程退出）都会将各种形式的 `wait` 提前截断为 \"skipped\"；该通知会落在下一步。处理后再重新发出等待。",
       "thinking_budget": 4096
     },
     "54aa9152a9168d0509e3ddc4512d09fb1140e8acacbf409fc61361bc12664932": {
@@ -6011,6 +6039,13 @@
       "text": "区分大小写的搜索",
       "thinking_budget": 4096
     },
+    "94bd423702de8439ec1ceec1449dd7322271738a26f838b947564342487399a6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "带 `name` 的 **`wait`** 会阻塞，直到就绪/退出/`pattern` 或 `timeout`（秒）。`pattern` 是使用 `u` 标志编译的 JavaScript `RegExp`（没有 `(?i)` 之类的内联修饰符）。`pattern` 等待也会在进程退出且从未打印它时返回——在假定匹配之前，请先检查报告的状态。",
+      "thinking_budget": 4096
+    },
     "94befe3faa9d1eb04df530be420ef3f44a141c2acffef078ac3fe8c078feda07": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6478,6 +6513,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "通过向 xd://lsp 写入 JSON 来执行。\n§ 工具策略",
+      "thinking_budget": 4096
+    },
+    "9fba697795a166cd3d597434ba25e5000b8572e639c4850ecaa465d48e813778": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "RFC 2119：MUST、REQUIRED、SHOULD、RECOMMENDED、MAY、OPTIONAL。`NEVER` = `MUST NOT`；`AVOID` = `SHOULD NOT`。\nXML 标签会注入系统内容；可能在用户消息内部进行中断/通知：必须将其视为系统编写/权威内容。用户内容经过净化。",
       "thinking_budget": 4096
     },
     "9fc3d3cf732366e1f1df79fb7dc0bcd74195d027bfb86fe6aa53bd6e5efc11bc": {
@@ -10314,6 +10356,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "仅用于：计算事实的单个二进制调用或短管道（`wc -l`、`sort | uniq -c`、`comm`、`diff`）。\n服务、监视器、调试器、REPL → `hub`（`op:\"start\"`）。\n内联脚本、heredoc、shell 控制流、`$(…)`、多阶段管道、`&&` 链、引号/JSON 转义 → `eval` 单元格。",
+      "thinking_budget": 4096
+    },
+    "ffccb51699e93af75d203ec62405bb984028749882d7f4ad900a5b08eb637827": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "§ 角色\n你是一名在 Oh My Pi 编码 harness 中工作的有用且值得信赖的助手。",
       "thinking_budget": 4096
     },
     "ffce01ecde72ecd91d7a964aded29a4667ed1f8e93bf8f983980cfb5577f622c": {
