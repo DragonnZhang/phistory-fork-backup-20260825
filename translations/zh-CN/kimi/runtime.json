@@ -742,11 +742,25 @@
       "text": "`*.py` - 当前目录下的所有 Python 文件",
       "thinking_budget": 4096
     },
+    "40348e400359399a2bbb5e1f2ff47309801e1bd3055a5d7704fc43803dfdfc31": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.51.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
+      "thinking_budget": 4096
+    },
     "41e43d01939b6d58bf046ce8b6c3134d81fe1ab947b2abf3d344ae6b2f14d591": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 `;` 依次运行命令，无论成功/失败",
+      "thinking_budget": 4096
+    },
+    "42b483a87cc906bd1aba1b0c16f7beb6268742807282d66d92570b04c3b973b3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.51.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "42f878f754195d1e3ad33eb90592ef5b8caf6b2b5f6c647c6d8848859fb909cc": {
