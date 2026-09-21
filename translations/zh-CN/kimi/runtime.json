@@ -105,13 +105,6 @@
       "text": "用一句简短的话回复。",
       "thinking_budget": 4096
     },
-    "0ae776b2b3177d1420f06b118f4ec4d395ceda229d8cee2547aa384fa31f68f6": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.36.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "0afc9a173f02c739078bc80cbdb5f8380cd5f23c0f2383947fa701b7fcdc9fc9": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -126,39 +119,11 @@
       "text": "遵循项目中现有代码的编码风格。",
       "thinking_budget": 4096
     },
-    "0bf6b150b3b590c65e05a6d8821c3baca2ad5dff12aa3869f37e3e82e0da8fad": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.4/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "0cb07f427a30ac8d713856890dc9a26eb00155b391025912a931d623d48fae28": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 multi_select 允许为问题选择多个答案",
-      "thinking_budget": 4096
-    },
-    "0d6d47efe5bb7a612865e0178e3857b6a06d79238e22d577544b460a4fdfba62": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.49.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "0d85bfc298f6f7ef38881ef47b1f42fe625f249ca3a9f4bdb15a1aac9f7d903b": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.46.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "0db8b68125a638fd843b914a107c88ef8fdd70d540947628fd65317b919b223e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.2/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "0db905fc0e6ea5ffec4e3d9ae0770bbb81aed08b9e84875b0ff2a3920f1a6636": {
@@ -175,14 +140,6 @@
       "text": "列出当前会话的后台任务。",
       "thinking_budget": 4096
     },
-    "128711735ab890929ee3889bfa580852a6bc5c5d48caf812574bdffa90995efa": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.41.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "131c8fe1dbdf17294b136e648e58affd5f0ecbe008fc8ee713a0d2fde4e9d733": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -195,13 +152,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "计划模式下会发生什么",
-      "thinking_budget": 4096
-    },
-    "13c1852b5d80d1243e957769e222a0bd944028ca6c06ea5fa20b9c0cb626cb16": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.6/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "13d71db86711e93ac33c21b8d88cc82a9dae7ea1529f10b2e39cb85e7112c8f6": {
@@ -223,13 +173,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在应用 head_limit 之前跳过前 N 行/条目，相当于 `| tail -n +N | head -N`。适用于所有输出模式。默认值为 0。",
-      "thinking_budget": 4096
-    },
-    "154ca844826a59ff65cf25ad1338aa4b6a3b763880827be237ab8f33e2b50328": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.37.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "15af67606ec9a8662efc1d6656e3c685c92e4459251f0fa3d34d847121c1303d": {
@@ -279,13 +222,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当前工作目录的目录列表如下：",
-      "thinking_budget": 4096
-    },
-    "17a317cded27ac2b591ea1ca3e608dd97d28c499578729ca23ea822df25ba29d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.35.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "17ea34ea98510ba362e5740a14caf0dee9e033ce6435166a3543389e88471c17": {
@@ -342,13 +278,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "定位配置文件（例如，`*.config.*`、`*.json`）",
-      "thinking_budget": 4096
-    },
-    "1bbab41a8b22c83582e39243be27fc9f492b3e18075009fa7e8242af128ec19a": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.39.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "1beeeeca44a6208fe2f92229545a33d7b9ca4b23d16d41424fb49c3e7733e9a5": {
@@ -512,13 +441,6 @@
       "text": "在处理子目录中的文件时，务必检查这些目录是否包含自己的 `AGENTS.md`，其中有补充或覆盖上述指令的更具体指导。你还可以查看 `README`/`README.md` 文件，以获取有关该项目的更多信息。",
       "thinking_budget": 4096
     },
-    "24983b3a639d3c379c00332739d73729742d59e230978cfb65680896e2ae6edb": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.2/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "24ab36f483e11f72a02a9b2ad3d4df2887224318768a6a002e7bee704bbc621a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -568,6 +490,13 @@
       "text": "`explore`：快速的代码库探索，具有由提示词强制约束的只读行为。（工具：Shell、ReadFile、ReadMediaFile、Glob、Grep、SearchWeb、FetchURL，模型：inherit，后台：yes）。何时使用：专为探索代码库设计的快速智能体。当你需要按模式快速查找文件（例如 \"src/**/*.yaml\"）、在代码中搜索关键词（例如 \"数据库连接\"），或回答关于代码库的问题（例如 \"auth 模块是如何工作的？\"）时，使用该智能体。调用该智能体时，请指明所需的细致程度：\"quick\" 用于基本搜索，\"medium\" 用于适度探索，\"thorough\" 用于跨多个位置和命名约定的全面分析。对于明显需要超过 3 次工具调用的任何只读探索，都使用该智能体。调查相互独立的问题时，优先并发启动多个 explore 智能体。",
       "thinking_budget": 4096
     },
+    "27b4894a29c9fd6d4d25dafb7cd52ff3839ac9870337edb410de79be76ebcb77": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "系统提示词",
+      "thinking_budget": 4096
+    },
     "28afaf4c779c892ee70248a22636e56f9e6bbd92686cf7a34f30a3c989167f8d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -580,13 +509,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`src/**/*.js` - 递归匹配 src 目录下的所有 JavaScript 文件",
-      "thinking_budget": 4096
-    },
-    "2a1fa544b303adc3e636890135845e28fa13555a873d719cfc909fe2ee7140f2": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.6/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "2a4b680488411aa416d524df3907722e8c44a3987d629935e36ef327640bfa60": {
@@ -701,13 +623,6 @@
       "text": "默认采用前台执行。仅当任务可以独立推进、你不需要立即拿到结果，并且在它完成之前交还控制权有明显好处时，才使用 `run_in_background=true`。",
       "thinking_budget": 4096
     },
-    "3333a6ecd1239aaecef276cd912672d9197660f1c9fabd3f6f5235422c643408": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.36.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "341fa80b54735de65722c1f3ca4a701359f9b97c6d3a982dc7eb8bb67bc17806": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -727,20 +642,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "仅在有意等待完成或超时时才使用 `block=true`。",
-      "thinking_budget": 4096
-    },
-    "369ec32adc1144aad0962432979fea0b00081c2a4b8ba038d4cd112ae1a1cad9": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.39.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "3861219fd42ebd309846a3e6f4b23360410a6008ba9e2400d88dea4fd4b4a170": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.50.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "38a7a6c20ef73b6770eb3b6ebabddd1893076698eebb3072526b6e06c63b7c2f": {
@@ -890,13 +791,6 @@
       "text": "对于代码重构，如果接口发生变化，通常需要更新所有调用被重构代码的地方。不要更改任何现有逻辑，尤其是测试中的逻辑，只专注于修复接口变化引起的错误。",
       "thinking_budget": 4096
     },
-    "45ed09b59d174435be6878fdbd1112b07c080e8f7f3ba3660b6c7883960ab6dd": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.1/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "460579bd0cd7718c651f1c8b45717b70aac24fc4e6c6acf520d111286477ea20": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -944,14 +838,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "除非有明确指示，否则避免修改工作目录之外的文件。",
-      "thinking_budget": 4096
-    },
-    "4bd6ffa52575480999328dc721169365f9daace11755a733f3c1540aa1fa92f0": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.43.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "4c30223c579a198b1ae91762ec39857a5d66d27392565c1f18d25c5f91f59c3d": {
@@ -1052,6 +938,13 @@
       "text": "系统可能会在适当的情况下，在用户消息或工具消息中插入由 `<system>` 和 `</system>` 标签包裹的提示或信息。这些信息与当前任务或工具调用相关，可能重要，也可能不重要。在决定下一步行动时，请将这些信息考虑在内。",
       "thinking_budget": 4096
     },
+    "53521c609a80e4320cd1ad8948b091893b8de7d365fc59f91524e67985346ceb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · user · input_text",
+      "thinking_budget": 4096
+    },
     "53d7bdac70e67e1772aebed09f9a50e75cd5fc1f4ff33ef16be94c11519e8d0b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1143,13 +1036,6 @@
       "text": "从零开始构建某个东西时，你应当：",
       "thinking_budget": 4096
     },
-    "5c18b2aa0b0df0c695f0b205b917d145531e5b711ed163fbe9d6be8739771437": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "5c4be6d7665095489cfa60811524d53f190f94acb3df3df30245d6ed795de94a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1171,40 +1057,11 @@
       "text": "隐藏文件（如 `.gitlab-ci.yml`、`.eslintrc.json` 之类的点文件）始终会被搜索。若还要搜索被 `.gitignore` 排除的文件（例如 `node_modules`、构建输出），可将 `include_ignored` 设为 `true`。出于安全考虑，即使 `include_ignored` 为 `true`，敏感文件（如 `.env`）仍会被跳过。",
       "thinking_budget": 4096
     },
-    "5d76068af34bd15510fc65f0ac28074507d65b13ee2e3acddc949ceabeb1b4a9": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.41.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "5ec59fff65c96c101b71d75deb96d2d813e4f0493c15455c36caa3ec2f1945f7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.4/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "5ef11991db1b56579dad28d3b7fbda9465c458fb8b166fac6cc879ad8e3c36a7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.3/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "5f6113f228d5cdce4ca03b2debd4b045d9186f76909c1e97918685bd2119239f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在做出更改之前，先使用工具（`ReadFile`、`Glob`、`Grep`）阅读代码库来理解它。明确最终目标以及实现该目标的最重要标准。",
-      "thinking_budget": 4096
-    },
-    "5f8e12b9b230947a3b738c536141879203e9f7390032a6b2e1bd492ac3f63994": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.35.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "5f9d73575d1858aba4e310a28e927e9f6ad41e7be125f8016ad145995f19f849": {
@@ -1219,13 +1076,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "架构决策——例如\"添加 WebSocket 支持\"",
-      "thinking_budget": 4096
-    },
-    "6041a51d127b1a9ca6c0af1387dd75d71fef6a37682c9fce15128a6c230fb99e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.47.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "61167d2145f302699b7f0800320b332fbc44d076f68f5d2e6ab6ae3c00a5abd1": {
@@ -1389,13 +1239,6 @@
       "text": "在工作过程中让用户在不同实现方案之间做出决定",
       "thinking_budget": 4096
     },
-    "71636a00a359fa199590b65dd726b36bd2dbe34c9a1278105c227dc5162f4aa7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.47.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "7209f48873b7163d793e6f29e091bf9334883e0c64fca165ef168fca4acba8ea": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1494,13 +1337,6 @@
       "text": "**查询模式**：省略 `todos`（或传入 null），以在不做更改的情况下获取当前待办列表。",
       "thinking_budget": 4096
     },
-    "7a1507ad183864a82116e42ed98e6fd8266a35177e167483d988494deae3ec59": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.48.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "7a1dae74027d0269b271952aeb69be35683ffd6579231f114f450aaba1443907": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1597,21 +1433,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在进行深入或广泛的研究之前先制定计划，确保始终不偏离方向。",
-      "thinking_budget": 4096
-    },
-    "803b3c2974dada9729a47cd5499ef58698c4d5d186bdae4b070e780a5ce31253": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.44.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "8159bbee82b2c9851414f026f7e351c0a87fcc4349e7aec3c7d012b7cb06dd56": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.45.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "81faa8edb40d57ec3f013a15d38d4bf7a22e71a7c009108fc991742f52af8d00": {
@@ -1824,25 +1645,11 @@
       "text": "在计划模式下，你将：",
       "thinking_budget": 4096
     },
-    "94560a2f33f85b3cea87ca6a14fe6c5143453f1599ca609cd340e15d9c7af8c8": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.50.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "94a46da993154543e4d227e1314b6a13da1a177a96e28ca072e2a8134a90782a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "对于新功能，通常需要设计架构，并以模块化、可维护的方式编写代码，尽量少侵入现有代码。如果项目已有测试，则添加新的测试。",
-      "thinking_budget": 4096
-    },
-    "950f7e57dce67264dcac7d7dd84746694777e876177af4ace56c3baf09861e8d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.3/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "9521aa721bd922c3b2579681a540c1e95c7c8c4a442f8b403703e0d21f3fec2b": {
@@ -1878,13 +1685,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "用户可能要求你研究某些主题，处理或生成某些多媒体文件。执行此类任务时，你必须：",
-      "thinking_budget": 4096
-    },
-    "98154da7e5c3b344c264ad8e1551a0ce96d9de452c2b037779e3fdad8e86a844": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.49.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "9854b51cead818e4f89eb529033622d29abb5d8fe172c509bafd9f4594ff9d2f": {
@@ -1941,13 +1741,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "最多提供 2-3 个选项（系统会自动附加一个 \"Reject\" 选项，因此向用户显示的总数为 3-4 个）。",
-      "thinking_budget": 4096
-    },
-    "9c662125d28d868b4b0288523979122f7c68197322a98fe3e35107b786b959e5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.45.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "9d7b49a61d616b3517b5e632b81d7b957db233eae130fa52d98e3b63060169ea": {
@@ -2041,6 +1834,13 @@
       "text": "是否在后台运行该智能体。除非任务可以独立继续，且在需要结果之前交还控制权有明显好处，否则优先使用 false。",
       "thinking_budget": 4096
     },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
+      "thinking_budget": 4096
+    },
     "a71a668052cf5af07df72cfcc14953e8004ac13d00d4b557c7426d0aec72fcab": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2067,21 +1867,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "生成一个子智能体来执行特定任务。子智能体将以全新的上下文生成，不包含你的任何历史记录。",
-      "thinking_budget": 4096
-    },
-    "aa01f83c965674bad5b9443c6fe023d1b6556d446f593dc1a77f49897c290a6d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.42.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "aa34e79bd2d4f961b77fb809b6bf9e040379ed0127367b0afd20e8f527e7c01f": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.44.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "aaf54c1e6a85379cd338a1ff56e02c3807cd37a54de831e79d508dfe34367f67": {
@@ -2166,14 +1951,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "过度使用此工具会打断用户的节奏。仅当用户的输入确实会改变你的下一步行动时才使用它。",
-      "thinking_budget": 4096
-    },
-    "b28e8f1cb92b3b22e2508596556d8a60b2ebca0ea0de3d4db6a1be9743714429": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.42.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
       "thinking_budget": 4096
     },
     "b2a5e0f17ad8c1c07ba6d5cc0b546185e845780d83c824d4dcb2de141f3dad35": {
@@ -2288,13 +2065,6 @@
       "text": "当只需少数几步/几次工具调用即可完成任务时。例如：\"修复单元测试函数 'test_xxx'\"、\"重构函数 'xxx'，使其更加稳健。\"",
       "thinking_budget": 4096
     },
-    "bce9394bbda236bb479ff17204611fd1dda8caa3f31296a0a727c9b7f910ab7b": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.46.0/lib/python3.12/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "bcf756ce17dfcddb2dc2de5ea703348274e10569a4972b0b0b0be3074c232c7a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2330,20 +2100,6 @@
       "text": "工作目录",
       "thinking_budget": 4096
     },
-    "c1a13cc98272eba86e52dacbaf5c1da6d9145b6229f900f0332deadc8786ce8b": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/home/runner/work/phistory/phistory/.phistory-cache/installs/kimi/1.48.0/lib/python3.12/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "c1b2e81141586e6fd5ffb760f594a80d310a57984dd0e71f70bbff2d72d4b202": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.38.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "c26c3d05fb0c14fcee774f2118de2bcd4cf0211b9ade84d7f92f93f5a65601ec": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2358,12 +2114,11 @@
       "text": "子智能体的结果只有你能看到。如果用户应当看到它，请自行总结。",
       "thinking_budget": 4096
     },
-    "c4b1420d53cf40b2f9b47ce25764ae4a99333f23a21948f3c53f71918f5a3a65": {
+    "c32997652e9ff3aa64c4125e622accd0169eb0c98e0da13457a5a4f3fbb9de2c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
       "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.40.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
+      "text": "块 1 · developer 消息",
       "thinking_budget": 4096
     },
     "c4e9320f37ed8571dd621cf07828eec0e0666444aa6410b476112321f7e08b86": {
@@ -2435,14 +2190,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "工具集成：为特定操作预先配置的工具链",
-      "thinking_budget": 4096
-    },
-    "c91dbe68af2fd17f314f139d5ba1d55076597798c0ceaac48b07957ec96fa747": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.43.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "c94ac3c2816c4ec81046f9adfc59522d4eb9b072ecf78881b3ee4d83ec97c2a1": {
@@ -2613,14 +2360,6 @@
       "text": "\"medium\"：理解某个模块——认证如何运作、哪些地方调用了这个 API",
       "thinking_budget": 4096
     },
-    "da01b236fd97fa636ee66565be6ca9c7deee53feb2b3cbf02e3fc0f129a0ef23": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.40.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "db0ffca3b8bb2557aa8dd2c1ae0b4d836dece4d790f2a250bef60757b4cf8308": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2768,13 +2507,6 @@
       "text": "替换指定文件中的特定字符串。",
       "thinking_budget": 4096
     },
-    "e849479a99cb2d121f82716383d4ac5b8c261ac499c26c5a53879230026f0333": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.1/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
-      "thinking_budget": 4096
-    },
     "e93e8e4b2c2044f5dd23b56c113b4ebe0dc7defc740f23bce75ae5d0553cd40d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2894,32 +2626,11 @@
       "text": "将输出限制为前 N 行/条目，相当于 `| head -N`。适用于所有输出模式：content（限制输出行数）、files_with_matches（限制文件路径数）、count_matches（限制计数条目数）。默认值为 250。传入 0 表示不限制（请谨慎使用——大量结果集会浪费上下文）。",
       "thinking_budget": 4096
     },
-    "f0fadb37475adc22068201e59f5b663eb0c98c628dbe6c0d8b1356be77021445": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.37.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f18e6de6f60dde18570c4ce5e805e20927723f0f93fe3a556f8a970b157cb458": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "你正在非交互模式下运行。用户无法在执行过程中回答问题或提供反馈。",
-      "thinking_budget": 4096
-    },
-    "f21f17e5b36ef0d86d923ae0706d57f63e80e6bf92ccb6cd048e878b1c94db23": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "开发者提示词",
       "thinking_budget": 4096
     },
     "f2c5c25a0fec47057ce60c1eaef3b1395cf67ca18722bdfccce6fabca5c7d99f": {
@@ -2929,18 +2640,18 @@
       "text": "充分理解用户的需求，如有需要，在开始前先请求澄清。",
       "thinking_budget": 4096
     },
-    "f304dd064109c67c140fc7f4ee659f0cb956c49476132bf04f91d020ac34b1c6": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.38.0/lib/python3.13/site-packages/kimi_cli/skills/skill-creator/SKILL.md",
-      "thinking_budget": 4096
-    },
     "f3891d7426c4169577b30687d8f8b01eb331d1bb1735e7a22ff00cd78be0c5d2": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 `if`、`case`、`for`、`while` 控制流在一次调用中执行复杂逻辑。",
+      "thinking_budget": 4096
+    },
+    "f47c428d1c628d058959c0c01901c9c7db8f9c39303ad5fdad54268ee14ca86a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · user · system-reminder",
       "thinking_budget": 4096
     },
     "f48925389dee120f0e7aaf10b3e4156d1c9579b3c94f773cd2cb8b411eab27bd": {
@@ -2983,13 +2694,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当你处于计划模式、已将计划写入计划文件并准备好接受用户批准时，使用此工具。",
-      "thinking_budget": 4096
-    },
-    "f6d7a68640de963b27f947d6a1bdaffe49e77a19d1ca03f77f4ca166c1ff3609": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "路径：/data00/home/liangweifeng/phistory/.phistory-cache/installs/kimi/1.0/lib/python3.13/site-packages/kimi_cli/skills/kimi-cli-help/SKILL.md",
       "thinking_budget": 4096
     },
     "f7ee33f8f34dc2cdbc9a1bac133f3a565198f578ba90629a886bca7433c0d433": {

@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "kimi-for-coding",
-    "tool_count": 24
+    "tool_count": 24,
+    "provider": "openai-chat"
   },
   "published_at": "2026-08-18T14:32:10.773Z",
   "tarball_url": "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-0.37.1.tgz",

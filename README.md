@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-06 03:36 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-21 06:49 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -21,9 +21,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 ## How It Works
 
-For each supported release, Phistory installs the exact CLI package and runs each configured snapshot through [`claude-tap`](https://github.com/WEIFENG2333/claude-tap), captures the prompt-bearing HTTP request without calling the real model provider, and stores the result under `captures/<agent>/<version>/variants/<variant>/` with `prompt.md`, `trace.jsonl`, and `meta.json`. Capture configurations use a `default` snapshot as their baseline; selected models or modes are stored as additional variants.
-
-For recent Claude Code releases, Phistory also extracts static prompt-like strings from the installed package and stores them under `captures/<agent>/<version>/static/`. The candidate archive preserves extracted text after resource filtering, so filters and matching rules can be reapplied without reinstalling historical packages. See [Static extraction and cleanup](docs/static-prompts.md).
+For each supported release, Phistory installs the exact CLI package and runs each configured snapshot through [`claude-tap`](https://github.com/WEIFENG2333/claude-tap), captures the prompt-bearing HTTP request without calling the real model provider, and stores the result under `captures/<agent>/<version>/variants/<variant>/` with `prompt.md`, `trace.jsonl`, and `meta.json`. The `default` snapshot runs each CLI the way its users do, through a real terminal when it ships one; selected models or alternative surfaces are stored as additional variants. `prompt.md` is rendered from the archived trace, so every block of the request survives into it: each system block and its cache boundary, reminder blocks, and system messages interleaved with the conversation.
 
 GitHub Actions checks automatically tracked CLI releases every hour and commits new snapshots when they appear.
 
@@ -45,9 +43,6 @@ uv run phistory capture --latest --agents codex --variants default,gpt-5.5,gpt-5
 
 # Capture a historical version range for one agent.
 uv run phistory backfill claude-code --from 2.1.113 --to latest
-
-# Rebuild static prompt files for the latest 10 captured Claude Code versions.
-uv run phistory extract-static claude-code --latest-captured 10
 
 # Translate archived prose using credentials configured outside the repository.
 uv run phistory translate --all-captured
@@ -79,11 +74,11 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-06 03:36 UTC
+Last capture update: 2026-09-21 06:49 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.263 - 2026-09-06](captures/claude-code/2.1.263/variants/default/prompt.md) | 409 | 409 | 2026-09-06 03:36 UTC |
+| Claude Code | [2.1.263 - 2026-09-06](captures/claude-code/2.1.263/variants/default/prompt.md) | 409 | 698 | 2026-09-21 04:40 UTC |
 | Codex CLI | [0.153.4 - 2026-09-04](captures/codex/0.153.4/variants/default/prompt.md) | 87 | 119 | 2026-09-05 00:19 UTC |
 | DeepSeek Harness | [0.1.2-rc.1 - 2026-09-03](captures/dsh/0.1.2-rc.1/variants/default/prompt.md) | 9 | 45 | 2026-09-05 18:39 UTC |
 | Antigravity CLI | [1.1.27 - 2026-09-05](captures/antigravity/1.1.27/variants/default/prompt.md) | 41 | 41 | 2026-09-05 20:14 UTC |

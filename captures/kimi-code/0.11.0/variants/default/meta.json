@@ -38,6 +38,7 @@
   "requested": {},
   "observed": {
     "model": "kimi-for-coding",
-    "tool_count": 19
+    "tool_count": 19,
+    "provider": "openai-chat"
   }
 }

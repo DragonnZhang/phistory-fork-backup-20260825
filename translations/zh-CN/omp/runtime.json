@@ -1612,13 +1612,6 @@
       "text": "使用正则表达式 Grep 文件。",
       "thinking_budget": 4096
     },
-    "2511013e87ff508722661e1ccfceab2fc22c5aff8120c029cf5bbdc5005d1bd2": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "`app.cdp_url` → 连接到现有的 CDP 端点（例如 `http://127.0.0.1:9222`）。",
-      "thinking_budget": 4096
-    },
     "2538e727eeb56d293a2530ecd1b30d93cb930dcfc8598c6c636b2d0efd193342": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3302,6 +3295,13 @@
       "text": "专用工具",
       "thinking_budget": 4096
     },
+    "53521c609a80e4320cd1ad8948b091893b8de7d365fc59f91524e67985346ceb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · user · input_text",
+      "thinking_budget": 4096
+    },
     "53ab53863b72ad5fb6811268f2995059dab7591f6181737df9204b8820de2958": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4455,6 +4455,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "为所有后台作业拍快照，无需等待",
+      "thinking_budget": 4096
+    },
+    "711a9c090468f419a319122352ec624c886d2bb3e504e812c56e4b25e0cc2789": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · user · system-reminder",
       "thinking_budget": 4096
     },
     "712aa6740c14cbfc34a444f8ea4325a5bd137cb82c02e5117cd6cbec124feac5": {
@@ -6053,6 +6060,13 @@
       "text": "start：分配交互式 PTY；默认为 true",
       "thinking_budget": 4096
     },
+    "9748df0cad0e25133345a42a7d6d5a431b2c2ae89df834bd82adeb89683f1c8d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · user · input_text",
+      "thinking_budget": 4096
+    },
     "976634eab97a14748baf20c32edeb3dc22fa4b93c3dee710d618acdbb94f4336": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6702,6 +6716,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "两种运行时使用相同的辅助函数和参数顺序。Python：同步，选项 = 末尾的 kwargs。JS：异步/可 `await`，选项 = 唯一一个末尾对象字面量，绝不作为位置参数传入（多余参数会抛错）。",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a775ba074c64d55b80b6afcb68b64f2fe3cd513e90e382c28a3d824183105fa0": {
@@ -9579,13 +9600,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "PDF、Word、PowerPoint、Excel、RTF、EPUB → 提取的文本。Notebook（`.ipynb`）→ 可编辑的 `# %% [type] cell:N` 文本。`:raw` 绕过转换器。",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
       "thinking_budget": 4096
     },
     "f1890963c49949d9cca3e3f1932c48c3f164a2d0d4e14eb8d632dc711f49a11f": {

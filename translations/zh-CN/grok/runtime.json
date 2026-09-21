@@ -2502,6 +2502,13 @@
       "text": "保持文本输出简洁直接。先给出答案或行动，而不是推理过程。省略填充词、开场白和不必要的过渡。不要复述用户说的话——直接去做。解释时，只包含用户理解所需的内容。",
       "thinking_budget": 4096
     },
+    "5c0208df8eb59e4f2eb912cc8d789dfb970baf5a3fcfa06a0a8cb2a863b9edcc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · 用户 · 文本",
+      "thinking_budget": 4096
+    },
     "5c020a550170753db38101bc53266cb273f8e179dac1694fc3a3bcef6a0c3f0c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3869,6 +3876,13 @@
       "text": "`tool_name` 必须是限定名称（例如 `linear__save_issue`）。`tool_input` 必须完全符合 `search_tool` 返回的输入 schema。",
       "thinking_budget": 4096
     },
+    "8e6d4e592374d5e8d352521444aa43c76a6d2926631f607241725282827d2068": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 3 · 用户 · 文本",
+      "thinking_budget": 4096
+    },
     "8ea169734fdc2457ed14603edb0a1a3812166b1065f10f00621b3e3d05bc33a4": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4569,6 +4583,13 @@
       "text": "`browser_network_details` 工具的输入。",
       "thinking_budget": 4096
     },
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
     "a6ac06c3c9f0b08e3706df0dca2b49d8f33a5f82dc1f48cdb69f25282cd9d11c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4588,6 +4609,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "何时不使用待办列表的示例",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a7f9dd39682730e780286f35b904d876d40561736aedad1149ef5348db157aa5": {
@@ -4973,6 +5001,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "用户可能会在会话期间创建、编辑或删除文件。",
+      "thinking_budget": 4096
+    },
+    "b29b8ab355ef920793c085a5ec17239f9532604f918911c61c682f1f737c641e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · 文本",
       "thinking_budget": 4096
     },
     "b326c80bf46732a868a260533798014f840f0bad9df86db64d654c22d52380e7": {
@@ -6767,13 +6802,6 @@
       "text": "更新现有组件以支持主题切换",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f1e9bece9b279199013912fc134ff7e3b6e29ed8effbd90a78b1413f673a423e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6877,6 +6905,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "有合适的已注册工作流时优先使用；对于在已知工作清单上进行有界扇出、分阶段的研究与验证，或多个独立视角，则编写脚本。在编写或修改脚本之前，先阅读 `create-workflow` 技能的 SKILL.md。`validate_only: true` 只运行针对特定路径的冒烟检查（元数据、编译、一个预设宿主路径）——并非证明每个分支或真实工具都能正常工作。",
+      "thinking_budget": 4096
+    },
+    "f47c428d1c628d058959c0c01901c9c7db8f9c39303ad5fdad54268ee14ca86a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · 用户 · system-reminder",
       "thinking_budget": 4096
     },
     "f4fa7450376f2be6ef7aecdbc6b49b98112220fcaee977d928e694cef53f76cf": {

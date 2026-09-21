@@ -28,13 +28,6 @@
       "text": "*了解你正在帮助的人。随着进展不断更新此内容。*",
       "thinking_budget": 4096
     },
-    "00d4b99263c3566c63a6ba8272e60b218461622b7f2b1c52a73838e406bab224": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.3/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n关于配置字段的文档，优先使用 `gateway` 工具的 `config.schema.lookup` 操作；更广泛的配置指引，请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，请先查看 GitHub 上的 OpenClaw 源码再作回答。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "01083fc5dd335f333b398418e1ae0ff7317baf764551237361baeaeccef3e186": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -385,25 +378,11 @@
       "text": "**记忆是有限的**——如果你想记住什么，就把它写到文件里",
       "thinking_budget": 4096
     },
-    "07945328ec096c20d8f19eff8d33e8dd9001e86fb215a80889a652cb55532d54": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.7/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "0809368527a00e8e8d86a562c2ef585d76471463273791a19a6fde85cbd51702": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要投票的投票选项编号（从 1 开始计数），与渲染出的带编号投票选项相对应。",
-      "thinking_budget": 4096
-    },
-    "084b5da47d28644d10115d868324ae2d83fdbec47c6e1578a47fff206aeb3ab4": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.23/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "08586355773c09a2c949b30f7e6017623c1b1ffe4511f02cd999a6575c97af12": {
@@ -434,13 +413,6 @@
       "text": "子智能体编排 → 使用 `sessions_spawn(...)` 启动委派的工作；提供清晰的目标/输出/写入范围/验证说明，并在稳定句柄有帮助时加上 `taskName`；对隔离的子智能体省略 `context`，仅在子智能体需要当前对话记录时才设置 `context:\"fork\"`；使用 `sessions_yield` 等待完成事件；仅在需要按需查看状态/调试信息时使用 `subagents(action=list)`。",
       "thinking_budget": 4096
     },
-    "089da77c027c2db250f3ae66c2608ba07a50f389cfda1de64d624e06ad9da19e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.12/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "08a13022b15f0b3cdc86f9ae05fb5299ca1c6af41c3fdebb0bea7fa0f630e0bc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -462,18 +434,18 @@
       "text": "维护本会话的进度卡片：即 OpenClaw 各界面中显示在会话旁的唯一持久状态面板，面向不阅读对话记录的人。任何耗时超过片刻的任务都要保持其最新——这是用户无需滚动就能观察你工作的方式。每次调用都会替换整张卡片。选择适合当前工作的表现形式，可使用以下两个部分之一或两者：`markdown`——一段紧凑的说明；比较或指标用表格，单个长操作用 <progress value=\"3\" max=\"7\"></progress> 进度条，简单状态用加粗单行文字；其他原始 HTML 会被剥离。有已知 URL？加上链接。不要把 PR 或 issue 留成裸 ID。以及 `plan`——一个有序的步骤清单（pending | in_progress | completed，in_progress 最多一个），用于真正按顺序进行的工作。清单是可选的：只要表格、进度条或一句话能表达得更好就省略它，并且绝不要在两个部分重复相同的事实。两部分都传空即可清空。在有实质变化时更新——某步完成、出现阻塞、结果出炉——而不是每条消息都更新。最多 8 KB markdown，50 个步骤。",
       "thinking_budget": 4096
     },
-    "091463883692464012552e74705f06bd8128b9c157c106f600bba75e99a3dd69": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.8/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "0914e9f745f4bef25f997c48111e6f4ab8f0bfd0c76e333b80f462b8a8d40e3c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "从 1 开始计数的投票选项编号。",
+      "thinking_budget": 4096
+    },
+    "091ca2a0daf01bc4771ada61dbb526244fd65e9f908d3a4bf97c93bc6f0f118b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "OpenClaw 文档：$PHISTORY_INSTALL/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n排查问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "092b10ff283acd3be0f8b26dea525ae72cd6fc091027f213129bd2d19f2ea859": {
@@ -593,13 +565,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "不要凭空捏造命令。\n网关重启、配置、频道、插件、智能体、模型/提供商：询问 `openclaw`。\n更新 OpenClaw：`gateway` action update.run，仅在用户明确请求时执行；重启和完成通知是自动的。绝不要通过 exec 运行 openclaw update、npm install -g openclaw，或停止/重启网关服务。",
-      "thinking_budget": 4096
-    },
-    "0b885e6040ff714ffaf9c99e72ed2884c369cc41743079e9ce97d5181de0a217": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.25/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "0bb77fe5b1f98a35011cf2c11b941b29f994aea4c7a6d7e187c92126e4b1e45b": {
@@ -733,13 +698,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "😊 像人类一样使用表情回应！",
-      "thinking_budget": 4096
-    },
-    "0e95255baf37a8cd140cbdff67c9754337e6c2b23b6cf3a06c8f8b5cfb20346d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.7/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n关于配置字段的文档，优先使用 `gateway` 工具操作 `config.schema.lookup`；更广泛的配置指导请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先查看 GitHub 上的 OpenClaw 源码再回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "0ecb6a3ccf509c93a4201c4bf989527ec326e69d03b2a685152a9b7a4558215c": {
@@ -1120,13 +1078,6 @@
       "text": "以文档形式发送图片/GIF，以避免 Telegram 压缩（仅限 Telegram）。",
       "thinking_budget": 4096
     },
-    "162bb75a4a2b911e8604245cab93b8f876e1a1441e400301ffab98ce2edc0e49": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.21/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "16765e85c761016cda782c0ef7efd7867a98576c76e399783dbe98729bf828b5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1399,32 +1350,11 @@
       "text": "**你的气质**——正式？随意？毒舌？温暖？哪种感觉合适？",
       "thinking_budget": 4096
     },
-    "1d38626869a035fbc18fc44a236e1f31bd96a9d5f1ff31925b35aa21d891d42f": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.21/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "1d43d91039bf2a3f8f2f00a24fa49c9755bf480a3bdd39a2f3c5c552ae63e760": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "文档：$PHISTORY_INSTALL/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威来源：在了解 OpenClaw 的工作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read` 或搜索本地文档；把 AGENTS.md/项目上下文、工作区/配置文件/记忆笔记以及 `memory_search` 当作指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway` 的 `config.schema.lookup` 操作；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档没有相关内容或已过时，请说明这一点并检查 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
-    "1d81efb7ac0f3577b7c4b8bbfb6c38d2fae8141c65008771c7afbbe4328e2ddd": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.31/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
-    "1dcab6f6f665d04080696142a9bce3b1b4f8f47b85d601609589ddd701e644f6": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.10/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威依据：在了解 OpenClaw 的运作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read`或搜索本地文档；应将 AGENTS.md/项目上下文、工作区/配置文件/记忆笔记以及 `memory_search`视为指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway`的 action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档没有提及或已过时，请如实说明并查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "1ddce9c9518e6e8d69dc2b1ce4a6a23bc0bb3286f22d3c279a8cdbd06e44a849": {
@@ -1558,13 +1488,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "messageId 的 snake_case 别名。在回应类操作中若省略此参数，则在可用时默认为当前入站消息的 id。",
-      "thinking_budget": 4096
-    },
-    "212565dc74ac83e5babc7b634cdace51653529f609a8c967260445e6ebc884e8": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.5/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway`的 action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "21362800a1f39436b68b9d323609165998b4849ec7f1a2e2c6fa731480cc99d3": {
@@ -1769,13 +1692,6 @@
       "text": "步骤：有序的操作，每一步都以智能体可检查的完成标准收尾。步骤排在参考资料之前；参考资料只出现在被某个步骤查阅的地方。",
       "thinking_budget": 4096
     },
-    "253fec23b1ae38206c4b70857070c8f62602a11627c57375262dab40992dc4a5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.12/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：先读本地文档。\n配置字段：使用 `gateway` 的 `config.schema.lookup` 操作；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时/不完整，查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "2548446b8c011f7d748e5a6b44aec14999c7887702c6423fd280b0ae344ced6b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1887,6 +1803,13 @@
       "text": "使用配置的图像模型（agents.defaults.imageModel）分析一张或多张图像。单个路径/URL 使用 image，多个（最多 20 张）使用 images。请提供一个提示词，描述要分析的内容。",
       "thinking_budget": 4096
     },
+    "281a6551ee09aa46b538625810713b8f8d9731f84399f09ef0fe793b21a9a1cf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "OpenClaw 文档：$PHISTORY_INSTALL/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawdhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n排查问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
+      "thinking_budget": 4096
+    },
     "283867a8a4dec26648efe1268bfced7baef222e5440922b152051ab38caee7b7": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1943,13 +1866,6 @@
       "text": "提供方超时毫秒数（300000 通常是较安全的取值）。",
       "thinking_budget": 4096
     },
-    "290d1969bf290710d6904ada960aeeb2ebc54c62c6936512533f23fcf152f12f": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.9.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为问题：优先通过 `read`/local 查文档。AGENTS/项目/工作区/配置文件/记忆＝指令/用户记忆，不是产品设计的权威事实。\n配置字段：`gateway(config.schema.lookup)` 精确路径。更广范围：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档未提及或已过时，请说明并检查 GitHub 源码。\n诊断：条件允许时运行 `openclaw status`；仅在受阻时才提问。",
-      "thinking_budget": 4096
-    },
     "290e7460aa2f14aa5358ce1dbd5f534b5f033df06e4c7fb06a168553b5e80262": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1969,6 +1885,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "将文本转换为语音。音频会从工具结果自动送达——成功调用后请回复 NO_REPLY，以避免重复消息。",
+      "thinking_budget": 4096
+    },
+    "29cb1f2b7f6077d84cd969de27058c9746c016429f76d351308b9178f8b1ed52": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "OpenClaw 文档：$PHISTORY_INSTALL/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n配置字段文档请优先使用 `gateway` 工具的 `config.schema.lookup` 操作；如需更广泛的配置指引，请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或已过时，回答前先查阅 GitHub 上的 OpenClaw 源码。\n排查问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "29ee12b49294d5cb85ef3b9d72561f69e527d1799917006f13d8de9861385e35": {
@@ -2080,13 +2003,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "背景",
-      "thinking_budget": 4096
-    },
-    "2d655344e944989a7411aa211f852e00a2f6011fc8c6c7f576b841ea4da4d7f3": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.8.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为问题：优先通过 `read`/local 搜索查阅文档。AGENTS/project/workspace/profile/memory = 指令/用户记忆，不是产品设计事实。\n配置字段：`gateway(config.schema.lookup)` 精确路径。更广范围：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档缺失或过时，请如实说明并检查 GitHub 源码。\n诊断：尽可能运行 `openclaw status`；仅在受阻时才询问。",
       "thinking_budget": 4096
     },
     "2da4e0740571f44d6a72fb43db4ef1deac20745931af72f299122d0fa999ea88": {
@@ -2207,13 +2123,6 @@
       "text": "**在以下情况保持沉默：**",
       "thinking_budget": 4096
     },
-    "2f92ecf5c2024b7a5d3fffabad9c9331096dcfc1a8b322706b7ab2c8335b4f3a": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.6/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "2f9372a3d2d7d0137a137aea8767dd7bd77a04064b432860f313476813619f5d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2254,13 +2163,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要返回的最大结果数。",
-      "thinking_budget": 4096
-    },
-    "303dac983cc8f99ac06e3f1f7bab7f497fe87045a0a41036d7bd72ed152ebbf7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.15/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "305fc7eb10eeabb4317737bd68adfa4234d960d1861f72334f0b237a3ffd668c": {
@@ -2317,13 +2219,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "告警渠道",
-      "thinking_budget": 4096
-    },
-    "31fc71dbb5c0fa9f55e05a022697838cc834477cf63b869a21f1e2348ad23e64": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.24/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "3237674c3ceb3e0c01aa8242bcd3b88a79b6a1d1eb8a0ffa1d0d09904c1a1a23": {
@@ -2465,13 +2360,6 @@
       "text": "最长人工等待时间，单位为秒；默认 900，取值限制在 30-3600。更早的运行取消或整体运行超时仍然适用。",
       "thinking_budget": 4096
     },
-    "34ef790ae5603cefce61412ea209e9cd8520bcdd5d7f7d088a9fef54666dd90a": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.14/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "352bd660327bc835fca40e2a4e3ae17245c35c9339b2d246836b843447c2de5e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2611,13 +2499,6 @@
       "text": "用于 action=update 的现有技能名称或键。",
       "thinking_budget": 4096
     },
-    "3848ac7c7b56b547d8808ad4b4fae0471609394ce96b45e3bc4af0fb7c2da0e5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.7.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威来源：在了解 OpenClaw 的工作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read` 或搜索本地文档；将 AGENTS.md/项目上下文、工作区/profile/记忆中的笔记以及 `memory_search` 视为指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway` action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档未提及或已过时，请明确说明并查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "3859d8ca8e62af55ff49a281c2ec9241272057cef74772646f2f060ca6fcd2a4": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2716,13 +2597,6 @@
       "text": "如果配置了多个通道，请传入 `channel`（telegram|whatsapp|discord|irc|googlechat|slack|signal|imessage|line）。",
       "thinking_budget": 4096
     },
-    "3b3dcc76660b5647ffa25c5a40e69a09e0d016ef2bf88daace8cca1505ccf42c": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.5.20/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 的 action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，就检查 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "3b3e2efbc7346fea2a4cee94f4e87c630fc38cfdcad415d3fa1f6936bc6f8611": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2798,13 +2672,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "memory_get：从 MEMORY.md 或 memory/*.md 安全读取片段，可选用 from/lines；在 memory_search 之后使用，只提取所需的行，保持上下文精简。",
-      "thinking_budget": 4096
-    },
-    "3c8594c14bf13775408664be5642f6c3f2503af520c58dfbfa0f80bc7f7a0f28": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.5.27/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 的 `config.schema.lookup` 操作；更广泛的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时/不完整，请查看 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "3c94c87dae73ce9bf482121165c0bb91f804964ce4e3bfdc12948b8ebf0b47e5": {
@@ -2888,13 +2755,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "memory_search：强制回忆步骤：在回答有关先前工作、决策、日期、人员、偏好或待办事项的问题之前，先对 MEMORY.md + memory/*.md（以及可选的会话记录）进行语义搜索；返回最相关的片段，并附带路径 + 行号。如果响应中 disabled=true，则记忆检索不可用，应将此情况告知用户。",
-      "thinking_budget": 4096
-    },
-    "3da974fd57bd42b42c900a4e2acc7eec391fbae020e2a6afb9af92e107f5b8d3": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.23/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "3db7720ffc39bfb493a201c2891c5292f5b9461ce88e2dded7fa614922c6cc85": {
@@ -3229,13 +3089,6 @@
       "text": "简短的选项标签；过长的输入会截断到 12 个字符。",
       "thinking_budget": 4096
     },
-    "44f68df69c1b80b12ef3f72837282c1c6ef29452bc52e8c5f2602daa6f4739af": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.24/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时才询问用户（例如处于沙箱环境）。",
-      "thinking_budget": 4096
-    },
     "44fb693eb35dff01dd4e50f9c6b624ae07b2f57dd76b92723874d798b8ab5871": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3446,13 +3299,6 @@
       "text": "选择一个操作。对于 action=\"send\"，需提供 message 或其他发送载荷；其他操作的字段不计为发送内容。",
       "thinking_budget": 4096
     },
-    "49329e6fa31812fb034a3f0e1f82cb50adcd4e5e3c45fa733529f7e677035993": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.9/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威来源：在理解 OpenClaw 的工作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read` 或搜索本地文档；将 AGENTS.md/项目上下文、工作区/配置文件/记忆笔记以及 `memory_search` 视为指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway` 操作 `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档没有提及或已过时，请如实说明并查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "497877e9b47fc09f696854dd6531bb09abdee52db7f973b2082ff32ef3fe9eba": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3549,13 +3395,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "附件挂载提示；visible=true 只接受省略或空白的 mountPath。",
-      "thinking_budget": 4096
-    },
-    "4b884d2dd51783a4c97b87140fe708238bc3e5f37f39059e161d6b2d006f8ff6": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.28/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时才询问用户（例如处于沙箱环境）。",
       "thinking_budget": 4096
     },
     "4b89eedb1f9807a6d8f3806b2b2b17aa3a210c8c16274b8f1ecf67532d9ed69b": {
@@ -3698,13 +3537,6 @@
       "text": "读取文件内容。支持文本文件和图片（jpg、png、gif、webp）。图片会作为附件发送。文本文件的输出会截断到 2000 行或 50KB（以先达到的为准）。大文件请使用 offset/limit。需要完整文件时，用 offset 继续读取，直到读完为止。",
       "thinking_budget": 4096
     },
-    "4d7c78fe42d189eab896e26e2156543aa479efa2b67e0b6750a05ab119c889ee": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.13/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "4d8162fd3c80705fa47a56cffe0e673f6d19cc428da0ddbd62aaa211b576f582": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3773,13 +3605,6 @@
       "text": "仅在用户明确请求时进行。\n修改配置/提问之前：`config.schema.lookup` 以获取确切的点路径。\n操作：config.get、config.patch、config.apply、update.run。配置写入尽可能热重载；仅在需要时重启。\n重启后，OpenClaw 会自动 ping 最后一个活跃会话。\n如果需要当前日期、时间或星期几，运行 session_status（📊 session_status）。",
       "thinking_budget": 4096
     },
-    "4e8f7883845f360c8a97dba60883477b912089e0e3b051bffce88f5e8abcb23d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.5.26/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：优先阅读本地文档。\n配置字段：使用 `gateway` action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "4e9233485c2caaecd640f8f479d2829633ad96ef69186796199dc81a880b117e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3792,13 +3617,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "运行时",
-      "thinking_budget": 4096
-    },
-    "4ea1fc479de6906d9fc98e4249f97fbe789f4d1ab7bc2074fdd064668db4ece4": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.12/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "4ecf4abaf764c0337de106f5577431b98da4f79b36bf613741084ce62d732b50": {
@@ -3848,13 +3666,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "对话上下文",
-      "thinking_budget": 4096
-    },
-    "4f4878d00b3fb1cacd7dc0cc98e8ae23eeacd7a2e9ea54399c51076d008ee07d": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.13/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在缺乏访问权限（例如处于沙箱环境）时才询问用户。",
       "thinking_budget": 4096
     },
     "4f644b5650a3184cb173eaf5d21161d8441fa810ec0d2f146c0b454531cfea82": {
@@ -4046,6 +3857,13 @@
       "text": "通过 OpenClaw 的浏览器控制服务器控制浏览器（status/start/stop/profiles/tabs/open/snapshot/screenshot/actions）。浏览器选择：对于 OpenClaw 托管的隔离浏览器（`openclaw`），默认省略 profile。对于已登录的用户浏览器，使用 profile=\"user\"。所选主机或浏览器节点上必须运行受支持的基于 Chromium 的浏览器（v144+）。仅在已有登录状态/Cookie 重要且用户在场时使用。对于 profile=\"user\" 或其他已有会话的 profile，在 act:type、evaluate、hover、scrollIntoView、drag、select 和 fill 上省略 timeoutMs；该驱动会拒绝针对这些操作的按调用超时覆盖。当存在节点托管的浏览器代理时，工具可能会自动路由到该代理。使用 node=<id|name> 或 target=\"node\" 固定节点。使用来自 snapshot 的 refs（如 e12）时，保持在同一标签页：优先将 snapshot 响应中的 targetId 传入后续操作（act/click/type 等）。对于标签页操作，targetId 还接受 tabId 句柄（t1）以及来自 action=tabs 的标签名称。对于多步骤浏览器工作、登录检查、过期 refs、重复标签页或 Google Meet 流程，在可用时使用捆绑的 browser-automation 技能。要在多次调用间获得稳定、可自行解析的 refs，请使用带 refs=\"aria\" 的 snapshot（Playwright aria-ref id）。默认的 refs=\"role\" 基于 role+name。使用 snapshot+act 进行 UI 自动化。默认避免使用 act:wait；仅在不存在可靠 UI 状态的例外情况下使用。target 选择浏览器位置（sandbox|host|node）。默认：host。允许 host 目标。",
       "thinking_budget": 4096
     },
+    "53521c609a80e4320cd1ad8948b091893b8de7d365fc59f91524e67985346ceb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · input_text",
+      "thinking_budget": 4096
+    },
     "53a381097dd6f72582225aaed7e9d46439837b5d2e4bf1500e13c18b87c44906": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4065,13 +3883,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "<description>使用 `gh` CLI 与 GitHub 交互。使用 `gh issue`、`gh pr`、`gh run` 和 `gh api` 来处理 issue、PR、CI 运行和高级查询。</description>",
-      "thinking_budget": 4096
-    },
-    "53d13a9cc596cd4e940a7870652172a35026b115047d0f2a9640797a70837478": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.9.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为问题：优先通过 `read`/local 查文档。AGENTS/project/workspace/profile/memory＝指令/用户记忆，不是产品设计的权威依据。\n配置字段：`gateway(config.schema.lookup)` 精确路径。更广范围：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n文档沉默/过时就明说，并检查 GitHub 源码。\n诊断：能运行 `openclaw status` 就运行；只有在受阻时才提问。",
       "thinking_budget": 4096
     },
     "54090974c1bb35eeb5202f79b7f227e74b1cf8f9c70a738dc170cda42e5d7f40": {
@@ -4177,6 +3988,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "[Tue 2026-06-30 18:23 UTC] 用一句简短的话回复。",
+      "thinking_budget": 4096
+    },
+    "562b8913ae118f82203f02f44c653aea321c10703c966c9f35fb3fbe2475cc83": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "OpenClaw 文档：$PHISTORY_INSTALL/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n排查问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "56484cf445e39f9746142e86cc9d94ecb9b33918a52cca158ba735900ac69232": {
@@ -4345,13 +4163,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "\"every\"：循环间隔\n  { \"kind\": \"every\", \"everyMs\": <ms>, \"anchorMs\": <optional-ms> }",
-      "thinking_budget": 4096
-    },
-    "5994387974a6de85bc9bfb6a014ada9870c5d8ad5e019ae15bb1d7fb472e0dae": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.10/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\nSource: https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在你缺乏访问权限时才询问用户（例如处于沙箱环境）。",
       "thinking_budget": 4096
     },
     "59a1736822808c20a11657121aabe200a360e45604f5852e2398a19b14d9c457": {
@@ -5046,13 +4857,6 @@
       "text": "sessionTarget=\"isolated\" 要求 payload.kind=\"agentTurn\"\n默认：优先使用 isolated agentTurn 任务，除非用户明确想要主会话系统事件。",
       "thinking_budget": 4096
     },
-    "68a3a904d1d64be6c5867143e7adc6d062a6a31703dc5bb7db346d835587fa4c": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.4/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n关于配置字段的文档，优先使用 `gateway` 工具操作 `config.schema.lookup`；更广泛的配置指导请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先查看 GitHub 上的 OpenClaw 源码再回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "68b0e1fe075c671a669157558d314534c53a473612ec169cf5de33806a569761": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -5518,25 +5322,11 @@
       "text": "单个 PDF 路径或 URL。",
       "thinking_budget": 4096
     },
-    "7137f12c516e539037e7f1b3d4dabf1ea14d77fc86352399b06a9afc3d290bc1": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.7.1-2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威来源：在了解 OpenClaw 的工作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read` 或搜索本地文档；将 AGENTS.md/项目上下文、工作区/profile/记忆中的笔记以及 `memory_search` 视为指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway` action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档未提及或已过时，请明确说明并查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "7161422d07a3f037af178935b64d973102e3d098e55a14f185214ff0951a3765": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "关键约束：",
-      "thinking_budget": 4096
-    },
-    "71a9bee2fecec6352204fca1300d645ba41aa83ee87b294cbf7d4950666b0d58": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.11/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "72295bbc5070e9faf5d5b0a9895b6d0e623324582df877abf97b6ad971c0b473": {
@@ -5734,13 +5524,6 @@
       "text": "🔄 记忆维护（心跳期间）",
       "thinking_budget": 4096
     },
-    "75d2ccaec1282a67626eb91472b47c9ab8875d2365520379c5728f40a9033d84": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.19/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 的 action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，就检查 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "75d40589192d8010a3319fde957e2a4f4500a66a4d3a68e7a49955c0babf514d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5822,13 +5605,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在你能收到每条消息的群聊中，要**明智地把握发言时机**：",
-      "thinking_budget": 4096
-    },
-    "77f9f9121232eae4d6078728bd4f832033bb590b840804c19ccfcbe910ddee5e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.11/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n涉及 OpenClaw 的行为、命令、配置或架构时：先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "7841b267f5d24ea90f306d2b5444e1f9fc676cf2490cf9b37f6e4cf92a8d6ce5": {
@@ -5961,13 +5737,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "💓 心跳——主动起来！",
-      "thinking_budget": 4096
-    },
-    "7b349d9c6b6b542ecb21b7b1f100a91cc8c76d8f6006ea65b9faae0905431648": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.23/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时才询问用户（例如处于沙箱环境）。",
       "thinking_budget": 4096
     },
     "7b389dbe2f50ffb3ac5d30809acf53471a6c7f96eea66ed917fcb79b590b9dd7": {
@@ -6142,13 +5911,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "背景：transparent、opaque、auto。transparent 需要 png/webp 输出。",
-      "thinking_budget": 4096
-    },
-    "7f5cb8e6f4ad8939620cabf82f085579bad629d41e175eee4b748764c8dbeeb2": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.27/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n配置字段的文档，优先使用 `gateway` 工具的 `config.schema.lookup` 动作；更广泛的配置指导，请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先在 GitHub 上查看 OpenClaw 源码再回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "7fe75a4c7df4c1149e00d6e0c2dacd45c0621f454e4209c275e0edb550803e23": {
@@ -6522,13 +6284,6 @@
       "text": "`action: \"wake\"` 的唤醒目标覆盖：将事件路由到指定会话，而非调用方智能体的当前会话。省略时默认为解析后的调用方会话 key。",
       "thinking_budget": 4096
     },
-    "88ddc814ec8406f7b1b7aebf33a339f5c5ce8d5c590ffa33c4864ab4b9d9bca1": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.18/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "8937b976ebebd6668e58ebe3faf62fbce6669f867c2c4abc3ad1bcad55686e7c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6641,13 +6396,6 @@
       "text": "子智能体编排 → 使用 `sessions_spawn(...)` 启动委派工作；提供清晰的目标/输出/写入范围/验证简报，并在稳定句柄有帮助时附上 `taskName`；对隔离的子智能体省略 `context`，仅当子智能体需要当前对话记录时才设置 `context:\"fork\"`；使用 `sessions_yield` 等待完成事件；仅在按需查看状态、调试或干预时使用 `subagents(action=list|steer|kill)`。",
       "thinking_budget": 4096
     },
-    "8b2de0d5f2caeeb1cd472927e8e10f22109085a909e156184829a9b742f32bf7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.15/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "8bd699574e745f408a8d2d637ec4f732227eba201a7e1abc770797b249fea6b6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6710,13 +6458,6 @@
       "text": "{kind:\"at\",at:\"ISO-8601\"} 为一次性任务；未指定 tz 时按 UTC；成功完成后自动删除：即送达已确认、无需送达、有意静默，或明确为 bestEffort。送达失败或状态未知且要求送达时，任务会保留并禁用。",
       "thinking_budget": 4096
     },
-    "8d1d625cde8fd038c4b9de0c6305d906334483d151fba4a60e0802edd573d872": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.1.29/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawdhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时才询问用户（例如处于沙箱环境）。",
-      "thinking_budget": 4096
-    },
     "8d5336e7df12c9c813b64c681b56210565e965dae5e03fc81ce5da7247710b10": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6743,13 +6484,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "对于 poll：返回前最多等待这么多毫秒",
-      "thinking_budget": 4096
-    },
-    "8dffcf4b81a6b5e47b1874ee81669f814b7fc363cf4c7531b6dc3229643d9962": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.8.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为问题：优先通过 `read`/local 搜索查阅文档。AGENTS/project/workspace/profile/memory ＝ 指令/用户记忆，并非产品设计的事实依据。\n配置字段：`gateway(config.schema.lookup)` 精确路径。更广泛的资料：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档缺失或过时，如实说明并检查 GitHub 源码。\n诊断：尽可能运行 `openclaw status`；仅在受阻时才询问。",
       "thinking_budget": 4096
     },
     "8e091f657da2460bb4c6f3d0b4f52200c6f93db4fde4ead50afb43b999ec0f10": {
@@ -6870,13 +6604,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "每隔几天，使用一个定时自动化任务读取最近的 `memory/YYYY-MM-DD.md` 文件，并识别哪些内容值得长期保留。更新 `USER.md` 中的活跃用户指令，把持久的非画像材料并入 `MEMORY.md`，并删除过时的条目。每日文件是原始笔记；`USER.md` 和 `MEMORY.md` 则是经过整理的层级。",
-      "thinking_budget": 4096
-    },
-    "9009802a7c21238ea4e4fc4f5cee987133d8024c3d08a3dd8efe82e34bc8b1c3": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在缺乏访问权限（例如处于沙箱环境）时才询问用户。",
       "thinking_budget": 4096
     },
     "901b8f5bcd698cd86b0de51ebc001ebeed37538da30ed1f53fb21e4daec08e04": {
@@ -7046,13 +6773,6 @@
       "text": "技能描述，用于 create/update/revise；最多 160 字节。update 时，简洁的文本会缩短提案列表条目。",
       "thinking_budget": 4096
     },
-    "92a4cad7d2cf72cca8fdb55fbd5715bdf5909df05bb5774653788dd17f43ec58": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.6/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 操作 `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "92d69419ee16057246342935530e661e50e5a544630e789934a3627f0f5d3c71": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7163,13 +6883,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "为并行收集器子会话分组；需要 collect=true。",
-      "thinking_budget": 4096
-    },
-    "9418cbf5dbedb42a9231e9b0960bab0b950fa47d173055fa80d468e1527e0ac9": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.22/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "94a5212be0979763e27a43c2a4bf385d2c8b537d7139174046412c5aa39154df": {
@@ -7380,13 +7093,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "触发告警前的失败次数",
-      "thinking_budget": 4096
-    },
-    "98ac5b385c8e781d3b4ed7344079aae5d421bfbe61459963965d48c6babdad8f": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "98bbfc2da0b78548264adcff9eed19fa9e10e61e71dba1d602f71b7264ff50f3": {
@@ -7760,13 +7466,6 @@
       "text": "已配对节点：status/list 可查看活跃计算机的在线状态；传入 node 以执行 describe/control。配对生命周期（pending/approve/reject）、notify、camera_snap/camera_list/camera_clip（含音频）、用于物理摄像头水平转动/俯仰/变焦的 camera_ptz、photos_latest、screen_snapshot、screen_record 视频、location_get、notifications_list + notifications_action（open/dismiss/reply）、device_status/device_info/device_permissions/device_health、可执行文件查找（which + bins）、通用 invoke。文件传输是一项独立的能力。",
       "thinking_budget": 4096
     },
-    "9ed62c84a5dee70a925bbffb9c1ed032ca744d101d6987d8e967d0e7aa1e3e9f": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.22/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "9f88be3c458319f63000bf92fa234ee3dc7bced92101e508fb86c6f957bbf6c3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8116,6 +7815,13 @@
       "text": "PDF 路径/URL；最多 10 个。",
       "thinking_budget": 4096
     },
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
     "a6cdb6fdbe7db0490f4939ceec16410f5937e4cdc74080c986a7928c71f21906": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8135,6 +7841,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "生成子智能体后结束回合；结果在下一条消息到达。对于原本会静默的交互式父级回合，确认操作可以发送一条等待回复。",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a7fe48bb1cc4feaf8a56010880963876ce7621052adf5996a93b2ec3e55a570f": {
@@ -8346,13 +8059,6 @@
       "text": "定期（每隔几天），使用一次心跳来：",
       "thinking_budget": 4096
     },
-    "ac1e09a1be5ebdf31279bb2e44cc02bb26b401bd3f11de6eb0cb6c915c78bff2": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "ac86d02e53102e60a10639e0b5eabbdcd5d4f7b985534f7b5314cbfcece48172": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8442,13 +8148,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "\"systemEvent\": 以系统事件形式注入文本\n  { \"kind\": \"systemEvent\", \"text\": \"<message>\" }",
-      "thinking_budget": 4096
-    },
-    "ae8563be94d24a3c945bc1f54782f208a7a5dc3d63db989d0c868cd4e07a4d8b": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.5/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n关于配置字段的文档，优先使用 `gateway` 工具操作 `config.schema.lookup`；更广泛的配置指导请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先查看 GitHub 上的 OpenClaw 源码再回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "ae8bee30d5e9feee69ef71f5de0b7a656fbc2d1dd0428483d84d1932c2765cd8": {
@@ -8547,13 +8246,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**可以自由进行：**",
-      "thinking_budget": 4096
-    },
-    "b044276e7690f414bd292fe00f27100d5d4950427756ca4b67abd4da3125a263": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.19/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "b0556ca54ae288568141978a785350e169c488258dd9a4844857793de3dee2a4": {
@@ -8877,13 +8569,6 @@
       "text": "运行时：agent=main | session=agent:main:main | sessionId=2f5a782c-f736-44a5-8258-dbbf83849d34 | host=runnervm3jd5f | repo=$PHISTORY_HOME/.openclaw/workspace | os=Linux 6.17.0-1020-azure (x64) | node=v24.18.0 | model=phistory/phistory-dummy | default_model=phistory/phistory-dummy | shell=bash | thinking=off\n当前模型身份：phistory/phistory-dummy。如果被问到你是什么模型，本次运行中请以该值作答。\nReasoning：off（除非 on/stream，否则隐藏）。切换 /reasoning；/status 会在启用时显示 Reasoning。",
       "thinking_budget": 4096
     },
-    "b809349bcd370c174c952c795e0b019fc3f909cde02b02faafb6e6688c06f1c5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.14/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "b80c26ea6719731ebaf3f8421a939cfad5f212861e90607d21167c545eed03e1": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8933,13 +8618,6 @@
       "text": "<description>创建或更新 AgentSkills。在设计、组织或打包包含脚本、参考资料和资源的技能时使用。</description>",
       "thinking_budget": 4096
     },
-    "b8ef42d6007b3ab3c80239f5dbffa82b8285baf227a4163b420a047a18f38e4b": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.12/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在缺乏访问权限（例如处于沙箱环境）时才询问用户。",
-      "thinking_budget": 4096
-    },
     "b91a551f9618f798d38155e0f5d5e4e74c43b5979a5ffa800b53a112b25cc6a3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8959,13 +8637,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "用于解释 cron 挂钟字段的 IANA 时区（kind=cron），例如 \"Asia/Shanghai\"；如果省略，cron 使用 Gateway 主机的本地时区。",
-      "thinking_budget": 4096
-    },
-    "b94cf3f66900b92bc4868aef18eb7b9156e57881a55ab44b030ee066ada8d0ee": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.5.28/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 的 `config.schema.lookup` 操作；更广泛的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时/不完整，请查看 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "b99a03d5f5635fdf58f8c6c0996c409369a8dfc00a6768a9f94a76fde3b1dea5": {
@@ -9099,13 +8770,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**就在这里**——仅限网页聊天",
-      "thinking_budget": 4096
-    },
-    "bc6cdd80151fc8be02f3805f5273dd040ad6b951679d4a88af9d4fddaacec5c5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.9/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "bc70d8c019806d00c3e396e343178be35481815c21799ffee3f0464e2734d7de": {
@@ -9332,13 +8996,6 @@
       "text": "事件的封面图片 URL 或本地文件路径。",
       "thinking_budget": 4096
     },
-    "c13a3e5dd1dd2a410afb82e86e6ccef045516f7f9489e3857359be45fef52fdd": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "c151f8a38c3409ed6146e9fbeb8b59c2794b33cc3bf9ab325e43427ffaf962a3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9400,13 +9057,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`[System Message] ...` 块是内部上下文，默认情况下用户不可见。",
-      "thinking_budget": 4096
-    },
-    "c332934c569edfaf0807648476784cc583a058cbb70b7af769a2c8564d7c0698": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.17/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在缺乏访问权限时才询问用户（例如，处于沙箱环境）。",
       "thinking_budget": 4096
     },
     "c346e6374864e1150f71979db03b74585881be023adbb01ba71f25f02ca169e5": {
@@ -9660,13 +9310,6 @@
       "text": "Skill Workshop",
       "thinking_budget": 4096
     },
-    "c8da4d1f59255adc242f2da3dd062df4193fe8dbd69bd7a50a98f0d5e1774164": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.11/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n文档是 OpenClaw 自我认知的权威依据：在了解 OpenClaw 的运作方式（记忆/每日笔记、会话、工具、Gateway、配置、命令、项目上下文）之前，先使用 `read`或搜索本地文档；应将 AGENTS.md/项目上下文、工作区/配置文件/记忆笔记以及 `memory_search`视为指令上下文或用户记忆，而不是 OpenClaw 的设计/实现知识。\n配置字段：使用 `gateway`的 action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档没有提及或已过时，请如实说明并查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
     "c9045dc43ae1bb1d877ac22c722e2fa9135de774a538d37a29222e35b1db4449": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9700,13 +9343,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要读取的最大行数",
-      "thinking_budget": 4096
-    },
-    "c9981dd99aa15b9c6fa6ffb2341b048d9ab4bc9e4d5da71dad13fe190749fcc1": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.8/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "c9a8dc4acde1b570b55ee6b67ef7ce92327cf0840c6438fc0eac9826be9ff0f6": {
@@ -9933,20 +9569,6 @@
       "text": "群聊",
       "thinking_budget": 4096
     },
-    "cd2b1d6a38b2d299dac4d955297f507b7c9a5eebf136b1536eeeff4878189916": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.26/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
-    "cd313c56a603099e57068b8ba5da934cdf4d70396b4b3c6df6f3e3b5e75a1bb9": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.7/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "cd366498202fea11e2f42afa67ec2b5546a570dee41ffddf57f827575ad36a0d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10036,13 +9658,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "生成音频开关。",
-      "thinking_budget": 4096
-    },
-    "cfd6ce4e5f979f0d5fc0a3e2bec072623db16de816527cd16e0b4889324db3b1": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.8/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 操作 `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "cfe33d9631e51e258df2fd7fd4075091df26052c7600a42809be0787d20ed55b": {
@@ -10626,13 +10241,6 @@
       "text": "<description>通过 curl 使用 wttr.in 获取当前天气和预报，用于地点、降雨、气温、出行规划。</description>",
       "thinking_budget": 4096
     },
-    "d9c00f5c2df1e2250e1ec3ddeddb9f61b13586adcd514866a0ec7d8d8b637176": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：请先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "d9c2d450eb7b56a6598b9accedae16559c192fff2dad88ed15f9b8340bd15f12": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10675,13 +10283,6 @@
       "text": "config.schema.lookup 必需；config.get 可选。",
       "thinking_budget": 4096
     },
-    "dad25ebca53d2244fec094f813d92b1fb26ed0f78fa0c7ff41c8725e24402898": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.22/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；仅在缺乏访问权限（例如处于沙箱环境）时才询问用户。",
-      "thinking_budget": 4096
-    },
     "daeef17fec24c0db3fa328d9bf6bd6711aa68fc2dea596270993baaaf329ee61": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10715,13 +10316,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "get：查单个任务；需要 jobId",
-      "thinking_budget": 4096
-    },
-    "dc342de95cb4e217ac92d62b7ca56d07191e4c14228daadd36a20ae47f9c35ff": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.6.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 行为/配置/架构：先阅读本地文档。\n配置字段：使用 `gateway` 的 `config.schema.lookup` 操作；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时/不完整，就检查 GitHub 源码。\n诊断问题时：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
       "thinking_budget": 4096
     },
     "dc4de41de76e74eafd441cd5288318890dd5416f23767abafb6e39e6251758ef": {
@@ -11100,13 +10694,6 @@
       "text": "按 sessionKey 或标签向另一个可见会话发送消息。线程范围的聊天会话会被拒绝；进行智能体间协调时，请以父频道会话为目标。用于将后续工作委派给现有会话；会等待目标运行，并在可用时返回更新后的助手回复。",
       "thinking_budget": 4096
     },
-    "e56507cd42d17243a5e17ff2d5f5d0f59fac40fc79025aabc4362accdb70c482": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.2/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n配置字段文档优先使用 `gateway` 工具的 `config.schema.lookup` action；更全面的配置指引请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先在 GitHub 上查阅 OpenClaw 源码再作回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "e58decf8436e489ff775913190b5b4df2e48b46884bc33bcc8350e9ee6fdc7b5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11154,13 +10741,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "强制回忆步骤：在回答关于以往工作、决策、日期、人物、偏好或待办事项的问题之前，先对 MEMORY.md、USER.md 以及 memory/ 下递归遍历的 Markdown 文件进行语义搜索。可选的 `corpus=wiki` 或 `corpus=all` 还会搜索已注册的 compiled-wiki 补充材料。`corpus=memory` 将命中结果限制为已索引的记忆文件（排名时不包含会话对话记录分块）。`corpus=sessions` 在与会话历史工具相同的可见性规则下，将命中结果限制为会话语料。语料结果覆盖每个被请求的语料；语料警告表示结果不完整，必须向用户呈现。如果响应中 disabled=true 或 stale=true，请告知用户并附上警告/操作指引。",
-      "thinking_budget": 4096
-    },
-    "e62b48f46e4d0f161c16ed9e9555a69baba14080df2c2e54f1e240f95cb09116": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.2.3/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "e6486928772ddd9901f05e7cde1cbe93fa9ba5cf67e9b5daefdaf5453cee4daa": {
@@ -11322,13 +10902,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "可选的质量提示：low、medium、high，或在提供商支持时使用 auto。",
-      "thinking_budget": 4096
-    },
-    "e9a97ab99fe8faac58be1eef9325da850b1d187422c86c9b3b9599013a951297": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.5.6/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：先查阅本地文档。\n关于配置字段的文档，优先使用 `gateway` 工具操作 `config.schema.lookup`；更广泛的配置指导请阅读 `docs/gateway/configuration.md` 和 `docs/gateway/configuration-reference.md`。\n如果文档不完整或过时，先查看 GitHub 上的 OpenClaw 源码再回答。\n诊断问题时，尽可能自己运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "e9fd9a1e6a0cade05f2af182cf8f12eaf3a97f92824d2a5b7051685d0ca40e98": {
@@ -11527,13 +11100,6 @@
       "text": "**名字：**\n  *（选一个你喜欢的）*",
       "thinking_budget": 4096
     },
-    "ee196adabf5c88330cf97f956fd6c8e49ccfd25b54f8d22e3db8a23c3acf2f45": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.1.30/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "ee1c84863219b05d9061e3c1ef95eb404b4eb389a8cdedeff000c3b3d141b995": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11653,20 +11219,6 @@
       "text": "任务模式（用于 add 操作）：\n{\n  \"name\": \"string\",\n  \"schedule\": { ... },      // 必填\n  \"trigger\": { \"script\": \"...\", \"once\": false }, // every/cron 的可选条件门\n  \"payload\": { ... },       // 必填\n  \"delivery\": { ... },      // isolated/current/session 的可选 announce，任意 target 的 webhook\n  \"sessionTarget\": \"main\" | \"isolated\" | \"current\" | \"session:<id>\",\n  \"enabled\": true | false   // 默认 true\n}",
       "thinking_budget": 4096
     },
-    "f0eeb1c9d8f1c92bf6c970a362f07c91cd9e1cfc35f3858d2be531838bab51f7": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.9/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在缺乏访问权限时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
-    "f103107784d61c091911f6bbe57d7bd5a4d32e88052eec195a67f137050d6d82": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.4.20/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n查找新技能：https://clawhub.ai\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在无法访问时（例如处于沙箱环境）才询问用户。",
-      "thinking_budget": 4096
-    },
     "f12ea6808cd7ddb818ccec04eb04355a4e006ff94c69bce9c6c17ea3e5ce9f0e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11686,20 +11238,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "仅限 OpenAI 的稳定最终用户标识符，用于滥用监控。",
-      "thinking_budget": 4096
-    },
-    "f155c7d2cd22787d3dd07174488a1e90ce5e8198f3296336e851c1f629e95f59": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/openclaw/2026.5.22/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\nOpenClaw 的行为/配置/架构：优先阅读本地文档。\n配置字段：使用 `gateway` action `config.schema.lookup`；更全面的配置文档：`docs/gateway/configuration.md`、`docs/gateway/configuration-reference.md`。\n如果文档过时或不完整，请查看 GitHub 源码。\n诊断问题：尽可能运行 `openclaw status`；仅在受阻时才询问用户。",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
       "thinking_budget": 4096
     },
     "f1bdd0b89357d437f5ecd48dd27ef161c79109c8b95bbb1e8ded37d0ab227df7": {
@@ -11791,13 +11329,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "时区：UTC\n如果需要当前日期、时间或星期几，使用 session_status 工具。",
-      "thinking_budget": 4096
-    },
-    "f30b7e4d8fddbd95369c450da0a50ad574b4f9ea10d9977966609787b110bd9a": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "OpenClaw 文档：/data00/home/liangweifeng/phistory/.phistory-cache/installs/openclaw/2026.3.1/node_modules/openclaw/docs\n镜像：https://docs.openclaw.ai\n源码：https://github.com/openclaw/openclaw\n社区：https://discord.com/invite/clawd\n寻找新技能：https://clawhub.com\n关于 OpenClaw 的行为、命令、配置或架构：优先查阅本地文档。\n诊断问题时，尽可能亲自运行 `openclaw status`；只有在没有访问权限时（例如处于沙箱环境）才询问用户。",
       "thinking_budget": 4096
     },
     "f3314c740425bba31a8ccfe830e05e43603177c7bc8c23e07e65d2f8f6fe9909": {

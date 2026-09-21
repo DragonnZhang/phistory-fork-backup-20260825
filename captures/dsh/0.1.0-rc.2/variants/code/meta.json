@@ -17,7 +17,8 @@
   },
   "observed": {
     "model": "deepseek-v4-flash",
-    "tool_count": 1
+    "tool_count": 1,
+    "provider": "openai-chat"
   },
   "published_at": "2026-08-13T09:48:26.232Z",
   "tarball_url": null,

@@ -3,40 +3,44 @@
   "agent": "Claude Code",
   "package": "@anthropic-ai/claude-code",
   "version": "2.1.158",
+  "variant": {
+    "id": "default",
+    "label": "Terminal",
+    "dimensions": {
+      "surface": "terminal"
+    }
+  },
+  "requested": {
+    "surface": "terminal"
+  },
+  "observed": {
+    "provider": "anthropic",
+    "model": "claude-opus-4-8",
+    "tool_count": 27,
+    "surface": "interactive-tty"
+  },
   "published_at": "2026-05-30T01:12:23.617Z",
-  "tarball_url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.158.tgz",
+  "tarball_url": null,
   "binary_version": "2.1.158 (Claude Code)",
-  "captured_at": "2026-05-30T04:18:17.575483+00:00",
+  "captured_at": "2026-09-21T05:11:23.924145+00:00",
   "tap_client": "claude",
   "target": "claude-tap capture-only",
-  "duration_seconds": 3.031,
+  "client_exit_code": 0,
+  "duration_seconds": 16.825,
   "command": [
     "python",
     "-m",
     "claude_tap",
     "run",
     "claude",
+    "--no-yolo",
     "--export-prompt",
-    "prompt.md",
+    ".tap/tap-export.md",
     "--no-live",
     "--no-open",
     "--no-update-check",
-    "-o",
+    "--output-dir",
     ".tap",
-    "--no-yolo",
-    "--",
-    "--no-session-persistence",
-    "-p",
-    "Reply with one short sentence."
-  ],
-  "variant": {
-    "id": "default",
-    "label": "Default",
-    "dimensions": {}
-  },
-  "requested": {},
-  "observed": {
-    "model": "claude-opus-4-8",
-    "tool_count": 29
-  }
+    "--"
+  ]
 }

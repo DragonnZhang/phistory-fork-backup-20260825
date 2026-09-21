@@ -44,6 +44,7 @@
   },
   "observed": {
     "model": "deepseek-v4-flash",
-    "tool_count": 25
+    "tool_count": 25,
+    "provider": "openai-chat"
   }
 }

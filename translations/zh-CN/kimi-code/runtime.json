@@ -2136,6 +2136,13 @@
       "text": "调用当前技能列表中已注册的技能。强制要求：当列表中的某个技能与用户请求匹配时，必须调用此工具（而不是自由格式的文本）。不要在同一轮对话中反复调用同一技能 — 递归深度上限为 3。",
       "thinking_budget": 4096
     },
+    "6e1921f3b0b976187d3296b15a53487015837933ef12e5a148417dd3ab4767ad": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 3 · user · system-reminder",
+      "thinking_budget": 4096
+    },
     "6eb1172dd39aead41518017f59e2e7617acad2c1af8817d96875f1c3f170ffce": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3256,6 +3263,20 @@
       "text": "默认选择推进，而不是提问：一旦目标明确，并且你已获得用户同意据此行动，就贯彻到底，自己处理遇到的阻碍；只有当用户的回答会真正改变你的下一步时才提问。这绝不凌驾于这些规则之上：目标不明确时应停下来讨论，编写代码前应等待明确指示。",
       "thinking_budget": 4096
     },
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
+      "thinking_budget": 4096
+    },
     "a71a668052cf5af07df72cfcc14953e8004ac13d00d4b557c7426d0aec72fcab": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3429,6 +3450,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "过度使用此工具会打断用户的操作流程。仅当用户的输入确实会改变你的下一步行动时才使用它。",
+      "thinking_budget": 4096
+    },
+    "b29b8ab355ef920793c085a5ec17239f9532604f918911c61c682f1f737c641e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · user · text",
       "thinking_budget": 4096
     },
     "b35b14201c56ac1d82eca29114baf958eb399fb03419a46a99112b5f6a220131": {
@@ -4782,13 +4810,6 @@
       "text": "用于匹配文件的 Glob 模式。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f1c70c1e543814bfd3d33ce6621d10d0755aa7d1ae4b7a0514e99f8adfd72a37": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4829,6 +4850,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "查询类任务（读这个文件、运行那个测试）：把确切的路径或命令放进提示词。子智能体不应再去搜索你已经知道的东西。",
+      "thinking_budget": 4096
+    },
+    "f47c428d1c628d058959c0c01901c9c7db8f9c39303ad5fdad54268ee14ca86a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · user · system-reminder",
       "thinking_budget": 4096
     },
     "f5253c6c9ccaf1aed22bcfe9fa8a4d46234e1f1112b5c93d7772497d6ec07df5": {

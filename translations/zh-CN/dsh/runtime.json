@@ -478,14 +478,6 @@
       "text": "可选的 JSON 输入，以 `args` 全局变量的形式暴露给脚本（裸列表需包装为一个字段，例如 {\"files\": [...]}）。",
       "thinking_budget": 4096
     },
-    "34cb7f5c1b6e97dd31be24712407a08e17ab6e5cf5cdeaa6c97b38a06264593e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码工作副本位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.2-rc.1/。该副本所在位置与当前工作目录是两个独立的值，可能不同；绝不要从这条路径推断工作目录。用 pwd 确定当前工作目录。此工作副本仅用于检查或扩展 DSH 本身。",
-      "thinking_budget": 4096
-    },
     "36e321bd1b2cba9b9fb2730547740c9ffcf1850d223390c379c00e778f91009a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -583,14 +575,6 @@
       "text": "通过 job id 请求取消正在运行的后台作业。立即返回；一旦其工作实际停止，作业即落定为 killed。",
       "thinking_budget": 4096
     },
-    "425e3d24b8d0bfd1ba06d0f4e555ca15217308ef853926b52b740bd8a98beb53": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码工作副本位于 /tmp/phistory-variant-smoke-20260815-E3TtIQ/cache/installs/dsh/0.1.0-rc.3/。该副本所在位置与当前工作目录是两个独立的值，可能不同；绝不要从这条路径推断工作目录。用 pwd 确定当前工作目录。此工作副本仅用于检查或扩展 DSH 本身。",
-      "thinking_budget": 4096
-    },
     "42951ae1741daf590cd392620bb3df98c9a493782fb0f7a087bf3ef8e0d116a4": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -630,14 +614,6 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "检查每个 bash 结果上的 [exit code: N] 标记；在继续之前先调查失败。",
-      "thinking_budget": 4096
-    },
-    "48e16a53324a3e47ea5fb98e3796714762a129169d34001dc7c86fbd1cc5b489": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码工作副本位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.0-rc.7/。该副本所在位置与当前工作目录是两个独立的值，可能不同；绝不要从这条路径推断工作目录。用 pwd 确定当前工作目录。此工作副本仅用于检查或扩展 DSH 本身。",
       "thinking_budget": 4096
     },
     "49065110dbb1aeb02a056b1755e20eb492608f1dfca672890b7a6be7457b868a": {
@@ -844,6 +820,13 @@
       "text": "以毫秒计的最长等待时长（仅在 wait: true 时有意义）。默认为配置的等待超时；以配置的最大值为上限。",
       "thinking_budget": 4096
     },
+    "5c0208df8eb59e4f2eb912cc8d789dfb970baf5a3fcfa06a0a8cb2a863b9edcc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · 用户 · 文本",
+      "thinking_budget": 4096
+    },
     "5cd725117f75b314ed7673422e1d250aa6e751cc302d726f8ad5ec4a565dbb77": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -928,13 +911,6 @@
       "text": "`editing-cordis-compositions`：在为此 Harness 创建、更改或验证 Cordis composition 时使用——例如编写或编辑智能体预设、添加或移除插件行、判断某项内容属于宿主 composition 还是单个会话、检查你编写的预设是否真正挂载，或诊断已挂载但未贡献任何内容的行。",
       "thinking_budget": 4096
     },
-    "6534ab8627ba62ef41994a85b313b01d82764f3772e8320351499dd413ee5b28": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的 checkout 位于 /tmp/phistory-variant-smoke-20260815-E3TtIQ/cache/installs/dsh/0.0.1-rc.5/。checkout 位置与当前工作目录是两个独立的值，可能不同；切勿从此路径推断工作目录。使用 pwd 确定当前工作目录。此 checkout 仅用于检查或扩展 DSH 本身。",
-      "thinking_budget": 4096
-    },
     "66a8f7de4ea76296438fdfe3721d9042b0545943ef98d109df010cc831cd43c7": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1017,6 +993,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果指定的 `path` 已作为文件存在，则不能使用 `create` 命令",
+      "thinking_budget": 4096
+    },
+    "6e1921f3b0b976187d3296b15a53487015837933ef12e5a148417dd3ab4767ad": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 3 · 用户 · system-reminder",
       "thinking_budget": 4096
     },
     "6e8edf54b772392d0eacbd53c0b3b62f2569103a1c70c7b3899953adec7c64e1": {
@@ -1363,11 +1346,18 @@
       "text": "Client 运行在浏览器页面中，适用于主题、布局、当前页面状态、Tool 卡片和 Slot UI。",
       "thinking_budget": 4096
     },
-    "a6952da92063093c0469df02ebbd4dc05da54ad9e799e43fa603b24a45e2a489": {
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
-      "text": "DeepSeek Harness 实现的 checkout 位于 /tmp/phistory-variant-smoke-20260815-E3TtIQ/cache/installs/dsh/0.1.0-rc.2/。checkout 位置与当前工作目录是两个独立的值，可能不同；切勿从此路径推断工作目录。使用 pwd 确定当前工作目录。此 checkout 仅用于检查或扩展 DSH 本身。",
+      "text": "块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a7ccc6808291eb7212740ad3bf1050e0fec07ae72cd2db5f9884fe1248c01ffc": {
@@ -1484,6 +1474,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "默认在后台使用 subagent_fork。在一条助手消息中一并启动各个独立委派，并在它们运行期间继续有用的工作。仅当你的下一步操作依赖该子智能体的结果时才设置 `run_in_background: false`。后台运行结束后，运行时会向你发送一条通知，其中包含其结果以及任何最终的助手消息。",
+      "thinking_budget": 4096
+    },
+    "b29b8ab355ef920793c085a5ec17239f9532604f918911c61c682f1f737c641e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · 文本",
       "thinking_budget": 4096
     },
     "b3b31412ef43a7048fcd4751508ac2ba48fd7cf592b0785acc4c8ab7a461c29c": {
@@ -1616,14 +1613,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "默认使用 ctx.get('serviceName') 读取可选的 Service，并处理 undefined。",
-      "thinking_budget": 4096
-    },
-    "c6ab8ce7d16c1e173fa4551721a642b6afd6d46828a3471809e0da1dbc9bdf5c": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码副本位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.1-rc.1/。该副本所在位置与当前工作目录是两个独立的值，可能不同；切勿根据此路径推断工作目录。使用 pwd 确定当前工作目录。此副本仅用于查看或扩展 DSH 本身。",
       "thinking_budget": 4096
     },
     "c6f6854f1aa2fb54115135dc584b036bc0cd996e0dfe90c7156e771f941eeaa2": {
@@ -1843,14 +1832,6 @@
       "text": "要在该 Plugin 下激活的确切不可变 Package ID。",
       "thinking_budget": 4096
     },
-    "dcb66539f6ed8a46143ece856082e7a53d6251e05091c18ac7cda216d251cc62": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码工作副本位于 /tmp/phistory-variant-smoke-20260815-E3TtIQ/cache/installs/dsh/0.1.0-rc.6/。该副本所在位置与当前工作目录是两个独立的值，可能不同；绝不要从这条路径推断工作目录。用 pwd 确定当前工作目录。此工作副本仅用于检查或扩展 DSH 本身。",
-      "thinking_budget": 4096
-    },
     "dd3bbfe111aa487853fcf5015e9dceb1661aaf7ab5055b2b0df0e6873960971e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -2024,12 +2005,6 @@
       "text": "执行一条 bash 命令（`bash -c`）并返回其 stdout/stderr。每次调用都在一个全新的 shell 中运行：调用之间不会保留任何状态（cwd、变量、函数）——请传入 `workdir`，而不是使用 `cd`。非零退出会报告为 `[exit code: N]`。当前 Harness 环境信息通过受管理的 `$DSH_*` 变量暴露；需要时可以查看。命令可能在文件沙箱下运行；被阻止的文件操作会报告为 `[sandbox: file access denied under <mode> mode]`——这是策略拒绝，不是命令中的 bug；不要换别的方式重试。长输出会被截断，只保留末尾部分；完整输出会保存到一个文件，可用时会报告其路径。对长时间运行的命令设置 `run_in_background: true`：调用会立即返回一个 job id；用 `job_output` 读取其输出，用 `job_kill` 停止它。尝试一条沙箱可能拒绝的命令是安全且符合预期的：直接运行并读取标记，而不是预先假定会被拒绝。当一条命令被拒绝且更宽的模式可以让它成功时，在同一轮次中立即升级——这是对拒绝唯一被许可的例外：用 `sandbox_permissions`（足以满足需求的最窄更宽模式）加上一句 `justification`，将完全相同的命令重试一次。不要绕道通过聊天先请求许可——那次重试弹出的批准提示就是用户表示同意的方式。如果会话声明已禁用批准提示，则不存在任何例外：拒绝即为最终结果——不要设置 `sandbox_permissions`。绝不投机性地升级：请求必须基于真实的拒绝——通常是该命令刚刚遇到的拒绝；只有当本会话此前已拒绝过同一访问时，才允许预先升级。被拒绝的升级对该命令而言是最终结果——停下来解释，绝不绕过它——但这并不禁止之后尝试或升级其他命令。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-9",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f1da3d06430ad353e68aa28031a67489944fb3d400dfe5f7f4e06651d7c1f83c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2089,14 +2064,6 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "默认在后台使用 subagent。在一条助手消息中一并启动各个独立委派，并在它们运行期间继续有用的工作。仅当你的下一步操作依赖该子智能体的结果时才设置 `run_in_background: false`。后台运行结束后，运行时会向你发送一条通知，其中包含其结果以及任何最终的助手消息。",
-      "thinking_budget": 4096
-    },
-    "fdd74b52bb931bf84921c16aa19a9f523aa23217eb9ddd8d50504b11f39a2791": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "review": "model-revised-against-source",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的源码副本位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.1-rc.2/。该副本所在位置与当前工作目录是两个独立的值，可能不同；切勿根据此路径推断工作目录。使用 pwd 确定当前工作目录。此副本仅用于查看或扩展 DSH 本身。",
       "thinking_budget": 4096
     },
     "fea100a00ce0b5f038c7ba311ef9665ccbbd6917b74c2319d10702da7487b7df": {

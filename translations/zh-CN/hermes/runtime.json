@@ -784,13 +784,6 @@
       "text": "技能目录内某个辅助文件的路径。对于 'write_file'/'remove_file'：必填，必须位于 references/、templates/、scripts/ 或 assets/ 之下。对于 'patch'：可选，省略时默认为 SKILL.md。",
       "thinking_budget": 4096
     },
-    "254af152cff5b97c1517e0ff067675bead8ae29027ba3c79e0aef1da603d66bc": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "对话开始于：2026 年 6 月 06 日，星期六\n模型：phistory-dummy\n提供商：openrouter",
-      "thinking_budget": 4096
-    },
     "25b6b0ebff9edc1ee840dd139ee84bf08af1823b8894c568d53f37eefa1c3832": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1505,13 +1498,6 @@
       "text": "任务输出以单向消息的形式发布到哪里（任务本身总是在没有聊天上下文的全新会话中运行）。省略时，则以创建该任务的聊天/话题为收件对象。否则：'local'（仅保存，不投递）、'all'（所有已连接的 home 频道，在触发时解析）、'bot-chat' 或 'bot-chat:<profile>'（作为真实消息注入某个 Bot Chat），或 platform:chat_id:thread_id（例如 'telegram:-1001234567890:17585'）。可以用逗号组合，如 'origin,all'。",
       "thinking_budget": 4096
     },
-    "46e7d4a7bf65de7ca1caa67ced63e0cce1a268af31405518fabd61b9115ccfec": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "对话开始于：2026 年 5 月 22 日星期五 下午 12:30\n模型：phistory-dummy\n提供商：openrouter",
-      "thinking_budget": 4096
-    },
     "475d031d2206f0c43d947d9b79c236aba3adfab51da49058a8c1658add382cbc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1890,13 +1876,6 @@
       "text": "Orchestrator 子智能体（role='orchestrator'）保留 delegate_task，以便生成自己的 worker，但仍不能使用 clarify、memory、send_message 或 execute_code。对该用户而言，Orchestrator 受 max_spawn_depth=1 限制，并可通过 delegation.orchestrator_enabled=false 全局禁用。",
       "thinking_budget": 4096
     },
-    "597bcfa8d9f87df0b7a2ecbbc83b3a96c4acc65b83e8c4254704180a4ba233e5": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "会话开始于：2026 年 5 月 29 日，星期五\n模型：phistory-dummy\n提供商：openrouter",
-      "thinking_budget": 4096
-    },
     "59dbe5d417420c19bfe5df26c8b0b5cbe4d0a6efe4e23c188866d12abc46d229": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1909,13 +1888,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "blogwatcher: 通过 blogwatcher-cli 工具监控博客和 RSS/Atom 订阅源。",
-      "thinking_budget": 4096
-    },
-    "5b79e50777834803e7d184c898ca6b506c531700b0ae28bae553369d830e9bef": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "对话开始于：2026 年 5 月 28 日，星期四\n模型：phistory-dummy\n提供商：openrouter",
       "thinking_budget": 4096
     },
     "5b81db618d7a3d61ca882ab331e9daa6894fe7ab7837a481912034e7e9a8b2d4": {
@@ -3487,6 +3459,20 @@
       "text": "轮次中途的用户引导",
       "thinking_budget": 4096
     },
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
+      "thinking_budget": 4096
+    },
     "a767aff7363d3e56a1d276e1d4ff59ca32c8cc77e87ac6985e3f79b2342a572e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3648,13 +3634,6 @@
       "text": "搜索过去的 Hermes 会话（基于本地会话数据库的 FTS5），或在某个会话内读取/滚动。四种形态，由参数决定：`query` = 发现（匹配的前 N 个会话，首个结果完整加载）；`session_id` + `around_message_id` = 滚动（围绕锚点的消息窗口）；仅 `session_id` = 读取整个会话——这也是解析 `@session:<profile>/<id>` 链接的方式（按 '/' 拆分为 profile + id）；无参数 = 浏览最近的会话。结果是真实的数据库消息，不经过 LLM。只搜索对话历史——当用户给出了直接来源（URL、文件、联系人、实时系统）时，先检查该来源；绝不要仅凭历史就断定“未找到”。用于关于过去对话的问题：“我们对 X 做了什么”、“Y 进行到哪里了”。当引导用户前往某个会话时，将其 `link` 的值原样内联写出（它会渲染为带标题的链接）。",
       "thinking_budget": 4096
     },
-    "ade28ec8faee781d923d3143c47f32c536025f171782b0e178c2c54e3e6a7e81": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "对话开始于：2026 年 5 月 22 日星期五 下午 12:31\n模型：phistory-dummy\n提供商：openrouter",
-      "thinking_budget": 4096
-    },
     "ae91685987fbcbd44357ff9a2ffe267d6348fc850628e5aa4543c7ac21ff161a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3738,6 +3717,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "获取当前页面可访问性树的文本快照。返回带有 ref ID（如 @e1、@e2）的交互元素，供 browser_click 和 browser_type 使用。full=false（默认）：仅含交互元素的紧凑视图。full=true：完整页面内容。超过 15000 字符的快照会被截断或由 LLM 摘要；此时完整快照会保存到文件，输出中包含该文件路径，以便你用 read_file 翻阅其余部分。需要先调用 browser_navigate。注意：browser_navigate 已经返回紧凑快照——本工具用于在改变页面的交互之后刷新快照，或以 full=true 获取完整内容。",
+      "thinking_budget": 4096
+    },
+    "b29b8ab355ef920793c085a5ec17239f9532604f918911c61c682f1f737c641e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · 文本",
       "thinking_budget": 4096
     },
     "b2a30629e0eb75c18efdc07c8239144e2b16ff9c93437e199e9ae893ef38c4a0": {
@@ -5042,13 +5028,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "同样可用（无需导入——内置于 hermes_tools）：\n  json_parse(text: str) —— json.loads 且 strict=False；用于含控制字符的 terminal() 输出\n  shell_quote(s: str) —— shlex.quote()；在将动态字符串插入 shell 命令时使用\n  retry(fn, max_attempts=3, delay=2) —— 针对瞬时故障进行指数退避重试",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
       "thinking_budget": 4096
     },
     "f1a4d8a893630526de70f981093050ee1a1dc622b01ec3716996b3b30483f316": {

@@ -36,6 +36,7 @@
   "requested": {},
   "observed": {
     "model": "minimax-code-capture",
-    "tool_count": 12
+    "tool_count": 12,
+    "provider": "anthropic"
   }
 }

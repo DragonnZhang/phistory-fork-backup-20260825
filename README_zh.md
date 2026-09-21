@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-09-06 03:36 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-09-21 06:49 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -21,9 +21,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 ## 工作原理
 
-Phistory 会安装每个受支持的具体 CLI 版本，再通过 [`claude-tap`](https://github.com/WEIFENG2333/claude-tap) 分别运行每个已配置快照，抓取包含系统提示词的 HTTP 请求，不调用真实模型服务，然后把结果保存到 `captures/<agent>/<version>/variants/<variant>/`，里面包含 `prompt.md`、`trace.jsonl` 和 `meta.json`。抓取配置以 `default` 快照为基线，显式选择的模型或模式会作为额外变体保存。
-
-对于最近的 Claude Code 版本，Phistory 还会从安装包里提取疑似静态 prompt 的字符串，保存在 `captures/<agent>/<version>/static/`。候选文件保留过滤资源代码后的原文，改进过滤或匹配规则时可以直接重放，无需重新安装历史包。详见 [Static 提取与整理](docs/static-prompts.md)。
+Phistory 会安装每个受支持的具体 CLI 版本，再通过 [`claude-tap`](https://github.com/WEIFENG2333/claude-tap) 分别运行每个已配置快照，抓取包含系统提示词的 HTTP 请求，不调用真实模型服务，然后把结果保存到 `captures/<agent>/<version>/variants/<variant>/`，里面包含 `prompt.md`、`trace.jsonl` 和 `meta.json`。`default` 快照按用户实际的用法运行 CLI，自带终端界面的就走真实终端；显式选择的模型或其他调用面会作为额外变体保存。`prompt.md` 由归档的 trace 渲染而来，因此请求里的每个块都会保留：每段系统提示词及其缓存边界、reminder 块，以及夹在对话中间的 system 消息。
 
 GitHub Actions 每小时检查一次已自动追踪的 CLI 版本；发现新版本后，会自动抓取并提交新的提示词快照。
 
@@ -45,9 +43,6 @@ uv run phistory capture --latest --agents codex --variants default,gpt-5.5,gpt-5
 
 # 回填某个 agent 的历史版本区间。
 uv run phistory backfill claude-code --from 2.1.113 --to latest
-
-# 重建最近 10 个已捕获 Claude Code 版本的静态 prompt 文件。
-uv run phistory extract-static claude-code --latest-captured 10
 
 # 使用仓库外配置的凭证翻译历史正文；已有段落自动复用。
 uv run phistory translate --all-captured
@@ -79,11 +74,11 @@ python -m http.server --directory .phistory-cache/site
 
 ## 抓取状态
 
-最近抓取更新：2026-09-06 03:36 UTC
+最近抓取更新：2026-09-21 06:49 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.263 - 2026-09-06](captures/claude-code/2.1.263/variants/default/prompt.md) | 409 | 409 | 2026-09-06 03:36 UTC |
+| Claude Code | [2.1.263 - 2026-09-06](captures/claude-code/2.1.263/variants/default/prompt.md) | 409 | 698 | 2026-09-21 04:40 UTC |
 | Codex CLI | [0.153.4 - 2026-09-04](captures/codex/0.153.4/variants/default/prompt.md) | 87 | 119 | 2026-09-05 00:19 UTC |
 | DeepSeek Harness | [0.1.2-rc.1 - 2026-09-03](captures/dsh/0.1.2-rc.1/variants/default/prompt.md) | 9 | 45 | 2026-09-05 18:39 UTC |
 | Antigravity CLI | [1.1.27 - 2026-09-05](captures/antigravity/1.1.27/variants/default/prompt.md) | 41 | 41 | 2026-09-05 20:14 UTC |
