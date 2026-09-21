@@ -1,7 +1,7 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, Oh My Pi, and Qwen Code.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-09-19T23:26:42.483143Z",
+  "updated_at": "2026-09-21T05:20:49.554915Z",
   "agents": [
     {
       "agent_id": "claude-code",
@@ -42,11 +42,11 @@
     {
       "agent_id": "grok",
       "agent": "Grok Build",
-      "latest_version": "1.0.34",
-      "latest_published_at": "2026-09-16T04:15:07.803Z",
-      "latest_captured_at": "2026-09-16T17:14:41.608864+00:00",
-      "versions": 135,
-      "snapshots": 135
+      "latest_version": "1.0.40",
+      "latest_published_at": "2026-09-20T23:48:33.620Z",
+      "latest_captured_at": "2026-09-21T05:20:39.513651+00:00",
+      "versions": 136,
+      "snapshots": 136
     },
     {
       "agent_id": "minimax-code",
@@ -114,20 +114,20 @@
     {
       "agent_id": "pi",
       "agent": "Pi",
-      "latest_version": "0.86.0",
-      "latest_published_at": "2026-09-19T23:14:16.198Z",
-      "latest_captured_at": "2026-09-19T23:26:42.483143+00:00",
-      "versions": 46,
-      "snapshots": 46
+      "latest_version": "0.86.1",
+      "latest_published_at": "2026-09-20T11:16:39.121Z",
+      "latest_captured_at": "2026-09-20T12:35:20.322715+00:00",
+      "versions": 47,
+      "snapshots": 47
     },
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.2.6",
-      "latest_published_at": "2026-09-18T18:17:53.560Z",
-      "latest_captured_at": "2026-09-18T19:55:24.585194+00:00",
-      "versions": 103,
-      "snapshots": 103
+      "latest_version": "18.2.7",
+      "latest_published_at": "2026-09-21T03:12:39.903Z",
+      "latest_captured_at": "2026-09-21T05:20:49.554915+00:00",
+      "versions": 104,
+      "snapshots": 104
     },
     {
       "agent_id": "qwen-code",
@@ -11649,6 +11649,23 @@
     {
       "agent_id": "grok",
       "agent": "Grok Build",
+      "version": "1.0.40",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "grok-build",
+        "tool_count": 26
+      },
+      "published_at": "2026-09-20T23:48:33.620Z",
+      "captured_at": "2026-09-21T05:20:39.513651+00:00",
+      "prompt": "captures/grok/1.0.40/variants/default/prompt.md",
+      "trace": "captures/grok/1.0.40/variants/default/trace.jsonl",
+      "meta": "captures/grok/1.0.40/variants/default/meta.json"
+    },
+    {
+      "agent_id": "grok",
+      "agent": "Grok Build",
       "version": "1.0.34",
       "variant_id": "default",
       "variant_label": "Default",
@@ -20285,6 +20302,23 @@
     {
       "agent_id": "pi",
       "agent": "Pi",
+      "version": "0.86.1",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 4
+      },
+      "published_at": "2026-09-20T11:16:39.121Z",
+      "captured_at": "2026-09-20T12:35:20.322715+00:00",
+      "prompt": "captures/pi/0.86.1/variants/default/prompt.md",
+      "trace": "captures/pi/0.86.1/variants/default/trace.jsonl",
+      "meta": "captures/pi/0.86.1/variants/default/meta.json"
+    },
+    {
+      "agent_id": "pi",
+      "agent": "Pi",
       "version": "0.86.0",
       "variant_id": "default",
       "variant_label": "Default",
@@ -21063,6 +21097,23 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.2.7",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-09-21T03:12:39.903Z",
+      "captured_at": "2026-09-21T05:20:49.554915+00:00",
+      "prompt": "captures/omp/18.2.7/variants/default/prompt.md",
+      "trace": "captures/omp/18.2.7/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.2.7/variants/default/meta.json"
     },
     {
       "agent_id": "omp",

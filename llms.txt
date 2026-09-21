@@ -17,7 +17,7 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 - [Codex CLI 0.155.1 — Default](https://phistory.cc/captures/codex/0.155.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [DeepSeek Harness 0.1.5-rc.2 — Default](https://phistory.cc/captures/dsh/0.1.5-rc.2/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Antigravity CLI 1.2.7 — Default](https://phistory.cc/captures/antigravity/1.2.7/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Grok Build 1.0.34 — Default](https://phistory.cc/captures/grok/1.0.34/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Grok Build 1.0.40 — Default](https://phistory.cc/captures/grok/1.0.40/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [MiniMax Code 3.0.73 — Default](https://phistory.cc/captures/minimax-code/3.0.73/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Kimi Code 2.0.2 — Default](https://phistory.cc/captures/kimi-code/2.0.2/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [MiMo Code 0.1.14 — Default](https://phistory.cc/captures/mimo/0.1.14/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
@@ -25,8 +25,8 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 - [Hermes Agent v2026.9.14 — Default](https://phistory.cc/captures/hermes/v2026.9.14/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Kimi CLI 1.50.0 — Default](https://phistory.cc/captures/kimi/1.50.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [opencode 1.18.31 — Default](https://phistory.cc/captures/opencode/1.18.31/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Pi 0.86.0 — Default](https://phistory.cc/captures/pi/0.86.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Oh My Pi 18.2.6 — Default](https://phistory.cc/captures/omp/18.2.6/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Pi 0.86.1 — Default](https://phistory.cc/captures/pi/0.86.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Oh My Pi 18.2.7 — Default](https://phistory.cc/captures/omp/18.2.7/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Qwen Code 0.22.3 — Default](https://phistory.cc/captures/qwen-code/0.22.3/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 
 ## Optional

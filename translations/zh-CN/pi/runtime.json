@@ -238,6 +238,13 @@
       "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.79.3/node_modules/@earendil-works/pi-coding-agent/README.md",
       "thinking_budget": 4096
     },
+    "215ea1b4712cf1955cf612cbbbe836a79b6f54f8799a66f583e534c5853ba9aa": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "示例：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.1/node_modules/@earendil-works/pi-coding-agent/examples（扩展、自定义工具、SDK）",
+      "thinking_budget": 4096
+    },
     "21e5fbaf173dd14fd8f71b563ef6ead1c5c9879340be12c5f762a459c40294a5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -299,6 +306,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.83.0/node_modules/@earendil-works/pi-coding-agent/README.md",
+      "thinking_budget": 4096
+    },
+    "2bdb01758ea084bba0ed02d87026b82b1b7d17aa67dc369025bab7d8774ae15d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "补充文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.1/node_modules/@earendil-works/pi-coding-agent/docs",
       "thinking_budget": 4096
     },
     "344a82f94090aad03595b83345bb899797f366dd88867021508ae2c79b0ac142": {
@@ -1195,6 +1209,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当被问及以下主题时：扩展（docs/extensions.md、examples/extensions/）、主题（docs/themes.md）、技能（docs/skills.md）、提示词模板（docs/prompt-templates.md）、TUI 组件（docs/tui.md）、按键绑定（docs/keybindings.md）、SDK 集成（docs/sdk.md）、自定义提供商（docs/custom-provider.md）、添加模型（docs/models.md）、pi 包（docs/packages.md）",
+      "thinking_budget": 4096
+    },
+    "d8a66af18c18a8a8ac732bdb1423c86f99a4162e71752e08b2a3ec9afa3d1a68": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主文档：/home/runner/work/phistory/phistory/.phistory-cache/installs/pi/0.86.1/node_modules/@earendil-works/pi-coding-agent/README.md",
       "thinking_budget": 4096
     },
     "d99d8883a275c19b7cbc3903224ac103efa45795b65dc74501b460503beeaf6e": {
