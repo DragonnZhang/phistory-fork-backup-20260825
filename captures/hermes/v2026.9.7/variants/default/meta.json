@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "phistory-dummy",
-    "tool_count": 20
+    "tool_count": 20,
+    "provider": "openai-chat"
   },
   "published_at": "2026-09-07T22:17:01Z",
   "tarball_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.7",

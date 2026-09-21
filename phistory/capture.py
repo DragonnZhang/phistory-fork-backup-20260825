@@ -66,7 +66,7 @@ def capture_target(
                     env=env,
                 )
             )
-            argv = list(execution.command)
+            argv = list(execution.result.argv)
             result = execution.result
         if not working_target.trace_path.exists():
             try:

@@ -2851,12 +2851,6 @@
       "text": "生成时要使用的图像的可选绝对路径。如果你想编辑、组合图像或将其用作参考，可以在这里传入图像。可以传入 artifact 图像以及文件系统中的任何图像。注意：传入的图像不能超过 3 张。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-9",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f22b55512605444b4565583d20dd017532ad661ec9126922e77111b725e2243c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",

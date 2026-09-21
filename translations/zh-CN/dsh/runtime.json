@@ -1491,13 +1491,6 @@
       "text": "问题的可选简短标题，例如 \"Confirm\" 或 \"Choose Mode\"。",
       "thinking_budget": 4096
     },
-    "b155d5d93e750523c43176175d5a2bb3a53742527e71a150e40069437fe97664": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的检出位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.5-rc.1/。检出位置与当前工作目录是两个独立的值，可能不同；绝不要根据此路径推断工作目录。使用 pwd 确定当前工作目录。此检出仅用于检查或扩展 DSH 本身。",
-      "thinking_budget": 4096
-    },
     "b17ffd26a4f399acb8de3860cf8c85dbd0daa4f5bf72f9c768c14d6186e7fc3d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1634,13 +1627,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 web_search 工具查找网络上的最新信息。它会返回一个可选的回答以及来源 URL 列表。在返回内容包含来源摘要时使用它们，并将相关 URL 以 Markdown 链接的形式引用。",
-      "thinking_budget": 4096
-    },
-    "c42d8c6fb2b03230ea9fae5dae1fc27ced037ab2566a531e4ab5a6bcbdf3fe9e": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "DeepSeek Harness 实现的检出副本位于 /home/runner/work/phistory/phistory/.phistory-cache/installs/dsh/0.1.5-rc.2/。检出位置与当前工作目录是两个独立的值，可能并不相同；切勿根据此路径推断工作目录。使用 pwd 确定当前工作目录。此检出副本仅用于检查或扩展 DSH 本身。",
       "thinking_budget": 4096
     },
     "c4c2202a432bda7929b245e6609fd519f1a2fe2333292b0b7c97f68a807aa77f": {

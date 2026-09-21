@@ -53,7 +53,7 @@ def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
     if time.monotonic() - started > CAPTURE_TIMEOUT_SECONDS:
         stdout += "\nDSH Web capture exceeded its timeout."
     result = CommandResult(tuple(argv), process.returncode or 0, stdout, "")
-    return CaptureExecution(tuple(argv), result, observed)
+    return CaptureExecution(result, observed)
 
 
 def _create_and_prompt_session(context: CaptureRunContext, port: int, process: subprocess.Popen) -> dict[str, object]:

@@ -15,8 +15,6 @@ from typing import Any, Iterator
 
 from phistory.sanitize import sanitize
 
-Provider = str
-
 _SYSTEM_KEYS = ("system", "instructions", "system_instruction", "systemInstruction")
 _MESSAGE_KEYS = ("messages", "input", "contents")
 _SYSTEM_ROLES = ("system", "developer")
@@ -47,7 +45,7 @@ class PromptTool:
 
 @dataclass(frozen=True)
 class PromptSnapshot:
-    provider: Provider
+    provider: str
     model: str
     system: tuple[PromptBlock, ...] = ()
     messages: tuple[PromptMessage, ...] = ()
@@ -63,9 +61,19 @@ class PromptSnapshot:
         return observed
 
 
+def render_archive_markdown(trace_path: Path) -> str:
+    """The archived Markdown for one capture: snapshot plus run-noise normalization."""
+    records = read_records(trace_path)
+    return sanitize(render_markdown(_snapshot(records, trace_path)), ports=capture_ports(records))
+
+
 def snapshot_from_trace(path: Path) -> PromptSnapshot:
     """Pick the richest prompt-bearing request in a trace and normalize it."""
-    body = select_request_body(read_records(path))
+    return _snapshot(read_records(path), path)
+
+
+def _snapshot(records: list[dict[str, Any]], path: Path) -> PromptSnapshot:
+    body = select_request_body(records)
     if body is None:
         raise ValueError(f"no prompt-bearing request in {path}")
     return snapshot_from_body(body)
@@ -163,7 +171,7 @@ def _directive_blocks(messages: tuple[PromptMessage, ...]) -> Iterator[PromptBlo
             yield PromptBlock(block.text, kind=f"{message.role.lower()} message", cached=block.cached)
 
 
-def infer_provider(body: dict[str, Any]) -> Provider:
+def infer_provider(body: dict[str, Any]) -> str:
     if "contents" in body or "systemInstruction" in body or "system_instruction" in body:
         return "gemini"
     if "input" in body or "instructions" in body:
@@ -211,7 +219,7 @@ def render_markdown(snapshot: PromptSnapshot) -> str:
         lines.append("_No tools captured._")
         lines.append("")
     for tool in sorted(snapshot.tools, key=lambda item: item.name):
-        lines.append(f"## {tool.name or 'unnamed_tool'}")
+        lines.append(f"## {tool.name}")
         lines.append("")
         if tool.description:
             lines.append(_demote_headings(tool.description))
@@ -386,12 +394,3 @@ def _tool(entry: dict[str, Any]) -> PromptTool | None:
         # Containers such as tool namespaces carry no schema; keep the declaration verbatim.
         schema = entry
     return PromptTool(name, description if isinstance(description, str) else "", schema)
-
-
-def render_archive_markdown(trace_path: Path) -> str:
-    """The archived Markdown for one capture: snapshot plus run-noise normalization."""
-    records = read_records(trace_path)
-    body = select_request_body(records)
-    if body is None:
-        raise ValueError(f"no prompt-bearing request in {trace_path}")
-    return sanitize(render_markdown(snapshot_from_body(body)), ports=capture_ports(records))

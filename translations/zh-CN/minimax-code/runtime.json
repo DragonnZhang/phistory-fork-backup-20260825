@@ -9714,13 +9714,6 @@
       "text": "**验证** —— 对现有交付物进行审查 / 测试 / 验证 / 审计。可自由委派。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f1a20547b87dfe0aa4d8c1164d9abd726bde85b7f102576461e1fde7494740c2": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

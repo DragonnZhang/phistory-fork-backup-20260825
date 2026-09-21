@@ -17,7 +17,6 @@ class CaptureRunContext:
 
 @dataclass(frozen=True)
 class CaptureExecution:
-    command: tuple[str, ...]
     result: CommandResult
     observed: dict[str, object] = field(default_factory=dict)
 

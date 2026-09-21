@@ -32,7 +32,7 @@ def run_oneshot(context: CaptureRunContext) -> CaptureExecution:
         _reset_output(context)
         time.sleep(1)
         result = _run(argv, context, env)
-    return CaptureExecution(tuple(argv), result)
+    return CaptureExecution(result)
 
 
 def _run(argv: list[str], context: CaptureRunContext, env: dict[str, str]):

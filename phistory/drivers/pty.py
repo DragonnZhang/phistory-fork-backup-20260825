@@ -35,7 +35,7 @@ def run_pty(context: CaptureRunContext) -> CaptureExecution:
     message = context.target.variant.pty_message or "Reply with one short sentence."
     transcript, returncode = _session(argv, context, message)
     result = CommandResult(tuple(argv), returncode, transcript, "")
-    return CaptureExecution(tuple(argv), result, {"surface": "interactive-tty"})
+    return CaptureExecution(result, {"surface": "interactive-tty"})
 
 
 def _session(argv: list[str], context: CaptureRunContext, message: str) -> tuple[str, int]:

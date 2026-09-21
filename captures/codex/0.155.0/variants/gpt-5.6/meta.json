@@ -15,7 +15,8 @@
   },
   "observed": {
     "model": "gpt-5.6",
-    "tool_count": 17
+    "tool_count": 17,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-17T23:19:02.781Z",
   "tarball_url": "https://registry.npmjs.org/@openai/codex/-/codex-0.155.0.tgz",

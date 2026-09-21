@@ -5,22 +5,28 @@
   "version": "2.1.275",
   "variant": {
     "id": "default",
-    "label": "Default",
-    "dimensions": {}
+    "label": "Terminal",
+    "dimensions": {
+      "surface": "terminal"
+    }
   },
-  "requested": {},
+  "requested": {
+    "surface": "terminal"
+  },
   "observed": {
+    "provider": "anthropic",
     "model": "claude-opus-5",
-    "tool_count": 25
+    "tool_count": 33,
+    "surface": "interactive-tty"
   },
   "published_at": "2026-09-17T20:20:31.805Z",
-  "tarball_url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.275.tgz",
+  "tarball_url": null,
   "binary_version": "2.1.275 (Claude Code)",
-  "captured_at": "2026-09-18T00:43:58.569258+00:00",
+  "captured_at": "2026-09-21T17:14:43.212521+00:00",
   "tap_client": "claude",
   "target": "claude-tap capture-only",
   "client_exit_code": 0,
-  "duration_seconds": 3.657,
+  "duration_seconds": 18.764,
   "command": [
     "python",
     "-m",
@@ -29,15 +35,12 @@
     "claude",
     "--no-yolo",
     "--export-prompt",
-    "prompt.md",
+    ".tap/tap-export.md",
     "--no-live",
     "--no-open",
     "--no-update-check",
     "--output-dir",
     ".tap",
-    "--",
-    "--no-session-persistence",
-    "-p",
-    "Reply with one short sentence."
+    "--"
   ]
 }

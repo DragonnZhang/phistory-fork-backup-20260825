@@ -10,7 +10,7 @@ from phistory.capture import (
 from phistory.drivers import CaptureRunContext
 from phistory.drivers.common import captured_prompt, tap_command
 from phistory.drivers.oneshot import _needs_antigravity_model_retry, _without_arg_and_value
-from phistory.models import AgentSpec, CaptureTarget, CaptureVariant, VersionInfo
+from phistory.models import AgentSpec, CaptureTarget, CaptureVariant, CommandResult, VersionInfo
 from phistory.prompt import snapshot_from_trace
 from phistory.sanitize import sanitize
 
@@ -361,7 +361,7 @@ def test_antigravity_model_flag_retry_removes_model_value():
         fake_env={},
     )
     target = _target(agent, VersionInfo("1.0.4"), Path("captures"))
-    result = type("Result", (), {"returncode": 1, "stderr": "flags provided but not defined: -model", "stdout": ""})()
+    result = CommandResult((), 1, "", "flags provided but not defined: -model")
 
     context = CaptureRunContext(target, target.variant_dir / ".tap", Path("workspace"), {})
     assert _needs_antigravity_model_retry(context, result)
@@ -408,17 +408,15 @@ def test_capture_target_retries_transient_empty_trace(tmp_path: Path, monkeypatc
     def fake_run(argv, **_kwargs):
         nonlocal capture_attempts
         if argv == [str(executable), "--version"]:
-            return type("Result", (), {"returncode": 0, "stdout": "agent 1.0.0\n", "stderr": ""})()
+            return CommandResult(tuple(argv), 0, "agent 1.0.0\n", "")
         capture_attempts += 1
         if capture_attempts == 1:
-            return type(
-                "Result", (), {"returncode": 1, "stdout": "", "stderr": "no valid records found in trace file"}
-            )()
+            return CommandResult(tuple(argv), 1, "", "no valid records found in trace file")
         output_dir = Path(argv[argv.index("--output-dir") + 1])
         trace = output_dir / "2026-05-22" / "trace_000001.jsonl"
         trace.parent.mkdir(parents=True, exist_ok=True)
         trace.write_text(json.dumps({"request": {"body": _PROMPT_BODY}}) + "\n", encoding="utf-8")
-        return type("Result", (), {"returncode": 0, "stdout": "", "stderr": ""})()
+        return CommandResult(tuple(argv), 0, "", "")
 
     monkeypatch.setattr("phistory.capture.run", fake_run)
     monkeypatch.setattr("phistory.drivers.oneshot.run", fake_run)

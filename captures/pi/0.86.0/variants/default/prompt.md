@@ -1,5 +1,7 @@
 # System Prompt
 
+## Block 1 · system message
+
 You are an expert coding assistant operating inside pi, a coding agent harness. You help users by reading files, executing commands, editing code, and writing new files.
 
 <tools>
@@ -39,7 +41,9 @@ Pi documentation (read only when the user asks about pi itself, its SDK, extensi
 $PHISTORY_WORKSPACE
 </cwd>
 
-# User Message
+# Messages
+
+## Message 1 · user · input_text
 
 Reply with one short sentence.
 

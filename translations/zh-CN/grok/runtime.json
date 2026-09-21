@@ -7516,13 +7516,6 @@
       "text": "更新现有组件以支持主题切换",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f1e9bece9b279199013912fc134ff7e3b6e29ed8effbd90a78b1413f673a423e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
