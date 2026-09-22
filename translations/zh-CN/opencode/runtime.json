@@ -3066,6 +3066,13 @@
       "text": "首先，助手检查了代码库，以找出具体的性能问题",
       "thinking_budget": 4096
     },
+    "dedf75c048e04191614181cbfa16fea0cfc8d8d168149a40758664eacee3be4d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作目录：$PHISTORY_WORKSPACE\n  工作区根文件夹：/\n  该目录是否为 git 仓库：否\n  平台：linux\n  今天的日期：2026 年 9 月 22 日（周二）",
+      "thinking_budget": 4096
+    },
     "df6a0864db825910b5a399e43146da4ecba6a27bd72fcf8d2b875244a991e12a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
