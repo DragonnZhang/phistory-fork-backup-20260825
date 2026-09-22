@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "gpt-6-astra",
-    "tool_count": 3
+    "tool_count": 11,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-04T23:31:18.513Z",
   "tarball_url": "https://registry.npmjs.org/@openai/codex/-/codex-0.153.4.tgz",

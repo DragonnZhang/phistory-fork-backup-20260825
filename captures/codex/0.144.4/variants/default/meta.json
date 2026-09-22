@@ -38,6 +38,8 @@
   },
   "requested": {},
   "observed": {
-    "model": "gpt-5.6-sol"
+    "model": "gpt-5.6-sol",
+    "provider": "openai-responses",
+    "tool_count": 9
   }
 }

@@ -15,7 +15,8 @@
   },
   "observed": {
     "model": "gpt-5.5",
-    "tool_count": 15
+    "tool_count": 15,
+    "provider": "openai-responses"
   },
   "published_at": "2026-07-29T01:45:57.696Z",
   "tarball_url": null,

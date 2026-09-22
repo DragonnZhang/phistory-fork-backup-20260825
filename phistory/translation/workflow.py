@@ -22,6 +22,7 @@ class TranslationResult:
     translated: int = 0
     failed: int = 0
     source_chars: int = 0
+    pruned: int = 0
     input_tokens: int = 0
     output_tokens: int = 0
     requests: int = 0
@@ -34,6 +35,7 @@ def translate_archive(
     agent_ids: list[str] | None = None,
     latest_captured: int | None = None,
     dry_run: bool = False,
+    prune: bool = False,
     config: TranslationConfig | None = None,
     max_batches: int | None = None,
     usage_log: Path | None = None,
@@ -83,6 +85,16 @@ def translate_archive(
         progress(f"[{agent_id}] scope: {len(rows)} runtime snapshots")
         if dry_run:
             continue
+
+        # Only a full archive scan knows which entries nothing references any more.
+        if prune and latest_captured is None:
+            stale = existing.keys() - all_segments.keys()
+            for key in stale:
+                del existing[key]
+            result.pruned = len(stale)
+            if stale:
+                progress(f"[{agent_id}] pruned {len(stale)} unreferenced dictionary entries")
+                write_dictionary(translation_root, agent_id, dictionary)
 
         if not pending:
             continue

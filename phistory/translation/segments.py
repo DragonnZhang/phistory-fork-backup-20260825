@@ -279,7 +279,7 @@ def _markdown_spans(text: str, context: str = "", scope: str = "") -> tuple[list
 
 def extract_markdown(text: str, *, source_hash: str | None = None) -> ExtractedSource:
     """Index prose by Unicode offsets; preserve raw Markdown and JSON escaping."""
-    refs, segments = ([], ()) if text.startswith("# Static Prompts\n") else _markdown_spans(text)
+    refs, segments = _markdown_spans(text)
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
     if source_hash is not None and source_hash != digest:
         raise ValueError("Source hash does not match Markdown text")

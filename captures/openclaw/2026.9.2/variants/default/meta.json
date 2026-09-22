@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "phistory-dummy",
-    "tool_count": 54
+    "tool_count": 54,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-05T19:13:07.937Z",
   "tarball_url": "https://registry.npmjs.org/openclaw/-/openclaw-2026.9.2.tgz",

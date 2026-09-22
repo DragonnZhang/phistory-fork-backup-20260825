@@ -5,8 +5,9 @@ from __future__ import annotations
 import re
 from functools import lru_cache
 
+from phistory.sanitize import sanitize
+
 TOKEN = re.compile(r"\$PHISTORY_[A-Z_]+(?![A-Za-z0-9_])")
-_TEMP_ROOT = re.compile(r"/(?:[\w.-]+/)*phistory-(home|work)-[A-Za-z0-9_-]+")
 
 
 def restore_template(text: str, bindings: dict) -> str:
@@ -19,13 +20,7 @@ def restore_template(text: str, bindings: dict) -> str:
 
 @lru_cache(maxsize=4096)
 def trace_template(text: str) -> tuple[str, dict]:
-    from phistory.capture import _sanitize_text
-
-    replacements = {
-        match.group(): "$PHISTORY_HOME" if match.group(1) == "home" else "$PHISTORY_WORKSPACE"
-        for match in _TEMP_ROOT.finditer(text)
-    }
-    template = _sanitize_text(text, replacements)
+    template = sanitize(text)
     if template == text:
         return text, {}
 

@@ -46,6 +46,7 @@
   "requested": {},
   "observed": {
     "model": "phistory-dummy",
-    "tool_count": 19
+    "tool_count": 19,
+    "provider": "openai-chat"
   }
 }

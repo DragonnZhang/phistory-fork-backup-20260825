@@ -3,7 +3,7 @@ from __future__ import annotations
 import time
 
 from phistory.drivers import CaptureExecution, CaptureRunContext
-from phistory.drivers.common import tap_command
+from phistory.drivers.common import captured_prompt, tap_command
 from phistory.storage import remove_if_exists
 from phistory.subprocesses import run
 
@@ -11,7 +11,7 @@ CAPTURE_TIMEOUT_SECONDS = 1800
 
 
 def run_oneshot(context: CaptureRunContext) -> CaptureExecution:
-    argv = tap_command(context.target, context.prompt_path, context.tap_output_dir)
+    argv = tap_command(context.target, context.tap_output_dir)
     env = context.env
     result = _run(argv, context, env)
     if _needs_claude_session_persistence_retry(context, result):
@@ -27,12 +27,12 @@ def run_oneshot(context: CaptureRunContext) -> CaptureExecution:
         argv = _without_arg_and_value(argv, "--model")
         result = _run(argv, context, env)
     for _ in range(2):
-        if not _needs_prompt_retry(result, context.prompt_path):
+        if captured_prompt(context.tap_output_dir):
             break
         _reset_output(context)
         time.sleep(1)
         result = _run(argv, context, env)
-    return CaptureExecution(tuple(argv), result)
+    return CaptureExecution(result)
 
 
 def _run(argv: list[str], context: CaptureRunContext, env: dict[str, str]):
@@ -47,7 +47,6 @@ def _run(argv: list[str], context: CaptureRunContext, env: dict[str, str]):
 
 def _reset_output(context: CaptureRunContext) -> None:
     remove_if_exists(context.tap_output_dir)
-    context.prompt_path.unlink(missing_ok=True)
 
 
 def _needs_claude_session_persistence_retry(context: CaptureRunContext, result) -> bool:
@@ -69,19 +68,6 @@ def _needs_antigravity_model_retry(context: CaptureRunContext, result) -> bool:
         return False
     output = f"{result.stderr}\n{result.stdout}"
     return "flags provided but not defined: -model" in output
-
-
-def _needs_prompt_retry(result, prompt_path) -> bool:
-    if prompt_path.exists():
-        return False
-    output = f"{result.stderr}\n{result.stdout}"
-    return any(
-        message in output
-        for message in (
-            "no prompt-bearing request found in trace",
-            "no valid records found in trace file",
-        )
-    )
 
 
 def _without_arg(argv: list[str], value: str) -> list[str]:

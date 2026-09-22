@@ -1963,6 +1963,13 @@
       "text": "代表用户提出一条要运行的命令。操作系统：linux。Shell：bash。\n**绝不提出 cd 命令**。\n如果你拥有此工具，请注意你确实能够直接在用户的系统上运行命令。\n请确保按照命令在 shell 中的实际运行方式精确指定 CommandLine。\n请注意，命令在执行前必须获得用户批准。如果用户不满意，可以拒绝该命令。\n在用户批准之前，实际命令不会执行。用户可能不会立即批准。\n如果步骤正在等待用户批准，说明它尚未开始运行。\n如果步骤返回 command id，则表示该命令已被发送到后台。你应该使用 command_status 工具监控该命令的输出和状态。\n命令将以 PAGER=cat 运行。对于通常依赖分页且可能产生很长输出的命令，你可能需要限制输出长度（例如 git log，可使用 git log -n <N>）。\n重要：Cwd（工作目录）必须位于用户的工作区内。不要使用 /tmp、/home 或任何工作区之外的路径。如果需要临时目录，请在工作区内创建。",
       "thinking_budget": 4096
     },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
+      "thinking_budget": 4096
+    },
     "a7d5df24653a23217f1513c5a71a3ffd861e04dc176c2dd51c6e4c82e306d1b6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2086,6 +2093,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "一条**用户入队消息**已准备好出队",
+      "thinking_budget": 4096
+    },
+    "b29b8ab355ef920793c085a5ec17239f9532604f918911c61c682f1f737c641e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · 文本",
       "thinking_budget": 4096
     },
     "b2cb1505537d9964e6eb7ecf7ef92d26c50dadb8beec4d2a388683fa42957359": {
@@ -2835,12 +2849,6 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "生成时要使用的图像的可选绝对路径。如果你想编辑、组合图像或将其用作参考，可以在这里传入图像。可以传入 artifact 图像以及文件系统中的任何图像。注意：传入的图像不能超过 3 张。",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-9",
-      "text": "用户消息",
       "thinking_budget": 4096
     },
     "f22b55512605444b4565583d20dd017532ad661ec9126922e77111b725e2243c": {

@@ -7,10 +7,11 @@ from typing import Literal
 
 PackageSource = Literal["npm", "pypi", "github-release", "github-release-asset", "minimax-code"]
 GitHubReleaseInstall = Literal["wheel", "editable"]
-CaptureDriver = Literal["oneshot", "dsh-web"]
+CaptureDriver = Literal["oneshot", "dsh-web", "pty"]
 HomeProfile = Literal[
     "none",
     "antigravity",
+    "claude",
     "dsh",
     "grok",
     "hermes",
@@ -34,6 +35,8 @@ class CaptureVariant:
     dimensions: dict[str, str] = field(default_factory=dict)
     driver: CaptureDriver = "oneshot"
     extra_env: dict[str, str] = field(default_factory=dict)
+    # Text typed into an interactive TUI to make it issue one prompt-bearing request.
+    pty_message: str = ""
 
 
 @dataclass(frozen=True)
@@ -117,22 +120,6 @@ class CaptureTarget:
     @property
     def meta_path(self) -> Path:
         return self.variant_dir / "meta.json"
-
-    @property
-    def static_dir(self) -> Path:
-        return self.version_dir / "static"
-
-    @property
-    def static_prompts_path(self) -> Path:
-        return self.static_dir / "prompts.md"
-
-    @property
-    def static_prompts_json_path(self) -> Path:
-        return self.static_dir / "prompts.json"
-
-    @property
-    def static_candidates_json_path(self) -> Path:
-        return self.static_dir / "candidates.json"
 
 
 @dataclass(frozen=True)

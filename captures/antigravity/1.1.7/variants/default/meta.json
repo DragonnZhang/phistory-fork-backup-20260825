@@ -43,6 +43,8 @@
   },
   "requested": {},
   "observed": {
-    "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH"
+    "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
+    "provider": "gemini",
+    "tool_count": 12
   }
 }

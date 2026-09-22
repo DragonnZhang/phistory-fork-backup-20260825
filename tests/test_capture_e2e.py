@@ -5,13 +5,14 @@ from pathlib import Path
 from phistory.capture import (
     _binary_version,
     _capture_env,
-    _sanitize_text,
-    _trace_observation,
     capture_target,
 )
 from phistory.drivers import CaptureRunContext
-from phistory.drivers.oneshot import _needs_antigravity_model_retry, _needs_prompt_retry, _without_arg_and_value
-from phistory.models import AgentSpec, CaptureTarget, CaptureVariant, VersionInfo
+from phistory.drivers.common import captured_prompt, tap_command
+from phistory.drivers.oneshot import _needs_antigravity_model_retry, _without_arg_and_value
+from phistory.models import AgentSpec, CaptureTarget, CaptureVariant, CommandResult, VersionInfo
+from phistory.prompt import snapshot_from_trace
+from phistory.sanitize import sanitize
 
 
 def _target(agent: AgentSpec, version: VersionInfo, root: Path) -> CaptureTarget:
@@ -52,7 +53,7 @@ def test_capture_target_runs_local_cli_through_tap(tmp_path: Path, monkeypatch):
     meta = json.loads(target.meta_path.read_text(encoding="utf-8"))
     assert meta["binary_version"] == "fake-codex 1.0.0"
     assert meta["target"] == "claude-tap capture-only"
-    assert meta["observed"] == {"model": "fake-model", "tool_count": 1}
+    assert meta["observed"] == {"provider": "openai-responses", "model": "fake-model", "tool_count": 1}
     assert "-t" not in meta["command"]
 
     trace_records = [json.loads(line) for line in target.trace_path.read_text(encoding="utf-8").splitlines()]
@@ -65,7 +66,7 @@ def test_capture_target_runs_local_cli_through_tap(tmp_path: Path, monkeypatch):
     assert str(tmp_path) not in prompt
 
 
-def test_trace_observation_selects_full_enveloped_request_and_keeps_routing_model(tmp_path):
+def test_observation_selects_full_enveloped_request_and_keeps_routing_model(tmp_path):
     title = {
         "model": "title-model",
         "request": {"systemInstruction": {"parts": [{"text": "Summarize the session."}]}, "contents": []},
@@ -80,10 +81,10 @@ def test_trace_observation_selects_full_enveloped_request_and_keeps_routing_mode
     }
     path = tmp_path / "trace.jsonl"
     path.write_text("\n".join(json.dumps({"request": {"body": body}}) for body in [title, primary]))
-    assert _trace_observation(path) == {"model": "main-model", "tool_count": 2}
+    assert snapshot_from_trace(path).observation == {"provider": "gemini", "model": "main-model", "tool_count": 2}
 
 
-def test_trace_observation_handles_direct_gemini_and_inner_model_precedence(tmp_path):
+def test_observation_handles_direct_gemini_and_inner_model_precedence(tmp_path):
     body = {
         "model": "gemini-model",
         "system_instruction": {"parts": [{"text": "Read the project."}]},
@@ -92,10 +93,14 @@ def test_trace_observation_handles_direct_gemini_and_inner_model_precedence(tmp_
     path = tmp_path / "trace.jsonl"
     for request_body in [body, {"model": "routing-alias", "request": body}]:
         path.write_text(json.dumps({"request": {"body": request_body}}))
-        assert _trace_observation(path) == {"model": "gemini-model", "tool_count": 2}
+        assert snapshot_from_trace(path).observation == {
+            "provider": "gemini",
+            "model": "gemini-model",
+            "tool_count": 2,
+        }
 
 
-def test_trace_observation_counts_namespaced_and_additional_tools(tmp_path):
+def test_observation_counts_namespaced_and_additional_tools(tmp_path):
     body = {
         "model": "responses-model",
         "instructions": "Read the project.",
@@ -104,10 +109,14 @@ def test_trace_observation_counts_namespaced_and_additional_tools(tmp_path):
     }
     path = tmp_path / "trace.jsonl"
     path.write_text(json.dumps({"request": {"body": body}}))
-    assert _trace_observation(path) == {"model": "responses-model", "tool_count": 3}
+    assert snapshot_from_trace(path).observation == {
+        "provider": "openai-responses",
+        "model": "responses-model",
+        "tool_count": 3,
+    }
 
 
-def test_sanitize_text_normalizes_volatile_claude_headers():
+def test_sanitize_normalizes_volatile_claude_headers():
     text = (
         "x-anthropic-billing-header: cc_version=2.1.146.6c9; cc_entrypoint=sdk-cli; cch=abc123;\n"
         " - OS Version: Linux 6.17.0-1013-azure\n"
@@ -142,7 +151,7 @@ def test_sanitize_text_normalizes_volatile_claude_headers():
         "```json"
     )
 
-    assert _sanitize_text(text, {}) == (
+    assert sanitize(text) == (
         "x-anthropic-billing-header: cc_version=2.1.146.6c9; cc_entrypoint=sdk-cli; cch=<normalized>;\n"
         " - OS Version: $PHISTORY_OS_VERSION\n"
         "Line with trailing whitespace.\n"
@@ -364,9 +373,9 @@ def test_antigravity_model_flag_retry_removes_model_value():
         fake_env={},
     )
     target = _target(agent, VersionInfo("1.0.4"), Path("captures"))
-    result = type("Result", (), {"returncode": 1, "stderr": "flags provided but not defined: -model", "stdout": ""})()
+    result = CommandResult((), 1, "", "flags provided but not defined: -model")
 
-    context = CaptureRunContext(target, target.prompt_path, target.variant_dir / ".tap", Path("workspace"), {})
+    context = CaptureRunContext(target, target.variant_dir / ".tap", Path("workspace"), {})
     assert _needs_antigravity_model_retry(context, result)
     assert _without_arg_and_value(["agy", "--print", "hello", "--model", "flash"], "--model") == [
         "agy",
@@ -375,19 +384,18 @@ def test_antigravity_model_flag_retry_removes_model_value():
     ]
 
 
-def test_no_prompt_retry_handles_claude_tap_export_failures(tmp_path: Path):
-    result = type(
-        "Result", (), {"returncode": 1, "stderr": "Error: no prompt-bearing request found in trace", "stdout": ""}
-    )()
+def test_captured_prompt_requires_a_prompt_bearing_trace(tmp_path: Path):
+    tap_dir = tmp_path / ".tap" / "2026-05-22"
+    tap_dir.mkdir(parents=True)
+    assert not captured_prompt(tmp_path / ".tap")
 
-    assert _needs_prompt_retry(result, tmp_path / "missing.md")
-    invalid_trace = type(
-        "Result", (), {"returncode": 1, "stderr": "no valid records found in trace file", "stdout": ""}
-    )()
-    assert _needs_prompt_retry(invalid_trace, tmp_path / "missing.md")
-    prompt = tmp_path / "prompt.md"
-    prompt.write_text("# Prompt\n", encoding="utf-8")
-    assert not _needs_prompt_retry(result, prompt)
+    trace = tap_dir / "trace_000000.jsonl"
+    trace.write_text("not json\n", encoding="utf-8")
+    assert not captured_prompt(tmp_path / ".tap")
+
+    body = {"model": "m", "system": "You are an agent.", "messages": [{"role": "user", "content": "hi"}]}
+    trace.write_text(json.dumps({"request": {"body": body}}) + "\n", encoding="utf-8")
+    assert captured_prompt(tmp_path / ".tap")
 
 
 def test_capture_target_retries_transient_empty_trace(tmp_path: Path, monkeypatch):
@@ -412,15 +420,15 @@ def test_capture_target_retries_transient_empty_trace(tmp_path: Path, monkeypatc
     def fake_run(argv, **_kwargs):
         nonlocal capture_attempts
         if argv == [str(executable), "--version"]:
-            return type("Result", (), {"returncode": 0, "stdout": "agent 1.0.0\n", "stderr": ""})()
+            return CommandResult(tuple(argv), 0, "agent 1.0.0\n", "")
         capture_attempts += 1
         if capture_attempts == 1:
-            return type(
-                "Result", (), {"returncode": 1, "stdout": "", "stderr": "no valid records found in trace file"}
-            )()
-        target.prompt_path.write_text("# Prompt\n", encoding="utf-8")
-        target.trace_path.write_text("{}\n", encoding="utf-8")
-        return type("Result", (), {"returncode": 0, "stdout": "", "stderr": ""})()
+            return CommandResult(tuple(argv), 1, "", "no valid records found in trace file")
+        output_dir = Path(argv[argv.index("--output-dir") + 1])
+        trace = output_dir / "2026-05-22" / "trace_000001.jsonl"
+        trace.parent.mkdir(parents=True, exist_ok=True)
+        trace.write_text(json.dumps({"request": {"body": _PROMPT_BODY}}) + "\n", encoding="utf-8")
+        return CommandResult(tuple(argv), 0, "", "")
 
     monkeypatch.setattr("phistory.capture.run", fake_run)
     monkeypatch.setattr("phistory.drivers.oneshot.run", fake_run)
@@ -656,3 +664,22 @@ request = urllib.request.Request(
 with urllib.request.urlopen(request, timeout=10) as response:
     response.read()
 """
+
+
+_PROMPT_BODY = {
+    "model": "test-model",
+    "system": "You are an agent.",
+    "messages": [{"role": "user", "content": "hi"}],
+    "tools": [{"name": "read", "description": "Read a file.", "input_schema": {"type": "object"}}],
+}
+
+
+def test_tap_command_always_selects_capture_only_mode(tmp_path: Path):
+    """claude-tap serves dummy responses only while an export path is set; without it a
+    capture would reach the real provider."""
+    agent = AgentSpec(id="agent", display_name="Agent", package="agent", tap_client="claude", fake_env={})
+    target = _target(agent, VersionInfo("1.0.0"), tmp_path)
+    argv = tap_command(target, tmp_path / ".tap")
+
+    assert "--export-prompt" in argv
+    assert argv[argv.index("--export-prompt") + 1].startswith(str(tmp_path / ".tap"))

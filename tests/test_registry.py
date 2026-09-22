@@ -1,8 +1,15 @@
-from phistory.registry import AGENT_ORDER, get_agent, parse_agent_ids
+from phistory.registry import AGENT_ORDER, agent_sort_key, get_agent, parse_agent_ids
 
 
 def test_display_order_starts_with_dsh_in_third_position():
     assert AGENT_ORDER[:3] == ("claude-code", "codex", "dsh")
+
+
+def test_catalog_places_claude_tag_fifth_without_adding_a_capture_agent():
+    agent_ids = [*AGENT_ORDER, "claude-tag"]
+
+    assert sorted(agent_ids, key=agent_sort_key)[4] == "claude-tag"
+    assert "claude-tag" not in AGENT_ORDER
 
 
 def test_parse_default_agents():
@@ -38,12 +45,20 @@ def test_get_agent_has_capture_contract():
     ]
 
 
-def test_claude_code_uses_full_prompt_surface_with_isolated_sessions():
+def test_claude_code_archives_the_terminal_surface_by_default():
     agent = get_agent("claude-code")
+    headless = agent.variant("sdk")
 
-    assert "--no-session-persistence" in agent.default_variant.run_args
-    assert "--bare" not in agent.default_variant.run_args
-    assert "--exclude-dynamic-system-prompt-sections" not in agent.default_variant.run_args
+    # The interactive terminal is what users actually run; -p reaches the Agent SDK surface.
+    assert agent.default_variant.driver == "pty"
+    assert agent.default_variant.pty_message
+    assert "-p" not in agent.default_variant.run_args
+    assert agent.home_profile == "claude"
+
+    assert "-p" in headless.run_args
+    assert "--no-session-persistence" in headless.run_args
+    assert "--bare" not in headless.run_args
+    assert "--exclude-dynamic-system-prompt-sections" not in headless.run_args
 
 
 def test_new_agents_define_install_and_capture_profiles():

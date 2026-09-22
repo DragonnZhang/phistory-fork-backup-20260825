@@ -2206,6 +2206,13 @@
       "text": "猜错会让用户付出实质性的代价——返工、不可逆操作、浪费工作范围——而不只是招来一句快速的\"其实，改成那个吧\"的后续补充。",
       "thinking_budget": 4096
     },
+    "3568173a1769a44058020482d0d8bf763b55a5ad699db84789359ad121ede20f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · 文本 · 已缓存",
+      "thinking_budget": 4096
+    },
     "35acf36c6f56f281d53b3d40a5e85697b6706499e13ee28590ece0f851a60816": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3143,6 +3150,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "做用户真正要求的工作，不悄悄扩大、缩小或改变其范围。",
+      "thinking_budget": 4096
+    },
+    "4df8fa3d3b700065b41eb70fb1d968936a183a5d85394d6b8f97718cf73a0d18": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · system-reminder · 已缓存",
       "thinking_budget": 4096
     },
     "4e132d9518bc6778753d5d85f88f18911d322e6f2c83cebc676faa667a9cdb48": {
@@ -5820,6 +5834,13 @@
       "text": "每个步骤的 `question` 应为以问号结尾的单个短句；不要预先解释对话中已经涵盖过的背景。",
       "thinking_budget": 4096
     },
+    "96b95bb32d90aa3fceffa7a0f454bec7083e6f0bd5db587c959aa537a5dc8e19": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 1 · 已缓存",
+      "thinking_budget": 4096
+    },
     "96d0b5da87d0c4ef841b575b513d372b7d245863eaf09f0317d9450670e3ddf2": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6497,6 +6518,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "何时不应使用待办事项列表的示例",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a718e6269b7852a36d41ab31cadfc80a7cd3adc400c396d9ce5f895102bf80e9": {
@@ -8825,6 +8853,13 @@
       "text": "要搜索的目录。默认为当前工作目录。",
       "thinking_budget": 4096
     },
+    "de50e85f926c995e07d4d3bc2071af85c757e56e4b5940e8f2a8a71ae018cd87": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · 用户 · 文本 · 已缓存",
+      "thinking_budget": 4096
+    },
     "de572a57fdf1130ac3dcf0b88fd86725f45719e2eab8379bc199de3e80a05508": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9677,13 +9712,6 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**验证** —— 对现有交付物进行审查 / 测试 / 验证 / 审计。可自由委派。",
-      "thinking_budget": 4096
-    },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
       "thinking_budget": 4096
     },
     "f1a20547b87dfe0aa4d8c1164d9abd726bde85b7f102576461e1fde7494740c2": {

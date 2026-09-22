@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "gpt-4.1",
-    "tool_count": 15
+    "tool_count": 15,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-01T16:53:20Z",
   "tarball_url": "https://github.com/MoonshotAI/kimi-cli/releases/tag/1.50.0",
