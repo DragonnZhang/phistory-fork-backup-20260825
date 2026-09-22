@@ -2580,6 +2580,13 @@
       "text": "CPU: AMD EPYC 7763 64-Core Processor",
       "thinking_budget": 4096
     },
+    "3ddbfc7e85b274e6a26b5bc84b4c7e61701eec22e6abf4b6cfbc20b7776b9b88": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "文档 → 提取的文本。笔记本 → 可编辑的单元格。图像 → 解码后内联显示。视频 → 预览网格加元数据。SVG 会作为文本读取，除非指定 `:img`；`:raw` 会绕过转换器。",
+      "thinking_budget": 4096
+    },
     "3de6d90a9dc72197f3dab3e268a497fe49b5eef77031e7f29cffbfaadd4c6422": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3610,6 +3617,13 @@
       "text": "选择器支持 CSS 以及 Puppeteer 的 `aria/…`、`text/…`、`xpath/…` 和 `pierce/…` 查询处理器。",
       "thinking_budget": 4096
     },
+    "5848bc6cacd3576af54aa72d4abb352574a2b829b8c2426bde521c6fc74494be": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "后台任务完成时会自动送达。你从不需要轮询。`jobs` 是一种非消耗性摘要；`wait` 观察已结束的任务时会先送达其结果，并抑制重复的 `async-result`。",
+      "thinking_budget": 4096
+    },
     "58616b006f5640f5313d7acd89daf4ce8d37f6d22df60f37af72adb262117dc1": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3713,6 +3727,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在交付前，验证：",
+      "thinking_budget": 4096
+    },
+    "5c03a2303c24b26e30c08666c6a99bb581166046ea80257bbd966f1ec81dda99": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-22；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "5c13c942558dd9cf8f6fd404760c446e406141c756bf638cd26249c34b768505": {
@@ -4084,6 +4105,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`diagnostics`——针对某个路径、glob 模式（`src/**/*.ts`）或整个工作区（`file: \"*\"`）的错误/警告",
+      "thinking_budget": 4096
+    },
+    "6478a78d5359b0c86ad5056a58279c452cd28f9d621bab141937e3d672a4611a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**`jobs`**：对每个任务的非消耗性状态摘要。使用 `wait` 并传入 id，可在自动送达之前取回已结束的结果。此外还会列出没有任务条目的正在运行的子智能体——请通过 `send` 与它们协调。",
       "thinking_budget": 4096
     },
     "64ae96c38027b1f90df6a84de3aae7a51cd4d32356c89f046de3a6dd02635a09": {
@@ -9859,6 +9887,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "之前的顶层名称会延续到下一个单元格——直接复用；绝不重新导入/重新声明。仅当文件自上次读取后有变化时才重新读取。",
+      "thinking_budget": 4096
+    },
+    "ef06b937a268de48317972788f668ad19df04079afb087bf65faed15aa97089a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "结果会自动送达。`hub jobs` 进行摘要而不消耗；对已结束任务的 `hub wait` 快照即是送达，因此随后不会有重复的 `async-result`。",
       "thinking_budget": 4096
     },
     "ef120cfb318c4d247b66686773fcf7418d14d928839bd0d13bd81def5501ed57": {
