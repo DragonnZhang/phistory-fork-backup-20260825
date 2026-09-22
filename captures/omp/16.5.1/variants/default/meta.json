@@ -44,6 +44,7 @@
   "requested": {},
   "observed": {
     "model": "gpt-4.1",
-    "tool_count": 20
+    "tool_count": 20,
+    "provider": "openai-responses"
   }
 }

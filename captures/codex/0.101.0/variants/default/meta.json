@@ -40,6 +40,7 @@
   "requested": {},
   "observed": {
     "model": "gpt-5.2-codex",
-    "tool_count": 10
+    "tool_count": 10,
+    "provider": "openai-responses"
   }
 }

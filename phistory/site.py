@@ -74,13 +74,23 @@ def _build_manifest(root: Path, *, translations: Callable[[dict], dict] | None =
                 "id": agent_id,
                 "name": latest["agent"] if latest else agent_id,
                 "short_name": AGENT_SHORT_NAMES.get(agent_id),
-                "icon": AGENT_ICONS.get(agent_id),
+                "icon": _agent_icon(root, agent_id),
                 "latest": latest,
                 "default_variant": default_variant,
                 "variants": variants,
             }
         )
     return {"agents": agents, "count": len(rows)}
+
+
+def _agent_icon(root: Path, agent_id: str) -> str | None:
+    if icon := AGENT_ICONS.get(agent_id):
+        return icon
+    for suffix in ("svg", "png"):
+        relative = Path("docs/agent-icons") / f"{agent_id}.{suffix}"
+        if (root.parent / relative).is_file():
+            return relative.as_posix()
+    return None
 
 
 def _variant_sort_key(agent_id: str, variant_id: str) -> tuple[int, str]:
@@ -115,6 +125,7 @@ def _site_row(row: dict, base: Path) -> dict:
         "variant_label": row["variant_label"],
         "variant_dimensions": row["variant_dimensions"],
         "observed": row["observed"],
+        "trace_redacted": row["trace_redacted"],
         "published_compact": _compact_date(row["published_at"]),
         "published_display": _display_time(row["published_at"]),
         "captured_display": _display_time(row.get("captured_at") or ""),
@@ -122,10 +133,6 @@ def _site_row(row: dict, base: Path) -> dict:
         "prompt_fingerprint": _file_fingerprint(row["prompt"]),
         "trace": asset_path("trace"),
         "trace_fingerprint": _file_fingerprint(row["trace"]),
-        "static_prompts": asset_path("static_prompts"),
-        "static_prompts_fingerprint": _file_fingerprint(row["static_prompts"]) if row.get("static_prompts") else "",
-        "static_prompts_json": asset_path("static_prompts_json"),
-        "static_candidates_json": asset_path("static_candidates_json"),
     }
 
 
@@ -432,9 +439,6 @@ a:hover { text-decoration: none; }
   color: var(--text);
   background: var(--control-hover);
 }
-.agent-control strong {
-  max-width: 128px;
-}
 .agent-name-short { display: none; }
 .agent-control::after {
   content: "";
@@ -490,6 +494,12 @@ a:hover { text-decoration: none; }
   display: inline-flex;
   align-items: center;
   height: 100%;
+}
+.agent-control strong {
+  display: block;
+  max-width: 128px;
+  height: auto;
+  line-height: 1.2;
 }
 .control small {
   color: var(--muted);
@@ -641,15 +651,11 @@ a:hover { text-decoration: none; }
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-@keyframes loading-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
   .loading-state { transition: none; }
   .loading-spinner { animation: none; }
 }
 #diff { position: absolute; inset: 0; }
-.shell[data-view="static"] #diff {
-  left: 270px;
-}
 .trace-view {
   position: absolute;
   inset: 0;
@@ -670,111 +676,6 @@ a:hover { text-decoration: none; }
 }
 .shell[data-view="trace"] #diff { display: none; }
 .shell[data-view="trace"] .trace-view { display: block; }
-.static-outline {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 270px;
-  display: none;
-  border-right: 1px solid var(--line);
-  background: var(--bg);
-  overflow: auto;
-  padding: 14px 10px 18px 14px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar) transparent;
-}
-.shell[data-view="static"] .static-outline {
-  display: block;
-}
-.static-outline-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.static-outline-title {
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-.static-filter {
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  padding: 4px 7px;
-  font: inherit;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.static-filter.is-active,
-.static-filter:hover,
-.static-filter:focus-visible {
-  color: var(--text);
-  background: var(--control-bg);
-  outline: none;
-}
-.static-outline-list {
-  display: grid;
-  gap: 3px;
-}
-.static-outline-group {
-  margin: 10px 0 4px;
-  color: var(--muted);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-.static-outline-item {
-  width: 100%;
-  border: 0;
-  border-radius: 7px;
-  background: transparent;
-  color: var(--text);
-  padding: 7px 8px;
-  display: grid;
-  grid-template-columns: 4px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 8px;
-  text-align: left;
-  cursor: pointer;
-}
-.static-outline-item:hover,
-.static-outline-item:focus-visible {
-  background: var(--control-bg);
-  outline: none;
-}
-.static-outline-item.is-unchanged {
-  color: var(--muted);
-}
-.static-change-mark {
-  width: 4px;
-  height: 20px;
-  border-radius: 999px;
-  background: var(--line);
-}
-.static-outline-item.is-added .static-change-mark { background: var(--diffstat-add); }
-.static-outline-item.is-removed .static-change-mark { background: var(--diffstat-remove); }
-.static-outline-item.is-changed .static-change-mark {
-  background: linear-gradient(180deg, var(--diffstat-add) 0 50%, var(--diffstat-remove) 50% 100%);
-}
-.static-outline-name {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 12px;
-  font-weight: 620;
-}
-.static-outline-delta {
-  color: var(--muted);
-  font-size: 11px;
-  font-variant-numeric: tabular-nums;
-}
 .shell[data-view="trace"] .compare {
   grid-template-columns: 236px;
 }
@@ -1084,6 +985,20 @@ a:hover { text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: .04em;
   margin-bottom: 6px;
+}
+.trace-role-note,
+.prompt-block-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+.prompt-block-label {
+  margin-bottom: 6px;
+  opacity: .75;
+}
+.trace-role-note::before {
+  content: '· ';
 }
 .tool-list {
   display: grid;
@@ -1475,6 +1390,16 @@ a:hover { text-decoration: none; }
   color: var(--muted);
   white-space: nowrap;
 }
+@media (min-width: 881px) and (max-width: 1100px) {
+  .topbar { grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; }
+  .left-tools .brand { display: none; }
+  .compare {
+    width: 100%;
+    max-width: 460px;
+    justify-self: center;
+    grid-template-columns: minmax(0, 196px) 22px minmax(0, 236px);
+  }
+}
 @media (max-width: 880px) {
   body { overflow: hidden; }
   .shell {
@@ -1556,57 +1481,6 @@ a:hover { text-decoration: none; }
   }
   .shell[data-view="trace"] .compare {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .shell[data-view="static"] #diff {
-    left: 0;
-    top: 46px;
-  }
-  .static-outline {
-    inset: 0 0 auto 0;
-    width: auto;
-    height: 46px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 7px 10px;
-    white-space: nowrap;
-  }
-  .static-outline-head {
-    display: inline-flex;
-    margin: 0 8px 0 0;
-    vertical-align: top;
-  }
-  .static-outline-title {
-    display: none;
-  }
-  .static-outline-list {
-    display: inline-flex;
-    gap: 4px;
-  }
-  .static-outline-group {
-    display: none;
-  }
-  .static-outline-item {
-    width: auto;
-    min-width: 118px;
-    max-width: 190px;
-    min-height: 30px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 8px;
-  }
-  .static-outline-name {
-    display: block;
-    min-width: 0;
-    max-width: 150px;
-  }
-  .static-outline-delta {
-    display: none;
-  }
-  .static-change-mark {
-    height: 16px;
   }
   .trace-page {
     padding: 18px 14px 34px;
@@ -1701,17 +1575,19 @@ __TRANSLATION_CSS__
       <button id="to" class="control version-control" type="button" aria-haspopup="listbox"></button>
     </div>
     <div class="actions">
-      <button id="language" class="icon-button language-button" type="button" aria-label="Switch content language" aria-pressed="false">中文</button>
+      <fieldset id="language" class="language-switch" aria-label="内容语言" lang="zh-CN">
+        <label class="language-option"><input type="radio" name="content-language" value="original" checked><span>原文</span></label>
+        <label class="language-option"><input type="radio" name="content-language" value="zh-CN"><span>中文</span></label>
+      </fieldset>
       <button id="view-toggle" class="icon-button view-button" type="button" title="Open trace detail">Trace</button>
       <button id="theme" class="icon-button" type="button" title="Toggle theme"></button>
-      <a class="icon-button" href="https://github.com/WEIFENG2333/phistory" target="_blank" rel="noreferrer" aria-label="Open GitHub project" title="Open GitHub project">
+      <a class="icon-button project-link" href="https://github.com/WEIFENG2333/phistory" target="_blank" rel="noreferrer" aria-label="Open GitHub project" title="Open GitHub project">
         <svg class="github-mark" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
       </a>
     </div>
   </header>
   <main class="editor">
     <div id="diff"><div class="empty">Loading diff viewer...</div></div>
-    <div id="static-outline" class="static-outline"></div>
     <div id="trace" class="trace-view"><div class="empty">Loading trace detail...</div></div>
     <div id="loading-state" class="loading-state" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true">
       <div class="loading-card">
@@ -1732,8 +1608,7 @@ __TRANSLATION_CSS__
 const manifest = JSON.parse(document.getElementById('manifest').textContent);
 const agents = new Map(manifest.agents.map(agent => [agent.id, agent]));
 const STORAGE_KEYS = {
-  traceState: 'phistory-trace-state-v1',
-  staticPrefs: 'phistory-static-prefs-v1'
+  traceState: 'phistory-trace-state-v1'
 };
 const els = {
   agent: document.getElementById('agent'),
@@ -1744,7 +1619,6 @@ const els = {
   theme: document.getElementById('theme'),
   diff: document.getElementById('diff'),
   editor: document.querySelector('.editor'),
-  staticOutline: document.getElementById('static-outline'),
   trace: document.getElementById('trace'),
   loading: document.getElementById('loading-state'),
   loadingTitle: document.getElementById('loading-title'),
@@ -1778,9 +1652,6 @@ const state = {
   picker: null,
   cache: new Map(),
   traceCache: new Map(),
-  staticCache: new Map(),
-  staticOutline: [],
-  staticOutlineChangedOnly: storedStaticPrefs().changedOnly,
   traceScrollTop: 0,
   traceHasStoredState: false,
   traceOpenSections: new Set(),
@@ -1814,7 +1685,7 @@ function boot() {
 
 function readQuery() {
   const params = new URLSearchParams(location.search);
-  state.view = ['trace', 'static'].includes(params.get('view')) ? params.get('view') : 'diff';
+  state.view = params.get('view') === 'trace' ? 'trace' : 'diff';
   const agentId = params.get('agent');
   if (agentId && agents.has(agentId)) state.agent = agentId;
   const agent = currentAgent();
@@ -1828,19 +1699,7 @@ function readQuery() {
     state.followLatest = !params.has('version') && !params.has('to');
     return;
   }
-  if (state.view === 'static' && params.has('version') && !params.has('from') && !params.has('to')) {
-    state.toVariant = validVariantId(agent, params.get('variant'));
-    state.fromVariant = state.toVariant;
-    const lane = variantInfo(agent, state.toVariant);
-    state.to = hasVersion(agent, state.toVariant, params.get('version')) ? params.get('version') : lane.latest.version;
-    state.from = previousVersion(agent, state.toVariant, state.to).version;
-    state.followLatest = false;
-    state.normalizeQuery = true;
-    ensureAvailableView();
-    return;
-  }
   readRangeQuery(params, agent);
-  ensureAvailableView();
 }
 
 function readRangeQuery(params, agent) {
@@ -1882,14 +1741,7 @@ function rangeQueryParams() {
   const defaultVariant = currentAgent().default_variant;
   if (state.fromVariant !== defaultVariant) params.set('from_variant', state.fromVariant);
   if (state.toVariant !== defaultVariant) params.set('to_variant', state.toVariant);
-  if (state.view === 'static') params.set('view', 'static');
   return params;
-}
-
-function ensureAvailableView() {
-  if (state.view !== 'static' || staticViewAvailable()) return;
-  state.view = 'diff';
-  state.normalizeQuery = true;
 }
 
 function bindEvents() {
@@ -1898,19 +1750,8 @@ function bindEvents() {
   els.to.addEventListener('click', () => togglePicker('to', els.to));
   els.viewToggle.addEventListener('click', toggleView);
   els.theme.addEventListener('click', toggleTheme);
-  els.language.addEventListener('click', toggleLanguage);
+  els.language.addEventListener('change', event => setLanguage(event.target.value));
   els.diff.addEventListener('focusin', guardMobileEditorFocus);
-  els.staticOutline.addEventListener('click', event => {
-    const filter = event.target.closest?.('.static-filter');
-    if (filter) {
-      state.staticOutlineChangedOnly = !state.staticOutlineChangedOnly;
-      saveStaticPrefs();
-      renderStaticOutline();
-      return;
-    }
-    const item = event.target.closest?.('.static-outline-item');
-    if (item) jumpToStaticSection(Number(item.dataset.line || 1));
-  });
   els.trace.addEventListener('click', event => {
     const jump = event.target.closest?.('.trace-jump');
     if (jump) {
@@ -1986,12 +1827,12 @@ function renderControls() {
   els.from.title = snapshotLabel(from, fromVariant);
   els.to.title = snapshotLabel(to, toVariant);
   const next = nextView();
-  els.viewToggle.textContent = next === 'diff' ? 'Diff' : (next === 'trace' ? 'Trace' : 'Static');
-  els.viewToggle.title = next === 'diff' ? 'Open prompt diff' : (next === 'trace' ? 'Open trace detail' : 'Open static prompts');
-  els.language.hidden = state.view === 'static';
-  els.language.textContent = state.language === 'zh-CN' ? '原文' : '中文';
-  els.language.setAttribute('aria-pressed', String(state.language === 'zh-CN'));
-  els.language.title = state.language === 'zh-CN' ? '显示原文' : '阅读中文翻译';
+  els.viewToggle.textContent = next === 'diff' ? 'Diff' : 'Trace';
+  els.viewToggle.title = next === 'diff'
+    ? 'Open prompt diff'
+    : (to.trace_redacted ? 'Open redacted trace detail' : 'Open trace detail');
+  els.language.querySelectorAll('input').forEach(input => { input.checked = input.value === state.language; });
+  els.language.title = state.language === 'zh-CN' ? '当前显示中文翻译；缺少译文时保留原文。' : '当前显示原文。';
 }
 
 function agentControlNameHtml(agent) {
@@ -2135,7 +1976,6 @@ function selectVariant(variantId) {
   } else {
     normalizeVersionRange(agent, side);
   }
-  ensureAvailableView();
   writeQuery();
   renderControls();
   renderPickerOptions();
@@ -2171,7 +2011,6 @@ function selectOption(value) {
       normalizeVersionRange(currentAgent(), 'to');
     }
   }
-  ensureAvailableView();
   closePicker();
   refresh();
 }
@@ -2199,11 +2038,6 @@ async function renderView(sequence) {
     }
     await loadMonaco();
     if (!isCurrentRender(sequence)) return;
-    if (state.view === 'static') {
-      await renderStatic(sequence);
-      return;
-    }
-    els.staticOutline.innerHTML = '';
     await renderDiff(sequence);
   } catch (error) {
     if (isCurrentRender(sequence)) showError(error);
@@ -2225,8 +2059,7 @@ function showLoading() {
   const range = state.view === 'trace' ? toLabel : `${fromLabel} → ${toLabel}`;
   const titles = {
     diff: 'Loading comparison...',
-    trace: 'Loading trace...',
-    static: 'Loading static prompts...'
+    trace: 'Loading trace...'
   };
   els.loadingTitle.textContent = titles[state.view] || 'Loading...';
   els.loadingDetail.textContent = `${agent.name} · ${range}`;
@@ -2248,37 +2081,11 @@ function toggleView() {
     state.fromVariant = state.toVariant;
     state.from = previousVersion(currentAgent(), state.toVariant, state.to).version;
   }
-  ensureAvailableView();
   refresh();
 }
 
 function nextView() {
-  const views = staticViewAvailable() ? ['diff', 'trace', 'static'] : ['diff', 'trace'];
-  const index = views.indexOf(state.view);
-  if (index === -1) return views[0];
-  return views[(index + 1) % views.length];
-}
-
-function staticViewAvailable() {
-  const from = snapshotInfo('from');
-  const to = snapshotInfo('to');
-  return Boolean(from?.static_prompts && to?.static_prompts);
-}
-
-function storedStaticPrefs() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEYS.staticPrefs) || '{}');
-  } catch {
-    return {};
-  }
-}
-
-function saveStaticPrefs() {
-  try {
-    localStorage.setItem(STORAGE_KEYS.staticPrefs, JSON.stringify({
-      changedOnly: Boolean(state.staticOutlineChangedOnly)
-    }));
-  } catch {}
+  return state.view === 'diff' ? 'trace' : 'diff';
 }
 
 function traceStateKey() {
@@ -2373,9 +2180,8 @@ function renderMonacoDiff(original, modified) {
   const options = {
     automaticLayout: true,
     renderSideBySide: !isNarrow,
-    // Legacy handles large, repetitive Static archives without collapsing their changes into one hunk.
-    diffAlgorithm: state.view === 'static' ? 'legacy' : 'advanced',
-    maxComputationTime: state.view === 'static' ? 20000 : 5000,
+    diffAlgorithm: 'advanced',
+    maxComputationTime: 5000,
     readOnly: true,
     domReadOnly: isNarrow,
     minimap: { enabled: !isNarrow },
@@ -2492,17 +2298,6 @@ async function loadTrace(item) {
   return records;
 }
 
-async function loadStaticPrompts(item) {
-  if (!item.static_prompts) return '';
-  const url = captureAssetUrl(item, item.static_prompts);
-  if (state.staticCache.has(url)) return state.staticCache.get(url);
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`Unable to load ${item.static_prompts}`);
-  const text = await response.text();
-  state.staticCache.set(url, text);
-  return text;
-}
-
 function captureAssetUrl(item, path) {
   const url = new URL(path, window.location.href);
   url.searchParams.set('v', captureAssetVersion(item, path));
@@ -2512,7 +2307,6 @@ function captureAssetUrl(item, path) {
 function captureAssetVersion(item, path) {
   if (path === item.prompt) return item.prompt_fingerprint || fallbackAssetVersion(item);
   if (path === item.trace) return item.trace_fingerprint || fallbackAssetVersion(item);
-  if (path === item.static_prompts) return item.static_prompts_fingerprint || fallbackAssetVersion(item);
   return fallbackAssetVersion(item);
 }
 
@@ -2537,24 +2331,6 @@ async function renderTrace(sequence) {
   loadStoredTraceState();
   els.trace.innerHTML = traceDetailHtml(item, detail);
   restoreTraceState();
-}
-
-async function renderStatic(sequence) {
-  const [from, to] = [snapshotInfo('from'), snapshotInfo('to')];
-  if (!from.static_prompts || !to.static_prompts) {
-    disposeEditor();
-    state.staticOutline = [];
-    renderStaticOutline();
-    els.diff.innerHTML = '<div class="empty">This snapshot has no static prompt archive.</div>';
-    return;
-  }
-  const [original, modified] = await Promise.all([loadStaticPrompts(from), loadStaticPrompts(to)]);
-  if (!isCurrentRender(sequence)) return;
-  const originalBody = staticPromptBodyMarkdown(original);
-  const modifiedBody = staticPromptBodyMarkdown(modified);
-  state.staticOutline = buildStaticOutline(originalBody, modifiedBody);
-  renderStaticOutline();
-  renderMonacoDiff(originalBody, modifiedBody);
 }
 
 function selectMainTraceRecord(records) {
@@ -2641,17 +2417,17 @@ function normalizePromptBlocks(provider, body) {
 
   for (const message of messageItems(body.messages)) {
     const role = String(message.role || '').toLowerCase();
-    if (role === 'system') system.push({ title: 'System Message', text: contentText(message.content) });
-    if (role === 'developer') developer.push({ title: 'Developer Message', text: contentText(message.content) });
+    if (role === 'system') system.push(...contentBlocks(message.content, 'System Message', 'system message'));
+    if (role === 'developer') developer.push(...contentBlocks(message.content, 'Developer Message', 'developer message'));
   }
   for (const item of messageItems(body.input)) {
     const role = String(item.role || item.type || '').toLowerCase();
-    if (role === 'system') system.push({ title: 'System Input', text: contentText(item.content || item.text) });
-    if (role === 'developer') developer.push({ title: 'Developer Input', text: contentText(item.content || item.text) });
+    if (role === 'system') system.push(...contentBlocks(item.content || item.text, 'System Input', 'system message'));
+    if (role === 'developer') developer.push(...contentBlocks(item.content || item.text, 'Developer Input', 'developer message'));
   }
   for (const item of messageItems(body.contents)) {
     const role = String(item.role || 'user').toLowerCase();
-    if (role === 'system') system.push({ title: 'System Content', text: contentText(item.parts || item.content) });
+    if (role === 'system') system.push(...contentBlocks(item.parts || item.content, 'System Content', 'system message'));
   }
   return {
     system: system.filter(block => block.text),
@@ -2661,22 +2437,21 @@ function normalizePromptBlocks(provider, body) {
 
 function normalizeMessages(provider, body) {
   const out = [];
+  const push = (role, value) => {
+    for (const block of contentBlocks(value, 'Content')) out.push({ role, text: block.text, label: block.label });
+  };
   for (const message of messageItems(body.messages)) {
     const role = String(message.role || 'message');
     if (role === 'system' || role === 'developer') continue;
-    const text = contentText(message.content || message.text);
-    if (text) out.push({ role, text });
+    push(role, message.content ?? message.text);
   }
   for (const item of messageItems(body.input)) {
     const role = String(item.role || item.type || 'input');
     if (role === 'system' || role === 'developer') continue;
-    const text = contentText(item.content || item.text || item.output);
-    if (text) out.push({ role, text });
+    push(role, item.content ?? item.text ?? item.output);
   }
   for (const item of messageItems(body.contents)) {
-    const role = String(item.role || 'user');
-    const text = contentText(item.parts || item.content);
-    if (text) out.push({ role, text });
+    push(String(item.role || 'user'), item.parts ?? item.content);
   }
   return out;
 }
@@ -2780,16 +2555,28 @@ function toolDeclarations(declarations, context = {}) {
     });
 }
 
-function contentBlocks(value, title) {
-  if (typeof value === 'string') return [{ title, text: value }];
+function contentBlocks(value, title, extra) {
+  if (typeof value === 'string') return [{ title, text: value, label: blockLabel(value, null, extra) }];
   if (Array.isArray(value)) {
     return value.map((item, index) => {
       const type = typeof item?.type === 'string' && item.type !== 'text' ? item.type : '';
-      return { title: type || `${title} ${index + 1}`, text: contentText(item) };
+      const text = contentText(item);
+      return { title: type || `${title} ${index + 1}`, text, label: blockLabel(text, item, extra) };
     }).filter(block => block.text);
   }
-  if (value && typeof value === 'object') return [{ title, text: contentText(value) }];
+  if (value && typeof value === 'object') {
+    const text = contentText(value);
+    return [{ title, text, label: blockLabel(text, value, extra) }];
+  }
   return [];
+}
+
+function blockLabel(text, item, extra) {
+  const parts = [];
+  if (extra) parts.push(extra);
+  if (typeof text === 'string' && text.trimStart().startsWith('<system-reminder>')) parts.push('system-reminder');
+  if (item && typeof item === 'object' && item.cache_control) parts.push('cached');
+  return parts.join(' · ');
 }
 
 function messageItems(value) {
@@ -2876,158 +2663,16 @@ function setTracePanelOpen(panel, open) {
   panel.querySelector(':scope > .trace-summary')?.setAttribute('aria-expanded', String(open));
 }
 
-function staticPromptBodyMarkdown(markdown) {
-  return markdown
-    .replace(/^# Static Prompts\s*\n+\s*Agent:\s*`[^`]*`\s*\n\s*Version:\s*`[^`]*`\s*\n+/i, '')
-    .trim();
-}
-
-function buildStaticOutline(original, modified) {
-  const oldSections = staticSections(original);
-  const newSections = staticSections(modified);
-  const oldByKey = new Map(oldSections.map(section => [section.key, section]));
-  const used = new Set();
-  const items = [];
-  for (const section of newSections) {
-    const previous = oldByKey.get(section.key);
-    if (previous) used.add(section.key);
-    items.push(staticOutlineItem(section, previous, false));
-  }
-  for (const section of oldSections) {
-    if (!used.has(section.key)) items.push(staticOutlineItem(section, null, true));
-  }
-  return items;
-}
-
-function staticSections(markdown) {
-  const lines = String(markdown || '').split('\n');
-  const sections = [];
-  let group = 'Static Prompts';
-  for (let index = 0; index < lines.length; index++) {
-    const match = /^(#{2,3})\s+(.+?)\s*$/.exec(lines[index]);
-    if (!match) continue;
-    const level = match[1].length;
-    const title = match[2].replace(/`/g, '').trim();
-    if (level === 2) {
-      group = title;
-      continue;
-    }
-    let end = lines.length;
-    for (let next = index + 1; next < lines.length; next++) {
-      if (/^#{2,3}\s+/.test(lines[next])) {
-        end = next;
-        break;
-      }
-    }
-    sections.push({
-      group,
-      title,
-      key: `${group}\n${title}`.toLowerCase(),
-      line: index + 1,
-      lines: lines.slice(index, end),
-    });
-  }
-  return sections;
-}
-
-function staticOutlineItem(current, previous, removed) {
-  const stats = removed
-    ? { added: 0, removed: current.lines.length }
-    : previous
-      ? changedLineStats(previous.lines, current.lines)
-      : { added: current.lines.length, removed: 0 };
-  const changed = stats.added + stats.removed;
-  return {
-    group: current.group,
-    title: current.title,
-    line: current.line,
-    added: stats.added,
-    removed: stats.removed,
-    changed,
-    status: removed ? 'removed' : (!previous ? 'added' : (changed ? 'changed' : 'unchanged')),
-  };
-}
-
-function changedLineStats(oldLines, newLines) {
-  const counts = new Map();
-  oldLines.map(staticCompareLine).forEach(line => counts.set(line, (counts.get(line) || 0) + 1));
-  let common = 0;
-  for (const line of newLines.map(staticCompareLine)) {
-    const count = counts.get(line) || 0;
-    if (!count) continue;
-    common++;
-    count === 1 ? counts.delete(line) : counts.set(line, count - 1);
-  }
-  return {
-    added: Math.max(0, newLines.length - common),
-    removed: Math.max(0, oldLines.length - common),
-  };
-}
-
-function staticCompareLine(line) {
-  return line.trim().replace(/\s+/g, ' ');
-}
-
-function renderStaticOutline() {
-  const items = state.staticOutlineChangedOnly
-    ? state.staticOutline.filter(item => item.status !== 'unchanged')
-    : state.staticOutline;
-  if (state.view !== 'static') {
-    els.staticOutline.innerHTML = '';
-    return;
-  }
-  if (!state.staticOutline.length) {
-    els.staticOutline.innerHTML = '<div class="empty">No static prompt outline.</div>';
-    return;
-  }
-  els.staticOutline.innerHTML = `<div class="static-outline-head">
-    <div class="static-outline-title">Static sections</div>
-    <button class="static-filter${state.staticOutlineChangedOnly ? ' is-active' : ''}" type="button">${state.staticOutlineChangedOnly ? 'All' : 'Changed'}</button>
-  </div>
-  <div class="static-outline-list">${staticOutlineItemsHtml(items)}</div>`;
-}
-
-function staticOutlineItemsHtml(items) {
-  let group = '';
-  return items.map(item => {
-    const groupHtml = item.group !== group ? `<div class="static-outline-group">${escapeHtml(item.group)}</div>` : '';
-    group = item.group;
-    return `${groupHtml}<button class="static-outline-item is-${item.status}" type="button" data-line="${item.line}" title="${escapeHtml(item.title)}">
-      <span class="static-change-mark" aria-hidden="true"></span>
-      <span class="static-outline-name">${escapeHtml(shortStaticTitle(item.title))}</span>
-      <span class="static-outline-delta">${staticDeltaLabel(item)}</span>
-    </button>`;
-  }).join('');
-}
-
-function shortStaticTitle(title) {
-  return String(title || '').replace(/^(System|Tool|Agent|Unknown) Prompt:\s*/i, '').replace(/^Unknown static prompt\s*/i, '#');
-}
-
-function staticDeltaLabel(item) {
-  if (item.status === 'unchanged') return '';
-  if (item.status === 'added') return `+${item.added}`;
-  if (item.status === 'removed') return `-${item.removed}`;
-  return `+${item.added} -${item.removed}`;
-}
-
-function jumpToStaticSection(line) {
-  if (!state.editor || !Number.isFinite(line)) return;
-  const target = Math.max(1, line);
-  const editor = state.editor.getModifiedEditor();
-  editor.revealLineInCenter(target);
-  editor.setPosition({ lineNumber: target, column: 1 });
-  editor.focus();
-}
-
 function traceDetailHtml(item, detail) {
   const agent = currentAgent();
   const variant = variantInfo(agent, item.variant_id);
   const suffix = agent.variants.length > 1 ? ` · ${variant.label}` : '';
   const title = `${agent.name} ${item.version}${suffix}`;
+  const traceKind = item.trace_redacted ? 'Redacted trace' : 'Trace detail';
+  const requestBodyLabel = item.trace_redacted ? 'Redacted Request Body' : 'Raw Request Body';
   return `<article class="trace-page">
     <header class="trace-hero">
-      <div class="trace-eyebrow">Trace detail · request ${detail.index + 1} of ${detail.total}</div>
+      <div class="trace-eyebrow">${traceKind} · request ${detail.index + 1} of ${detail.total}</div>
       <div class="trace-title"><h2>${escapeHtml(title)}</h2><span>${escapeHtml(item.published_compact)}</span></div>
       <div class="trace-meta">${metaItem('Provider', detail.provider)}${metaItem('Model', detail.model || 'unknown')}${metaItem('Endpoint', `${detail.method} ${detail.path}`)}${item.published_display ? metaItem('Published', item.published_display) : ''}${item.captured_display ? metaItem('Captured', item.captured_display) : ''}</div>
     </header>
@@ -3037,7 +2682,7 @@ function traceDetailHtml(item, detail) {
     ${blocksSectionHtml('Developer Prompt', detail.developerBlocks, false)}
     ${toolsSectionHtml(detail.tools)}
     ${messagesSectionHtml(detail.messages)}
-    ${traceSectionHtml('Raw Request Body', JSON.stringify(detail.rawBody, null, 2), { open: false, raw: true, wrapToggle: true })}
+    ${traceSectionHtml(requestBodyLabel, JSON.stringify(detail.rawBody, null, 2), { open: false, raw: true, wrapToggle: true })}
   </article>`;
 }
 
@@ -3087,17 +2732,21 @@ function blocksSectionHtml(title, blocks, open) {
   if (!blocks.length) return '';
   const section = sectionId(title);
   const body = blocks.map(block => {
-    const origin = block.title === 'System Message'
+    const origin = !block.label && block.title === 'System Message'
       ? '<div class="prompt-block-origin">In-conversation message · <code>role: system</code></div>'
       : '';
-    return `<div class="prompt-block">${origin}<div class="trace-rendered">${markdownHtml(block.text)}${originalTextHtml(block.text, block.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(block.text)}</pre></div>`;
+    return `<div class="prompt-block">${blockLabelHtml(block.label)}${origin}<div class="trace-rendered">${markdownHtml(block.text)}${originalTextHtml(block.text, block.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(block.text)}</pre></div>`;
   }).join('');
   return `<section class="trace-section${open ? ' is-open' : ''}" data-section="${section}">${traceSummaryHtml(title, open, '', true)}<div class="trace-content"><div class="trace-body">${body}</div></div></section>`;
 }
 
+function blockLabelHtml(label) {
+  return label ? `<div class="prompt-block-label">${escapeHtml(label)}</div>` : '';
+}
+
 function messagesSectionHtml(messages) {
   if (!messages.length) return '';
-  const body = messages.map(message => `<div class="trace-message"><div class="trace-role">${escapeHtml(message.role)}</div><div class="trace-rendered">${markdownHtml(message.text)}${originalTextHtml(message.text, message.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(message.text)}</pre></div>`).join('');
+  const body = messages.map(message => `<div class="trace-message"><div class="trace-role">${escapeHtml(message.role)}${message.label ? ` <span class="trace-role-note">${escapeHtml(message.label)}</span>` : ''}</div><div class="trace-rendered">${markdownHtml(message.text)}${originalTextHtml(message.text, message.originalText)}</div><pre class="trace-text trace-raw">${escapeHtml(message.text)}</pre></div>`).join('');
   return `<section class="trace-section" data-section="messages">${traceSummaryHtml('Messages', false, '', true)}<div class="trace-content"><div class="trace-body">${body}</div></div></section>`;
 }
 

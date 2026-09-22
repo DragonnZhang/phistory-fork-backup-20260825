@@ -37,7 +37,8 @@
   },
   "requested": {},
   "observed": {
-    "model": "grok-4.5",
-    "tool_count": 1
+    "model": "grok-build",
+    "tool_count": 25,
+    "provider": "openai-responses"
   }
 }

@@ -87,7 +87,7 @@ def test_dsh_web_creates_and_prompts_session_with_browser_auth(
     target = CaptureTarget(agent, VersionInfo("1.0.0"), agent.variant(variant_id), tmp_path)
     tap_dir = tmp_path / "tap"
     tap_dir.mkdir()
-    context = CaptureRunContext(target, target.prompt_path, tap_dir, tmp_path, {})
+    context = CaptureRunContext(target, tap_dir, tmp_path, {})
     process = SimpleNamespace(poll=lambda: None)
 
     with ThreadingHTTPServer(("127.0.0.1", 0), Handler) as server:

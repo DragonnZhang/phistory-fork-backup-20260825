@@ -45,9 +45,6 @@ def read_capture_rows(root: Path) -> list[dict[str, Any]]:
         variant_meta = meta.get("variant") if isinstance(meta.get("variant"), dict) else {}
         prompt = variant_dir / "prompt.md"
         trace = variant_dir / "trace.jsonl"
-        static_prompts = version_dir / "static" / "prompts.md"
-        static_prompts_json = version_dir / "static" / "prompts.json"
-        static_candidates_json = version_dir / "static" / "candidates.json"
         if not prompt.exists() or not trace.exists():
             continue
         rows.append(
@@ -59,13 +56,11 @@ def read_capture_rows(root: Path) -> list[dict[str, Any]]:
                 "variant_label": variant_meta.get("label") or variant_dir.name,
                 "variant_dimensions": variant_meta.get("dimensions") or {},
                 "observed": meta.get("observed") or {},
+                "trace_redacted": meta.get("trace_redacted") is True,
                 "published_at": meta.get("published_at") or "",
                 "captured_at": meta.get("captured_at") or "",
                 "prompt": prompt,
                 "trace": trace,
-                "static_prompts": static_prompts if static_prompts.exists() else None,
-                "static_prompts_json": static_prompts_json if static_prompts_json.exists() else None,
-                "static_candidates_json": static_candidates_json if static_candidates_json.exists() else None,
                 "meta": meta_path,
             }
         )
@@ -118,14 +113,10 @@ def _readme_markdown(rows: list[dict[str, Any]], base: Path) -> str:
                 "[`claude-tap`](https://github.com/WEIFENG2333/claude-tap), captures the prompt-bearing HTTP "
                 "request without calling the real model provider, and stores the result under "
                 "`captures/<agent>/<version>/variants/<variant>/` with `prompt.md`, `trace.jsonl`, and `meta.json`. "
-                "Capture configurations use a `default` snapshot as their baseline; selected models or modes are stored as additional variants."
-            ),
-            "",
-            (
-                "For recent Claude Code releases, Phistory also extracts static prompt-like strings from the "
-                "installed package and stores them under `captures/<agent>/<version>/static/`. "
-                "The candidate archive keeps the raw extraction input so matching "
-                "rules can be improved later without reinstalling every historical package."
+                "The `default` snapshot runs each CLI the way its users do, through a real terminal when it ships one; "
+                "selected models or alternative surfaces are stored as additional variants. "
+                "`prompt.md` is rendered from the archived trace, so every block of the request survives into it: "
+                "each system block and its cache boundary, reminder blocks, and system messages interleaved with the conversation."
             ),
             "",
             "GitHub Actions checks automatically tracked CLI releases every hour and commits new snapshots when they appear.",
@@ -150,9 +141,6 @@ def _readme_markdown(rows: list[dict[str, Any]], base: Path) -> str:
             "",
             "# Capture a historical version range for one agent.",
             "uv run phistory backfill claude-code --from 2.1.113 --to latest",
-            "",
-            "# Rebuild static prompt files for the latest 10 captured Claude Code versions.",
-            "uv run phistory extract-static claude-code --latest-captured 10",
             "",
             "# Translate archived prose using credentials configured outside the repository.",
             "uv run phistory translate --all-captured",
@@ -258,13 +246,10 @@ def _readme_zh_markdown(rows: list[dict[str, Any]], base: Path) -> str:
                 "[`claude-tap`](https://github.com/WEIFENG2333/claude-tap) 分别运行每个已配置快照，抓取包含系统提示词的 "
                 "HTTP 请求，不调用真实模型服务，然后把结果保存到 "
                 "`captures/<agent>/<version>/variants/<variant>/`，里面包含 `prompt.md`、`trace.jsonl` 和 "
-                "`meta.json`。抓取配置以 `default` 快照为基线，显式选择的模型或模式会作为额外变体保存。"
-            ),
-            "",
-            (
-                "对于最近的 Claude Code 版本，Phistory 还会从安装包里提取疑似静态 prompt 的字符串，"
-                "保存在 `captures/<agent>/<version>/static/`。候选文件会保留原始内容，"
-                "方便以后改进匹配规则时不用重新安装所有历史包。"
+                "`meta.json`。`default` 快照按用户实际的用法运行 CLI，自带终端界面的就走真实终端；"
+                "显式选择的模型或其他调用面会作为额外变体保存。"
+                "`prompt.md` 由归档的 trace 渲染而来，因此请求里的每个块都会保留："
+                "每段系统提示词及其缓存边界、reminder 块，以及夹在对话中间的 system 消息。"
             ),
             "",
             "GitHub Actions 每小时检查一次已自动追踪的 CLI 版本；发现新版本后，会自动抓取并提交新的提示词快照。",
@@ -289,9 +274,6 @@ def _readme_zh_markdown(rows: list[dict[str, Any]], base: Path) -> str:
             "",
             "# 回填某个 agent 的历史版本区间。",
             "uv run phistory backfill claude-code --from 2.1.113 --to latest",
-            "",
-            "# 重建最近 10 个已捕获 Claude Code 版本的静态 prompt 文件。",
-            "uv run phistory extract-static claude-code --latest-captured 10",
             "",
             "# 使用仓库外配置的凭证翻译历史正文；已有段落自动复用。",
             "uv run phistory translate --all-captured",
@@ -368,21 +350,18 @@ def _write_capture_doc(rows: list[dict[str, Any]], base: Path) -> None:
     if not rows:
         lines.extend(["No captures yet.", ""])
     else:
-        lines.append(
-            "| Agent | Version | Variant | Published | Captured | Snapshot | Static | Candidates | Raw Trace |"
-        )
-        lines.append("| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+        lines.append("| Agent | Version | Variant | Published | Captured | Snapshot | Trace |")
+        lines.append("| --- | --- | --- | --- | --- | --- | --- |")
         for row in _sorted_capture_rows(rows):
             prompt = _rel(row["prompt"], output.parent)
             trace = _rel(row["trace"], output.parent)
-            static = _optional_link(row.get("static_prompts"), output.parent, "prompts.md")
-            candidates = _optional_link(row.get("static_candidates_json"), output.parent, "candidates.json")
             published = _human_time(row["published_at"])
             captured = _human_time(row["captured_at"])
             prompt_label = _snapshot_label(row["agent_id"], row["version"], row["variant_id"], published)
+            trace_label = "redacted trace.jsonl" if row["trace_redacted"] else "trace.jsonl"
             lines.append(
                 f"| {row['agent']} | `{row['version']}` | `{row['variant_id']}` | {published} | {captured} | "
-                f"[{prompt_label}]({prompt}) | {static} | {candidates} | [trace.jsonl]({trace}) |"
+                f"[{prompt_label}]({prompt}) | [{trace_label}]({trace}) |"
             )
         lines.append("")
     output.write_text("\n".join(lines), encoding="utf-8")
@@ -418,15 +397,16 @@ def _write_llms_txt(rows: list[dict[str, Any]], base: Path) -> None:
         "# Phistory",
         "",
         (
-            "> Phistory is an automatically updated archive of versioned system prompts and raw request traces "
+            "> Phistory is an automatically updated archive of versioned system prompts and request traces "
             "from coding-agent CLIs."
         ),
         "",
         (
             "Use the capture catalog below as the source of truth. Capture files live at "
             "`/captures/<agent>/<version>/variants/<variant>/`: `prompt.md` is the normalized prompt for reading "
-            "and comparison, `trace.jsonl` is the raw HTTP evidence, and `meta.json` records provenance and "
-            "observed metadata. The `default` variant is the baseline capture without an explicit model or mode "
+            "and comparison, `trace.jsonl` is the HTTP evidence, and `meta.json` records provenance, observed "
+            "metadata, and whether a manually imported trace was redacted before publication. The `default` "
+            "variant is the baseline capture without an explicit model or mode "
             "selection; additional variants record deliberate model or mode choices."
         ),
         "",
@@ -489,12 +469,8 @@ def _capture_json_row(row: dict[str, Any], base: Path) -> dict[str, Any]:
         "trace": _rel(row["trace"], base),
         "meta": _rel(row["meta"], base),
     }
-    if row.get("static_prompts"):
-        payload["static_prompts"] = _rel(row["static_prompts"], base)
-    if row.get("static_prompts_json"):
-        payload["static_prompts_json"] = _rel(row["static_prompts_json"], base)
-    if row.get("static_candidates_json"):
-        payload["static_candidates_json"] = _rel(row["static_candidates_json"], base)
+    if row["trace_redacted"]:
+        payload["trace_redacted"] = True
     return payload
 
 
@@ -507,12 +483,6 @@ def _rel(path: Path, base: Path) -> str:
         return path.resolve().relative_to(base.resolve()).as_posix()
     except ValueError:
         return Path(os.path.relpath(path.resolve(), base.resolve())).as_posix()
-
-
-def _optional_link(path: Path | None, base: Path, label: str) -> str:
-    if path is None:
-        return ""
-    return f"[{label}]({_rel(path, base)})"
 
 
 def _version_key(version: str) -> tuple:

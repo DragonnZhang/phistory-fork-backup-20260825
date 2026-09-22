@@ -29,7 +29,7 @@ class DshRpcError(RuntimeError):
 
 def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
     port = _free_port()
-    argv = tap_command(context.target, context.prompt_path, context.tap_output_dir)
+    argv = tap_command(context.target, context.tap_output_dir)
     argv.extend(("--host", "127.0.0.1", "--port", str(port)))
     context.tap_output_dir.mkdir(parents=True, exist_ok=True)
     log_path = context.tap_output_dir / "client.log"
@@ -53,7 +53,7 @@ def run_dsh_web(context: CaptureRunContext) -> CaptureExecution:
     if time.monotonic() - started > CAPTURE_TIMEOUT_SECONDS:
         stdout += "\nDSH Web capture exceeded its timeout."
     result = CommandResult(tuple(argv), process.returncode or 0, stdout, "")
-    return CaptureExecution(tuple(argv), result, observed)
+    return CaptureExecution(result, observed)
 
 
 def _create_and_prompt_session(context: CaptureRunContext, port: int, process: subprocess.Popen) -> dict[str, object]:

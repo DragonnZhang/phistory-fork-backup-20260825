@@ -38,6 +38,7 @@
   "requested": {},
   "observed": {
     "model": "grok-build",
-    "tool_count": 1
+    "tool_count": 24,
+    "provider": "openai-responses"
   }
 }

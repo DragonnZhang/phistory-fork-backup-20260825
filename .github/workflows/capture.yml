@@ -39,14 +39,6 @@ jobs:
           status=$?
           echo "status=$status" >> "$GITHUB_OUTPUT"
           exit 0
-      - name: Extract Claude Code static prompts
-        id: static
-        run: |
-          set +e
-          uv run phistory extract-static claude-code --latest-captured 10
-          status=$?
-          echo "status=$status" >> "$GITHUB_OUTPUT"
-          exit 0
       - name: Translate archived prompts
         id: translation
         env:
@@ -105,8 +97,8 @@ jobs:
           path: /tmp/phistory-smoke
           retention-days: 7
       - name: Report capture failures
-        if: always() && (steps.latest.outputs.status != '0' || steps.static.outputs.status != '0' || steps.translation.outputs.status != '0')
+        if: always() && (steps.latest.outputs.status != '0' || steps.translation.outputs.status != '0')
         run: |
-          echo "::error title=Prompt archive workflow incomplete::Check the preceding logs for failed or skipped capture, static extraction, translation and commit steps."
+          echo "::error title=Prompt archive workflow incomplete::Check the preceding logs for failed or skipped capture, translation and commit steps."
           echo "Pages will deploy the artifacts available on main, including any partial results successfully committed by this run."
           exit 1

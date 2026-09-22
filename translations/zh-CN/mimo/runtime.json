@@ -1640,6 +1640,13 @@
       "text": "请记住，待办事项列表必须始终以 markdown 格式编写，且必须始终包裹在三重反引号中。",
       "thinking_budget": 4096
     },
+    "53521c609a80e4320cd1ad8948b091893b8de7d365fc59f91524e67985346ceb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · 用户 · input_text",
+      "thinking_budget": 4096
+    },
     "53a7e81590969f7f9e61683e97cdbc1ae639f6b69db1d9754c3e3cb363988853": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2830,6 +2837,13 @@
       "text": "标点（`.`、`-`、`/`、`:`）在分词时会被剥离。\n  查询和被索引的正文都只看字母数字连续段，所以 `T5.3`\n  能匹配 `T5.3`、`T5_3` 或 `T5 3`。像 `postgres://host:5433`\n  这样的字面量会被索引成 `postgres`、`host`、`5433` 这些 token——搜其中\n  一个即可，不要搜完整 URL。",
       "thinking_budget": 4096
     },
+    "90d3a7e5357044f69d0f47ef57e99a4a316f3fda558bc1d76ed165c9c4857bef": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 2 · 系统消息",
+      "thinking_budget": 4096
+    },
     "90df99ff1f9bd029eef4e8466c16a554dd005dd763441b8a722a25ac2e38a060": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3279,11 +3293,25 @@
       "text": "如实报告结果：测试失败时，连同输出一起说明；某个步骤被跳过时，也要说明；某件事已完成并经过验证时，直截了当地陈述，不含糊其辞。",
       "thinking_budget": 4096
     },
+    "a6a5ecc8acdebdc9b9a15bd4e58f84329b4bf083437d00cced4b58aecca30f09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "块 1 · 系统消息",
+      "thinking_budget": 4096
+    },
     "a6dbc0e23f6ffd3a718b743d48dcb4517420e6e7ad4a94257bad18b3a32417bc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "生成标题时，标题中绝不应包含 \"summarizing\" 或 \"generating\"",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a725d4aeceb77ccb7b0c51558c6689e96ef1beddc0998f3ad72bbff1635f2c4e": {
@@ -4933,13 +4961,6 @@
       "text": "执行一个工作流脚本，以确定性的方式编排多个子智能体。脚本是普通的 JavaScript，在沙箱中运行，并通过 agent()、parallel() 和 pipeline() 派生子智能体。该工具立即返回一个 run_id 并在后台运行；工作流完成后，结果会以通知的形式送达。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-11",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f19a865bc49a8f17346605dce9eea802ac7cc9181134e9ff396848e8ca446cf0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5008,6 +5029,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "上下文继承",
+      "thinking_budget": 4096
+    },
+    "f47c428d1c628d058959c0c01901c9c7db8f9c39303ad5fdad54268ee14ca86a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · 用户 · system-reminder",
       "thinking_budget": 4096
     },
     "f4d24c803a0f7ea4a8c67f24dfef65351cfeba81ed0475e870a9b61e423763fe": {

@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "gpt-4.1",
-    "tool_count": 10
+    "tool_count": 10,
+    "provider": "openai-responses"
   },
   "published_at": "2026-08-28T05:57:34.071Z",
   "tarball_url": "https://registry.npmjs.org/opencode-ai/-/opencode-ai-1.18.25.tgz",
