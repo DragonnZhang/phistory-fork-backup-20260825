@@ -74,13 +74,23 @@ def _build_manifest(root: Path, *, translations: Callable[[dict], dict] | None =
                 "id": agent_id,
                 "name": latest["agent"] if latest else agent_id,
                 "short_name": AGENT_SHORT_NAMES.get(agent_id),
-                "icon": AGENT_ICONS.get(agent_id),
+                "icon": _agent_icon(root, agent_id),
                 "latest": latest,
                 "default_variant": default_variant,
                 "variants": variants,
             }
         )
     return {"agents": agents, "count": len(rows)}
+
+
+def _agent_icon(root: Path, agent_id: str) -> str | None:
+    if icon := AGENT_ICONS.get(agent_id):
+        return icon
+    for suffix in ("svg", "png"):
+        relative = Path("docs/agent-icons") / f"{agent_id}.{suffix}"
+        if (root.parent / relative).is_file():
+            return relative.as_posix()
+    return None
 
 
 def _variant_sort_key(agent_id: str, variant_id: str) -> tuple[int, str]:
@@ -115,6 +125,7 @@ def _site_row(row: dict, base: Path) -> dict:
         "variant_label": row["variant_label"],
         "variant_dimensions": row["variant_dimensions"],
         "observed": row["observed"],
+        "trace_redacted": row["trace_redacted"],
         "published_compact": _compact_date(row["published_at"]),
         "published_display": _display_time(row["published_at"]),
         "captured_display": _display_time(row.get("captured_at") or ""),
@@ -1774,7 +1785,9 @@ function renderControls() {
   els.to.title = snapshotLabel(to, toVariant);
   const next = nextView();
   els.viewToggle.textContent = next === 'diff' ? 'Diff' : 'Trace';
-  els.viewToggle.title = next === 'diff' ? 'Open prompt diff' : 'Open trace detail';
+  els.viewToggle.title = next === 'diff'
+    ? 'Open prompt diff'
+    : (to.trace_redacted ? 'Open redacted trace detail' : 'Open trace detail');
   els.language.querySelectorAll('input').forEach(input => { input.checked = input.value === state.language; });
   els.language.title = state.language === 'zh-CN' ? '当前显示中文翻译；缺少译文时保留原文。' : '当前显示原文。';
 }
@@ -1920,7 +1933,6 @@ function selectVariant(variantId) {
   } else {
     normalizeVersionRange(agent, side);
   }
-  ensureAvailableView();
   writeQuery();
   renderControls();
   renderPickerOptions();
@@ -1956,7 +1968,6 @@ function selectOption(value) {
       normalizeVersionRange(currentAgent(), 'to');
     }
   }
-  ensureAvailableView();
   closePicker();
   refresh();
 }
@@ -2604,9 +2615,11 @@ function traceDetailHtml(item, detail) {
   const variant = variantInfo(agent, item.variant_id);
   const suffix = agent.variants.length > 1 ? ` · ${variant.label}` : '';
   const title = `${agent.name} ${item.version}${suffix}`;
+  const traceKind = item.trace_redacted ? 'Redacted trace' : 'Trace detail';
+  const requestBodyLabel = item.trace_redacted ? 'Redacted Request Body' : 'Raw Request Body';
   return `<article class="trace-page">
     <header class="trace-hero">
-      <div class="trace-eyebrow">Trace detail · request ${detail.index + 1} of ${detail.total}</div>
+      <div class="trace-eyebrow">${traceKind} · request ${detail.index + 1} of ${detail.total}</div>
       <div class="trace-title"><h2>${escapeHtml(title)}</h2><span>${escapeHtml(item.published_compact)}</span></div>
       <div class="trace-meta">${metaItem('Provider', detail.provider)}${metaItem('Model', detail.model || 'unknown')}${metaItem('Endpoint', `${detail.method} ${detail.path}`)}${item.published_display ? metaItem('Published', item.published_display) : ''}${item.captured_display ? metaItem('Captured', item.captured_display) : ''}</div>
     </header>
@@ -2616,7 +2629,7 @@ function traceDetailHtml(item, detail) {
     ${blocksSectionHtml('Developer Prompt', detail.developerBlocks, false)}
     ${toolsSectionHtml(detail.tools)}
     ${messagesSectionHtml(detail.messages)}
-    ${traceSectionHtml('Raw Request Body', JSON.stringify(detail.rawBody, null, 2), { open: false, raw: true })}
+    ${traceSectionHtml(requestBodyLabel, JSON.stringify(detail.rawBody, null, 2), { open: false, raw: true })}
   </article>`;
 }
 

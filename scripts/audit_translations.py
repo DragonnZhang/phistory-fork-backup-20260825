@@ -20,6 +20,16 @@ REPO = Path(__file__).resolve().parents[1]
 
 SNAKE_CASE = re.compile(r"\b[a-z][a-z0-9]*(?:_+[a-z0-9]+)+\b")
 STYLE_WORDS = {"snake_case", "lower_case", "upper_case", "kebab_case"}
+PRIVATE_CAPTURE_MARKERS = {
+    "memory XML": re.compile(r"<memory\s+path=", re.IGNORECASE),
+    "team memory path": re.compile(r"team/channel/" r"MEMORY\.md", re.IGNORECASE),
+    "channel memory index": re.compile(r"channel\s+memory\s+index", re.IGNORECASE),
+    "Claude session URL": re.compile(r"https://claude\.ai/(?:code|session-lens)/session_[A-Za-z0-9]+", re.IGNORECASE),
+}
+
+
+def private_capture_markers(text: str) -> list[str]:
+    return [name for name, pattern in PRIVATE_CAPTURE_MARKERS.items() if pattern.search(text)]
 
 
 def git_paths(*args: str) -> list[str]:
@@ -76,16 +86,27 @@ def main() -> int:
     capture_root, translation_root = REPO / "captures", REPO / "translations"
     site_root = args.site_dir.resolve()
     published_translations = site_root / "translations"
+    errors, missing_maps = [], []
     rows = read_capture_rows(capture_root)
     documents = {}
     for row in rows:
+        if row["trace_redacted"]:
+            for surface in ("prompt", "trace"):
+                markers = private_capture_markers(row[surface].read_text(encoding="utf-8"))
+                if markers:
+                    errors.append(
+                        {
+                            "source": str(row[surface].relative_to(REPO)),
+                            "error": "redacted capture still contains private markers",
+                            "markers": markers,
+                        }
+                    )
         for surface, kind in (("prompt", "runtime"), ("trace", "runtime")):
             if path := row.get(surface):
                 documents[path] = (row["agent_id"], kind)
     unknown_sources = deep_sources - {path.resolve() for path in documents}
     if unknown_sources:
         parser.error("--verify-source is not an archived source: " + ", ".join(map(str, sorted(unknown_sources))))
-    errors, missing_maps = [], []
     if not (site_root / "index.html").is_file():
         errors.append({"error": "built site is missing index.html; run phistory build-site first"})
     # The deploy artifact must contain the same evidence and paid translations as the repository.

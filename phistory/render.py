@@ -56,6 +56,7 @@ def read_capture_rows(root: Path) -> list[dict[str, Any]]:
                 "variant_label": variant_meta.get("label") or variant_dir.name,
                 "variant_dimensions": variant_meta.get("dimensions") or {},
                 "observed": meta.get("observed") or {},
+                "trace_redacted": meta.get("trace_redacted") is True,
                 "published_at": meta.get("published_at") or "",
                 "captured_at": meta.get("captured_at") or "",
                 "prompt": prompt,
@@ -349,7 +350,7 @@ def _write_capture_doc(rows: list[dict[str, Any]], base: Path) -> None:
     if not rows:
         lines.extend(["No captures yet.", ""])
     else:
-        lines.append("| Agent | Version | Variant | Published | Captured | Snapshot | Raw Trace |")
+        lines.append("| Agent | Version | Variant | Published | Captured | Snapshot | Trace |")
         lines.append("| --- | --- | --- | --- | --- | --- | --- |")
         for row in _sorted_capture_rows(rows):
             prompt = _rel(row["prompt"], output.parent)
@@ -357,9 +358,10 @@ def _write_capture_doc(rows: list[dict[str, Any]], base: Path) -> None:
             published = _human_time(row["published_at"])
             captured = _human_time(row["captured_at"])
             prompt_label = _snapshot_label(row["agent_id"], row["version"], row["variant_id"], published)
+            trace_label = "redacted trace.jsonl" if row["trace_redacted"] else "trace.jsonl"
             lines.append(
                 f"| {row['agent']} | `{row['version']}` | `{row['variant_id']}` | {published} | {captured} | "
-                f"[{prompt_label}]({prompt}) | [trace.jsonl]({trace}) |"
+                f"[{prompt_label}]({prompt}) | [{trace_label}]({trace}) |"
             )
         lines.append("")
     output.write_text("\n".join(lines), encoding="utf-8")
@@ -395,15 +397,16 @@ def _write_llms_txt(rows: list[dict[str, Any]], base: Path) -> None:
         "# Phistory",
         "",
         (
-            "> Phistory is an automatically updated archive of versioned system prompts and raw request traces "
+            "> Phistory is an automatically updated archive of versioned system prompts and request traces "
             "from coding-agent CLIs."
         ),
         "",
         (
             "Use the capture catalog below as the source of truth. Capture files live at "
             "`/captures/<agent>/<version>/variants/<variant>/`: `prompt.md` is the normalized prompt for reading "
-            "and comparison, `trace.jsonl` is the raw HTTP evidence, and `meta.json` records provenance and "
-            "observed metadata. The `default` variant is the baseline capture without an explicit model or mode "
+            "and comparison, `trace.jsonl` is the HTTP evidence, and `meta.json` records provenance, observed "
+            "metadata, and whether a manually imported trace was redacted before publication. The `default` "
+            "variant is the baseline capture without an explicit model or mode "
             "selection; additional variants record deliberate model or mode choices."
         ),
         "",
@@ -466,6 +469,8 @@ def _capture_json_row(row: dict[str, Any], base: Path) -> dict[str, Any]:
         "trace": _rel(row["trace"], base),
         "meta": _rel(row["meta"], base),
     }
+    if row["trace_redacted"]:
+        payload["trace_redacted"] = True
     return payload
 
 

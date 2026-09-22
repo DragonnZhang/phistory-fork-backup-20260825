@@ -7,7 +7,7 @@ from pathlib import Path
 
 from phistory import __version__
 from phistory.registry import AGENT_ORDER, AGENTS, parse_agent_ids
-from phistory.render import render_index
+from phistory.render import read_capture_rows, render_index
 from phistory.workflow import capture_latest, iter_backfill, rerender_archive
 
 
@@ -157,7 +157,7 @@ def main(argv: list[str] | None = None) -> int:
             config = None if args.dry_run else load_config(args.config, model=args.model, concurrency=args.concurrency)
             results = translate_archive(
                 root,
-                agent_ids=parse_agent_ids(args.agents) if args.agents else None,
+                agent_ids=_parse_archived_agent_ids(root, args.agents),
                 latest_captured=args.latest_captured,
                 dry_run=args.dry_run,
                 prune=args.prune,
@@ -283,6 +283,18 @@ def _parse_csv(value: str | None) -> tuple[str, ...] | None:
     if not items:
         raise SystemExit("--variants requires at least one variant id")
     return items
+
+
+def _parse_archived_agent_ids(root: Path, value: str | None) -> list[str] | None:
+    requested = _parse_csv(value)
+    if requested is None:
+        return None
+    archived = {row["agent_id"] for row in read_capture_rows(root)}
+    unknown = [agent_id for agent_id in requested if agent_id not in archived]
+    if unknown:
+        known = ", ".join(sorted(archived))
+        raise ValueError(f"unknown archived agent {', '.join(unknown)!r}; known agents: {known}")
+    return list(requested)
 
 
 if __name__ == "__main__":

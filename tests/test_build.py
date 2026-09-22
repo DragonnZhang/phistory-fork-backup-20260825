@@ -91,6 +91,8 @@ def test_build_from_clean_archive_reuses_history_and_only_publishes_public_asset
     assert (public / "translations/zh-CN/agent/runtime.json").read_bytes() == original_dictionary.read_bytes()
     data = manifest(public)
     assert data["count"] == 2
+    assert data["agents"][0]["icon"] == "docs/agent-icons/agent.svg"
+    assert data["agents"][0]["latest"]["trace_redacted"] is False
     versions = data["agents"][0]["variants"][0]["versions"]
     for item in versions:
         for kind in ("prompt", "trace"):

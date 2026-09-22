@@ -95,11 +95,12 @@ def test_capture_paths_and_index(tmp_path: Path):
     capture_doc_text = capture_doc.read_text(encoding="utf-8")
     capture_index_json = json.loads(capture_index.read_text(encoding="utf-8"))
     llms_text = llms_txt.read_text(encoding="utf-8")
-    assert "| Agent | Version | Variant | Published | Captured | Snapshot | Raw Trace |" in capture_doc_text
+    assert "| Agent | Version | Variant | Published | Captured | Snapshot | Trace |" in capture_doc_text
     assert "[agent 1.0.0 [default], published 2026-05-22 00:00 UTC]" in capture_doc_text
     assert capture_index_json["agents"][0]["latest_version"] == "1.0.0"
     assert capture_index_json["captures"][0]["variant_id"] == "default"
     assert capture_index_json["captures"][0]["observed"] == {}
+    assert "trace_redacted" not in capture_index_json["captures"][0]
     assert capture_index_json["captures"][0]["prompt"] == "captures/agent/1.0.0/variants/default/prompt.md"
     assert llms_text.startswith("# Phistory\n\n> Phistory is an automatically updated archive")
     assert "https://phistory.cc/captures/index.json" in llms_text
@@ -123,6 +124,32 @@ def test_capture_is_incomplete_without_trace(tmp_path: Path):
     write_meta(target, {"version": "1.0.0"})
 
     assert not is_captured(target)
+
+
+def test_render_marks_a_manually_redacted_trace(tmp_path: Path):
+    capture = tmp_path / "captures/manual/2026-09-22/variants/default"
+    capture.mkdir(parents=True)
+    (capture / "prompt.md").write_text("# Prompt\n", encoding="utf-8")
+    (capture / "trace.jsonl").write_text("{}\n", encoding="utf-8")
+    (capture / "meta.json").write_text(
+        json.dumps(
+            {
+                "agent_id": "manual",
+                "agent": "Manual",
+                "version": "2026-09-22",
+                "trace_redacted": True,
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    render_index(tmp_path / "captures", tmp_path / "README.md")
+    render_site(tmp_path / "captures", tmp_path / "index.html")
+
+    catalog = json.loads((tmp_path / "captures/index.json").read_text(encoding="utf-8"))
+    assert catalog["captures"][0]["trace_redacted"] is True
+    assert "[redacted trace.jsonl]" in (tmp_path / "docs/captures.md").read_text(encoding="utf-8")
+    assert '"trace_redacted":true' in (tmp_path / "index.html").read_text(encoding="utf-8")
 
 
 def test_render_index_writes_useful_llms_txt_without_captures(tmp_path: Path):
@@ -213,6 +240,8 @@ def test_render_site_writes_viewer_manifest(tmp_path: Path):
     assert "captures/agent/1.1.0/variants/default/trace.jsonl" in text
     assert "Trace detail" in text
     assert "Raw Request Body" in text
+    assert "Redacted trace" in text
+    assert "Redacted Request Body" in text
     assert "toolDeclarations" in text
     assert "traceToolItems" in text
     assert "flattenTraceTool" in text
@@ -227,6 +256,7 @@ def test_render_site_writes_viewer_manifest(tmp_path: Path):
     assert 'id="loading-state"' in text
     assert "Loading comparison..." in text
     assert "renderSequence" in text
+    assert "ensureAvailableView" not in text
     assert "aria-busy" in text
     assert '"published_display":"2026-05-22 00:00 UTC"' in text
     assert '"captured_display":"2026-05-22 01:00 UTC"' in text

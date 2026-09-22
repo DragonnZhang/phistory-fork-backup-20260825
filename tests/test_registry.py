@@ -1,8 +1,15 @@
-from phistory.registry import AGENT_ORDER, get_agent, parse_agent_ids
+from phistory.registry import AGENT_ORDER, agent_sort_key, get_agent, parse_agent_ids
 
 
 def test_display_order_starts_with_dsh_in_third_position():
     assert AGENT_ORDER[:3] == ("claude-code", "codex", "dsh")
+
+
+def test_catalog_places_claude_tag_fifth_without_adding_a_capture_agent():
+    agent_ids = [*AGENT_ORDER, "claude-tag"]
+
+    assert sorted(agent_ids, key=agent_sort_key)[4] == "claude-tag"
+    assert "claude-tag" not in AGENT_ORDER
 
 
 def test_parse_default_agents():
