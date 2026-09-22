@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "minimax-code-capture",
-    "tool_count": 21
+    "tool_count": 21,
+    "provider": "anthropic"
   },
   "published_at": "2026-08-13T09:52:36.934Z",
   "tarball_url": "https://file.cdn.minimax.io/public/minimax-agent-prod/release/MiniMax%20Code-3.0.65-arm64-mac.zip",

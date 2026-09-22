@@ -3,14 +3,30 @@
   "agent": "Claude Code",
   "package": "@anthropic-ai/claude-code",
   "version": "2.1.199",
+  "variant": {
+    "id": "default",
+    "label": "Terminal",
+    "dimensions": {
+      "surface": "terminal"
+    }
+  },
+  "requested": {
+    "surface": "terminal"
+  },
+  "observed": {
+    "provider": "anthropic",
+    "model": "claude-opus-4-8",
+    "tool_count": 30,
+    "surface": "interactive-tty"
+  },
   "published_at": "2026-07-02T17:33:48.451Z",
   "tarball_url": null,
   "binary_version": "2.1.199 (Claude Code)",
-  "captured_at": "2026-07-08T02:48:39.980740+00:00",
+  "captured_at": "2026-09-21T04:58:42.623181+00:00",
   "tap_client": "claude",
   "target": "claude-tap capture-only",
   "client_exit_code": 0,
-  "duration_seconds": 31.481,
+  "duration_seconds": 17.272,
   "command": [
     "python",
     "-m",
@@ -19,25 +35,12 @@
     "claude",
     "--no-yolo",
     "--export-prompt",
-    "prompt.md",
+    ".tap/tap-export.md",
     "--no-live",
     "--no-open",
     "--no-update-check",
     "--output-dir",
     ".tap",
-    "--",
-    "--no-session-persistence",
-    "-p",
-    "Reply with one short sentence."
-  ],
-  "variant": {
-    "id": "default",
-    "label": "Default",
-    "dimensions": {}
-  },
-  "requested": {},
-  "observed": {
-    "model": "claude-opus-4-8",
-    "tool_count": 25
-  }
+    "--"
+  ]
 }

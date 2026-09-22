@@ -1519,6 +1519,13 @@
       "text": "如果完成用户任务需要写入或修改文件，你的代码和最终回答应遵循以下编码准则，但用户指令（即 AGENTS.md）可以覆盖这些准则：",
       "thinking_budget": 4096
     },
+    "3874b9243b63b9b5ca82e80bc4664468d565fd47949ca05d37b57cabac4d568b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 3 · user · input_text",
+      "thinking_budget": 4096
+    },
     "3875d047536d8b6c98f1232e91a17819e178d0f285bbef14ef51e514df0bda05": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -1772,6 +1779,13 @@
       "text": "仅当至少一个目标图像没有本地文件路径时才使用 `num_last_images_to_include`。",
       "thinking_budget": 4096
     },
+    "42f6413f2c40a0a61a31101fc059d66400961bbe3334e4fbe26062d611b90607": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 5 · 开发者消息",
+      "thinking_budget": 4096
+    },
     "436a50837bf0413bc3c50df208cec7110cd3dd32c81cc565676d0ca112e59088": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -1943,6 +1957,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "仅当验证能够与正在进行的实现并行运行，并且有可能在最终整合之前发现具体风险时，才委派验证。",
+      "thinking_budget": 4096
+    },
+    "4b861634dfabb0c9e552807865d580b4f6c1071dc1d70529b99057787d4e125e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 4 · 开发者消息",
       "thinking_budget": 4096
     },
     "4badcb3b60315b53db0bfbf7e3be85c5b2174b5a4ac2dfec97767949465a723f": {
@@ -2167,6 +2188,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "不要为可逆的、低影响的更改编写测试，也不要编写只是照搬实现的测试。如果确实选择用测试来验证你的工作，请确保这些测试是有意义的，且为验证实现所必需。",
+      "thinking_budget": 4096
+    },
+    "53521c609a80e4320cd1ad8948b091893b8de7d365fc59f91524e67985346ceb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 1 · user · input_text",
       "thinking_budget": 4096
     },
     "5371cd59722dce77f339786f0db228f265b4224f342916e193bacde82b8f9b74": {
@@ -2803,6 +2831,13 @@
       "text": "子智能体在后台运行期间，立即着手做有意义的不重叠工作。",
       "thinking_budget": 4096
     },
+    "6e2805fc56f0ff7f29dd30201c909bba6e0003f35fbfb41404a746ef680412f9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 2 · 开发者消息",
+      "thinking_budget": 4096
+    },
     "6e294e50dcad5a053f11127cc1769a0fae4de513470da5b9ff412c892d035a39": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -3247,6 +3282,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "测试时，你的理念应当是：先从尽可能针对你所修改代码的测试做起，以便高效地发现问题，然后随着信心的建立，逐步扩展到更广泛的测试。如果你修改的代码没有对应的测试，且代码库中的相邻模式表明存在一个添加测试的合理位置，你可以添加测试。但是，不要给本来没有测试的代码库添加测试。",
+      "thinking_budget": 4096
+    },
+    "7cc95ac599fce2beb1d0a1d6856a239123bb73226b99f0de1b9d7a596967888b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 3 · 开发者消息",
       "thinking_budget": 4096
     },
     "7cea66c514da9b4b8ed36023f1bee88f7af4703a621a807002637b5f392a2144": {
@@ -3853,6 +3895,13 @@
       "text": "当你的下一个即时步骤依赖该结果时，不要委派紧急的阻塞工作。如果紧接着的下一个操作被该任务阻塞，主 rollout 通常应在本地完成它，以保持关键路径推进。",
       "thinking_budget": 4096
     },
+    "9748df0cad0e25133345a42a7d6d5a431b2c2ae89df834bd82adeb89683f1c8d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息 2 · user · input_text",
+      "thinking_budget": 4096
+    },
     "977bc1a2649de60e873e8dfb3c9aad96cbe8c7855f918256fdb4f007314f8c5f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -4255,6 +4304,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "`notify(value: string | number | boolean | undefined | null)`：为当前的 `exec` 调用立即注入一个额外的 `custom_tool_call_output`。值会按 `text(...)` 的方式进行字符串化。",
+      "thinking_budget": 4096
+    },
+    "a710764b8c9650fff88cf32f4c94a03408ba753ccfdc939153f29309fc0d239a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息",
       "thinking_budget": 4096
     },
     "a7e19d59b42b25a07f6ec1a69eb6f444d66c0146a90dc31a1ea5a20b71dade1a": {
@@ -5150,6 +5206,13 @@
       "text": "工作一段时间时，要保持更新信息丰富、形式多样，但同时保持简洁。",
       "thinking_budget": 4096
     },
+    "c32997652e9ff3aa64c4125e622accd0169eb0c98e0da13457a5a4f3fbb9de2c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 1 · 开发者消息",
+      "thinking_budget": 4096
+    },
     "c337b9228255c13c9fab32a75abd1ff582082e793a6bc7ca16319a1bed879e0b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -5218,6 +5281,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "当你有多个可以独立回答的不同问题时，并行运行多个独立的信息检索子任务。",
+      "thinking_budget": 4096
+    },
+    "c4ada06b0eff7af02903ffd958dce3c07426270972c93eef181756d26b5073e9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "区块 6 · 开发者消息",
       "thinking_budget": 4096
     },
     "c5162bd4057a97ba9f609b924c5f67365e4a33596b3b5928a4fb1944da7ca8d3": {
@@ -6384,13 +6454,6 @@
       "text": "对于代码编辑类子任务，应拆分工作，使每个委派任务的写入集互不相交。",
       "thinking_budget": 4096
     },
-    "f186492b380703f6419876e0d9da8b0ccc8c5cb6bf738422800dbea7a00d31cf": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-10",
-      "status": "translated",
-      "text": "用户消息",
-      "thinking_budget": 4096
-    },
     "f18dba930aa25499fadc6f3d7cb5865eb0ae07bda92240e9483e345729fcef6a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -6417,12 +6480,6 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "当子任务过于困难、难以妥善委派，以及当它耦合紧密、紧急或很可能阻塞你紧接着的下一步时，将工作留在本地完成。",
-      "thinking_budget": 4096
-    },
-    "f21f17e5b36ef0d86d923ae0706d57f63e80e6bf92ccb6cd048e878b1c94db23": {
-      "model": "zai-org/GLM-5.3",
-      "prompt_version": "zh-CN-9",
-      "text": "开发者提示词",
       "thinking_budget": 4096
     },
     "f23642412153d4ccfb653d1796628773ecdfdf4d607d82fbe0135094ce53d7ab": {

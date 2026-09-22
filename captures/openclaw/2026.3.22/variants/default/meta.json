@@ -43,6 +43,7 @@
   "requested": {},
   "observed": {
     "model": "phistory-dummy",
-    "tool_count": 27
+    "tool_count": 27,
+    "provider": "openai-responses"
   }
 }

@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH",
-    "tool_count": 9
+    "tool_count": 9,
+    "provider": "gemini"
   },
   "published_at": "2026-09-19T01:01:46Z",
   "tarball_url": "https://github.com/google-antigravity/antigravity-cli/releases/download/1.2.7/agy_cli_linux_x64.tar.gz",

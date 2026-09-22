@@ -6,15 +6,18 @@ from phistory.models import AgentSpec, CaptureDriver, CaptureVariant
 def _default(
     run_args: tuple[str, ...] = (),
     *,
+    label: str = "Default",
     driver: CaptureDriver = "oneshot",
     dimensions: dict[str, str] | None = None,
+    pty_message: str = "",
 ) -> CaptureVariant:
     return CaptureVariant(
         id="default",
-        label="Default",
+        label=label,
         run_args=run_args,
         driver=driver,
         dimensions=dimensions or {},
+        pty_message=pty_message,
     )
 
 
@@ -26,6 +29,7 @@ def _variant(
     driver: CaptureDriver = "oneshot",
     dimensions: dict[str, str] | None = None,
     min_version: str | None = None,
+    pty_message: str = "",
 ) -> CaptureVariant:
     return CaptureVariant(
         id=variant_id,
@@ -34,6 +38,7 @@ def _variant(
         driver=driver,
         dimensions=dimensions or {},
         min_version=min_version,
+        pty_message=pty_message,
     )
 
 
@@ -46,16 +51,28 @@ CLAUDE_CODE = AgentSpec(
     extra_env={
         "DISABLE_AUTOUPDATER": "1",
         "DISABLE_UPDATES": "1",
-        "CI": "1",
     },
+    home_profile="claude",
     default_variant=_default(
-        (
-            "--no-yolo",
-            "--",
-            "--no-session-persistence",
-            "-p",
-            "Reply with one short sentence.",
-        )
+        ("--no-yolo",),
+        label="Terminal",
+        driver="pty",
+        dimensions={"surface": "terminal"},
+        pty_message="Reply with one short sentence.",
+    ),
+    variants=(
+        _variant(
+            "sdk",
+            "Headless (-p)",
+            (
+                "--no-yolo",
+                "--",
+                "--no-session-persistence",
+                "-p",
+                "Reply with one short sentence.",
+            ),
+            dimensions={"surface": "headless"},
+        ),
     ),
 )
 
@@ -553,13 +570,14 @@ AGENTS: dict[str, AgentSpec] = {
     )
 }
 AGENT_ORDER = tuple(AGENTS)
+CATALOG_AGENT_ORDER = (*AGENT_ORDER[:4], "claude-tag", *AGENT_ORDER[4:])
 
 
 def agent_sort_key(agent_id: str) -> tuple[int, str]:
     try:
-        return (AGENT_ORDER.index(agent_id), "")
+        return (CATALOG_AGENT_ORDER.index(agent_id), "")
     except ValueError:
-        return (len(AGENT_ORDER), agent_id)
+        return (len(CATALOG_AGENT_ORDER), agent_id)
 
 
 def get_agent(agent_id: str) -> AgentSpec:

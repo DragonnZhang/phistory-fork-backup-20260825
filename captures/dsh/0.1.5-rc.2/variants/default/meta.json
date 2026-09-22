@@ -16,7 +16,8 @@
   "observed": {
     "model": "deepseek-flash",
     "tool_count": 27,
-    "mode": "standard"
+    "mode": "standard",
+    "provider": "openai-chat"
   },
   "published_at": "2026-09-10T14:57:10.790Z",
   "tarball_url": "https://registry.npmjs.org/@deepseek-ai/dsh/-/dsh-0.1.5-rc.2.tgz",

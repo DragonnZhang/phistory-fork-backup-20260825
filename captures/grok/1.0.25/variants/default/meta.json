@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "grok-build",
-    "tool_count": 26
+    "tool_count": 26,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-09T18:21:45.130Z",
   "tarball_url": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.25.tgz",

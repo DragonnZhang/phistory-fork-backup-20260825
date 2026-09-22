@@ -141,7 +141,7 @@ def test_tool_names_stay_original_but_section_titles_translate():
     assert texts(document) == ["Tools", "Run a shell command.", "Search the web."]
 
 
-def test_static_text_fences_and_long_paragraph_chunks():
+def test_text_fences_and_long_paragraph_chunks():
     long = ("A complete sentence about permission checks. " * 300).strip()
     original = "```text\n# Important rules\n\n" + long + "\n```\n"
     document = extract_markdown(original)
@@ -489,9 +489,3 @@ def test_shared_dictionary_provenance_and_corruption(tmp_path):
     (tmp_path / "zh-CN" / "codex" / "runtime.json").write_text("{}")
     with pytest.raises(ValueError, match="Invalid translation dictionary"):
         read_dictionary(tmp_path, "codex")
-
-
-def test_static_archive_never_enters_translation_queue():
-    source = extract_markdown("# Static Prompts\n\n### Internal prompt\n\n```text\nRead all files.\n```\n")
-    assert source.segments == ()
-    assert source.index["segments"] == []

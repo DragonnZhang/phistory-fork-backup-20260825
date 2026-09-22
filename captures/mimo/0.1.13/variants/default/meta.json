@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "gpt-4.1",
-    "tool_count": 16
+    "tool_count": 16,
+    "provider": "openai-responses"
   },
   "published_at": "2026-08-19T11:05:49.762Z",
   "tarball_url": "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.13.tgz",

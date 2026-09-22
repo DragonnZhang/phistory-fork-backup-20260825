@@ -11,7 +11,8 @@
   "requested": {},
   "observed": {
     "model": "gpt-4.1",
-    "tool_count": 4
+    "tool_count": 4,
+    "provider": "openai-responses"
   },
   "published_at": "2026-09-19T23:14:16.198Z",
   "tarball_url": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.86.0.tgz",

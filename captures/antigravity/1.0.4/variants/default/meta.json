@@ -38,5 +38,10 @@
     "label": "Default",
     "dimensions": {}
   },
-  "requested": {}
+  "requested": {},
+  "observed": {
+    "provider": "gemini",
+    "tool_count": 11,
+    "model": "MODEL_GOOGLE_GEMINI_2_5_FLASH"
+  }
 }
