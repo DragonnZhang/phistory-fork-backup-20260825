@@ -941,6 +941,13 @@
       "text": "在完成任务后，更新你对剩余工作的了解",
       "thinking_budget": 4096
     },
+    "0e00e60b68394c4aeb58114e5d81976c8bb8dd89f1c46449ed0ee295d15cf2e0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**Watching**（结果中的订阅行）：每个发布结果都会说明此会话现在是否关注该 artifact，涵盖来自其他地方的重新发布以及发送给 Claude 的评论。Claude 绝不会声称拥有结果未确认的关注。Claude 使用 `ArtifactComments` 工具来关注它并非刚刚发布的 artifact，并读取或回复 artifact 上的评论。",
+      "thinking_budget": 4096
+    },
     "0e260b1ecfbfb7a49f8ea09fd2cf6bbf272728051f175b3f61921de62fefd574": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -6172,6 +6179,13 @@
       "text": "Claude Code 的快速模式使用 Claude Opus 并加快输出（不会降级到较小的模型）。可以通过 /fast 切换，适用于 Opus 5/4.8/4.7。",
       "thinking_budget": 4096
     },
+    "641a8a8835c22a90686baf50533be5283e6ea50627fb8b437f0358eb163de823": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "最新的 Claude 模型是 Claude 5 系列和 Haiku 4.5。模型 ID — Fable 5.1：'claude-fable-5-1'，Opus 5.5：'claude-opus-5-5'，Sonnet 5：'claude-sonnet-5'，Haiku 4.5：'claude-haiku-4-5-20251001'。构建 AI 应用时，默认使用最新且能力最强的 Claude 模型。",
+      "thinking_budget": 4096
+    },
     "641d3d4486cf0f9fc3e1edae82de9bb798c9c0430568ed18c17ae49933c678f1": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -10972,6 +10986,13 @@
       "text": "遇到障碍时，不要用破坏性操作作为捷径来简单地消除它。例如，应尽量找出根本原因并修复底层问题，而不是绕过安全检查（例如 --no-verify）。如果发现意外状态，比如陌生的文件、分支或配置，请先调查再删除或覆盖，因为它可能是用户正在进行的工作。例如，通常应解决合并冲突而不是丢弃更改；同样，如果存在锁文件，应调查是哪个进程持有它，而不是将其删除。简而言之：有风险的操作只应在谨慎的前提下进行，拿不准时，先询问再行动。请既遵循这些指示的字面规定，也遵循其精神实质——三思而后行。",
       "thinking_budget": 4096
     },
+    "b8813fb44dac64b558ea0bd2ccd2a6dbcacd5a1fd2edd6c49a71c2081dcecf38": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你由名为 Opus 5.5（1M 上下文）的模型驱动。确切的模型 ID 是 claude-opus-5-5[1m]。助手的知识截止日期为 2026 年 6 月。",
+      "thinking_budget": 4096
+    },
     "b8a349d7fb3ab7e48d68712d6eaabc610ba5de6c141c80597b6755325c92da96": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -14530,6 +14551,13 @@
       "text": "对于任何其他任务——即使是明显能从并行中受益的任务——都不要调用此工具。请使用 Agent 工具（如果可用）来运行单个子智能体，或者简要描述一个多智能体工作流可以做什么、大致需要多少成本，并询问用户是否要运行它。可以提到：用户在以后的消息中说 \"use a workflow\" 即可请求运行一个工作流，从而跳过这次询问。",
       "thinking_budget": 4096
     },
+    "f33def2b8a6935ed95178775725b0e62f73bdfe0601d3dc85fecc7114b092a27": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在 git 提交信息末尾加上：\nCo-Authored-By: Claude Opus 5.5 (1M context) <noreply@anthropic.com>",
+      "thinking_budget": 4096
+    },
     "f37292565763d59b41f60c14677ed4aa4b168fb868aa71e6514f1a5cb57cdded": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -15046,6 +15074,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "返回结果的最大数量（默认：5）",
+      "thinking_budget": 4096
+    },
+    "fc443914040e1f09607482c51fa409976acbe696c02c1360174225f15c630618": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Claude Code 的快速模式使用输出更快的 Claude Opus（不会降级到更小的模型）。可以通过 /fast 切换该模式。",
       "thinking_budget": 4096
     },
     "fc5f238d4729058f0f53943c9178a5e49443b52e23815457adf98f9d4437a871": {
