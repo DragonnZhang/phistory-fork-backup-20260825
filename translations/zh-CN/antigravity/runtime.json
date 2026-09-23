@@ -1515,6 +1515,13 @@
       "text": "本质上非常简单，且属于一次性任务。例如：“把这个输出格式化为表格”、“修复这个 UI 布局的对齐问题”、“给这段代码添加一条注释”、“运行这个命令”、“修复这个语法错误”",
       "thinking_budget": 4096
     },
+    "82d75eb4db955d1de6a3e07341d0e8aeb576cb942b9b40438a835ddccab22e77": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息发送的目标收件人 ID，例如子智能体的对话 ID。",
+      "thinking_budget": 4096
+    },
     "82ee1fb37f9a3fae47b9d3dc9a3f9e8e71ac842e80e4e6fd8d45c95c1d71adcc": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -2758,6 +2765,13 @@
       "text": "省略两者即可查看整个文件或文件的前 800 行，以较小者为准。",
       "thinking_budget": 4096
     },
+    "eaff18933786f748b321ac93bd3402deb81656991c7f9c69386c8774413a35b1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "消息内容。",
+      "thinking_budget": 4096
+    },
     "eb3756952b75c6997b7ff74106eb5d15f28836f8ff3a58a87674274b75f332e0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -2812,6 +2826,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "更新主应用程序，整合你的设计和组件，",
+      "thinking_budget": 4096
+    },
+    "ef7434f0d7be2eea8c35a00bb4658066c362506e81ff788186d782e043279298": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "向另一个智能体发送消息。此工具可用于与子智能体、同级智能体等通信。不要使用此工具与用户交流。",
       "thinking_budget": 4096
     },
     "ef9a04bfdc139ba39d5298c71cd89ca2b32f1e61ca9a93b8bea5d8661ea29265": {

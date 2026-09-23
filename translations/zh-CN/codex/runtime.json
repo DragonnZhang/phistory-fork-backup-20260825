@@ -417,6 +417,13 @@
       "text": "仅当用户或系统/开发者指令明确要求时才创建目标；不要从普通任务中推断目标。\n仅当明确请求 token 预算时才设置 token_budget。若目标已存在则失败；update_goal 仅用于状态。",
       "thinking_budget": 4096
     },
+    "1329db7cda46896b14758c34b648f056fa93d22d93b32afa2af4de361038702c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-6-astra`：为最严苛的工作提供前沿智能。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority。",
+      "thinking_budget": 4096
+    },
     "1385b7481fa0ca75e660fe27dcc5053929f84e68ef8ae02b5d4127411f60b419": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -1798,6 +1805,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "你的当前模式仅在带有不同 `<collaboration_mode>...</collaboration_mode>` 的新开发者指令对其进行更改时才会改变；用户请求或工具描述本身不会改变模式。已知的模式名称为 Default 和 Plan。",
+      "thinking_budget": 4096
+    },
+    "43b9a1f928c9aced56aa901e4b05ee55d4e65593cfac9593211b2457ffc091d3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-terra`：用于简单直接工作的旧版均衡模型。推理力度：low、medium（默认）、high、xhigh、max、ultra。服务层级：priority。\n        为范围明确的任务生成一个子智能体。返回被生成的智能体 id 以及可用时面向用户的昵称。被生成的智能体默认继承你当前的模型。省略 `model` 即使用该首选默认值；仅在需要显式覆盖时才设置 `model`。\n此 spawn_agent 工具让你可以使用默认继承你当前模型的子智能体。除非用户明确要求使用不同的模型，否则不要设置 `model` 字段。你应该遵循以下规则和指南来使用此工具。",
       "thinking_budget": 4096
     },
     "43e96bd26fea6907332e00e32d112b21b6c471a32a327b6e652d53944627caaf": {
@@ -3207,6 +3221,13 @@
       "text": "可选的超时时间，以毫秒为单位。默认值为 30000，最小值为 10000，最大值为 3600000。优先选择较长的等待时间（分钟级），以避免忙轮询。",
       "thinking_budget": 4096
     },
+    "7a27308fdab82c4b0ce86c265b0359bd38686b2a3582b46a2eeeffc8d408ba2e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-6-luna`：面向较简单任务的快速且经济的模型。推理力度：low、medium（默认）、high、xhigh、max。服务层级：priority。",
+      "thinking_budget": 4096
+    },
     "7a5a8916dfd1132b85de63a609aeb6e250670054e3f8fbad583db32561f0a6fb": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -3450,6 +3471,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "章节按从一般 → 具体 → 补充信息的顺序排列。",
+      "thinking_budget": 4096
+    },
+    "8309c76ad05aaeddb9edd891a12b27c6c64cd79ca220679d116c4e8d6e42772d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-sol`：用于复杂工作的旧版编程模型。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority、ultrafast。",
       "thinking_budget": 4096
     },
     "8371d94860e46605063233ec71b986017c500c04f5951332880f5fa8e7ef0b63": {
@@ -6273,6 +6301,13 @@
       "text": "仅当子任务具体、有边界，且能与有用的本地工作并行独立运行时才调用此工具；否则继续在本地处理。\n它将能够向你和其他正在运行的智能体发送消息，其最终答案会在它完成时提供给你。\n新智能体的规范任务名称将随消息一起提供给它。",
       "thinking_budget": 4096
     },
+    "e991feb216a13fecdb3d95eaf327abf948be91e30c296dcc7693354d628156b1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-terra`：用于简单直接工作的旧版均衡模型。推理力度：low、medium（默认）、high、xhigh、max、ultra。服务层级：priority。\n        生成一个智能体来处理指定任务。如果你当前的任务是 `/root/task1`，并且你以 task_name \"task_3\" 调用 spawn_agent，该智能体将拥有规范任务名称 `/root/task1/task_3`。\n之后你可以互换地使用 `task_3` 或 `/root/task1/task_3` 来指代这个智能体。然而，智能体 `/root/task2/task_3` 只能通过其规范名称 `/root/task1/task_3` 与这个智能体通信。\n被生成的智能体将拥有与你相同的工具，并能够生成自己的子智能体。",
+      "thinking_budget": 4096
+    },
     "ea038f16b9b4a9f5f85d45046aa17d35df1a137e638628d74f1c3e3979830c4b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -6439,6 +6474,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "`generatedImage(result: { image_url: string; output_hint?: string })`：追加一个图像生成结果及其可选的输出提示。不支持 HTTP(S) URL。",
+      "thinking_budget": 4096
+    },
+    "ee9f55c4c0b0978d14f26827f29114127651847120b155fbb9575be5b6a1da14": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-6-sol`：用于编程和日常工作的主力模型。推理力度：low、medium（默认）、high、xhigh、max、ultra。服务层级：priority。",
       "thinking_budget": 4096
     },
     "eeebc00400fa6578940dc94872c5db6d3c8422bdb400a081c5e13a88d78eab78": {
