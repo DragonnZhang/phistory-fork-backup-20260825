@@ -154,6 +154,13 @@
       "text": "不带前导冒号的行选择器（例如 \"50-100\"、\"50+10\"、\"50-100,200-300\"）；当文件名包含冒号时，使 `path` 保持字面值",
       "thinking_budget": 4096
     },
+    "0201d6c7e0fc06935428d84f1742f521bccf1a26f2e7972cef1bfedf03b607d8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在保留的内核中执行现有 TypeScript 脚本",
+      "thinking_budget": 4096
+    },
     "0225e813a9f9f19fc2e8409186ba556ccf1f13e62f2b2cb2d2817e3c42c9940f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1164,6 +1171,13 @@
       "text": "使用 `CUT`+`PUT` 移动代码：`CUT 5.=9 @fn` 捕获到 `@fn`；`PUT >40 @fn` 粘贴它。未命名的 `CUT` + `PUT >40` 适用于单次调用内的移动。命名寄存器可跨 edit 调用持久保留。",
       "thinking_budget": 4096
     },
+    "18ecbd48ac992228d5b17adb2790b2cef397c852ae7267654d3122482652078a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "eval(language=\"py\", code=\"%load ./analysis.py\", title=\"load analysis\")",
+      "thinking_budget": 4096
+    },
     "18fa70c6878eaa8f13e23d8866cd1fc9d1510fecc40238e2fa80ae7ff8e7a3a3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1241,6 +1255,13 @@
       "text": "将 blocked 任务恢复为 `pending`",
       "thinking_budget": 4096
     },
+    "1b34cf67464c8bc5806781862644a3de7753cb62170d79ffd6c97a8cdcbba3a0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "安装发行版，无需重放失败的单元格",
+      "thinking_budget": 4096
+    },
     "1b66586459fb7b678a9e3f99c5283e6a6bbfef67f8fb77ef366de369789d579b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1288,6 +1309,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`app.target`（配合 `path`/`cdp_url`）——用 url+title 上的子串匹配来选取 BrowserWindow。",
+      "thinking_budget": 4096
+    },
+    "1ce703b153f59497a233bf9c6cc14020f9be29d4ef50a6dfd55b8b72b57d400a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "JS 包会进入一个在同一项目内跨会话复用的受管环境；内核变量保持独立。少数需要显式更改目标的情况 → `%environment project`（允许更改项目依赖）或 `%environment managed`。",
       "thinking_budget": 4096
     },
     "1d0377b0cd5fa62301db5189d5ab994c4671236739e50457821542cb9fd2b765": {
@@ -1393,6 +1421,13 @@
       "prompt_version": "zh-CN-11",
       "status": "preserved",
       "text": "extra = compute(name)",
+      "thinking_budget": 4096
+    },
+    "1f6c4d09bb80e02506884089e3eaf402de7bff36e322222f6ed68c94cf18a37b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-23；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "1f777883b853f5557222c4d6208b3f2230aae005ad00372810e5b9a9bbafe49f": {
@@ -1694,6 +1729,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`omp://`：Harness 文档；除非用户询问 Harness 本身，否则避免使用。",
+      "thinking_budget": 4096
+    },
+    "2599792142dd29167de4ff397f6981e24e66ab84fe4336aa9209cab55c27f2fd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "缺少 Python 依赖 → 确定其发行版，然后使用 `%pip install pillow` 作为 `code`；它会安装到内核的解释器中。导入名可能不同（`PIL` → `pillow`）；不要盲目安装异常信息中的名称。",
       "thinking_budget": 4096
     },
     "25e179f2c63819531fd922548d509671c11b797a0eb66e97b201c3368ac46090": {
@@ -2305,6 +2347,13 @@
       "text": "`tab.id(n)` / `tab.ref(\"e5\")` 返回 `BrowserElement` 句柄，支持 `click`、`type`、`fill`、`press`、`hover`、`focus`、`select`、`uploadFile`、`scrollIntoView`、`boundingBox`、`isVisible`、`isHidden` 和 `evaluate`。传递给 `BrowserElement.evaluate` 的字符串是一个函数表达式，会以该元素作为第一个参数被调用。",
       "thinking_budget": 4096
     },
+    "371c00b207cdf5c45febc16b108b61fe00c0672bea13cce03facca1afe832a9a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可复用的设置 → 编写一次脚本，然后使用 `%load ./setup.py` 作为 `code`。定义会持续存在；源代码不会被回显。包含空格的路径要加引号；`local://` 有效。",
+      "thinking_budget": 4096
+    },
     "376555d896661a42067a1f0550d65b5383b2059caebeab43d11adc998074085c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2366,6 +2415,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "开始工作前，必须将每一项作为独立任务 `init`。",
+      "thinking_budget": 4096
+    },
+    "38fd529adbb96711f49ef8ca419ca33f5d3c07d756fadf79b92c8762f047a247": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "加载现有脚本；在后续单元格中复用其定义",
       "thinking_budget": 4096
     },
     "39cadb43cbc2c2d11704b6a7b0dd8874a506d8c60600833d89516296ca0346d3": {
@@ -3133,6 +3189,13 @@
       "text": "错误——用空的 `SWAP` 来删除。正确：DEL 4",
       "thinking_budget": 4096
     },
+    "4bc3d75e1e052d8ce2fb1c29422b1a8a3743dbcdea0b49ce451806ff4b76e9ed": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "eval(language=\"py\", code=\"%pip install pillow\", title=\"install image support\")",
+      "thinking_budget": 4096
+    },
     "4be783d98e5aef77bc205484b8755a3fb7e11d561f6497837847816ee3963363": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3202,6 +3265,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "创建/覆盖 → `write`。",
+      "thinking_budget": 4096
+    },
+    "4db2f6b0f36fd27a74b39c1578543324485f0284ec88ead6dc2c2c7042ccc203": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在此 eval 调用中运行的代码或独立的 % 命令。支持顶层 await。",
       "thinking_budget": 4096
     },
     "4de2beb1ca0cc45c563fd8763c8b78fdc40ec313582638e825b5c06ac5611bb9": {
@@ -3517,6 +3587,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "工程原则",
+      "thinking_budget": 4096
+    },
+    "564ed30263792e5a1416dba3980664f8c915ddbf111ac18b9274e6e8362cdf91": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "之前的顶层名称会保留到下一个单元格——直接复用；绝不重复已成功的设置。安装缺失的依赖后，重试其失败的导入，而不是整个失败的单元格。仅当文件自上次读取后有更改时才重新读取。",
       "thinking_budget": 4096
     },
     "565e9d4643ee7cddaf065cdd00c7921348d65dd26b95269b04f29d678f55fc98": {
@@ -4303,6 +4380,13 @@
       "text": "错误 — 用空的 `SWAP` 来删除。正确：CUT 4",
       "thinking_budget": 4096
     },
+    "692db8b5267d7f250754289b9244b25ff1e45c8283ea0540d082d1938a7bc35e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "出错时，只修复并重新运行失败的步骤。先前的语句可能已经产生了副作用。",
+      "thinking_budget": 4096
+    },
     "6983796717781c5cab4428925b4a98708d63d53b350d4f76580a586a517dedc5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4504,6 +4588,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "变更 diff：`[src/foo.ts#1A2B]`、`-12:before`、`+12:after`",
+      "thinking_budget": 4096
+    },
+    "6d73987a04b5d4336c030aaebd11c518672ae8da22ed4e42b02839b9b2a2b473": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`%load` 只有在显式调用时才会再次执行。仅编辑文件不会重新加载它。",
       "thinking_budget": 4096
     },
     "6d7fcf7aacde0319380641906ba4139b24d4990fb40094263608ad15670e3b7c": {
@@ -4863,6 +4954,13 @@
       "text": "测试行为、边界、不变量、状态转换、优先级、真实错误——而不是内部接线、源码文本、顺带的默认值。",
       "thinking_budget": 4096
     },
+    "764308e9fabe0508157a7c142677e762aada80d0f3d6ca7ac139d0cf7318170a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "eval(language=\"js\", code=\"%load ./analysis.ts\", title=\"load analysis\")",
+      "thinking_budget": 4096
+    },
     "7677fc98624e3eef64553dee51630b24f560669067298595179c49fb93147dcd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5024,6 +5122,13 @@
       "text": "文档 → 提取出的文本。笔记本 → 可编辑的单元格。图片 → 解码后内联显示。除非指定 `:img`，SVG 会作为文本读取。`:raw` 会绕过转换器。",
       "thinking_budget": 4096
     },
+    "7c49d4c9c69f4568102547e568312027dea919afe3ec7d26a1574975ec490e3a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "缺少 JS 依赖 → 使用 `%bun add csv-parse` 作为 `code`。",
+      "thinking_budget": 4096
+    },
     "7cacb49a7e8f508c59c72a5285aca910a61700eaa4871b285ec7da9067d5e112": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5148,6 +5253,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "使用 `local://<path>` URI 传递大型载荷，绝不以内联文本方式传递。",
+      "thinking_budget": 4096
+    },
+    "804f76edd324fc84f724a9a0ce01669a1293db3a4c622e4690dae1d2e62c2b55": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "百分号命令是独立的单元格。安装完成后，只重试失败的导入/步骤——而非之前的副作用。",
       "thinking_budget": 4096
     },
     "80778b837167cec117765421d213523076e6cbf70fabb55f06d02eaaba59d014": {
@@ -8321,6 +8433,13 @@
       "text": "可以输出 ` ```mermaid ` 代码块；终端会渲染为 ASCII。仅限真正的结构/流程，而非琐碎内容。",
       "thinking_budget": 4096
     },
+    "c96196aadf50c462f6fb3168d3032270eb0e397bf448ff3aa17342090ee1af5b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在项目之外安装 JavaScript 依赖",
+      "thinking_budget": 4096
+    },
     "c962592a63392b38de559d42e6e1304ffbc5afcc83aec5ce8e63b3d0a6b9a9cf": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9327,6 +9446,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`timeout`（可选）— 秒数；`0` 禁用单元格超时。仅在重计算或长时间的非智能体工具调用时才调高。",
+      "thinking_budget": 4096
+    },
+    "e1fb9856931c9f5292c755d55fa36d7b805235362405eec0b0375aa3e7fb818a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "preserved",
+      "text": "eval(language=\"js\", code=\"%bun add csv-parse\", title=\"install CSV parser\")",
       "thinking_budget": 4096
     },
     "e20aea0cec1c4f88f071130ad49a418ddd13225f33d280b72244e0bd856f2e05": {
@@ -10398,6 +10524,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "艺术风格",
+      "thinking_budget": 4096
+    },
+    "fb3863cd677e5727d3aa7ab32b42fc53c26e53282e77a52a1597cd081b6bd50c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "包安装会保留内核状态。出现内核丢失通知意味着必须重新加载设置。仅压缩操作不会重置仍在运行的内核。",
       "thinking_budget": 4096
     },
     "fb8faefbefa200d095c0c87e5bab3ae98385be42de231a7440c6ddd49d98c97f": {
