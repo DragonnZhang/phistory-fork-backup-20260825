@@ -7551,6 +7551,13 @@
       "text": "要列出内容的目录路径，相对于工作区根目录。",
       "thinking_budget": 4096
     },
+    "f2aa230ad79c63bfffe975f92eb2c351e1bd978de7ec9cf6a8da004690d141c9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本次会话的草稿文件是 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-w02eq_61/01a0cb37-9c6c-76c0-afdb-e2b0fa278825/feedback_drafts.json.\n如果用户的反馈可以从文档中得到解答（例如 UI 元素的位置或设置），请在本地或在线阅读 Grok Build 文档，并与所创建的草稿一并作答。",
+      "thinking_budget": 4096
+    },
     "f2b86657c9228da69a8205ad868f14cb4f3e0753682cfd644944ea9706a409da": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

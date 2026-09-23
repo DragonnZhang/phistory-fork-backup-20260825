@@ -1,0 +1,52 @@
+{
+  "agent_id": "mimo",
+  "agent": "MiMo Code",
+  "package": "@mimo-ai/cli",
+  "version": "0.1.15",
+  "variant": {
+    "id": "default",
+    "label": "Default",
+    "dimensions": {}
+  },
+  "requested": {},
+  "observed": {
+    "provider": "openai-responses",
+    "model": "gpt-4.1",
+    "tool_count": 1
+  },
+  "published_at": "2026-09-22T15:16:28.680Z",
+  "tarball_url": "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.15.tgz",
+  "binary_version": "0.1.15",
+  "captured_at": "2026-09-22T19:03:55.785590+00:00",
+  "tap_client": "mimo",
+  "target": "claude-tap capture-only",
+  "client_exit_code": 0,
+  "duration_seconds": 10.077,
+  "command": [
+    "python",
+    "-m",
+    "claude_tap",
+    "run",
+    "mimo",
+    "--no-yolo",
+    "--export-prompt",
+    ".tap/tap-export.md",
+    "--no-live",
+    "--no-open",
+    "--no-update-check",
+    "--output-dir",
+    ".tap",
+    "--mode",
+    "reverse",
+    "--",
+    "run",
+    "Reply with one short sentence.",
+    "--model",
+    "openai/gpt-4.1",
+    "--format",
+    "json",
+    "--dir",
+    ".",
+    "--dangerously-skip-permissions"
+  ]
+}
