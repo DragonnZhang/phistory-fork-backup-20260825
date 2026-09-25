@@ -86,6 +86,13 @@
       "text": "`type`：步骤的类型。特别值得关注的步骤是 `USER_INPUT`（表示用户的提示词）和 `PLANNER_RESPONSE`（表示智能体的响应和工具调用）。",
       "thinking_budget": 4096
     },
+    "04dea71d0b25668b67b033da83b1e9a0deb064d5b53bbf876c0749ee7af1fd41": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "检查过去 24 小时内新提交的 issue 并发布每日摘要报告：CronExpression=\"0 9 * * *\", Prompt=\"Summarize issues filed in the last 24h and post the report\", IsDaemon=true",
+      "thinking_budget": 4096
+    },
     "04ecc024f190dd492a78d614078a9eac536912a16205b2699657aee54410ca01": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -631,6 +638,13 @@
       "text": "处理含糊不清的用户意图",
       "thinking_budget": 4096
     },
+    "2fc93156a3a8113b5c76fb97480ac28badba033b4bf8133866dd556c756c6a3c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每小时运行一次健康检查，最多 3 次：CronExpression=\"0 * * * *\", MaxIterations=3, Prompt=\"Run the health check script and report results\", IsDaemon=false",
+      "thinking_budget": 4096
+    },
     "304fef7006252c554f860102667346d8908f72ad927b091f53b176e8259ad7d2": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -674,6 +688,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "验证你的修改达到了预期效果，例如运行单元测试、确保代码能够构建等。",
+      "thinking_budget": 4096
+    },
+    "32e61d35d06944da30c020852a937f022ea32d893dc4c6b066eb3b42596c2039": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选。仅当 cron 是一个独立的常驻作业、应在当前任务完成后仍继续触发时（例如每日/每周的周期性报告或常驻维护作业），才设置为 true。只要 cron 是完成你当前任务的一部分——包括轮询或监视一个正在运行的作业直到其完成、心跳/存活检测或提醒——就保持 false（默认值）。",
       "thinking_budget": 4096
     },
     "348857220e4f48c7ef760cee5ae6c129a08689f7b7004650f8901c66a2f213a7": {
@@ -1140,6 +1161,13 @@
       "text": "**references/** - 包含智能体在需要时可以阅读的额外文档",
       "thinking_budget": 4096
     },
+    "60cf3ccd178e3ad3ca8442e650eed586bc40a574771e4a1337994c4f297ff6dc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "对于旨在无限期在后台持续运行、且预期不会自行结束的长期支持进程（例如开发服务器、文件监视器、隧道），设置为 true。对于预期会终止的普通命令，保持 false（默认值）。",
+      "thinking_budget": 4096
+    },
     "60dd96c78cc53a115f4141dbefe281d6e96b477a2fc4873b9dadbb7b8c702e5f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1388,6 +1416,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "**注意**：此工具调用会立即返回，不会暂停执行。若要等待定时器触发，你必须停止调用工具来结束你的回合。",
+      "thinking_budget": 4096
+    },
+    "768e61a0dac8e049f389f8810543a3e6c99df03d28849c34ac616e01a1ced1cd": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将此项设置为 true，可将 CodeContent 追加到 TargetFile 的末尾（如果该文件不存在则创建它）。不能与 Overwrite=true 组合使用。",
       "thinking_budget": 4096
     },
     "76c820fbbd8aca0a24585ba41d87f1829d4ca2a7d019757fb4f6c1485ebb4091": {
@@ -2715,6 +2750,13 @@
       "text": "向用户提及任务时，避免使用完整的任务 ID 和启动时间戳；保持易读。",
       "thinking_budget": 4096
     },
+    "e507ce053a393debb7ab93df167fa7b16662337870dbb3b57832531d4c83ca8b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每 5 分钟轮询一次部署状态，直到通过为止：CronExpression=\"*/5 * * * *\", Prompt=\"Check deployment status and report progress\", IsDaemon=false",
+      "thinking_budget": 4096
+    },
     "e5b2b9bcb80396df7161c3118d86b444d5c1162278fcde0ab6b1c1f502ebbd7c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2854,6 +2896,13 @@
       "text": "'send_input'：向正在运行的任务发送输入",
       "thinking_budget": 4096
     },
+    "f051722edad711a660258cedec5c8531981865b2d02c23d12252761b160ddfea": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "默认情况下，如果 TargetFile 已存在，此工具会报错。要覆盖已有文件，请将 Overwrite 设置为 true。要向已有文件追加内容（或在其不存在时创建该文件），请将 Append 设置为 true。",
+      "thinking_budget": 4096
+    },
     "f0573942d4959450bc8e811339f80bd43e9d745a63a9ce401d72b6f1edd1c859": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -2896,6 +2945,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "获取用户批准",
+      "thinking_budget": 4096
+    },
+    "f5f22bd6c07e9ed464c519de315f9b6e312f2425e63fd08ce31b82df99215c23": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**周期性 cron**：将 CronExpression 设置为标准的 5 字段 cron 表达式（例如 '*/5 * * * *' 表示每 5 分钟一次）。每次 cron 触发时，都会发送一条包含你的 Prompt 的通知。cron 作为后台任务运行。可以选择设置 MaxIterations 来限制触发次数。还可以选择设置 IsDaemon 来声明 cron 与你当前任务的关系：当 cron 是你当前任务取得进展的方式——轮询或监视某个作业直到其完成、心跳/存活检测或提醒——时，将其保持为 false（默认值），这样你的任务会保持活跃，直到 cron 结束；仅当 cron 是一个独立的常驻作业、应在当前任务完成后继续运行时——例如周期性报告，或用户要求你持续运行的维护作业——才将其设置为 true，这样你现在就可以完成任务，而它在后台继续触发。",
       "thinking_budget": 4096
     },
     "f7171048ee07db5901523a29125e734540f63d87d31bf36e201fc9bcf555f753": {
