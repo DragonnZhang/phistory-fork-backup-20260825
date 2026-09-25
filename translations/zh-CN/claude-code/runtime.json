@@ -3956,6 +3956,13 @@
       "text": "支持完整的正则表达式语法（例如 \"log.*Error\"、\"function\\s+\\w+\" 等）",
       "thinking_budget": 4096
     },
+    "3d9972b3ab2f8f05dbdbc14773124bd0526cf9d2741ac6dc8cb27988afecf00c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在自动模式处于激活状态时：",
+      "thinking_budget": 4096
+    },
     "3dcee0fb714be49e4a277c916dd7236490dc4031ecf2ba24b79e69bc1815a494": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -7965,6 +7972,13 @@
       "text": "助手绝不使用 EndConversation 工具，甚至不会提及结束对话的可能性。",
       "thinking_budget": 4096
     },
+    "85d59143a6ca846486a826ef81dc272c8acfe475399d8c13dec6d437dd0c7345": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**辅助文件**：多文件 artifact（独立的样式表、脚本、数据、图片或更多 HTML 页面）通过 `files` 发布它的其他文件，它将每个已发布路径映射到一个源文件。已发布路径是 HTML 所引用的路径，为相对路径且不带前导斜杠。发布时只有页面本身会被包进文档骨架：`files` 中的 HTML 文件是另一个不带骨架提供的页面，所以 Claude 要让每个页面以各自的 `<!doctype html>`、charset 和 viewport meta 以及基础样式开头，否则缺少 doctype 时，页面会以怪异模式渲染并使用浏览器默认样式。更新时，Claude 传入的文件会被添加或替换，它未提及的文件会保留，而 `null` 会删除一个文件。限制：页面和每个文本文件 16MB，每个二进制文件 15MB，且仅限标准 Web 媒体类型；一次发布最多发送 255 个文件和 64MB，而一个版本总共最多可容纳 511 个文件和 256MB，因此更大的集合需要分多次发布到同一个 `url`（后续每次发布都会添加到已有文件之上）。",
+      "thinking_budget": 4096
+    },
     "85dd4c9339b6e90b7515faf387f21a4074416470cfafee4e9d107379ea2179ff": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8163,6 +8177,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "仔细考虑操作的可逆性和影响范围。一般来说，你可以自由执行本地的、可逆的操作，比如编辑文件或运行测试。但对于难以逆转、影响本地环境之外的共享系统，或存在其他风险或破坏性的操作，请在继续之前先与用户确认。暂停下来确认的代价很低，而不希望发生的操作的代价（工作丢失、误发消息、删除分支）可能非常高。对于此类操作，要结合上下文、操作本身和用户指令来考虑，默认情况下应透明地告知该操作，并在继续之前请求确认。这一默认做法可由用户指令改变——如果用户明确要求你更自主地运行，那么你可以不经确认直接执行，但在执行操作时仍需注意风险和后果。用户批准过某项操作（如 git push）一次，并不意味着在所有情境下都批准该操作，因此除非操作已在类似 CLAUDE.md 文件的持久性指令中提前获得授权，否则始终先确认。授权仅适用于指定的范围，不会超出。让你的操作范围与实际请求的内容相匹配。",
+      "thinking_budget": 4096
+    },
+    "889dd18c9d8ec995631c792fc5e79f68c617a21c8fa9b1b84b9e91394567bb0c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "action 'list' 和 'query' 的选项：`limit`（1-1000，默认 100）和 `cursor`（取自先前结果的 `next_cursor`）用于在集合中翻页；`where` 子句（[字段, 运算符, 值] 三元组）和 `order_by` 仅对 'query' 进行过滤和排序。带 `order_by` 的查询是单页的：它按该顺序最多返回 `limit` 个文档，且绝不返回 `next_cursor`，因此应传入你实际想要的 `limit`（最多 1000），或者去掉 `order_by`，用 `cursor` 翻页以读取整个集合。",
       "thinking_budget": 4096
     },
     "88bd33135a51f56777d9b3f8d56a60698089ae47ba141542d658cd2bb6d1b96e": {
@@ -9858,6 +9879,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "assistant: \"我将使用 Task 工具，用 greeting-responder 智能体来启动\"",
+      "thinking_budget": 4096
+    },
+    "a64e21248c3202563a549a00e221c2a22be38557b95db818f139a14c01a7a4f4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在更简便的情况下，你可以通过 Bash 工具完成大部分工作：用 cat、head 或 sed -n 读取文件，用 grep 和 find 搜索，用 sed、heredoc 或短脚本完成小型的、机械性的文件修改，从而代替专门的 Read、Edit 或 Write 工具。如何选择由你决定：当 shell 编辑不够稳健时，例如精确替换或多行替换，或 sed/awk 标志在 GNU 与 BSD/macOS 之间存在差异时，应优先使用 Edit 或 Write。",
       "thinking_budget": 4096
     },
     "a65df36cc541fc429e4d0bc8fb184c1da35ab8602c4108961f026bc3ad309357": {
