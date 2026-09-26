@@ -24,12 +24,70 @@ PRIVATE_CAPTURE_MARKERS = {
     "memory XML": re.compile(r"<memory\s+path=", re.IGNORECASE),
     "team memory path": re.compile(r"team/channel/" r"MEMORY\.md", re.IGNORECASE),
     "channel memory index": re.compile(r"channel\s+memory\s+index", re.IGNORECASE),
+    "Chinese channel memory index": re.compile(r"频道记忆索引"),
     "Claude session URL": re.compile(r"https://claude\.ai/(?:code|session-lens)/session_[A-Za-z0-9]+", re.IGNORECASE),
+    "email address": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE),
+    "authorization token": re.compile(r"\bBearer\s+\S{8,}|\bsk-ant-[A-Za-z0-9_-]+", re.IGNORECASE),
+    "local home path": re.compile(r"/(?:data00/)?home/[A-Za-z0-9._-]+"),
+    "private channel name": re.compile(r"(?<!\w)#dev[0-9]+\b", re.IGNORECASE),
 }
 
 
 def private_capture_markers(text: str) -> list[str]:
     return [name for name, pattern in PRIVATE_CAPTURE_MARKERS.items() if pattern.search(text)]
+
+
+def unredacted_trace_fields(text: str) -> list[str]:
+    sensitive_request_headers = {
+        "authorization",
+        "x-claude-code-session-id",
+        "x-claude-remote-container-id",
+        "x-claude-remote-session-id",
+    }
+    sensitive_response_headers = {
+        "request-id",
+        "anthropic-organization-id",
+        "anthropic-workspace-id",
+        "traceresponse",
+        "cf-ray",
+    }
+    fields = []
+
+    def require_redacted(name: str, value) -> None:
+        if value is not None and value != "<redacted>":
+            fields.append(name)
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError:
+            fields.append(f"line {line_number}: invalid JSON")
+            continue
+        require_redacted(f"line {line_number}: request_id", record.get("request_id"))
+        request = record.get("request") if isinstance(record.get("request"), dict) else {}
+        for key, value in request.get("headers", {}).items():
+            if key.lower() in sensitive_request_headers:
+                require_redacted(f"line {line_number}: request header {key}", value)
+        body = request.get("body") if isinstance(request.get("body"), dict) else {}
+        metadata = body.get("metadata") if isinstance(body.get("metadata"), dict) else {}
+        if "user_id" in metadata:
+            require_redacted(f"line {line_number}: metadata user_id", metadata["user_id"])
+
+        response = record.get("response") if isinstance(record.get("response"), dict) else {}
+        for key, value in response.get("headers", {}).items():
+            if key.lower() in sensitive_response_headers:
+                require_redacted(f"line {line_number}: response header {key}", value)
+        response_body = response.get("body") if isinstance(response.get("body"), dict) else {}
+        if "id" in response_body:
+            require_redacted(f"line {line_number}: response body id", response_body["id"])
+        for event_index, event in enumerate(response.get("sse_events", [])):
+            data = event.get("data") if isinstance(event, dict) and isinstance(event.get("data"), dict) else {}
+            message = data.get("message") if isinstance(data.get("message"), dict) else {}
+            if "id" in message:
+                require_redacted(f"line {line_number}: SSE event {event_index} message id", message["id"])
+    return fields
 
 
 def git_paths(*args: str) -> list[str]:
@@ -89,8 +147,10 @@ def main() -> int:
     errors, missing_maps = [], []
     rows = read_capture_rows(capture_root)
     documents = {}
+    redacted_agents = set()
     for row in rows:
         if row["trace_redacted"]:
+            redacted_agents.add(row["agent_id"])
             for surface in ("prompt", "trace"):
                 markers = private_capture_markers(row[surface].read_text(encoding="utf-8"))
                 if markers:
@@ -101,9 +161,30 @@ def main() -> int:
                             "markers": markers,
                         }
                     )
+            fields = unredacted_trace_fields(row["trace"].read_text(encoding="utf-8"))
+            if fields:
+                errors.append(
+                    {
+                        "source": str(row["trace"].relative_to(REPO)),
+                        "error": "redacted trace still contains private transport fields",
+                        "fields": fields,
+                    }
+                )
         for surface, kind in (("prompt", "runtime"), ("trace", "runtime")):
             if path := row.get(surface):
                 documents[path] = (row["agent_id"], kind)
+    for agent_id in redacted_agents:
+        dictionary = translation_root / "zh-CN" / agent_id / "runtime.json"
+        if dictionary.is_file():
+            markers = private_capture_markers(dictionary.read_text(encoding="utf-8"))
+            if markers:
+                errors.append(
+                    {
+                        "source": str(dictionary.relative_to(REPO)),
+                        "error": "translation dictionary still contains private markers",
+                        "markers": markers,
+                    }
+                )
     unknown_sources = deep_sources - {path.resolve() for path in documents}
     if unknown_sources:
         parser.error("--verify-source is not an archived source: " + ", ".join(map(str, sorted(unknown_sources))))

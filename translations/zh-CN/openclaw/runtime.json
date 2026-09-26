@@ -294,6 +294,13 @@
       "text": "显示可见会话的模型/用量/时间/成本/任务。当前会话使用 `sessionKey=\"current\"`；UI 标签不是键。`model` 进行覆盖；`model=default` 进行重置。用于关于活动模型/会话的问题。",
       "thinking_budget": 4096
     },
+    "057405b7ca1fd0deb834805a475079e0e3d11d535641c0725c62e56df0307440": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "canvas (canvas)：在配对的 macOS 节点上呈现、隐藏或导航该 widget 面板。",
+      "thinking_budget": 4096
+    },
     "05a4d3d6ee325401af9984a6ee0e733eea3e56ae8646d1807a999c51eca33bbf": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -504,11 +511,25 @@
       "text": "**用户的请求永远排在第一位。** 如果第一条消息要求做实际\n工作，就把那项工作完整做完，并回复结果。不要以\n自我介绍开场，不要问该怎么称呼你，也不要去等\n任务并不需要的回答；把诞生序列留到工作交付之后，或\n留到一个安静的时刻。这个文件是一种仪式，而不是一道门槛。",
       "thinking_budget": 4096
     },
+    "097df0ef43dfd1c5049e872c7381eeb11bf4f6e5a5729c314e6554325df99980": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "ask_user (core)：向人类用户提出 1-3 个结构化问题并等待其回答；`multiSelect` 允许选取多个选项，`timeoutSeconds` 限定等待时长。仅在受阻时使用...",
+      "thinking_budget": 4096
+    },
     "09c22c7ff9f0b91b0f3f6b958e4c8c56e55cb8fca38b7760304b5c5ddd7c4bf0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "每页的最大条目数。默认 200，硬性上限 5000。",
+      "thinking_budget": 4096
+    },
+    "09c332dee712f3a9aee337cfbb4583c816ce005148a1a3a8dda3a9a3c41af32b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "talk_voice (talk-voice)：列出或更改本对话中活跃的实时 Talk 通话（浏览器、iOS 或 Android）或 Discord 语音通话的语音。使用 list 查看其提供商、模型、当前 voi...",
       "thinking_budget": 4096
     },
     "09f2a01df078416bc0cd7583935064da54a55a8c0fc4a9db34bd60178c358dba": {
@@ -614,6 +635,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "不要凭空捏造命令。\n网关重启、配置、频道、插件、智能体、模型/提供商：询问 `openclaw`。\n更新 OpenClaw：`gateway` action update.run，仅在用户明确请求时执行；重启和完成通知是自动的。绝不要通过 exec 运行 openclaw update、npm install -g openclaw，或停止/重启网关服务。",
+      "thinking_budget": 4096
+    },
+    "0b7d7549280f54622ed27f6f729d6ae7e4654b0db75662e3bcadc83d08ac43e4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "此查询的最大结果数。省略时默认为 8。",
       "thinking_budget": 4096
     },
     "0bb77fe5b1f98a35011cf2c11b941b29f994aea4c7a6d7e187c92126e4b1e45b": {
@@ -882,6 +910,13 @@
       "text": "**日历** - 未来 24-48 小时内有什么即将到来的活动？",
       "thinking_budget": 4096
     },
+    "10caa468b3938ec28d48bd905205abe9eab9771e827d1185bd6fe16cbd8f928f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "intent (memory-core)：创建、列出或显式取消基于事件触发的常驻意图。创建的意图即进入待触发状态；触发时系统会自动注入提醒。不要投递...",
+      "thinking_budget": 4096
+    },
     "10da4e70323f2309db76715c60ce34ddb9c8837f42e7d0f3460e6f5bc798a61d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -978,6 +1013,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "宽高比：1:1、2:1、20:9、19.5:9、2:3、3:2、2.35:1、3:4、4:3、4:5、5:4、9:16、9:19.5、9:20、16:9、21:9、1:2、4:1、1:4、8:1、1:8。",
+      "thinking_budget": 4096
+    },
+    "13375b5781d06f14529764322c5b695842261e1da2fcb21854493f30cd73c004": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "搜索查询，使用英语。描述你所需的能力。",
       "thinking_budget": 4096
     },
     "1358ec9083f3794af0693a683b6d7b122771bb126460d9e5927e6d095ed22673": {
@@ -1281,6 +1323,20 @@
       "text": "agents_list：列出允许用于 sessions_spawn 的 OpenClaw 智能体 ID",
       "thinking_budget": 4096
     },
+    "1923b9cafddf5f143f2a75ff2186e84f858821fb56380835aad851bfb4d2a215": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "宣布生成（spawns）时，通知运行结束；保留的 OpenClaw 会话中的后续轮次不会主动汇报；通过 `sessions_send` 跟进。",
+      "thinking_budget": 4096
+    },
+    "193fdeb04bd91ac91c58816cb1f86a0f7c0703832fbd4e209a78eef9e8321d57": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当前日期：2026-09-23\n时区：UTC\n如需确切的当前时间，使用 `session_status`。",
+      "thinking_budget": 4096
+    },
     "196fd1cd5c9ade4847805f04c83eb24fdbeb51438f652655b8bfb233be212b24": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1300,6 +1356,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "仅当用户可以同时选择多个选项时才为 True。",
+      "thinking_budget": 4096
+    },
+    "1a182feb0d7fca3efa1cc26224664b44f7cab4196d98ce411e0c5d2f3e6c1f78": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "单次搜索结果的最大数量。省略或为 null 时使用默认值。只有批次查询时，请省略此参数或将其设为 null；在各批次条目上设置 limit。",
       "thinking_budget": 4096
     },
     "1a7ea21580bd78c684cc29a15fa5de5a8a6983b671d21d4193aceb3bf712afd1": {
@@ -1742,6 +1805,13 @@
       "text": "[引导待定]\n请先读取工作区中的 BOOTSTRAP.md 并按其执行，然后再正常回复。\n如果本次运行能够完成 BOOTSTRAP.md 工作流，就完成它。\n如果不能，请简要说明阻碍原因，继续执行此处仍然可行的引导步骤，并给出最简单的下一步。\n引导未完成时，不得假装引导已完成。\n在处理完 BOOTSTRAP.md 之前，不要使用通用的开场问候，也不要正常回复。\n对于引导待定的工作区，你的第一条用户可见回复必须遵循 BOOTSTRAP.md，而不是通用问候。",
       "thinking_budget": 4096
     },
+    "2315f468f3baea06a37e0fc32f3daea2d403085ead784fed5d14bb7594f25cb4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "update_goal (core)：仅当完整目标已验证且无剩余必做工作时，才将会话目标标记为完成。仅当同一阻碍已至少持续三...",
+      "thinking_budget": 4096
+    },
     "2332864b2af83a0e9e971e3c95f7ed42a02ca789f1d0e511c6a12978667ff882": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1907,6 +1977,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**在以下情况保持沉默：**人们在随意闲聊；已有人回答；你只会说“嗯”或“不错”；对话没有你也照样进行；回复会打断对话。",
+      "thinking_budget": 4096
+    },
+    "2644126ec2e1fa3b2bda958ebbf98351298d860ba0718cff480173ca44c45c12": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "Tool Search 结果 id 或工具名称。",
       "thinking_budget": 4096
     },
     "2678e951d2031467be1fbaa05c65a91ebd491f2ff55ed02143911d6a77989a14": {
@@ -2111,6 +2188,13 @@
       "text": "image：使用配置的图像模型分析图像",
       "thinking_budget": 4096
     },
+    "2a03225347817f55f20b28167612ea3c7ef2e62b6211fc69213293a1593a182a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions_send (core)：通过 sessionKey/label 在此 Gateway 上运行可见会话，或通过 agentId 运行已配置的本地智能体；sessionKey 与 label 冗余时以 sessionKey 为准。会话标识的是模型上下文，而不是一个 ex...",
+      "thinking_budget": 4096
+    },
     "2a06f07e5cf5f85c0a6fb6b71dcd377b7b5ab9c3b6df4ae74cb3709a9099badb": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2151,6 +2235,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "nodes：对配对节点执行 list/describe/notify/camera/screen",
+      "thinking_budget": 4096
+    },
+    "2abe1b18360b6ba2e7e5173541fcfb764e2ecef788f07a3e12d1639ab73cf436": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "独立搜索。进行多个搜索时，优先单独使用此参数；与其并存的非空 query 会作为第一个条目运行。它们的有效 limit 总计最多为 50；省略的条目 limit 按 8 计算。序列化后的查询字符串总共最多可使用 512 个 UTF-8 字节。",
       "thinking_budget": 4096
     },
     "2ae4c0732bc86e49783144322f8ba2c366d5d0c16551117c337e7a1e195220a5": {
@@ -2459,11 +2550,25 @@
       "text": "**你的本质** - 你是什么样的生物？（AI 助手也可以，但也许你是更古怪的东西）",
       "thinking_budget": 4096
     },
+    "316c7eb1e1692d614ee6c3f224b2f13d9171275424bd24e1b00e50ac140a0b91": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "terminal (core)：管理操作员从此聊天的 Control UI 面板打开的终端。list 发现共享终端；read 返回缓冲区快照；resize 和 close 管理现有 term...",
+      "thinking_budget": 4096
+    },
     "31706238b853f550e34e9ca8e7ff5bc5243266ccf2ad4930658e5dfb45e7ce50": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "[Fri 2026-06-12 15:51 UTC] 用一句简短的话回复。",
+      "thinking_budget": 4096
+    },
+    "31b4a58a622b5fc35eae135502cfe36f00eceed1f24f540db7fda6c44d27d5a2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "[Wed 2026-09-23 23:55 UTC] 用一个短句回复。",
       "thinking_budget": 4096
     },
     "31b8a96237866a5391c924b9d4f3f9b8b3f73dadaeb185f3257a5b3663daede3": {
@@ -2638,6 +2743,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**代词：** _（可选）_",
+      "thinking_budget": 4096
+    },
+    "35390451656c3881a53ff50655edc9e75c07020e9b18a5b3f950c7b11b1af83d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "运行时：agent=main | session=agent:main:main | sessionId=83abc4e2-96d2-4359-98b8-186881b57b16 | host=runnervmlun5p | repo=$PHISTORY_HOME/.openclaw/workspace | os=Linux 6.17.0-1022-azure (x64) | node=v24.21.0 | active_node=unknown | model=phistory/phistory-dummy | default_model=phistory/phistory-dummy | shell=bash",
       "thinking_budget": 4096
     },
     "353e188e6715b82cb8b0c30ad447edfa67822c04a41362102aec913aed6505f5": {
@@ -2828,6 +2940,13 @@
       "text": "在提出或构建自定义的系统、功能、工作流、工具、集成或自动化之前，先简要查一下是否已有开源项目、仍在维护的库、现有的 OpenClaw 插件或免费平台能足够好地解决它。够用时就优先采用这些方案。只有当现有选项不合适、太贵、无人维护、不安全、不合规，或用户明确要求定制时，才自行构建。除非用户明确批准支出，否则避免推荐付费服务。保持轻量——这是一道预检关卡，不是一项研究任务。",
       "thinking_budget": 4096
     },
+    "38fa038d0fa960c1596d5c6834471214fd19c6d68d09cd9a95ea5f852028ae95": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "session_status (core)：显示可见会话的模型/用量/时间/成本/任务。`sessionKey=\"current\"` 用于当前会话；UI 标签不是键。`model` 覆盖；`model=default` 重置。用于活动模型/会话...",
+      "thinking_budget": 4096
+    },
     "393cf1329ec535a3581fa166f3d2f63dcfc8aedd051cde774ba211bb536ae5d8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2882,6 +3001,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "拿不准时，先问。",
+      "thinking_budget": 4096
+    },
+    "3a7c5a05fbbe86dabe39705d908598a2a453c5afdae6d3c8db8bd9658af849d8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "web_search (core)：搜索当前网络；返回规范化的提供商结果。支持新鲜度和日期范围过滤（freshness、date_after/date_before）以及域名过滤（domain_filter）。",
       "thinking_budget": 4096
     },
     "3a96eafb557119538f92b847376a21f53a8d520bc1a48c18da53010de4cb5ee9": {
@@ -3425,6 +3551,13 @@
       "text": "在 UI 列表中显示的简短任务标题；为工作命名，而不是为智能体命名。",
       "thinking_budget": 4096
     },
+    "449ca369c84214e270e6842eb57df0637ffc6995589a892685fb76746454010e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "mobile_ui (core)：通过语义无障碍快照控制已配对且启用了 Accessibility Control 的 Android 应用；一次调用即为一次观察或一次操作。所有改变状态的操作（activate、s...",
+      "thinking_budget": 4096
+    },
     "449e15243a9b54a821c1a52cfb1c91c59044e5300b49642eb619443891f908bf": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3570,6 +3703,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "大小：SKILL.md 保持在 10,000 字符以内。技能是复现结果的最短流程；较长的参考资料、示例和各分支细节放入随附文件，由需要它的步骤指向该文件。",
+      "thinking_budget": 4096
+    },
+    "472ac02a3c2628061c7b2984861a2d638b7d3379000e1d8c2d871a8811a497e7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions_spawn (core)：生成子会话；默认 `runtime=\"subagent\"`。`mode=\"run\"` 一次性后台。`agentId` 面向已配置的智能体（见 agents_list）；`model` 覆盖其模型；`cleanu...",
       "thinking_budget": 4096
     },
     "4746de87a47fa4f248e2498535f06af86c8d918d45ffffc5ea8beb5b2db37c3f": {
@@ -3943,11 +4083,25 @@
       "text": "**审查并更新 MEMORY.md**（见下文）",
       "thinking_budget": 4096
     },
+    "4dbf81c607a7ba5286aceddd6f05a60c8d309ea75ffa0e39cf2c4f55b1d6b4a9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "单个搜索查询，使用英语。非空的 query 会先并入非空批次。与非空批次并存时，Null 或空白值会被忽略。",
+      "thinking_budget": 4096
+    },
     "4dd17ffa09bcf6435d04f085fafa24d5127a140c4a2e12e9840c3daf707e5493": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "\"cron\"：Cron 表达式\n  { \"kind\": \"cron\", \"expr\": \"<cron-expression>\", \"tz\": \"<optional-timezone>\" }",
+      "thinking_budget": 4096
+    },
+    "4de7e5d155be325eba039fa80d1448995d2b442edd7a52f7bf984f2a2c216a0d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "nodes (core)：配对节点：status/list 带活跃计算机在线状态；传入 node 以执行 describe/control。配对生命周期（pending/approve/reject）、notify、camera_snap/camera_list/camera_clip（...",
       "thinking_budget": 4096
     },
     "4dfbf26b234aed9b0ab60ace1a9da4201a6c06ef1734bb063bcdd73f1c4ad5bf": {
@@ -4142,6 +4296,20 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "Perplexity 原生 Search API 每页提取的最大 token 数。",
+      "thinking_budget": 4096
+    },
+    "513d27091f64a0e1208eb45538812ffe4844160814b9103481b23bf57ddd0623": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions_search (core)：在可见的历史会话中搜索匹配的用户和助手文本。随后使用返回的 sessionKey、sessionId 和 messageId 调用 sessions_history，获取邻近上下文。",
+      "thinking_budget": 4096
+    },
+    "5149ec65c1327979b2e27e141526c967d2e074e9146e74a7f1db523b57c36e9c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用户的纠正会更新现有任务；应用它并在授权范围内继续，除非用户暂停、取消或替换该任务。不要止步于确认或道歉。",
       "thinking_budget": 4096
     },
     "5158a58a27b7e0c5e69436f585dc26ee742960fe388e4013987aa63544c8d70c": {
@@ -4781,6 +4949,13 @@
       "text": "已由操作员确认的能力审查。",
       "thinking_budget": 4096
     },
+    "5c470893a6a2b2a69a89160785c986061a0fcd4b26c95ef6a5bb1dc7a1e83a59": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "automations (core)：Gateway 调度器：提醒、延迟自我唤醒、循环、周期性工作、事件监视器。绝不要执行 sleep/poll 来充当计时器。ACTIONS：status | list [includeDisabled,limit?,offset?...",
+      "thinking_budget": 4096
+    },
     "5c5bf0955e534f46a715b46082d07749203a4a10f32bc1765951f7f74c5b4bdd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4899,6 +5074,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "有人说“记住这个” -> 更新 `memory/YYYY-MM-DD.md` 或相关文件。",
+      "thinking_budget": 4096
+    },
+    "5e3fe9a5e5398f54bbf4b3d8ae160aadb663fe95a9f2c9f42393fefc6a3469db": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可用的延迟 Schema 工具：",
       "thinking_budget": 4096
     },
     "5e59b3bd2de04a3f4a62812c3ebfdc3625c4c0eee882864e7d4bb1471ccec016": {
@@ -5096,6 +5278,13 @@
       "text": "**何时回应：**被直接提及或被提问；你能带来真正的价值；某句妙语恰好自然应景；需要纠正重要的错误信息；被要求时进行总结。",
       "thinking_budget": 4096
     },
+    "62f3909590ab184589a684ab751b19efec14a8f61b68104061be974ff1f17aa1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当某个搜索结果的输入尚不明确时，为该搜索结果加载完整的 schema 和元数据。",
+      "thinking_budget": 4096
+    },
     "632b63a52fa9e4dd7a82d31a9f4da4864ff1bb031c8ae92391c3347f77e046a7": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5164,6 +5353,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "<description>搜索表情包模板，建议格式，并生成本地或托管的图片表情包。</description>",
+      "thinking_budget": 4096
+    },
+    "652d2f02697283f105ddef475b10741cf4c38ba75e9d2cdd6fab6a010ee20def": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "image_generate (core)：创建/编辑图像。通过 count 批量生成；aspectRatio 和分辨率最高支持 4K。会话聊天在后台运行：每次请求调用一次，等待完成，随后以结构化消息...形式给出可见回复。",
       "thinking_budget": 4096
     },
     "657f83fb28dcb2e2ab38ca8de169f3353c6b2bd4c03bed06bc72843093f83c46": {
@@ -5520,6 +5716,13 @@
       "text": "本地笔记",
       "thinking_budget": 4096
     },
+    "6ab4228521efb12bb37b746c2ca63dbd107d70fa95566b027c5c06423842ff98": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "browser (browser)：通过 OpenClaw 的浏览器控制服务器控制浏览器。可用操作：doctor、status、start、stop、profiles、importprofile、tabs、open、focus、close、snapshot、screensho...",
+      "thinking_budget": 4096
+    },
     "6ab678243c6a1dc602e45882b827c7798f29585036ff7e7e7076ba88d885a8bf": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5615,6 +5818,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "媒体 URL/路径。data: 使用 buffer。",
+      "thinking_budget": 4096
+    },
+    "6ca98f429bed09aa3ae88ee7d8e136145142425f7640db7f133f4571ed5f3c43": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "memory_get (memory-core)：从 MEMORY.md、USER.md 以及 memory/ 下递归包含的 Markdown 文件中安全地读取精确摘录。不支持会话对话记录路径；请使用可用的会话历史工作流...",
       "thinking_budget": 4096
     },
     "6cb4d813ea49f1ee7622f5b6c2b6b2c75e8e686df019f8cc04316f2c32d8687b": {
@@ -6167,6 +6377,13 @@
       "text": "terminal：列出/读取/调整大小/关闭操作员打开的会话终端；输入遵循 exec 策略，可能需要精确输入审批；绝不打开 shell",
       "thinking_budget": 4096
     },
+    "77b3360d3b10f9980291b197bb572ac98898c4c1df4059e4bce4e9c0fcceae47": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "subagents (core)：后台工作：列出状态，等待选定的 taskIds 完成或需要关注，或取消某个 taskId。wait 保持当前轮次活跃；超时不会取消工作，也不会消耗 com...",
+      "thinking_budget": 4096
+    },
     "77e5fb2e06135f0792c85bad0d70ad993a366ed74a78eb097ea5eb7295130764": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6459,6 +6676,13 @@
       "text": "要返回的结果数量。",
       "thinking_budget": 4096
     },
+    "7e0f5aa8b380769f2bb3ca4c1e1d84f564039ef5e8e0ad9dfc245c9eb4852ec5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "memory_search (memory-core)：必做的回忆步骤：在回答有关先前工作、决策、日期、人员、项目...的问题之前，先对 MEMORY.md、USER.md 以及 memory/ 下递归包含的 Markdown 文件进行语义搜索。",
+      "thinking_budget": 4096
+    },
     "7e22e56071c1ab725bf1e2943112bd4821617556ed1502e7a471db81107ccc55": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6480,11 +6704,25 @@
       "text": "runs: 获取任务的运行历史（需要 jobId）",
       "thinking_budget": 4096
     },
+    "7e7f3ef23c6c5d05366ec99a0fbc531eade3ddd4ec212fa881f750bbf821fe74": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions_list (core)：列出可见会话的元数据和分组；按 ownerId/creatorId、projectId/workspaceDir、group/pinned、kind/agent/activity/archive 过滤。relationship=owned|created|involving 选择...",
+      "thinking_budget": 4096
+    },
     "7eaf7887b3ae6ddf5b1eecd2119efb568e32503d69d715d9f4d437d0e4d693c5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "输出格式：png、jpeg、webp。",
+      "thinking_budget": 4096
+    },
+    "7eb7acd56e2006fb457455557922458be362523e7c6af2cbcc33e86b3bcf9350": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "conversations_turn (core)：通过 conversationRef 发送，并等待与之关联的入站回复。回复会返回到这里，而不是启动第二个本地智能体回合；未经请求的消息仍会启动……",
       "thinking_budget": 4096
     },
     "7efd9feaebb5097888e81b8a42a5a7a2c1e00d57a1266a6f093e48e391ed8bb3": {
@@ -6613,6 +6851,13 @@
       "text": "edit：对文件进行精确编辑",
       "thinking_budget": 4096
     },
+    "819a155dfdfdc8a67e80d0e559d70b8459cdfcdae5fb0040922e5f4270eef9af": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions (core)：cloud_profiles 列出已配置的云配置文件；传入 profileId 以采用其中的操作系统和机器选择。会话设置、所有权、重置、删除以及自定义侧栏分组：patch 标签...",
+      "thinking_budget": 4096
+    },
     "81a61060cba52b98bee750186964009a4468bd8468f3f90fb2631e56381f6f3f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6695,6 +6940,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "OpenClaw 消息传递：使用可用的消息传递工具，绝不使用 shell 命令、CLI、curl 或直接 RPC。缺少消息传递工具并不构成使用其他途径的许可。",
+      "thinking_budget": 4096
+    },
+    "8373356ddd5f77134386b3f8e0a4454456407ad399622f456836538affaf3298": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "conversations_send (core)：直接通过来自 conversations_list 的 conversationRef 发送。这会执行渠道投递；不会在背后的会话中运行本地智能体。",
       "thinking_budget": 4096
     },
     "83be4b1eb6571ad7f2f3850c0dca9a3e04693838103eb5fb20d850c96427d39c": {
@@ -6856,6 +7108,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当前日期：2026-09-05\n时区：UTC\n要获取确切的当前时间，请使用 `session_status`。\nexec approval-pending：发送 \"Reply with:\" 中的确切 /approve；绝不要索要其他代码。",
+      "thinking_budget": 4096
+    },
+    "87375b3f6f36849154cbae199deb23025fb7fe628d173a67b6c8f8f062365e44": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "tts (core)：使用配置的语音提供商将文本转换为语音音频（TTS）。仅在明确的语音/ speech/TTS 意图或激活的 TTS 配置下使用；绝不用于普通文本回复。音频自动 delivere...",
       "thinking_budget": 4096
     },
     "873bac1f119f90541466fb866a0b103d47b702308fbd916d61802ebf1b31dd00": {
@@ -7306,6 +7565,13 @@
       "text": "使用 `runtime=\"subagent\"` 或 `runtime=\"acp\"` 生成一个隔离会话。`mode=\"run\"` 是一次性的，`mode=\"session\"` 是持久的或绑定线程的。子智能体会自动继承父级的工作区目录。当工作应在全新的子会话而非当前会话中进行时，使用此工具。",
       "thinking_budget": 4096
     },
+    "903c1647b857b0cd69760265503bf51984bf37a9b852eca27079eee9fc88aa00": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "portal (core)：通过门户路由暴露本地 HTTP 服务器或会话所附环境的 HTTP 服务器（environmentId）；在 Control UI 中验证浏览器访问和应用渲染。或...",
+      "thinking_budget": 4096
+    },
     "903c7dc6000d96122126f2703bfa96c349609f8e7be2929992a826dbbcffb179": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7416,6 +7682,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "插件自有的 JSON 属性（编码后最大 8KB）",
+      "thinking_budget": 4096
+    },
+    "91cfba4a2d84dd8aa2ba741eabbd4d23ddc8a98874d218371ec44f3408de0da7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "通过 OpenClaw 调用精确的 Tool Search 结果 id 或名称。",
       "thinking_budget": 4096
     },
     "91d53227c1e459cc66610e17d4a0fc84c410419a0031ddea53b0547000083624": {
@@ -7620,6 +7893,13 @@
       "text": "可执行的请求：在本回合采取行动。",
       "thinking_budget": 4096
     },
+    "951764acdf8fb6954d88750bdbd50cfe1fddb13003ba48b3d76e60212826c1ab": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "file_write (file-transfer)：按绝对路径向配对节点写入文件字节。原子写入（临时文件 + 重命名）。默认拒绝覆盖；传入 overwrite=true 以替换。拒绝通过符号链接...",
+      "thinking_budget": 4096
+    },
     "9551fd0bb7cabb157d3dec3c81185a09fb76b6daebdab5b318a2924935a875d8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7695,6 +7975,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "action=update、action=prepare_patch、action=patch 或 action=read 所用的现有技能名称或键。后续调用复用返回的 skillName。",
+      "thinking_budget": 4096
+    },
+    "964a33be3f871f816f67390a7060abfa9ceef8ded0bb403c7e401114262de80a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当保留的 OpenClaw 会话在达到请求的结果之前停止时，用 `sessions_send` 继续它；仅在验证结果之后，或在进展需要新的用户授权或无法获得的外部决策时，才结束。",
       "thinking_budget": 4096
     },
     "9654ba2ff3bf017f67cac8d53168088fab1e7decbe4167dc66a58fcdcb3caf68": {
@@ -7884,6 +8171,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "要在节点上写入的绝对路径。由服务器端进行规范化。",
+      "thinking_budget": 4096
+    },
+    "9928b34bc7306bb3335367d8eae72dcf71da9815e11062db82be5cfd68b355bf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "gateway (core)：读取网关配置/模式。update.run：所有者请求或操作员计划；自动重启并附带完成通知。绝不通过 shell 执行。其他系统更改：使用 openclaw 工具。",
       "thinking_budget": 4096
     },
     "994474db30b035f940755bd43799209d04fe53feeddfefdccb28dab9f6838ce7": {
@@ -8131,11 +8425,25 @@
       "text": "将稳定的偏好、沟通风格、人际关系和进行中项目的上下文写成祈使式指令，例如 `Always`、`Never` 或 `Prefer`。",
       "thinking_budget": 4096
     },
+    "9d3980f22e4a2fa00340800d193e4c22df3044dd5ff24d1212ba6d973566f00e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "经策略批准的 MCP 和客户端工具也可能可以通过搜索发现。\n使用 tool_search 获取紧凑的输入签名，或使用 tool_describe 获取完整 schema。延迟加载的名称不可直接调用。调用 tool_call，在 id 中传入结果的 id 或名称，并在 args 中传入所有工具参数。即使其他指导直接点名某个延迟工具，也要使用这个包装器。\nAGENTS.md 的 Tools 部分指导用法；它从不授予可用性。\n长时间等待：不要快速轮询。使用 exec yieldMs 或 process(poll, timeout=<ms>)。\n大型工作：`sessions_spawn`；遵循已接受的完成模式。\n`sessions_spawn`：需要干净上下文 => `context:\"isolated\"`；需要对话记录 => `context:\"fork\"`。\n内部工作默认使用子智能体；仅当用户请求或需要可独立回访并引导的单独会话时，才使用 `visible:true`。\n同一项工作被第 3 次提出时：先完成它，然后提议一个例程。先检查 `automations` 列表；绝不重复已有的。\n提升 = 直白地重述计划+任务，获得同意，创建它（交付默认设置以此为准），然后强制运行 `run` 一次作为可见的测试；测试失败 => 如实说明并将其移除。\n绝不循环轮询 `subagents list`/`sessions_list`。宣布子智能体：用 `sessions_yield` 等待。状态仅在按需/干预/调试/请求时提供。\n被问及不在上下文中的其他聊天/群组/会话时：先检查 `sessions_list`/`sessions_search`，再声称无法访问。",
+      "thinking_budget": 4096
+    },
     "9d492e795ddb5170385b8b90bb075711b71e6e077f8382cf05319ff1cba45a86": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "run: 立即触发任务（需要 jobId）",
+      "thinking_budget": 4096
+    },
+    "9d8f83e4fdf5fb758d5e9efd55c60293c13da4e3aee6cf781622f8bb91dec05b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "create_goal (core)：仅在用户或系统指令明确请求时才创建目标。仅在明确请求预算时才设置正的 token_budget；否则省略它或……",
       "thinking_budget": 4096
     },
     "9d90ce53ccfe371e3cebd0caeccc22653344efc6f2bb341160c5f8da405e4a40": {
@@ -8327,6 +8635,13 @@
       "text": "为当前会话或其他可见会话显示 /status-equivalent 会话状态卡片，包含用量、时间、可用情况下的成本，以及关联的后台任务上下文。可选的 `model` 为单个会话设置模型覆盖；`model=default` 重置覆盖。遇到诸如当前激活的是什么模型、会话是如何配置的问题时，使用此工具。",
       "thinking_budget": 4096
     },
+    "a187149e983731dc1f3abea775ba25d1b8e1b2e62923b3d82cdd89654079045a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "sessions_history (core)：读取经过脱敏的可见会话历史。在回复/调试/恢复之前使用。使用 messageId 获取锚定历史；sessionId 选择其对话记录且必须与 messageId 同用。两者都省略时...",
+      "thinking_budget": 4096
+    },
     "a1c8cb9b15c8eb7a44c467051527e9a6b48511adee24c2ef5993cf549d9d5cd2": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8416,6 +8731,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "以类似这样的话开场：\n>",
+      "thinking_budget": 4096
+    },
+    "a3455b62a795f48258d45d098513b33644fa9645ca3c2cd6a319875552fd8b9d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "message (core)：发送/管理频道消息。支持的操作：broadcast、send。",
       "thinking_budget": 4096
     },
     "a34c667537fd2991eaa022802ae3ac0668c871d6c595111b6f16be381b1b287c": {
@@ -8641,6 +8963,13 @@
       "text": "消息",
       "thinking_budget": 4096
     },
+    "a79bd8fce1118927e397201bc8e8daece29c9bc4867422f3d2de30afa4372972": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "progress_card (core)：维护本会话的进度卡：在 OpenClaw 各 UI 中显示于会话旁的唯一持久状态面板，面向不阅读对话记录的人。创建卡...",
+      "thinking_budget": 4096
+    },
     "a7fe48bb1cc4feaf8a56010880963876ce7621052adf5996a93b2ec3e55a570f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8737,6 +9066,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "阅读 `SOUL.md` —— 这就是你",
+      "thinking_budget": 4096
+    },
+    "a9bdedbfef3c00c6ad16588a56d85c8228f2c9dbbbf358164fdc7fc676211a18": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "agents_wait (core)：等待由 sessions_spawn collect=true 启动的收集器子智能体。接受多个 run id；一旦任一完成即返回（已完成的结果（含结构化输出），加上待处理的 id...",
       "thinking_budget": 4096
     },
     "a9cb9bf92ece4eec45e35c3fc3dbd94ff963b41c9344aa9d3ffc0302584d8a6b": {
@@ -9340,6 +9676,13 @@
       "text": "对于 schedule.kind=\"at\"，不带显式时区的 ISO 时间戳按 UTC 处理。",
       "thinking_budget": 4096
     },
+    "b5cbf3ad5919773910b76e778437d70863944b1c56a4f8243fc0ac91231f7a2d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "secrets (core)：受保护的凭据：先用 `list` 查看元数据；`request` 通过人工掩码录入补齐任务所需但缺失的名称和原因；`delete` 移除条目。请求会等待人工处理；值...",
+      "thinking_budget": 4096
+    },
     "b5cdf902bbd8f8afa5daafe9d9bc20a95a8926a1442d01b3bceff7e2027a6d82": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9781,6 +10124,13 @@
       "text": "列出可见的会话元数据和分组；可按 ownerId/creatorId、projectId/workspaceDir、group/pinned、kind/agent/activity/archive 过滤。relationship=owned|created|involving 选择的是已通过身份验证的请求用户的会话，而非该智能体的所有者。默认仅返回元数据。limit 默认为 100；更大的请求仍然有效，但 limitApplied 永远不会超过 200。count 是本页数量，不是清单总数。当 hasMore 为真时，使用 nextOffset 和相同的过滤条件继续；truncationReason 会指明扫描/字节预算。页面是实时的：按 agentId/key/sessionId 去重，或重新启动以获取全新清单。archived=all 包含活跃和已归档的行。通过 includeLastMessage/messageLimit 内联预览最近的消息；includeDerivedTitles 会添加派生标题。enrichmentOmitted 表示预览超出了字节预算；请单独读取历史记录。请在选择 history/send 目标之前使用。",
       "thinking_budget": 4096
     },
+    "be4a1f5c2d1de98354100bb77cb31a5522ac6ef120d48eb5f17f830ed2e3ee47": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "theme (core)：读取并更改请求用户的 OpenClaw 外观。list 列出可用的内置、插件和个人主题及其描述和当前选择。get 检查 th...",
+      "thinking_budget": 4096
+    },
     "be7f31c527e5cc8701e063f7db9c4f41e2f719c8e3dbe170cef9f96fca15c9e3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9793,6 +10143,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**每日笔记：** `memory/YYYY-MM-DD.md` 保存原始日志；如有需要，创建 `memory/`。",
+      "thinking_budget": 4096
+    },
+    "bea0138be835ae50d6510b1926605d4d582745100734170eeef26434d2065197": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "agents_list (core)：列出已配置的智能体 id 及其名称/模型/运行时元数据，允许作为 `sessions_spawn(runtime:\"subagent\")` 的目标。",
       "thinking_budget": 4096
     },
     "becd8cb4c49a5635e2eebd5f3920089b1c0c2a7e1f1682d8f6b4b0f6db23ca54": {
@@ -9816,6 +10173,13 @@
       "text": "tts",
       "thinking_budget": 4096
     },
+    "bf2033fad4ddda6eb64362915ae7db95b3afe373d72b2d26643ffb1487927068": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "view_image (core)：在私有模型上下文中使用可用的视觉能力检查图像：path 接受一个本地图像路径或允许的 URL；paths 最多接受 maxImages 个条目（默认 20）。是否……",
+      "thinking_budget": 4096
+    },
     "bf3c94b09e4cd599a2a8ea1aeec62a856ce456c44fb6bf3f123a473c647fc630": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9828,6 +10192,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "目前还没有记忆。这是一个全新的工作区，所以记忆文件在你创建之前不存在是正常的。",
+      "thinking_budget": 4096
+    },
+    "bf64edebc64231abc425074c557c44463fd1187dae8f35373b30fdc4fd451ec4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "pdf (core)：分析 PDF：支持时使用 Anthropic/Google 原生能力，否则进行文本/图像提取。pdf 一份；pdfs 最多 10 份；prompt 说明检查内容。`pages` 选择页面范围（\"1-5\"、\"1,3,5-7\"）...",
       "thinking_budget": 4096
     },
     "bfb4fbe4240d1b8979b3d02bbd9f2aff123a14f24b2aca5f65f1650a01b5fdfd": {
@@ -10255,6 +10626,13 @@
       "text": "Skill Workshop",
       "thinking_budget": 4096
     },
+    "c835b2fb1b03d40e8c2c99543786dd6ccebf9581f34844ef7d57981b919e4e53": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "get_goal (core)：获取当前会话目标，包括其完整目标描述、状态、token 用量以及可选的预算。",
+      "thinking_budget": 4096
+    },
     "c9045dc43ae1bb1d877ac22c722e2fa9135de774a538d37a29222e35b1db4449": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10267,6 +10645,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "文件删除后，OpenClaw 会将出生序列视为已完成，并且\n不会重新创建 `BOOTSTRAP.md`。",
+      "thinking_budget": 4096
+    },
+    "c940beee15818fdd86f402074753b5f67861b92752232eb6f06aee36ad2e64e6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "搜索生效的 Tool Search 目录。单次搜索传入 query，一次调用中进行多个独立搜索则传入 queries；非空的 query 会先并入非空批次，并使用其自身的 limit。批次结果按请求顺序保持分组。查询必须使用英语：匹配是针对工具名称和描述进行的词法匹配，而这些内容以英语书写，因此换成其他语言通常匹配不到任何结果。向 tool_call 传入精确的结果 id 或名称；仅在需要其输入 schema 时才使用 tool_describe。",
       "thinking_budget": 4096
     },
     "c94a295c1111c8455f4504feceaae3f346e74c4914926f61418713956f22312f": {
@@ -10381,6 +10766,13 @@
       "text": "在侧边栏中显示的活动名称（例如 'with fire'）。custom 类型时会被忽略。",
       "thinking_budget": 4096
     },
+    "cb4a1ec096fbda385fe2589bd6a314fcdf7f8405b58333e8fe0307b877062f95": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "conversations_list (core)：将外部会话列为稳定的 conversationRef 值。会话持有本地模型上下文；conversationRef 选择确切的外部渠道目的地。",
+      "thinking_budget": 4096
+    },
     "cb71011bc87a149807ecc01a9f09745489e7a995033ae62451907258c194b9cd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10428,6 +10820,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "\"inherit\" 继承父级沙箱策略；\"require\" 在子会话未沙箱化时失败。",
+      "thinking_budget": 4096
+    },
+    "cbccad884cc0dd4dd652380f959183551ad0bfde5077a385eea67034a8cae31d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "说\"我正在检查/获取/修复该问题\"属于进度更新，而不是最终答案。在同一轮中采取下一个可行的行动；以结果、具体的阻碍或已启动的完成路径收尾。",
       "thinking_budget": 4096
     },
     "cbda052ded397b17c1bc99682e65cc6030189bdaaa2aba7439785f46de4d715c": {
@@ -10554,6 +10953,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "做一个你自己真正愿意与之交谈的助手。该简洁时简洁，该详尽时详尽。不是公司机器人，不是马屁精。只是……很好。",
+      "thinking_budget": 4096
+    },
+    "ce0a8b88a50df9e5e3efd6acbdaa6b49d1f65d88ad824f6554e23022b9c55a58": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "延迟工具 Schema",
       "thinking_budget": 4096
     },
     "ce240d81056f900ed186b31ce0a1a93460c86124db65fb8c29537e438426ccfe": {
@@ -10767,6 +11173,13 @@
       "text": "启动、停止、导入、总结或检查会议对话记录捕获和历史笔记。",
       "thinking_budget": 4096
     },
+    "d2369cd366c9caa1f0efd6042ae242097d1d4cb0457b2e3d59c7e7cfa1feeb19": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "dir_list (file-transfer)：从配对节点获取目录列表，而非本地工作区。文本限制为 8192 个 UTF-8 字节，在规范路径下显示完整名称、isDir 和大小...",
+      "thinking_budget": 4096
+    },
     "d241363c2d6d50bc6eed66b9500a8ec8637dc6eb3264f5eb090943e1b8eb4826": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10877,6 +11290,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**要有自己的观点。**你可以不同意，可以有偏好，可以觉得某些东西有趣或无聊。一个毫无个性的助手，不过是个多绕了几步的搜索引擎。",
+      "thinking_budget": 4096
+    },
+    "d41cb0e8c223ab4997b37969d6d6fe8a0cb361fce0dcf605012bbdd63cf2641f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "node_inference (ollama)：发现并运行已安装在配对桌面/服务器节点上的支持对话的 Ollama 模型。先使用 action=discover，再用该结果中的节点和模型执行 action=run。推理...",
       "thinking_budget": 4096
     },
     "d42cbaf1ec119c3ec0e190d7a28817f54c675d07191af9c4bbb3baadae5e47f5": {
@@ -11263,6 +11683,13 @@
       "text": "从配对节点检索目录列表，而非本地工作区。文本限制为 8192 个 UTF-8 字节，在可表示时显示规范路径下的完整名称、isDir 和大小；完整返回的元数据保留在结构化 details 中。在请求文件内容之前，先用它发现远程路径。文本分页时，将文本的 nextPageToken 作为 pageToken 传入，并使用相同的节点和路径；它从最后显示的条目之后继续，可能与结构化令牌不同。第一个条目无法表示时，会报告分页无法推进。需要操作员主动启用：gateway.nodes.commands.allow 必须包含 'dir.list'，且文件传输策略必须通过 allowReadPaths 或已记住的精确批准来授权该路径。未配置策略时，每次调用都会被拒绝。",
       "thinking_budget": 4096
     },
+    "d9c7294cef2ee567d673b743383c64d6456273145bfab81a9fadd6ae60a4753a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "transcripts (core)：启动、停止、导入、总结或检查会议记录捕获；列出过往会议并阅读其笔记。",
+      "thinking_budget": 4096
+    },
     "d9e6bb927f70d68ac6b06a18d06972146aecab1115a75f23061a29231692b390": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11324,6 +11751,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "以稳定的 conversationRef 值列出外部对话。会话保存本地模型上下文；conversationRef 选择确切的外部通道目的地。",
+      "thinking_budget": 4096
+    },
+    "dbffaa245627d847c271642e89dcfc0cf524fc9d8596a7f3d3a7e99f39c1330b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "web_fetch (core)：抓取 URL；提取可读的 markdown/文本。轻量级；不做浏览器自动化。",
       "thinking_budget": 4096
     },
     "dc0abb53cd5b997a6031dbead4d89bcb541a4c85702013c6495dfd981e9eda60": {
@@ -11599,6 +12033,13 @@
       "text": "连续性",
       "thinking_budget": 4096
     },
+    "e1957a27de8b3798860449ccb8039c841f0b4f8357c69fd76d68d1018f7fc8fc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工具输入。",
+      "thinking_budget": 4096
+    },
     "e1b7067fb9ccc50bc284a8a567ee0613cce588009843fe85da6a240247821f2d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11707,6 +12148,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "来自 list 的声音 ID；set 时必填。",
+      "thinking_budget": 4096
+    },
+    "e3cca4c15927321bf9afaf6f7e105dd224d9172bdd563499c47eee0f5a7875bb": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "plugins (core)：检查、搜索、从官方目录或 ClawHub 安装、启用、禁用、卸载或重载插件，无需重启 Gateway。编辑后重载已安装的插件...",
       "thinking_budget": 4096
     },
     "e3cddf3134f4375cfcf501d2958a82d5280b70a14f347e2694f9e3c6ad781605": {
@@ -11835,6 +12283,13 @@
       "text": "用于 read、reaction、edit、delete、pin 或 unpin 的目标消息 id。在类似 reaction 的操作中若省略此参数，则在可用时默认为当前入站消息 id。",
       "thinking_budget": 4096
     },
+    "e60d1adbdb6da5adac22b7c781719d040790b99ba8323451bec4acb8a84a17dc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "file_fetch (file-transfer)：按绝对路径从配对节点获取文件。将获取到的所有字节保存到网关的 file-transfer 媒体存储中，并返回 localPath 和 mediaId。返回受支持的图像...",
+      "thinking_budget": 4096
+    },
     "e60eb4a478194ccbb700d0942904121f1e84d3da51991107876929b431e1ad6b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11954,6 +12409,13 @@
       "text": "发送一条经过思考的回复，而不是多条碎片。不要对同一条消息以不同的反应回应多次。",
       "thinking_budget": 4096
     },
+    "e8797a2a98006c2f94bc4ff333fcf579d5d505e5d89cc8a7aad0bb5e57626701": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "video_generate (core)：创建视频，包括图生视频：图像引用承担 first_frame/last_frame/reference_image 角色；视频引用约束风格。分辨率最高 4K；提供音频/水印开关。actio...",
+      "thinking_budget": 4096
+    },
     "e8c2f2141d7c664f8464f3e184f39e0180366c3e450084afb5bbe1faed0dad4b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11987,6 +12449,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "人类在群聊里不会回复每条消息——你也不必如此。重质不重量：如果放在朋友的真实群聊里你都不会发，那就别发。避免三连击——不要用不同的回应把同一条消息回复好几遍；一条用心的回复胜过三条零碎的回应。参与，但不要主导。",
+      "thinking_budget": 4096
+    },
+    "e946f8fed6514732fe8c2b14d13590a59899d31d0314f2452e96f4a7deb68e8e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "dir_fetch (file-transfer)：以 gzip 压缩的 tar 包形式从配对节点获取整个目录树，包括点文件。在网关上解包。文本限制为 8192 个 UTF-8 字节，并显示 rootDir、to...",
       "thinking_budget": 4096
     },
     "e975191d3ccac07503c765a3dca6834be767c64c7ae1bf6b0a167b46f3fe3e98": {
@@ -12472,6 +12941,13 @@
       "text": "时区：UTC\n如果需要当前日期、时间或星期几，使用 session_status 工具。",
       "thinking_budget": 4096
     },
+    "f327f964abd451e7b2005f31e7232548924f6d9fc84b5ee24a4435cbefe85b11": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "skill_workshop (core)：在可用工具的发布与审查政策下编写可复用技能。在符合模型预算时读取一个完整的工件。暂存待处理提案以创建或 u...",
+      "thinking_budget": 4096
+    },
     "f3314c740425bba31a8ccfe830e05e43603177c7bc8c23e07e65d2f8f6fe9909": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -12682,6 +13158,13 @@
       "text": "记录重要的内容。决策、背景、需要记住的事情。除非被要求保留，否则略过机密信息。",
       "thinking_budget": 4096
     },
+    "f7bd0886d7c2dd8e14bc3e380c50c63743307ab1abc358c97d23c43d2cc30661": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "dashboard (core)：读取并整理本会话的仪表盘；widget_put 仅更新插件小部件。请遵循小部件创作工具当前的放置指引。操作：read snapshot；tab_creat...",
+      "thinking_budget": 4096
+    },
     "f8047f21b3a504b8fc001c7891d58bfc85936268ef292e6c85eb87f0fd0486f8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -12793,6 +13276,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果多个技能都可能适用：选择最具体的那个，用 `read` 读取位于 <location> 的 SKILL.md，然后遵循它。必须使用 <available_skills> 中确切的 <location> 值；绝不猜测、编造或硬编码技能文件路径。",
+      "thinking_budget": 4096
+    },
+    "f9eedb7909509ed26465703f458c50c40586560a55813b8ad8197a46a38fc7a6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "不要凭空编造命令。\n网关重启、配置、频道、插件、智能体、模型/提供商：询问 `openclaw`。\n对于承载本会话的 Gateway：在已连接的聊天中，只要 commands.restart 已启用（默认即启用），所有者就可以发送 `/update`，无论智能体的工具配置如何。更新 OpenClaw：`gateway` action update.run，仅在所有者明确请求或操作员计划更新时进行；运行时会协调重启和完成通知。如果被拒绝，解释原因并转达工具的确切恢复说明；任何手动更新命令都应由操作员在 Gateway 服务之外运行。缺少聊天所有权时，需要所有者在 Control UI 中完成设置，或寻求 Gateway 操作员的帮助。绝不通过 exec 或分离任务运行 openclaw update、npm install -g openclaw、更换安装，或停止/重启网关服务。\n对于用户请求在其他主机上进行的更新，先确认它不是本 Gateway，然后使用 exec/SSH 并配合 `openclaw update --yes`；正常的 exec 审批仍然适用。",
       "thinking_budget": 4096
     },
     "fa3f287f2f7e1e08a5ac87cdb9252e804bc69f6f4e08d1b1cfe3a5d163fe16c1": {
