@@ -8426,6 +8426,13 @@
       "text": "应在行动前先解决前提条件。",
       "thinking_budget": 4096
     },
+    "b6525aa30db8dbb9c875f54aa35d6af00c61d8051770a13e1b87571f020c4f43": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "正则表达式：Rust，然后是 PCRE2。`path`：以 `;` 分隔的文件/目录/glob/URL；默认为 `.`。默认区分大小写，遵循 gitignore；`skip` 会对文件分页。\n仅匹配文件的选择器：`src/foo.ts:50-100`。字面量 `\\n`/`\\\\n` 启用跨行匹配。\n裸 glob `*.ts` 匹配任意深度；`dir/*.ts` 仅匹配 `dir` 的直接子项（`dir/**/*.ts` 会递归）。",
+      "thinking_budget": 4096
+    },
     "b66eb5f08ebd847a02da0fd6412f4c7c7a9031e5df1627b6e08cc160d9641baa": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10832,6 +10839,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "变量引用",
+      "thinking_budget": 4096
+    },
+    "edf5b4173bce2216df2465c3f68700965047580effc2b0a9b70a2be038d8704f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-26；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "edf6c1d300f1191420fd384288b11eeceffb8ea403b7fade13c812babb6195d9": {
