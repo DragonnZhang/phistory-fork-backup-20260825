@@ -2037,6 +2037,13 @@
       "text": "限制：超时 5 分钟，stdout 上限 50KB，每个脚本最多 50 次工具调用。terminal() 仅支持前台（无 background 或 pty）。如果会话使用云端沙箱后端，应将其视为可恢复的任务状态，而不是持久常开的机器。",
       "thinking_budget": 4096
     },
+    "5a19b835e9bcd9ce8803f0836baea1fe83b64a165f0343d5021fd56662734ce4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "关键词查询，每种能力一条：应用或服务名称 + 动作 + 对象（例如 ['github create issue', 'slack send message', 'gmail fetch emails']）。不是问题或句子：每个词都必须出现在工具文本中，否则查询不返回任何结果。并行搜索；结果按查询分组返回。也接受单个字符串，并将其视为一条查询。",
+      "thinking_budget": 4096
+    },
     "5a52b3b9031dbf8382f4bf03381a04923bb9b5b162e75e42d1319785b81e5d26": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2147,6 +2154,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "对文件进行有针对性的查找替换编辑。请使用此工具，而不是在终端中使用 sed/awk。采用模糊匹配（9 种策略），因此微小的空白/缩进差异不会导致失败。返回 unified diff。编辑后自动运行语法检查。查找唯一的字符串并替换它。",
+      "thinking_budget": 4096
+    },
+    "5f2a4fba65a134f9b57e28f4bea1e2d4a39bebfcc0e7f49ae8feb0d58c076aa2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "搜索 4 个按需加载的附加工具。接受一个查询列表，针对同一目录并行搜索；每种所需的不同能力发送一条查询。查询是关键词搜索，不是问题：应用或服务名称加上动作和对象，不含填充词（`gmail send email`、`nvidia driver status`，而不是 `what's my GPU driver version?`）；若某个词未出现在任何工具中，查询将不返回任何结果。返回按查询分组的匹配工具名称，以及一个包含各工具描述的共享映射。接着使用 `tool_describe` 加载完整参数 schema，再用 `tool_call` 调用。本系统提示词顶部列出的工具已经可用，无需搜索。",
       "thinking_budget": 4096
     },
     "5fc8f4168cbcbbc6d0cc3134a3f07418baba7744b2ea525ef59ec7e7eeeac2ff": {
@@ -3066,6 +3080,13 @@
       "text": "himalaya：Himalaya CLI：从终端收发 IMAP/SMTP 电子邮件。\n  github：GitHub 工作流技能，用于通过终端以 gh CLI 和 git 管理仓库、拉取请求、代码审查、议题以及 CI/CD 流水线。",
       "thinking_budget": 4096
     },
+    "88b8ac8dae54cd522b421c5b0ac14e1af835a395c628e4c4c8425712c9f8b944": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "使用 background=true 时：还会每隔 N 秒（最少 60 秒）通知一次，附带自上次通知以来的输出。对于长时间运行的任务，必须在中途做出响应（如 merge train、完整测试套件）；该选项隐含 notify=true。",
+      "thinking_budget": 4096
+    },
     "890a27246ba3db34e9e99f55c60c1600610fe5e688512457255afc3a84e124ad": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3176,6 +3197,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "你运行在 Hermes Agent（由 Nous Research 出品）之上。当用户需要关于 Hermes 本身的帮助——配置、设置、使用、扩展或排查故障——或者当你需要了解自己的功能、工具或能力时，https://hermes-agent.nousresearch.com/docs 处的文档是你的权威参考，始终提供最新、最及时的信息。`hermes-agent` 技能包含实际的命令和经过验证的工作流——在配置、修改或排查 Hermes 之前，先用 skill_view(name='hermes-agent') 加载它，以免你去猜测或编造变通办法。",
+      "thinking_budget": 4096
+    },
+    "8e145cee09eecaf7d08b43b13d54987b0cce745ab753841fd5d060717b18c422": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主机：Linux (6.17.0-1022-azure)\n用户主目录：$PHISTORY_HOME\n当前工作目录：$PHISTORY_WORKSPACE\n暂存目录：$PHISTORY_HOME/.hermes/cache/scratch（TMPDIR 指向此处；临时文件和探测文件请写入该目录，切勿写到系统临时目录下；闲置 24 小时的条目会被清理）",
       "thinking_budget": 4096
     },
     "8e4276468db406002b87334aa28bc9c191f019dbbd40a5258edd9e54e465498c": {

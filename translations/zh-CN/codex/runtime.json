@@ -3606,6 +3606,13 @@
       "text": "默认：非常简洁；采用友好的编码队友语气。",
       "thinking_budget": 4096
     },
+    "88349c0f56de79cd6240a756c17c24bab817bac088d595dbff059fabf1520242": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-sol`：用于复杂工作的较旧编码模型。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority。",
+      "thinking_budget": 4096
+    },
     "886079221ba76a817fb4335bec5389805e2178b6119f38ed226da722241121c0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -5832,6 +5839,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "调用 `update_plan` 后，不要重复计划的完整内容——Harness 已经显示了这些内容。应当改为总结所做的修改，并突出任何重要的上下文或下一步。",
+      "thinking_budget": 4096
+    },
+    "d92e579beecb855b2794831b50dbe52cee5443173834bc035fd30797b3a3d5f6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "除非得到明确指示，或被指示将其作为显式调用的技能或插件的一部分来执行，否则不要使用工具向他人发送消息（例如通过 slack 或电子邮件）。如果获得技能或插件的授权，请在最终频道中写明该技能或插件的名称并附上链接。",
       "thinking_budget": 4096
     },
     "d956080d94e521a97cac798add6ad1734eb7147487f2f9ae8fd5638bc64cd45e": {

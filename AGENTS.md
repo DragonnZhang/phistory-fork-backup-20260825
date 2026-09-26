@@ -34,6 +34,7 @@ captures/<agent>/<version>/variants/<variant>/meta.json
 `trace.jsonl` is raw evidence and is never rewritten. `prompt.md` is derived from it: `uv run phistory rerender` rebuilds every archived Markdown file from stored traces without reinstalling anything, so improvements to rendering or normalization reach the whole archive in one pass. Treat `prompt.md` as reproducible output, not as a second source of truth.
 
 Manually supplied traces are the explicit exception when private runtime data must be removed before publication. Preserve the source outside the repository, record its SHA-256 and the redaction categories in `meta.json`, and set `trace_redacted` to `true`. Remove embedded private memory payloads as well as credentials, identifiers, user messages, and local paths. The site and generated indexes label these traces as redacted; do not describe them as byte-for-byte raw evidence.
+For Claude Tag, use the shared importer and review steps in `docs/manual-traces.md` for every version.
 
 `prompt.md` must not drop prompt material. Each system block keeps its own section and cache boundary, reminder blocks stay separate from what the user typed, and system messages interleaved with the conversation are archived as part of the system surface. Tool containers flatten to the names a model can actually call.
 
