@@ -924,9 +924,9 @@ Today's date is $PHISTORY_DATE.
 <system-reminder>
 # Memory
 
-You have a persistent, file-based team memory directory at `$PHISTORY_TMP It is synced at the start of every session and shared with the other users who work in this project. This directory already exists — write to it directly with the Write tool (do not run mkdir or check for its existence).
+You have a persistent, file-based team memory directory at `$PHISTORY_MEMORY_CHANNEL/`. It is synced at the start of every session and shared with the other users who work in this project. This directory already exists — write to it directly with the Write tool (do not run mkdir or check for its existence).
 
-You also have read-only team memory at `$PHISTORY_TMP Read from it when relevant, but do not write there — changes will not persist.
+You also have read-only team memory at `$PHISTORY_MEMORY_SILO/`. Read from it when relevant, but do not write there — changes will not persist.
 
 You should build up this memory system over time so that future conversations can have a complete picture of who the user is, how they'd like to collaborate with you, what behaviors to avoid or repeat, and the context behind the work the user gives you.
 
@@ -1001,7 +1001,7 @@ There are several discrete types of memory that you can store in your memory sys
 </types>
 
 
-There is no separate private memory directory in this session. Save every memory type to `$PHISTORY_TMP bearing in mind it is shared with teammates.
+There is no separate private memory directory in this session. Save every memory type to `$PHISTORY_MEMORY_CHANNEL/`, bearing in mind it is shared with teammates.
 ## What NOT to save in memory
 
 - Code patterns, conventions, architecture, file paths, or project structure — these can be derived by reading the current project state.
@@ -1015,7 +1015,7 @@ These exclusions apply even when the user explicitly asks you to save. If they a
 
 ## How to save memories
 
-Write each memory to its own file in `$PHISTORY_TMP using this frontmatter format:
+Write each memory to its own file in `$PHISTORY_MEMORY_CHANNEL/` using this frontmatter format:
 
 ```markdown
 ---
@@ -1100,7 +1100,7 @@ This is ambient context — do not narrate it to the user unless they ask or it 
 <system-reminder>
 Attribution for git commits and pull requests you create from here on (this replaces Claude Code's own earlier attribution guidance, such as a previous copy of this reminder; the user's own instructions about these lines, such as a CLAUDE.md or memory rule, take precedence over this reminder, but do not add attribution lines this reminder leaves out):
 - End git commit messages with:
-Co-Authored-By: Claude Sonnet 5 <$PHISTORY_EMAIL>
+Co-Authored-By: Claude Sonnet 5 <[PRIVATE EMAIL REDACTED BEFORE PUBLICATION]>
 Claude-Session: [PRIVATE CLAUDE SESSION LINK REDACTED BEFORE PUBLICATION]
 - End pull request descriptions with:
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
@@ -1111,7 +1111,7 @@ Claude-Session: [PRIVATE CLAUDE SESSION LINK REDACTED BEFORE PUBLICATION]
 
 ## Message 3 · user · text
 
-Reply with one short sentence.
+[CAPTURED USER CONTENT REDACTED BEFORE PUBLICATION]
 
 # Tools
 
@@ -3707,7 +3707,7 @@ Upload one or more files (images, videos, recordings, or any artifact) to this c
       "type": "string"
     },
     "file_path": {
-      "description": "Single-file shorthand: absolute path on the container's local disk (e.g. $PHISTORY_TMP Preferred for anything over a few KB. For several files, use `files`.",
+      "description": "Single-file shorthand: absolute path on the container's local disk (e.g. /tmp/out.gif). Preferred for anything over a few KB. For several files, use `files`.",
       "type": "string"
     },
     "filename": {

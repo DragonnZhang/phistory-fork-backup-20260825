@@ -22,14 +22,13 @@
   "target": "manually imported trace",
   "trace_redacted": true,
   "redactions": [
-    "authorization, session, container, request, organization, workspace, trace, and CDN identifiers",
-    "user and Slack metadata",
-    "local paths",
-    "captured user, assistant, tool-result, and response content",
-    "private channel memory content",
-    "private Claude session links",
-    "email addresses"
+    "authorization and transport identifiers",
+    "organization, workspace, Slack, and user metadata",
+    "private memory content, session links, and email addresses",
+    "local home, memory, and scratchpad paths",
+    "captured user, assistant, tool-result, and response content"
   ],
+  "redacted_history_message_count": 10,
   "source": {
     "kind": "user-provided trace",
     "sha256": "c1d6c8a7ec6b3ec882ac1a348238ae9b76b73004515f8890f4c6f51c2c012e46"
