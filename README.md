@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-27 14:14 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-27 18:39 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -74,17 +74,17 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-27 14:14 UTC
+Last capture update: 2026-09-27 18:39 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
 | Claude Code | [2.1.283 - 2026-09-25](captures/claude-code/2.1.283/variants/default/prompt.md) | 427 | 734 | 2026-09-25 22:43 UTC |
 | Codex CLI | [0.157.1 - 2026-09-26](captures/codex/0.157.1/variants/default/prompt.md) | 94 | 140 | 2026-09-26 01:53 UTC |
-| DeepSeek Harness | [0.1.5-rc.3 - 2026-09-22](captures/dsh/0.1.5-rc.3/variants/default/prompt.md) | 12 | 63 | 2026-09-23 12:03 UTC |
+| DeepSeek Harness | [0.1.7-rc.2 - 2026-09-24](captures/dsh/0.1.7-rc.2/variants/default/prompt.md) | 13 | 69 | 2026-09-27 18:38 UTC |
 | Antigravity CLI | [1.2.12 - 2026-09-27](captures/antigravity/1.2.12/variants/default/prompt.md) | 55 | 55 | 2026-09-27 08:30 UTC |
 | Claude Tag | [2026-09-26 - 2026-09-25](captures/claude-tag/2026-09-26/variants/default/prompt.md) | 2 | 2 | 2026-09-25 23:51 UTC |
 | Grok Build | [1.0.41 - 2026-09-22](captures/grok/1.0.41/variants/default/prompt.md) | 137 | 137 | 2026-09-22 22:23 UTC |
-| MiniMax Code | [3.0.73 - 2026-09-18](captures/minimax-code/3.0.73/variants/default/prompt.md) | 37 | 37 | 2026-09-18 11:41 UTC |
+| MiniMax Code | [3.0.74 - 2026-09-27](captures/minimax-code/3.0.74/variants/default/prompt.md) | 38 | 38 | 2026-09-27 18:39 UTC |
 | Kimi Code | [2.1.1 - 2026-09-24](captures/kimi-code/2.1.1/variants/default/prompt.md) | 79 | 79 | 2026-09-24 10:26 UTC |
 | MiMo Code | [0.1.15 - 2026-09-22](captures/mimo/0.1.15/variants/default/prompt.md) | 15 | 15 | 2026-09-22 19:03 UTC |
 | OpenClaw | [2026.9.6 - 2026-09-23](captures/openclaw/2026.9.6/variants/default/prompt.md) | 77 | 77 | 2026-09-23 23:55 UTC |
