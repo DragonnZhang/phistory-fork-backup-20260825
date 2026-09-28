@@ -1568,6 +1568,13 @@
       "text": "先完成当前任务，再开始新任务",
       "thinking_budget": 4096
     },
+    "79bb62140dfb2f4c74bd67603d93417f9ed5b29dcebc00b687f0a38fd232caa2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作目录：$PHISTORY_WORKSPACE\n  工作区根文件夹：/\n  目录是否为 git 仓库：否\n  平台：linux\n  今日日期：2026 年 9 月 28 日（周一）",
+      "thinking_budget": 4096
+    },
     "7a095c919a79bd2cca94d4917981a954cb250409aee0d45a0b8701dd5019af97": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
