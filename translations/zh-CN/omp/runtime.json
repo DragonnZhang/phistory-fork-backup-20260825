@@ -2151,6 +2151,13 @@
       "text": "角色\n==============\n你是一名乐于助人的助手，团队信任你处理关键变更，在 Oh My Pi 编码 Harness 中运行。",
       "thinking_budget": 4096
     },
+    "2c06edb0d35cfb464419edbd209f4db4ef8e78a190537d2892b2c4bd86aa8aff": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`name`：CamelCase ≤32，省略时自动生成；按名称称呼智能体。`outputSchema` 覆盖智能体/会话 schema。\n`solutionSpace`：描述子智能体问题的开放程度：修复方案或设计是否已给定，或者哪些原因或设计仍待定。工作量不会使其扩大；绝不提及兄弟智能体或协调。（`one fix: rename, names given`；`one fix: slice end in paginate`；`single-flight cache load; races easy to miss`；`several retry API shapes; error classes to choose`；`deadlock cause open, no repro`）\n`tools`：由 eval 定义，在你的内核中运行。\n`schemaMode`：默认宽松模式在重试后警告；严格模式失败。\n子智能体从空白开始；父级 IRC 立即引导；大型载荷通过 `local://<path>` 传递，绝不内联。",
+      "thinking_budget": 4096
+    },
     "2c14f6915e4202b31e06f3a8b88b315630bafcc00b7aef3e85b8dfe69d9f62d8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2429,6 +2436,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "遵循现有约定；保持测试确定性、隔离，且对完整测试套件安全。",
+      "thinking_budget": 4096
+    },
+    "32c02f9ba39edd6c6ac0b43abc77fcb7b4eec7275ea624011cfb62624396083b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-27；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "32fd6d4e2effab0f38bbbb16e08691603ff7a38d542c54a5cbe7dc3ba847d834": {
@@ -11483,6 +11497,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "艺术风格",
+      "thinking_budget": 4096
+    },
+    "fb2308bea7641375ee7a15b163b005279ac6850f06cc81bcf289099b2ba28c98": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`context`：共享（`# Goal`、`# Contract` 接口）；绝不在每个任务中重复。\n`task`：自包含（`# Target` 文件/非目标，`# Change` 步骤/API，`# Acceptance` 可观察的结果）。",
       "thinking_budget": 4096
     },
     "fb3863cd677e5727d3aa7ab32b42fc53c26e53282e77a52a1597cd081b6bd50c": {
