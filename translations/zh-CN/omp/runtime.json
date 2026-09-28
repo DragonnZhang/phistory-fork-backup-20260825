@@ -1864,6 +1864,13 @@
       "text": "正则搜索或定位目标 → `grep`，而不是 shell 的 `grep`、`rg` 或 `awk`。",
       "thinking_budget": 4096
     },
+    "264794f72ed88f67206d32f54bf38d02a1c18b3c316771d28f7ecb2ae877e1a8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每次调用一个单元格；顶层状态会保留，包括跨压缩（compaction）时。`agent()` 子项拥有独立的内核。\n内核可能与你的父会话以及并发的 `task` 子智能体共享：其他智能体可以在你的单元格之间覆盖任何顶层名称。为复用的状态取智能体唯一的名称，或者在使用它的单元格中重新计算。\n对于 2 个及以上独立事项，使用命名的 `workpool()`；结果会自动送达。如果被阻塞，留下 `eval` 并调用 `wait`。\nPython：顶层 `await` 可用；`asyncio.run(…)` 会失败。\nJS：Bun（`Bun.file`、`Bun.write`、`Bun.$`）；顶层 `await`/`return` 可用。\n出错时，仅重试失败的步骤；之前的步骤可能已生效。",
+      "thinking_budget": 4096
+    },
     "267d4156af50aa571acae2d423702b417ae58bcb71c634f1f4a4717e7dce4b29": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2184,6 +2191,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`rename`——默认应用；`apply: false` 用于预览。项目感知的查找在没有 `symbol` 时会 ERROR——匹配缺失或有歧义时不会静默回退。",
+      "thinking_budget": 4096
+    },
+    "2c5aa51c7ee16e59423f27e876f12668a769d2654314c0a06259d51a0b9b8819": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-09-28；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "2c6caf206a1a30b45c82f0ca901c0a69925f3c21a4fcba04ed264cd1fbd5dedb": {
@@ -7626,6 +7640,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "首次使用前，阅读 xd://<tool> 以获取完整文档和 JSON schema。\n§ 工具策略",
+      "thinking_budget": 4096
+    },
+    "a4963758d7bfd1bccddae363fddff0e08e99d1440d100529d467d4d87d1ad1b9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅在被阻塞且没有其他事可做时才等待。\n在你拥有的任务产生首个结果、有消息发送给你或发生 steering 中断时返回；安全上限会返回仍在运行的快照。\n没有拥有的任务？则在短暂的消息窗口后返回，该窗口会随重复等待而增长。\n结果和消息会自动送达。还有工作未完成时，绝不轮询。",
       "thinking_budget": 4096
     },
     "a4ba78254be651c0fbb9d4b2d18290c44dda7ccbbca05b8e98c99f95d77a78a6": {
