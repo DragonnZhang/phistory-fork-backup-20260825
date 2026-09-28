@@ -14,6 +14,13 @@
       "text": "要读取的最大行数（默认为 2000）",
       "thinking_budget": 4096
     },
+    "00ac84d7749a3e87be20d88a2ec94421adfadc1f6218ddda31302f81b3d517d0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主工作目录：$PHISTORY_HOME/.minimax-code/sessions/mvs_3a51b9864d804ad895c94f6ccf2a4e3c/workspace",
+      "thinking_budget": 4096
+    },
     "00c9467d9cc4999e143acd0a6bb66f0d4e9374b2ef3ab34e75f8ebfa78e44d3e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

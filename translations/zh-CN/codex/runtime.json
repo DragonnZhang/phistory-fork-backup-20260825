@@ -118,6 +118,13 @@
       "text": "仅在用户或系统/开发者指令明确要求时才创建目标；不要从普通任务中推断目标。\n仅在明确请求 token 预算时才设置 token_budget。如果存在未完成的目标，此操作会失败；仅使用 update_goal 来更新状态。",
       "thinking_budget": 4096
     },
+    "05f4bef98d780fedd2f3a76de83dc97e6e53730ee3fb88a9042bc164c0c906b3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "输出是否应具有透明背景。默认为 false。",
+      "thinking_budget": 4096
+    },
     "0624e52c0a5ead018bf8a45edaa9f1f8ff6727826253481561da2891bfd4d633": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -3569,6 +3576,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "必填。要开始推进的具体目标。在没有目标时，这将启动一个新的活动目标；在当前目标已完成时，将替换当前目标。",
+      "thinking_budget": 4096
+    },
+    "87208f098a3d2c8300e7d4ca56d294acd6fb63f30c7d4831c81bd091a0184802": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当请求需要透明背景时，包括移除背景或抠图，将 `transparent_background` 设为 true；否则设为 false。对于编辑操作，除非用户要求更改，否则保留现有的透明度。",
       "thinking_budget": 4096
     },
     "87465e106bf2aac7a7da7e0f8575af040eb802b073fcdd7006e896467534ade5": {

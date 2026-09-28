@@ -1,7 +1,7 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, Oh My Pi, and Qwen Code.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-09-27T14:14:26.335720Z",
+  "updated_at": "2026-09-28T07:31:16.644646Z",
   "agents": [
     {
       "agent_id": "claude-code",
@@ -15,20 +15,20 @@
     {
       "agent_id": "codex",
       "agent": "Codex CLI",
-      "latest_version": "0.157.1",
-      "latest_published_at": "2026-09-26T01:06:57.149Z",
-      "latest_captured_at": "2026-09-26T01:53:03.004271+00:00",
-      "versions": 94,
-      "snapshots": 140
+      "latest_version": "0.158.0",
+      "latest_published_at": "2026-09-28T05:12:20.266Z",
+      "latest_captured_at": "2026-09-28T07:30:47.562298+00:00",
+      "versions": 95,
+      "snapshots": 143
     },
     {
       "agent_id": "dsh",
       "agent": "DeepSeek Harness",
-      "latest_version": "0.1.5-rc.3",
-      "latest_published_at": "2026-09-22T05:55:20.869Z",
-      "latest_captured_at": "2026-09-23T12:03:23.321602+00:00",
-      "versions": 12,
-      "snapshots": 63
+      "latest_version": "0.1.7-rc.2",
+      "latest_published_at": "2026-09-24T14:18:11.337Z",
+      "latest_captured_at": "2026-09-27T18:38:28.642892+00:00",
+      "versions": 13,
+      "snapshots": 69
     },
     {
       "agent_id": "antigravity",
@@ -60,11 +60,11 @@
     {
       "agent_id": "minimax-code",
       "agent": "MiniMax Code",
-      "latest_version": "3.0.73",
-      "latest_published_at": "2026-09-18T09:58:19.892Z",
-      "latest_captured_at": "2026-09-18T11:41:50.106783+00:00",
-      "versions": 37,
-      "snapshots": 37
+      "latest_version": "3.0.74",
+      "latest_published_at": "2026-09-27T15:00:42.103Z",
+      "latest_captured_at": "2026-09-27T18:39:08.655028+00:00",
+      "versions": 38,
+      "snapshots": 38
     },
     {
       "agent_id": "kimi-code",
@@ -114,11 +114,11 @@
     {
       "agent_id": "opencode",
       "agent": "opencode",
-      "latest_version": "1.18.32",
-      "latest_published_at": "2026-09-21T22:50:42.463Z",
-      "latest_captured_at": "2026-09-22T00:15:20.213894+00:00",
-      "versions": 116,
-      "snapshots": 116
+      "latest_version": "1.18.33",
+      "latest_published_at": "2026-09-28T04:23:28.113Z",
+      "latest_captured_at": "2026-09-28T07:31:12.472812+00:00",
+      "versions": 117,
+      "snapshots": 117
     },
     {
       "agent_id": "pi",
@@ -132,11 +132,11 @@
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.3.5",
-      "latest_published_at": "2026-09-27T13:42:26.513Z",
-      "latest_captured_at": "2026-09-27T14:14:26.335720+00:00",
-      "versions": 113,
-      "snapshots": 113
+      "latest_version": "18.4.1",
+      "latest_published_at": "2026-09-28T07:00:19.672Z",
+      "latest_captured_at": "2026-09-28T07:31:16.644646+00:00",
+      "versions": 114,
+      "snapshots": 114
     },
     {
       "agent_id": "qwen-code",
@@ -15139,6 +15139,64 @@
     {
       "agent_id": "codex",
       "agent": "Codex CLI",
+      "version": "0.158.0",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "provider": "openai-responses",
+        "model": "gpt-6-astra",
+        "tool_count": 11
+      },
+      "published_at": "2026-09-28T05:12:20.266Z",
+      "captured_at": "2026-09-28T07:30:47.562298+00:00",
+      "prompt": "captures/codex/0.158.0/variants/default/prompt.md",
+      "trace": "captures/codex/0.158.0/variants/default/trace.jsonl",
+      "meta": "captures/codex/0.158.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
+      "version": "0.158.0",
+      "variant_id": "gpt-5.6",
+      "variant_label": "GPT-5.6",
+      "variant_dimensions": {
+        "model": "gpt-5.6"
+      },
+      "observed": {
+        "provider": "openai-responses",
+        "model": "gpt-5.6",
+        "tool_count": 17
+      },
+      "published_at": "2026-09-28T05:12:20.266Z",
+      "captured_at": "2026-09-28T07:30:51.230825+00:00",
+      "prompt": "captures/codex/0.158.0/variants/gpt-5.6/prompt.md",
+      "trace": "captures/codex/0.158.0/variants/gpt-5.6/trace.jsonl",
+      "meta": "captures/codex/0.158.0/variants/gpt-5.6/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
+      "version": "0.158.0",
+      "variant_id": "gpt-5.5",
+      "variant_label": "GPT-5.5",
+      "variant_dimensions": {
+        "model": "gpt-5.5"
+      },
+      "observed": {
+        "provider": "openai-responses",
+        "model": "gpt-5.5",
+        "tool_count": 14
+      },
+      "published_at": "2026-09-28T05:12:20.266Z",
+      "captured_at": "2026-09-28T07:30:49.331419+00:00",
+      "prompt": "captures/codex/0.158.0/variants/gpt-5.5/prompt.md",
+      "trace": "captures/codex/0.158.0/variants/gpt-5.5/trace.jsonl",
+      "meta": "captures/codex/0.158.0/variants/gpt-5.5/meta.json"
+    },
+    {
+      "agent_id": "codex",
+      "agent": "Codex CLI",
       "version": "0.157.1",
       "variant_id": "default",
       "variant_label": "Default",
@@ -17747,6 +17805,135 @@
       "prompt": "captures/codex/0.80.0/variants/default/prompt.md",
       "trace": "captures/codex/0.80.0/variants/default/trace.jsonl",
       "meta": "captures/codex/0.80.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {
+        "surface": "web"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 26,
+        "mode": "standard"
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:28.642892+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/default/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/default/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/default/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "standard",
+      "variant_label": "Standard",
+      "variant_dimensions": {
+        "surface": "web",
+        "mode": "standard"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 26,
+        "mode": "standard"
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:35.023267+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/standard/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/standard/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/standard/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "minimal",
+      "variant_label": "Minimal",
+      "variant_dimensions": {
+        "surface": "web",
+        "mode": "minimal"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 1,
+        "mode": "minimal"
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:42.449082+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/minimal/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/minimal/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/minimal/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "headless",
+      "variant_label": "Headless",
+      "variant_dimensions": {
+        "surface": "headless"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 24
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:31.299178+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/headless/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/headless/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/headless/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "cordis",
+      "variant_label": "Creator",
+      "variant_dimensions": {
+        "surface": "web",
+        "mode": "cordis"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 29,
+        "mode": "cordis"
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:46.183294+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/cordis/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/cordis/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/cordis/meta.json"
+    },
+    {
+      "agent_id": "dsh",
+      "agent": "DeepSeek Harness",
+      "version": "0.1.7-rc.2",
+      "variant_id": "code",
+      "variant_label": "PTC",
+      "variant_dimensions": {
+        "surface": "web",
+        "mode": "ptc"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "deepseek-flash",
+        "tool_count": 1,
+        "mode": "ptc"
+      },
+      "published_at": "2026-09-24T14:18:11.337Z",
+      "captured_at": "2026-09-27T18:38:38.736372+00:00",
+      "prompt": "captures/dsh/0.1.7-rc.2/variants/code/prompt.md",
+      "trace": "captures/dsh/0.1.7-rc.2/variants/code/trace.jsonl",
+      "meta": "captures/dsh/0.1.7-rc.2/variants/code/meta.json"
     },
     {
       "agent_id": "dsh",
@@ -22569,6 +22756,24 @@
     {
       "agent_id": "minimax-code",
       "agent": "MiniMax Code",
+      "version": "3.0.74",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "provider": "anthropic",
+        "model": "minimax-code-capture",
+        "tool_count": 20
+      },
+      "published_at": "2026-09-27T15:00:42.103Z",
+      "captured_at": "2026-09-27T18:39:08.655028+00:00",
+      "prompt": "captures/minimax-code/3.0.74/variants/default/prompt.md",
+      "trace": "captures/minimax-code/3.0.74/variants/default/trace.jsonl",
+      "meta": "captures/minimax-code/3.0.74/variants/default/meta.json"
+    },
+    {
+      "agent_id": "minimax-code",
+      "agent": "MiniMax Code",
       "version": "3.0.73",
       "variant_id": "default",
       "variant_label": "Default",
@@ -27339,6 +27544,24 @@
     {
       "agent_id": "opencode",
       "agent": "opencode",
+      "version": "1.18.33",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "provider": "openai-responses",
+        "model": "gpt-4.1",
+        "tool_count": 10
+      },
+      "published_at": "2026-09-28T04:23:28.113Z",
+      "captured_at": "2026-09-28T07:31:12.472812+00:00",
+      "prompt": "captures/opencode/1.18.33/variants/default/prompt.md",
+      "trace": "captures/opencode/1.18.33/variants/default/trace.jsonl",
+      "meta": "captures/opencode/1.18.33/variants/default/meta.json"
+    },
+    {
+      "agent_id": "opencode",
+      "agent": "opencode",
       "version": "1.18.32",
       "variant_id": "default",
       "variant_label": "Default",
@@ -30305,6 +30528,24 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.4.1",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "provider": "openai-responses",
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-09-28T07:00:19.672Z",
+      "captured_at": "2026-09-28T07:31:16.644646+00:00",
+      "prompt": "captures/omp/18.4.1/variants/default/prompt.md",
+      "trace": "captures/omp/18.4.1/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.4.1/variants/default/meta.json"
     },
     {
       "agent_id": "omp",
