@@ -1,16 +1,16 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, and Oh My Pi.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-09-28T15:49:31.875656Z",
+  "updated_at": "2026-09-28T22:15:12.308836Z",
   "agents": [
     {
       "agent_id": "claude-code",
       "agent": "Claude Code",
-      "latest_version": "2.1.283",
-      "latest_published_at": "2026-09-25T18:46:11.330Z",
-      "latest_captured_at": "2026-09-25T22:43:20.103507+00:00",
-      "versions": 427,
-      "snapshots": 734
+      "latest_version": "2.1.284",
+      "latest_published_at": "2026-09-28T17:11:59.750Z",
+      "latest_captured_at": "2026-09-28T22:15:10.675976+00:00",
+      "versions": 428,
+      "snapshots": 736
     },
     {
       "agent_id": "codex",
@@ -140,6 +140,47 @@
     }
   ],
   "captures": [
+    {
+      "agent_id": "claude-code",
+      "agent": "Claude Code",
+      "version": "2.1.284",
+      "variant_id": "default",
+      "variant_label": "Terminal",
+      "variant_dimensions": {
+        "surface": "terminal"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "tool_count": 31,
+        "surface": "interactive-tty"
+      },
+      "published_at": "2026-09-28T17:11:59.750Z",
+      "captured_at": "2026-09-28T22:15:10.675976+00:00",
+      "prompt": "captures/claude-code/2.1.284/variants/default/prompt.md",
+      "trace": "captures/claude-code/2.1.284/variants/default/trace.jsonl",
+      "meta": "captures/claude-code/2.1.284/variants/default/meta.json"
+    },
+    {
+      "agent_id": "claude-code",
+      "agent": "Claude Code",
+      "version": "2.1.284",
+      "variant_id": "sdk",
+      "variant_label": "Headless (-p)",
+      "variant_dimensions": {
+        "surface": "headless"
+      },
+      "observed": {
+        "provider": "anthropic",
+        "model": "claude-opus-5-5",
+        "tool_count": 23
+      },
+      "published_at": "2026-09-28T17:11:59.750Z",
+      "captured_at": "2026-09-28T22:15:12.308836+00:00",
+      "prompt": "captures/claude-code/2.1.284/variants/sdk/prompt.md",
+      "trace": "captures/claude-code/2.1.284/variants/sdk/trace.jsonl",
+      "meta": "captures/claude-code/2.1.284/variants/sdk/meta.json"
+    },
     {
       "agent_id": "claude-code",
       "agent": "Claude Code",
