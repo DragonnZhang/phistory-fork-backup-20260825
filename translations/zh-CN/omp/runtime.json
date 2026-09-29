@@ -3434,6 +3434,13 @@
       "text": "用户提供一组任务。",
       "thinking_budget": 4096
     },
+    "4a06cf969afefa886c7eb3866c7009da2a5a0abcd06b5c64e7fd47ccc945c6e7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "持久 shell：一条 fact 命令/管道；依赖安装使用 `&&`。\n脚本/heredoc/`$(…)`/complex 管道 → `eval`。\n`cwd`，而非 `cd`；`pty` 仅限交互式使用。\n内部 URI 可在内建命令/coreutils、重定向和 glob 中作为路径使用。\n`async` 会推迟有限结果；timeout 不变。\n没有 `head`/`tail`/redirection；输出默认截断，完整结果见 `artifact://<id>`。\n长驻服务：名称必须唯一；ready 需要提供名称；无 async/timeout；pty 默认为 true。ready 需要日志正则或端口（两者都给出时则都用）；host 默认为 127.0.0.1，ready.timeout 为 30s。\n后台结果随后返回；绝不要轮询；前台等待行为不变。",
+      "thinking_budget": 4096
+    },
     "4a51eb1671b9048f18d3c2db21363aca6353e68e8fdbe7017c167994578d19fd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

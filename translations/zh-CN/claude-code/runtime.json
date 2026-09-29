@@ -2092,6 +2092,13 @@
       "text": "**description**：需要完成的内容",
       "thinking_budget": 4096
     },
+    "210810b6e4006c149ecccaf4887d7cd02bd83cc03ac6648d137bb701f41b1fba": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`timeout` 以毫秒为单位：默认 120000，前台命令最大 600000。",
+      "thinking_budget": 4096
+    },
     "21165ca427e22da8914f5e2b8c63bcf9709172e47c23fb71c27d349d4f2c2a7f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -8547,6 +8554,13 @@
       "text": "取消之前用 CronCreate 安排的 cron 作业。将其从内存中的会话存储里移除。",
       "thinking_budget": 4096
     },
+    "8efc53508a1c2aea044b9b34c00f8a8dd884a73e8243c9b090d243e3b5307980": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在 git 提交信息的末尾加上：\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>",
+      "thinking_budget": 4096
+    },
     "8f1ebbf4a3ee9f773f91373f0c5f1a66472e295ca54d818ca3753fd3b925cafe": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -9883,6 +9897,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "距现在多少秒后唤醒。由运行时限制在 [60, 3600] 范围内。除非 `stop` 为 true，否则为必填项。",
+      "thinking_budget": 4096
+    },
+    "a60040456c61033454ce9954ea344624dc07d1dd92bc1551270e9b73ea605216": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可选的超时时间，以毫秒为单位（前台命令最大 600000）",
       "thinking_budget": 4096
     },
     "a619dc6a95e4be757851be6d3236142889c299248de1ff21510eb9e0ea1b863f": {
@@ -11900,6 +11921,13 @@
       "text": "你可以在记忆系统中存储几种不同类型的记忆：",
       "thinking_budget": 4096
     },
+    "c68d535ee7e41a479559d2322cc99a18a5a574d08ee567e397833d7d480d3dc8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`run_in_background` 以分离方式运行命令：命令会跨回合持续运行，并在退出时重新调用你。使用它时，`timeout` 表示命令在后台可运行多长时间（默认 1800000，最大 7200000）；达到该上限时，命令会被停止并重新调用你。无需 `&`。在前台使用 `sleep` 会被阻止；请使用 Monitor 配合 until 循环来等待某个条件。",
+      "thinking_budget": 4096
+    },
     "c6944d06ab9673c0145cc295d7e8acd292991648114706ca3d35c033e9e7dfd6": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -12112,6 +12140,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "对于可以立即运行的命令，不要在它们之间 sleep——直接运行即可。",
+      "thinking_budget": 4096
+    },
+    "c98750217cbd10f1f7bb4ffc771451b5c7d0921dc4cb7877b73b8f244d83539c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "设为 true 可在后台运行此命令。使用它时，`timeout` 限制命令在后台被停止前可运行多长时间（默认 1800000 ms，最大 7200000 ms）。",
       "thinking_budget": 4096
     },
     "c9a92b24454a617b3af6f1b019ed75fbc265da07900962fe6b46c63d75e0740d": {
@@ -14712,6 +14747,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "inotifywait -m --format '%e %f' /watched/dir",
+      "thinking_budget": 4096
+    },
+    "f3cc02c670f517028611e15fa89290ee521e2c1f1e935e93f7d61a7c85c9b186": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你由名为 Opus 5.5 的模型驱动。确切的模型 ID 是 claude-opus-5-5。助手的知识截止日期为 2026 年 6 月。",
       "thinking_budget": 4096
     },
     "f3f9bc3ad6119cefeb02ccb8957cb3e05b4b2e990978b2bba88dcaac96705dab": {
