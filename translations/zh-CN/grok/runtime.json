@@ -2860,6 +2860,13 @@
       "text": "确保正确使用引号后，执行命令。",
       "thinking_budget": 4096
     },
+    "60169daaf508b6717bd23eb8756a85fe2753b6f53fad01a1f5153979fd28bab9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "本次会话的草稿文件是 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-v97hm5vs/01a0ec62-d62e-7a90-a2e2-9ea4c03b1c8e/feedback_drafts.json.\n如果用户的反馈可以从文档中得到解答（例如 UI 元素位置或设置），请本地或在线阅读 Grok Build 文档，并在创建草稿的同时给出回答。",
+      "thinking_budget": 4096
+    },
     "60267a0afcde30abfc9f92f2c25ef30dfeb2b97bfd96eae8aa1436f6e278de05": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4856,6 +4863,13 @@
       "text": "`tool_name` 必须是限定形式的 `server__tool` 名称（例如 `linear__save_issue`）。`tool_input` 必须严格符合 `search_tool` 返回的输入 schema。",
       "thinking_budget": 4096
     },
+    "a0e93e813d797ac345069db7a726a0e400913284e19325021b14d1eaf313ed2e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "传入 task_ids，包含一个或多个来自 block_until_ms=0 命令或 background=true 子智能体的 id（monitor 的 task_id 由 monitor 返回）；单个任务请使用单元素数组。多个 id 配合为正的 timeout_ms 时，会等待直到全部完成",
+      "thinking_budget": 4096
+    },
     "a10836cdb20ca5fc23361dbfa485defd8044234e5dba5c37b997b232d5742460": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -5057,6 +5071,13 @@
       "prompt_version": "zh-CN-11",
       "status": "preserved",
       "text": "subagent_type=\"general-purpose\", description=\"Run test suite\", run_in_background=true",
+      "thinking_budget": 4096
+    },
+    "a6666edfdd8e10d49271edffa8cb0009324bb28ac9066debcb579603a816f095": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "后台命令会一直运行，直到其退出、被你用 kill_command_or_subagent 停止，或达到 10 小时的后台上限。kill_command_or_subagent 会向进程组发送 SIGTERM，约 1 秒后再发送 SIGKILL；未通过 `setsid` / `nohup` 脱离的进程会随之被终止。",
       "thinking_budget": 4096
     },
     "a6981ce886cec5a1982e1c5d25ecfe19235a58d2ca727ac8256f2a3c6de0a687": {
@@ -6298,6 +6319,13 @@
       "text": "Persona 定义在项目的 .grok/personas/ 目录或用户主目录下的 .grok/personas/ 目录中。",
       "thinking_budget": 4096
     },
+    "cb898ce4675e540882adc1f84debe030d77ccfb7f4a000e2f35079af22c39a34": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "可以指定可选的 block_until_ms，单位为毫秒（最大 36000000ms）。到达 block_until_ms 时仍在运行的前台命令会被移到后台而不是被终止；转入后台后会一直运行直到退出（后台上限 10 小时）。你会收到一个 task id；用 get_command_or_subagent_output 等待它。`block_until_ms: 0` 会立即在后台运行命令。",
+      "thinking_budget": 4096
+    },
     "cba924321c965168f38f19e98b3f14f7c0515ba7861c50df133bbee12bc77c34": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6739,6 +6767,13 @@
       "text": "在编辑之前，你**必须**在对话中至少使用一次你的 `read_file` 工具。",
       "thinking_budget": 4096
     },
+    "da05840a85e793b3169ccb0b121eefc30f78b35261b037f5866680f6632fcb7f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在将命令移到后台之前，阻塞并等待命令完成的时长（以毫秒为单位）。默认值为 30000ms。设为 0 可立即在后台运行命令。计时器包含 shell 启动时间。",
+      "thinking_budget": 4096
+    },
     "dab136f39323bec42a238640c273a1bf0d13a21e04f41cccbbbb1f514655b09b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -6842,6 +6877,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在管道中始终使用 `grep --line-buffered`——没有它，管道缓冲会把事件延迟几分钟。",
+      "thinking_budget": 4096
+    },
+    "ddb0e62a66884d338893b3b15027de015e2d77d4c6eed993eea38741c24bb093": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "将 `block_until_ms` 设为 0 可在后台运行命令（例如开发服务器、长时间构建）：它会立即返回一个 task id 并继续在后台运行。完成时会收到通知，因此你可以继续工作；只有需要密切监控时（可能在完成前挂起或性能退化的长时间任务）才用 get_command_or_subagent_output 轮询它，如果最终被结果阻塞，稍后再轮询。使用此参数时，不需要在命令末尾加 '&'。",
       "thinking_budget": 4096
     },
     "ddf0cb6aaccc061b5f6b07442b54a4d35b326439cd8b5806004129fbe16bd27c": {

@@ -8,7 +8,7 @@ Open the web viewer to compare prompt snapshots across versions and see how agen
 
 **Start here:** [phistory.cc](https://phistory.cc/)
 
-> Checks for new releases hourly. Archive last updated: **2026-09-28 22:15 UTC**.
+> Checks for new releases hourly. Archive last updated: **2026-09-29 08:58 UTC**.
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -74,16 +74,16 @@ python -m http.server --directory .phistory-cache/site
 
 ## Capture Status
 
-Last capture update: 2026-09-28 22:15 UTC
+Last capture update: 2026-09-29 08:58 UTC
 
 | Agent | Latest | Versions | Snapshots | Last Captured |
 | --- | --- | ---: | ---: | --- |
 | Claude Code | [2.1.284 - 2026-09-28](captures/claude-code/2.1.284/variants/default/prompt.md) | 428 | 736 | 2026-09-28 22:15 UTC |
-| Codex CLI | [0.158.0 - 2026-09-28](captures/codex/0.158.0/variants/default/prompt.md) | 95 | 143 | 2026-09-28 07:30 UTC |
+| Codex CLI | [0.159.0 - 2026-09-29](captures/codex/0.159.0/variants/default/prompt.md) | 96 | 146 | 2026-09-29 08:58 UTC |
 | DeepSeek Harness | [0.1.7-rc.2 - 2026-09-24](captures/dsh/0.1.7-rc.2/variants/default/prompt.md) | 13 | 69 | 2026-09-27 18:38 UTC |
-| Antigravity CLI | [1.2.12 - 2026-09-27](captures/antigravity/1.2.12/variants/default/prompt.md) | 55 | 55 | 2026-09-27 08:30 UTC |
+| Antigravity CLI | [1.2.13 - 2026-09-29](captures/antigravity/1.2.13/variants/default/prompt.md) | 56 | 56 | 2026-09-29 08:58 UTC |
 | Claude Tag | [2026-09-26 - 2026-09-25](captures/claude-tag/2026-09-26/variants/default/prompt.md) | 2 | 2 | 2026-09-25 23:51 UTC |
-| Grok Build | [1.0.41 - 2026-09-22](captures/grok/1.0.41/variants/default/prompt.md) | 137 | 137 | 2026-09-22 22:23 UTC |
+| Grok Build | [1.0.44 - 2026-09-28](captures/grok/1.0.44/variants/default/prompt.md) | 138 | 138 | 2026-09-29 08:58 UTC |
 | MiniMax Code | [3.0.74 - 2026-09-27](captures/minimax-code/3.0.74/variants/default/prompt.md) | 38 | 38 | 2026-09-27 18:39 UTC |
 | Kimi Code | [2.1.1 - 2026-09-24](captures/kimi-code/2.1.1/variants/default/prompt.md) | 79 | 79 | 2026-09-24 10:26 UTC |
 | MiMo Code | [0.1.15 - 2026-09-22](captures/mimo/0.1.15/variants/default/prompt.md) | 15 | 15 | 2026-09-22 19:03 UTC |
@@ -92,7 +92,7 @@ Last capture update: 2026-09-28 22:15 UTC
 | Kimi CLI | [1.51.0 - 2026-09-21](captures/kimi/1.51.0/variants/default/prompt.md) | 23 | 23 | 2026-09-21 17:12 UTC |
 | opencode | [1.18.33 - 2026-09-28](captures/opencode/1.18.33/variants/default/prompt.md) | 117 | 117 | 2026-09-28 07:31 UTC |
 | Pi | [0.87.1 - 2026-09-22](captures/pi/0.87.1/variants/default/prompt.md) | 49 | 49 | 2026-09-22 22:23 UTC |
-| Oh My Pi | [18.4.2 - 2026-09-28](captures/omp/18.4.2/variants/default/prompt.md) | 115 | 115 | 2026-09-28 15:49 UTC |
+| Oh My Pi | [18.4.3 - 2026-09-29](captures/omp/18.4.3/variants/default/prompt.md) | 116 | 116 | 2026-09-29 08:58 UTC |
 
 ## Project Trend
 

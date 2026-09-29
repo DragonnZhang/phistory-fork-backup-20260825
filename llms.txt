@@ -14,11 +14,11 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 ## Latest prompts
 
 - [Claude Code 2.1.284 — Terminal](https://phistory.cc/captures/claude-code/2.1.284/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Codex CLI 0.158.0 — Default](https://phistory.cc/captures/codex/0.158.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Codex CLI 0.159.0 — Default](https://phistory.cc/captures/codex/0.159.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [DeepSeek Harness 0.1.7-rc.2 — Default](https://phistory.cc/captures/dsh/0.1.7-rc.2/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Antigravity CLI 1.2.12 — Default](https://phistory.cc/captures/antigravity/1.2.12/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Antigravity CLI 1.2.13 — Default](https://phistory.cc/captures/antigravity/1.2.13/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Claude Tag 2026-09-26 — Default](https://phistory.cc/captures/claude-tag/2026-09-26/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Grok Build 1.0.41 — Default](https://phistory.cc/captures/grok/1.0.41/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Grok Build 1.0.44 — Default](https://phistory.cc/captures/grok/1.0.44/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [MiniMax Code 3.0.74 — Default](https://phistory.cc/captures/minimax-code/3.0.74/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Kimi Code 2.1.1 — Default](https://phistory.cc/captures/kimi-code/2.1.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [MiMo Code 0.1.15 — Default](https://phistory.cc/captures/mimo/0.1.15/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
@@ -27,7 +27,7 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 - [Kimi CLI 1.51.0 — Default](https://phistory.cc/captures/kimi/1.51.0/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [opencode 1.18.33 — Default](https://phistory.cc/captures/opencode/1.18.33/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Pi 0.87.1 — Default](https://phistory.cc/captures/pi/0.87.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
-- [Oh My Pi 18.4.2 — Default](https://phistory.cc/captures/omp/18.4.2/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Oh My Pi 18.4.3 — Default](https://phistory.cc/captures/omp/18.4.3/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 
 ## Optional
 

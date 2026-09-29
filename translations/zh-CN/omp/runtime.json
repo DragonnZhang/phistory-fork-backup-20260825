@@ -1220,6 +1220,13 @@
       "text": "绝不重复已成功的设置。内核丢失通知意味着需要重新加载设置。",
       "thinking_budget": 4096
     },
+    "181689fe5cdbb613416383e1b32dc523858be4eb8c090a8b6996b230204b53dc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-29；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "183105ccd3d6d219ce8f83db52d9541329703af2b7d38fd8e011a45e404f292a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
