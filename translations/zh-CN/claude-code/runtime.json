@@ -3447,6 +3447,13 @@
       "text": "破坏性操作：删除文件/分支、删除数据库表、终止进程、rm -rf、覆盖未提交的更改",
       "thinking_budget": 4096
     },
+    "364b7ec74377e475b47fe7b66d5aec4848b256e298d799b2fd1272ad46baceaf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "plugin-authoring：制作一个模组：Claude Code（终端或桌面版 Code 标签页）内的实时窗格、条带、状态栏、toast 通知或钩子，以函数钩子插件的形式编写，可在本会话中热重载。在编写或调试钩子模块之前先加载。",
+      "thinking_budget": 4096
+    },
     "367d1747d30e7f86168c2f1153e9a82c9a45ab89a8cd7722cd2510d0436b2498": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",

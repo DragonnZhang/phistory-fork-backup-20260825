@@ -11639,6 +11639,13 @@
       "text": "当该语言存在 eval 运行时，使用内联解释器脚本（`-e`/`-c`/`--eval`）",
       "thinking_budget": 4096
     },
+    "fda0d46a105bd1394d4c26a264f5bd0ff3eeb76d7d86c9e8e6c3f7c4cde74baf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-30；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "fddceea67943e9102a31330e7c4295da573b228c06555e673c80bf932e9a90ff": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
