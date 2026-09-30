@@ -2709,6 +2709,13 @@
       "text": "助手通过添加“确保测试和构建成功”作为最后一项任务，推断出测试和构建需要通过",
       "thinking_budget": 4096
     },
+    "c925d746b676cbbea291ad1a9ff81997fd4e54c69bc0038127b79bb3bb21979f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作目录：$PHISTORY_WORKSPACE\n  工作区根文件夹：/\n  目录是否为 git 仓库：否\n  平台：linux\n  今天的日期：2026 年 9 月 30 日（星期三）",
+      "thinking_budget": 4096
+    },
     "c92e6ecd01314750942a16459e00817ec8da9920c3ee33dc568cefc52de87449": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
