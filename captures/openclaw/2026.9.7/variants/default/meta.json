@@ -1,0 +1,50 @@
+{
+  "agent_id": "openclaw",
+  "agent": "OpenClaw",
+  "package": "openclaw",
+  "version": "2026.9.7",
+  "variant": {
+    "id": "default",
+    "label": "Default",
+    "dimensions": {}
+  },
+  "requested": {},
+  "observed": {
+    "provider": "openai-responses",
+    "model": "phistory-dummy",
+    "tool_count": 12
+  },
+  "published_at": "2026-09-30T03:38:09.894Z",
+  "tarball_url": "https://registry.npmjs.org/openclaw/-/openclaw-2026.9.7.tgz",
+  "binary_version": "OpenClaw 2026.9.7 (c074824)",
+  "captured_at": "2026-09-30T07:18:13.134808+00:00",
+  "tap_client": "openclaw",
+  "target": "claude-tap capture-only",
+  "client_exit_code": 0,
+  "duration_seconds": 51.267,
+  "command": [
+    "python",
+    "-m",
+    "claude_tap",
+    "run",
+    "openclaw",
+    "--no-yolo",
+    "--export-prompt",
+    ".tap/tap-export.md",
+    "--no-live",
+    "--no-open",
+    "--no-update-check",
+    "--output-dir",
+    ".tap",
+    "--",
+    "agent",
+    "--local",
+    "--agent",
+    "main",
+    "--message",
+    "Reply with one short sentence.",
+    "--json",
+    "--timeout",
+    "20"
+  ]
+}
