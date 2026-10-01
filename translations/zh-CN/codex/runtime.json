@@ -1026,6 +1026,13 @@
       "text": "**restricted**：需要审批",
       "thinking_budget": 4096
     },
+    "26fb5048caee35e852a767162cf07e83a6b7dd1f3531af3d572dc5f7dbb7d861": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-sol`：较老一代的主力模型。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority。\n        为一个范围明确的任务生成一个子智能体。返回生成的智能体 id，以及可用时面向用户的昵称。生成的智能体默认继承你当前的模型。省略 `model` 即使用该首选默认值；仅在需要显式覆盖时才设置 `model`。\n此 spawn_agent 工具让你可以使用子智能体，它们默认继承你当前的模型。除非用户明确要求使用其他模型，否则不要设置 `model` 字段。你应遵循以下规则和指南来使用此工具。",
+      "thinking_budget": 4096
+    },
     "273d6460428be9af0434a65147d9143c79c0b145d7f31626822d341d7fcf3921": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -1793,6 +1800,13 @@
       "text": "在处理测试相关的任务时，例如添加测试、修复测试，或复现 bug 以验证行为，无论处于何种审批模式，你都可以主动运行测试。是否属于测试相关任务，由你自行判断。",
       "thinking_budget": 4096
     },
+    "42998cad80c2b1deef10edc6524e28b98637da5c7ec90b2a9fb40dd313c0086d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-5.6-sol`：较老一代的主力模型。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority。\n        生成一个智能体来处理指定任务。如果你当前的任务是 `/root/task1`，并且你以 task_name \"task_3\" 调用 spawn_agent，该智能体将拥有规范任务名 `/root/task1/task_3`。\n之后，你可以用 `task_3` 或 `/root/task1/task_3` 指代该智能体，两者可互换使用。然而，`/root/task2/task_3` 的智能体只能通过其规范名称 `/root/task1/task_3` 与该智能体通信。\n生成的智能体将拥有与你相同的工具，并能够生成自己的子智能体。",
+      "thinking_budget": 4096
+    },
     "42e35896625c7f7812004ae7f597b527d39bdb8233ffe762f6950a8f7caccd04": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -1903,6 +1917,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "用表格呈现映射或对比。对于能完整解释答案的小型静态软件图或工程图，优先使用 Mermaid。对于非技术性的规划、日程和说明，或当交互能实质性改善理解时，优先使用内联可视化。",
+      "thinking_budget": 4096
+    },
+    "48ac8e8a784a21fc85dc2f38da6a554ba9bbdaec328bc178f046aea5f62dee36": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "避免不必要的道歉和自责。当你犯了本可以避免的实质性错误时，坦然承认并改正；确有必要时简要道歉。不要仅仅因为用户提出中性的追问、更正自己的消息或提供新信息，就道歉或责怪自己。",
       "thinking_budget": 4096
     },
     "48be6e879525cc32736d3c323aa8f4d646f17d487952f9bdccccb2ba7db2b9f3": {
@@ -2375,6 +2396,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "本次计划更新的可选说明。",
+      "thinking_budget": 4096
+    },
+    "5ac6d3ee22c79df0479a38217dc5a7e1f8cd9d978e5f342f40a8d12e3f2d0555": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-6-sol`：上一代主力模型。推理力度：low、medium（默认）、high、xhigh、max、ultra。服务层级：priority。",
       "thinking_budget": 4096
     },
     "5b5c985090b6af40093ea505484bece87300b7934efec50635a6456f947c751c": {
@@ -3296,6 +3324,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "你为棋盘、网格、工具栏、图标按钮、计数器或磁贴等固定格式的 UI 元素定义带有响应式约束（如 aspect-ratio、网格轨道、min/max 或容器相对尺寸）的稳定尺寸，使悬停状态、标签、图标、棋子、加载文本或动态内容都无法改变布局大小或使布局移位。",
+      "thinking_budget": 4096
+    },
+    "7bc5caa74f3987b96430a15deccfbbf4e720a2329b4db906bac159e5aaf2bb9f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`gpt-6.1-sol`：最新的主力模型，适用于编程和日常工作。推理力度：low（默认）、medium、high、xhigh、max、ultra。服务层级：priority。",
       "thinking_budget": 4096
     },
     "7bddef37869b8ba0da53c8f87c8d05471a3ec7ac88289b35b2eee311e1f90120": {
@@ -4598,6 +4633,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "你即将执行一项可能具有破坏性的操作，例如用户并未明确要求的 `rm` 或 `git reset`",
+      "thinking_budget": 4096
+    },
+    "ad38e9c8a1bad2102717e0f1a683b4e9b5ea9dd4ca1d43c0023f3400ec5012e2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "直接陈述打算采取的行动。避免补充你不会做什么、某事物不是什么、哪些内容将保持不变，或者你将如何区分或归类结果。不要使用\"X, not Y\"或\"X—not Y\"之类的对比式框架，这类表述会引入用户并未问及的、未经提示的替代选项。避免\"exact-head checks\"和\"editorial-row layouts\"这类生造的复合标签、含糊的限定语和套话式的过渡；用平实的动词和介词直接陈述实际关系。",
       "thinking_budget": 4096
     },
     "ad6c59fa527484cb02f424da7df5a342760810f86899aa00572ca5c4e2d7aa02": {

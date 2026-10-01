@@ -119,6 +119,13 @@
       "text": "始终完整阅读 pi 的 .md 文件，并跟随链接查阅相关文档（例如，TUI API 详情可参见 tui.md）",
       "thinking_budget": 4096
     },
+    "45650dca3b2ee6035115e75612f2f3152690b88dfb0e5025282f7e0688704648": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当被问及以下内容时：扩展（docs/extensions.md、examples/extensions/）、主题（docs/themes.md）、技能（docs/skills.md）、提示词模板（docs/prompt-templates.md）、TUI 组件（docs/tui.md）、快捷键绑定（docs/keybindings.md）、SDK 集成（docs/sdk.md）、自定义提供商（docs/custom-provider.md）、添加模型（docs/models.md）、pi 包（docs/packages.md）、环境变量（docs/environment-variables.md）、MCP 服务器（docs/mcp.md）",
+      "thinking_budget": 4096
+    },
     "46b692f5c0c8a46c051893e6a9d61830c16fab319039b3c40937c38b547c964a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",

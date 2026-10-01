@@ -1,5 +1,12 @@
 {
   "entries": {
+    "0035c8040d7e66e73f29f1db3b47ae03766693780455f91778f38633f75bb113": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "执行一条 bash 命令（`bash -c`）并返回其 stdout/stderr。每次调用都在一个全新的 shell 中运行；应传入 `workdir`，而不是使用 `cd`。受管理的 `$DSH_*` 变量会公开当前 harness 环境的事实信息。过长的输出会被截断为末尾部分；完整输出会保存到一个文件中，其路径会在可用时报告。在执行任何删除或移动之前，先验证解析出的绝对目标路径确实是预期路径；绝不对你尚未检查的计算路径执行该操作。未设置的变量会展开为空字符串，因此请用 `${VAR:?}` 保护此类路径中的变量。命令可能在文件沙箱下运行；被阻止的文件操作会报告为 `[sandbox: file access denied under <mode> mode]`，这是一种策略拒绝：不要换用其他方式重试。",
+      "thinking_budget": 4096
+    },
     "008ec9f92df59cf45382ce309f801826c714236e5c9b3f03f20e088df8f8933d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1282,6 +1289,13 @@
       "text": "不要假设 process、Buffer、window、document、fetch、原生定时器或任何其他全局对象可用。先查询对应平台的 Builtins 和 Services。",
       "thinking_budget": 4096
     },
+    "738b391deb5cca3333d0429661bdae8bf9668e9ab0cf0dd8d90e0420862d75a4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`agent-experience`：在编写或修改面向模型的工具定义（名称、描述、参数 schema 或其系统提示词部分）时使用，也用于设计技能、上下文加载或多步骤工作流，以便让信息易于发现并高效利用上下文。",
+      "thinking_budget": 4096
+    },
     "749cb64dcf2caf927b17e883e7e600c40a809a6db667fb576727b68461b7c70e": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1335,6 +1349,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "pluginRunId 标识一次激活尝试，并关联其审批、Host/Client 加载、私有 RPC、Run 卡片和错误。",
+      "thinking_budget": 4096
+    },
+    "77ed9ac56d5a34524790d1af8578171757e12fb870857c35c133da65e425dc4d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "运行由 Inspect Provider 声明的只读查询。platform、provider 和 method 必须来自 cordis_inspect_list，且 input 必须满足该 method 的 schema。在编写插件代码之前使用此工具，以读取确切的 Service 方法、Event 模式、插件 Config schema、Tool schema、主题 token，或实时的 Slot 树和 props。Host 查询在本地运行。Client 查询会在配置的超时时间内等待第一个有效的页面响应；否则它会报告 Client 失败，或要求你重新连接并重试。此工具无法调用业务 Service 方法，也无法修改运行时。",
       "thinking_budget": 4096
     },
     "781f4e6576c7439c8807eab6f257200b1d6d28e325d385663ffae22cf6389d44": {
@@ -1423,6 +1444,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "set 操作时必需；安装时默认为 true。对于 set_version_exemption，true 表示授予，false 表示撤销。",
+      "thinking_budget": 4096
+    },
+    "846b933fe9798a0c0acd5d7011e1d3778e5c6d6e5852e54d8bf82565a28129e2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`cordis-plugin-development`：在设计、审查、添加、启用、禁用、安装、配置或调试当前 Harness profile 中的插件、bundle、功能、页面、面板、工具或 MCP 连接时使用，包括默认禁用的随附插件；也用于任何未指明其他目标的视觉对象、装饰或小组件请求，这指的是在 Harness Web UI 中渲染的已安装 UI 插件。",
       "thinking_budget": 4096
     },
     "86d3f8d7ef7f4c0dfaf127bf647629febf1de55fe0eec1b8f8a94a13f54cda01": {
