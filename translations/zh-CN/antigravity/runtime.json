@@ -320,6 +320,13 @@
       "text": "如果此 artifact 应展示给用户，则设为 true。对于临时脚本、临时数据文件或用户无需查看的文件，则设为 false",
       "thinking_budget": 4096
     },
+    "1644d241c72341b5aa78d6c50c60f552cae20fb13b5b250665728e2c37a514e9": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "$PHISTORY_WORKSPACE\n命令工作目录：$PHISTORY_WORKSPACE\n与用户请求相关的代码应写入上述列出的位置。除非明确要求，否则避免将项目代码文件写入 tmp、.gemini 目录，或直接写入桌面及类似文件夹。\n应用数据目录：$PHISTORY_HOME/.gemini/antigravity-cli\n会话 ID：$PHISTORY_CONVERSATION",
+      "thinking_budget": 4096
+    },
     "1770b43001bb175b97def75262c6e051474fabf0e333984d5cc3b32b66e782fe": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -1498,6 +1505,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果推荐某个选项，请将其排在最前面，并在选项文本前加上 \"(Recommended)\" 前缀。",
+      "thinking_budget": 4096
+    },
+    "7f4cabff85bab8e87a2899137e35be405655697e2dac1dafada6a439d89295de": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "用户的操作系统版本为 linux。\n活跃工作区：",
       "thinking_budget": 4096
     },
     "808db57108b5ac81913f1d6bdfed6f22df7119ce877e953a4a353b905a2afa80": {

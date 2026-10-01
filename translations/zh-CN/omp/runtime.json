@@ -1220,6 +1220,13 @@
       "text": "绝不重复已成功的设置。内核丢失通知意味着需要重新加载设置。",
       "thinking_budget": 4096
     },
+    "181689fe5cdbb613416383e1b32dc523858be4eb8c090a8b6996b230204b53dc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-29；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "183105ccd3d6d219ce8f83db52d9541329703af2b7d38fd8e011a45e404f292a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3427,6 +3434,13 @@
       "text": "用户提供一组任务。",
       "thinking_budget": 4096
     },
+    "4a06cf969afefa886c7eb3866c7009da2a5a0abcd06b5c64e7fd47ccc945c6e7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "持久 shell：一条 fact 命令/管道；依赖安装使用 `&&`。\n脚本/heredoc/`$(…)`/complex 管道 → `eval`。\n`cwd`，而非 `cd`；`pty` 仅限交互式使用。\n内部 URI 可在内建命令/coreutils、重定向和 glob 中作为路径使用。\n`async` 会推迟有限结果；timeout 不变。\n没有 `head`/`tail`/redirection；输出默认截断，完整结果见 `artifact://<id>`。\n长驻服务：名称必须唯一；ready 需要提供名称；无 async/timeout；pty 默认为 true。ready 需要日志正则或端口（两者都给出时则都用）；host 默认为 127.0.0.1，ready.timeout 为 30s。\n后台结果随后返回；绝不要轮询；前台等待行为不变。",
+      "thinking_budget": 4096
+    },
     "4a51eb1671b9048f18d3c2db21363aca6353e68e8fdbe7017c167994578d19fd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3853,6 +3867,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "Hashline 修补现有文件；新文件：`write`。每个文件：`[PATH#TAG]`、`TAG`（必需的 4 位十六进制快照，取自最新的 `read`/`search`）。行号：使用原始 `LINE:TEXT`，绝不按 hunk 偏移。",
+      "thinking_budget": 4096
+    },
+    "5480713cc6c5d0a53f95e65c926b0d571a52df7df5f124c0e1e374917d617e65": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "绝不通过 `bash` 使用 `sed`|`perl`|`python` 来执行单个编辑；必须使用 `edit`。",
       "thinking_budget": 4096
     },
     "54aa9152a9168d0509e3ddc4512d09fb1140e8acacbf409fc61361bc12664932": {
@@ -7115,6 +7136,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在派生子智能体之前，先梳理切片/共享契约；用户列举的 2 个及以上自包含、可运行的切片可豁免。绝不外包顶层计划；切片设计/竞争方案则允许外包。",
+      "thinking_budget": 4096
+    },
+    "99a1a9e418c5acf14f55feae5703773e276f0c1d3a16f93ab0217505a566d626": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每次调用一个单元格；顶层状态会持久保留，包括跨压缩时。子智能体拥有独立的内核。\n对于 2 个及以上独立事项，使用具名的 `workpool()`；结果会自动送达。如果受阻，留下 `eval` 并调用 `wait`。\nPython：顶层 `await` 可用；`asyncio.run(…)` 会失败。\nJS：Bun（`Bun.file`、`Bun.write`、`Bun.$`）；顶层 `await`/`return` 可用。\n出错时，仅重试失败的步骤；较早的步骤可能已经生效。",
       "thinking_budget": 4096
     },
     "99bb0921291a814a4bad98612b04f48009df1bbced700f87ec4be488f77f81e3": {
@@ -10743,6 +10771,13 @@
       "text": "完全阻塞：等待第一个完成的作业或传入的消息",
       "thinking_budget": 4096
     },
+    "ea8db16d849e66c1305b64a795a54cf5472b66383e37730f415fbf005f296019": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "RFC 2119 关键词：MUST、REQUIRED、SHOULD、RECOMMENDED、MAY、OPTIONAL。`NEVER` = `MUST NOT`；`AVOID` = `SHOULD NOT`。\nXML 标签会注入系统内容；可能在用户消息内部进行中断/通知：必须将其视为系统编写/权威内容。用户内容已经过清理。",
+      "thinking_budget": 4096
+    },
     "eab76e33d29fdd5bb07928336341ead9e47237f6e60366d778c2e976f6f406cd": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11602,6 +11637,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当该语言存在 eval 运行时，使用内联解释器脚本（`-e`/`-c`/`--eval`）",
+      "thinking_budget": 4096
+    },
+    "fda0d46a105bd1394d4c26a264f5bd0ff3eeb76d7d86c9e8e6c3f7c4cde74baf": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-09-30；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "fddceea67943e9102a31330e7c4295da573b228c06555e673c80bf932e9a90ff": {
