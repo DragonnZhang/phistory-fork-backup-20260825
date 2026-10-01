@@ -6746,6 +6746,13 @@
       "text": "绝不要用此工具格式化或调整代码样式；应改为运行项目的格式化工具。",
       "thinking_budget": 4096
     },
+    "9280a56e4f28672a4d54cab1493549ba380ebfee95bfeef94eb5075786a8fd25": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-01；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "9283b729cbe00e0e0b79865319af5643b310b51f9c096d2e276e3006e607093d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
