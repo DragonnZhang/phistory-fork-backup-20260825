@@ -21,6 +21,13 @@
       "text": "**智能体类型选择：** 先为每个条目选择 `agent` 类型。只读调研必须使用 `agent: \"scout\"`，它运行在更快的模型上。仅当所列专业智能体均不合适时，才使用默认工作智能体。",
       "thinking_budget": 4096
     },
+    "005e5a0201b9ecef908b0e06aaccc4b49a1a7a1cdb5278ccdec4db73e660a678": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`agent://<id>`：输出（未发布时显示状态 + 进度）；嵌套 ID 以点号分隔，`/key/index` 为 JSON 路径；写入 = 消息，`agent://all` 仅用于广播。",
+      "thinking_budget": 4096
+    },
     "0067941a720abf2dddd0fa5248fbe68e446f725626298b8449bf67d5125a314d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9425,6 +9432,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "视频（`.mp4`、`.mov`、`.mkv`、`.webm`、`.m4v`、`.avi`、`.wmv`）需要系统 `ffmpeg`/`ffprobe`：裸读取返回预览网格及元数据（分辨率、编解码器、时长、fps）；`:412` 提取第 412 帧，`:1h5m42s`/`:90s`/`:01:23` 定位到某个时间戳",
+      "thinking_budget": 4096
+    },
+    "cc376daa196a06cc0a6407ce6d2a0b6930d902b3430e6e696706336e3f5ca954": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-02；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
       "thinking_budget": 4096
     },
     "cc3a255915ffb8efb921ec7f6afd41fe5f18b8e2991539b176fd82c581d27753": {
