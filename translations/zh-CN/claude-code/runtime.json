@@ -905,6 +905,13 @@
       "text": "用户明确说出 \"worktree\"（例如 \"start a worktree\"、\"work in a worktree\"、\"create a worktree\"、\"use a worktree\"）",
       "thinking_budget": 4096
     },
+    "0d6d3e75280e22ba74342904dfee42ed1672ff03c2ece2a60b3d555423187c74": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "code-review：按给定的努力级别（low/medium：发现更少、置信度更高；high→max：覆盖更广，可能包含不确定的发现）审查当前 diff 或指定的 PR 编号/分支/路径目标，查找正确性 bug（外加模型的审查 recipe 所涵盖的复用/简化/效率清理）；未给出级别时，它会复用你上次输入的级别。传入 --comment 可将发现以 PR 内联评论的形式发布，或传入 --fix 在审查后将发现应用到工作树。传入 --max-findings <n> 可最多报告 n 条发现，或传入 --max-findings all 报告全部发现。该选择会一直保留，直到你传入 --max-findings default。",
+      "thinking_budget": 4096
+    },
     "0d76f03ea32df223fb8dd997d9f6775fdb0eedf153ec6ec10c6348c59f700937": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",

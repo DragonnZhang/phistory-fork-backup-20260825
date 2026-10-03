@@ -608,6 +608,13 @@
       "text": "使用标准 markdown 链接语法创建可点击的文件链接：[link text](file:///absolute/path/to/file)。",
       "thinking_budget": 4096
     },
+    "2e82a1156b04982374f99e20fa61b60d813d930f4c5df296f787f214833a2d86": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "查看这些技能文件时，始终使用下方 \"Available skills\" 列表中提供的确切路径。",
+      "thinking_budget": 4096
+    },
     "2ead8495ad991a3bdae6bcaa66add87602b41fa1a8d8f3bee8424741cf5977ba": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -740,6 +747,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "**不要使用无字距调整的巨型字体**：超大字体却缺少适当的字符间距/字距调整。",
+      "thinking_budget": 4096
+    },
+    "362f8aa32184b7f06eca1f643c58e9b863b0c19fc9fb8e111ed8878186e9991d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "$PHISTORY_WORKSPACE\n命令工作目录：$PHISTORY_WORKSPACE\n与用户请求相关的代码应写入上述位置。除非明确要求，否则避免将项目代码文件写入 tmp、.gemini 目录，或直接写入桌面等类似文件夹。\n应用数据目录：$PHISTORY_HOME/.gemini/antigravity-cli\n会话 ID：$PHISTORY_CONVERSATION\nArtifact 目录路径：$PHISTORY_HOME/.gemini/antigravity-cli/brain/$PHISTORY_CONVERSATION",
       "thinking_budget": 4096
     },
     "3741ed5933b4fd8bfb49d7aaff36723e16c80660aa6c9f177fd61f3e2f5e24f0": {
@@ -2001,6 +2015,13 @@
       "text": "可选。要查看的起始行 Startline，从 1 开始索引，包含端点。指定时，该值必须小于或等于 EndLine。",
       "thinking_budget": 4096
     },
+    "a4fa828d2f0d5b6a8afd01361f49f0a241955e7b726a79ac68c57b32676374d6": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "列出用户为已安装插件连接的账号：每个插件的认证提供方、其登录状态、登录时所用的身份，以及这些提供方所驱动的 CLI。在运行插件 CLI 之前，可用此工具检查用户是否已登录；认证失败时，也可用它明确告诉用户应在 Plugins Manager 中重新连接哪个提供方。当某个提供方连接了多个账号时，可通过在命令前添加 AGY_ACCOUNT=<account>（此工具输出中的一个账号名称）前缀，为沙箱中的 CLI 命令选择一个账号；若不加该前缀，则使用默认账号。",
+      "thinking_budget": 4096
+    },
     "a5531f5e5395661c8566ee630e33d5c9e8dc86f6cd9633bd44ab983d48508f10": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -2769,6 +2790,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "每 5 分钟轮询一次部署状态，直到通过为止：CronExpression=\"*/5 * * * *\", Prompt=\"Check deployment status and report progress\", IsDaemon=false",
+      "thinking_budget": 4096
+    },
+    "e518387bc3bff41d1218e108056b2a3763900a00a044b76c9bbe94a3d2c359a3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果某个技能似乎与你当前的任务相关，必须在继续之前阅读其 `SKILL.md` 指令。只有当你将与该技能相关的任务委托给一个会自行阅读并遵循这些指令的子智能体时，才可以跳过这一步。",
       "thinking_budget": 4096
     },
     "e5b2b9bcb80396df7161c3118d86b444d5c1162278fcde0ab6b1c1f502ebbd7c": {

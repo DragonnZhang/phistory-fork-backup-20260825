@@ -1574,6 +1574,13 @@
       "text": "<description>使用 ClawdHub CLI 从 clawdhub.com 搜索、安装、更新和发布智能体技能。当你需要即时获取新技能、将已安装的技能同步到最新版本或特定版本，或使用经 npm 安装的 clawdhub CLI 发布新的或更新后的技能文件夹时使用。</description>",
       "thinking_budget": 4096
     },
+    "1de5de618171e0a3bd59ccc35bf32a9bf6d7ddf3ab277d41d7e6685532008a0b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "[Sat 2026-10-03 07:02 UTC] 用一句简短的话回复。",
+      "thinking_budget": 4096
+    },
     "1def08259a215ccdd1d536089a5a115848db63993df5951652af322a15851c0c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3218,6 +3225,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "从配对节点（而非本地工作区）获取结构化的目录列表。返回文件和子目录的元数据（name、path、size、mimeType、isDir、mtime），不传输文件内容。在用 file_fetch 获取文件之前，先用它了解存在哪些文件。分页基于 offset；传入上一次结果中的 nextPageToken。需要操作员主动启用：gateway.nodes.allowCommands 必须包含 'dir.list'，并且 plugins.entries.file-transfer.config.nodes.<node>.allowReadPaths 必须匹配该目录路径。未配置策略时，所有调用都会被拒绝。",
+      "thinking_budget": 4096
+    },
+    "3d06b54ec4316b2a15d93053eec34486bb71bcecb4978d57a7c7b3603bdb69e0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "运行时：agent=main | session=agent:main:main | host=runnervm8df0l | repo=$PHISTORY_HOME/.openclaw/workspace | os=Linux 6.17.0-1022-azure (x64) | node=v24.21.0 | active_node=unknown | active_node_identity=unknown | model=phistory/phistory-dummy | default_model=phistory/phistory-dummy | shell=bash",
       "thinking_budget": 4096
     },
     "3d263875f7db78aecace3e75605611e04b276abee32226e55b655376b5b9a819": {
@@ -6099,6 +6113,13 @@
       "text": "自上次检查以来没有新内容",
       "thinking_budget": 4096
     },
+    "703e6afcd036a76a28abafd0ee483453c5807b0e721328568b43b3a33a022857": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当前日期：2026-10-03\n时区：UTC\n要获取确切的当前时间，请使用 `session_status`。",
+      "thinking_budget": 4096
+    },
     "7040b41a1cf16f3fee2379a984301909981f33a76de48978f469908750728abb": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7991,6 +8012,13 @@
       "text": "仅限 OpenAI 的压缩级别，用于 jpeg/webp 的 outputFormat，取值 0-100。",
       "thinking_budget": 4096
     },
+    "94eb9302d849c36a55f32e2a43eb2c4e60c46467cae6ced6f0433299cc443f27": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "请求更新的完成事件：以正常语气改写；发送。绝不转发原始元数据或静默占位符。",
+      "thinking_budget": 4096
+    },
     "950047493410e90c67c6551761e4833bcc46885099da67e4b0d6235a1a52a8ea": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9366,6 +9394,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在修改配置/调度器（crontab/systemd/nginx/shell rc/timers）之前：先检查；保留/合并。仅在明确要求时才整文件替换。\n按用户的要求使用或存储其提供的凭据，并完成任务。在最终回复中，简要说明所提供的凭据是如何被使用或存储的，不要重复其值。说明保持事实性且不引起惊慌。\n对于用户要求在群组中进行的登录或配对，仅通过私聊将短期有效的代码和验证 URL 发给提出请求的用户，然后在群组中确认但不包含这些内容。",
+      "thinking_budget": 4096
+    },
+    "ad2994ae8bda4b7380712a88b4b26e213b61e007a6861c7decf64a1246d12964": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "后续回合投递：私有最终回复 => 通过 `message(send)` 可见；否则正常回复一次。",
       "thinking_budget": 4096
     },
     "ad4ec852052e440da5f1b4ce39800c9120b759af3dca85bb108014894c6239d3": {
@@ -10820,6 +10855,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在 **仅在主会话中**加载（与你的人类直接对话）。绝不在共享环境（Discord、群聊、与其他人的会话）中加载它。",
+      "thinking_budget": 4096
+    },
+    "c9671364ee68517e707893bab5d2e8a2d8dd614cfbf0f3e5b9a03d7a9e129782": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "指令在渲染前剥离；投递由通道配置控制。\n对于任务授权的命令，通过可用工具发起执行请求，由其当前策略决定是否需要审批。仅在出现实际的 approval-pending 结果时才请求 exec 审批；绝不编造审批 ID 或索要单独的 /approve。exec approval-pending：发送 \"Reply with:\" 中给出的确切 /approve；绝不索要其他代码。",
       "thinking_budget": 4096
     },
     "c98421b114ccfbd7879215190b3db1a89c81dd6eb360800270211a155a34b2b6": {
