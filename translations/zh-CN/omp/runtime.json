@@ -2522,6 +2522,13 @@
       "text": "绝不打开凭猜测得到的文件。使用 `read` 的范围，而不是整个文件。",
       "thinking_budget": 4096
     },
+    "35740d9ffa2720f7e9137a56a28d42a908234a7756922dc4f438632fda460ccc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-03；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "3584cb9004c96e45b6d10fd575f0127d018a5c3c84442bbea8a22ce197b7418d": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -8704,6 +8711,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "绝不叙述或考虑会话限制、token 或工具预算、工作量估计，以及自己能完成多少。这不是你该操心的事——就当没有上限一样开始；执行或委派。",
+      "thinking_budget": 4096
+    },
+    "bb202c8139fad687021e3ff37065b7fb003a99f1d30f78a3234753b9efa01f4a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`name`：CamelCase，≤32 个字符，省略时自动生成；按名称称呼智能体。`outputSchema` 覆盖智能体/会话 schema。\n`solutionSpace`：描述子智能体所面临问题的开放程度：是已给出修复方案或设计，还是哪些原因或设计仍待确定。工作量大小不会扩大该范围；绝不提及兄弟智能体或协调。（`one fix: rename, names given`；`one fix: slice end in paginate`；`single-flight cache load; races easy to miss`；`several retry API shapes; error classes to choose`；`deadlock cause open, no repro`）\n`tools`：由 eval 定义，在你的内核中运行。\n`model`：选择器或有序数组，为本次 spawn 覆盖智能体的模型（`provider/model[:level]`、形如 `@smol` 的角色别名、`@default` = 父级当前使用的模型）；按 `tasks[]` 条目设置，绝不在顶层设置。除非需要特定模型，否则省略。请求的模型不可用 → 停止并报告；绝不替换为其他模型。\n`schemaMode`：默认的 permissive 在重试后发出警告；strict 则失败。\n子智能体从空白状态开始；父级通过 IRC 立即引导；大型载荷通过 `local://<path>` 传递，绝不内联。",
       "thinking_budget": 4096
     },
     "bb3b94b42114ec088ada02fe06409373b9800577ece309e0c68e6e5e24b569db": {
