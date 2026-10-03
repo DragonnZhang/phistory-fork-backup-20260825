@@ -1016,6 +1016,13 @@
       "text": "来自语言服务器的符号感知代码智能——在文本搜索或编辑会遗漏调用点之处，这是导航、重构和诊断的准确途径。",
       "thinking_budget": 4096
     },
+    "13a8994b737e0a77875612593a66c8acee3c607c2f65b0a0c5e4500deec5e8c7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "持久 shell：一次一条实际命令/管道；依赖关系使用 `&&`。\n脚本/heredoc/`$(…)`/complex 管道 → `eval`。\n`cwd`，而不是 `cd`；`pty` 仅限交互式使用。\n内部 URI 可用作内置命令/coreutils、重定向和 glob 的路径。\n`async` 会推迟有限结果的返回，但保留截止时间（默认 300 秒）；`timeout: 0` 用于监视器和长时间任务。\n没有 `head`/`tail`/redirection；输出默认截断，完整结果见 `artifact://<id>`。\n长期运行的服务：名称必须唯一；ready 需要提供名称；没有 async/timeout；pty 默认为 true。ready 需要 log 正则表达式或 port（若两者都给出则都使用）；host 默认为 127.0.0.1，ready.timeout 为 30 秒。\n后台结果会随后送达；绝不轮询；前台等待保持不变。",
+      "thinking_budget": 4096
+    },
     "13d530af189eadefe6eb3acd9da10e9b19ec0ed00ab947694955bcdde6d4434c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2429,6 +2436,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "**重叠：** 将相互独立的所有权并行化。同一文件的编辑不保证能合并。编辑共享文件之前，让兄弟智能体通过 `hub` 协调。指定一名集成负责人，并只对不可再分的共享变更边界做串行化。每个并发批次有两个前提条件：",
+      "thinking_budget": 4096
+    },
+    "310de42c94b909ba2acdf38b2d867da45074ed3cf606b8a5885af599daf9602f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "仅在受阻且无事可做时才等待。\n对你启动的后台任务/服务阻塞；在第一个结果、发送给你的消息或转向中断时返回；安全上限会返回仍在运行的快照。\n没有你启动且正在运行的内容？会报错；绝不等待其他智能体。\n结果和消息会自动送达。还有工作未完成时绝不轮询。",
       "thinking_budget": 4096
     },
     "31942e5caf560529e81c232e99e361c1dfc60d8f9274ac5b4a48f6624a4cffa9": {
@@ -4749,6 +4763,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "完成单个任务",
+      "thinking_budget": 4096
+    },
+    "676be747826b417530f2423995b29c995793f695ff3f2d35ae4bfcb91674e585": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "`archive`：通过全局 `archive` 进行只读本地历史查询：最近的项目、带摘要的过往会话、可搜索的提示词历史。→ `xd://eval/archive`",
       "thinking_budget": 4096
     },
     "6785c5ce3147b874f3535336983832900fd3ea092a84ce83e758885dc5f7eaf5": {
