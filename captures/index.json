@@ -1,16 +1,16 @@
 {
   "description": "Phistory automatically archives versioned system prompt snapshots from agent CLIs like Claude Code, Codex, DeepSeek Harness, Antigravity, Grok Build, MiniMax Code, Kimi Code, MiMo Code, OpenClaw, Hermes, Kimi CLI, opencode, Pi, and Oh My Pi.",
   "site": "https://phistory.cc/",
-  "updated_at": "2026-10-03T08:38:05.784846Z",
+  "updated_at": "2026-10-04T08:49:53.386329Z",
   "agents": [
     {
       "agent_id": "claude-code",
       "agent": "Claude Code",
-      "latest_version": "2.1.288",
-      "latest_published_at": "2026-10-02T18:30:40.093Z",
-      "latest_captured_at": "2026-10-03T08:31:32.651355+00:00",
-      "versions": 418,
-      "snapshots": 418
+      "latest_version": "2.1.289",
+      "latest_published_at": "2026-10-03T20:12:02.717Z",
+      "latest_captured_at": "2026-10-04T08:43:32.289664+00:00",
+      "versions": 419,
+      "snapshots": 419
     },
     {
       "agent_id": "codex",
@@ -123,23 +123,40 @@
     {
       "agent_id": "pi",
       "agent": "Pi",
-      "latest_version": "1.0.0",
-      "latest_published_at": "2026-10-01T19:15:22.967Z",
-      "latest_captured_at": "2026-10-02T09:03:28.031021+00:00",
-      "versions": 52,
-      "snapshots": 52
+      "latest_version": "1.0.2",
+      "latest_published_at": "2026-10-04T00:56:19.486Z",
+      "latest_captured_at": "2026-10-04T08:49:48.752709+00:00",
+      "versions": 53,
+      "snapshots": 53
     },
     {
       "agent_id": "omp",
       "agent": "Oh My Pi",
-      "latest_version": "18.5.0",
-      "latest_published_at": "2026-10-03T01:33:22.363Z",
-      "latest_captured_at": "2026-10-03T08:38:05.784846+00:00",
-      "versions": 99,
-      "snapshots": 99
+      "latest_version": "18.6.0",
+      "latest_published_at": "2026-10-03T22:15:10.175Z",
+      "latest_captured_at": "2026-10-04T08:49:53.386329+00:00",
+      "versions": 100,
+      "snapshots": 100
     }
   ],
   "captures": [
+    {
+      "agent_id": "claude-code",
+      "agent": "Claude Code",
+      "version": "2.1.289",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "claude-opus-5-5",
+        "tool_count": 23
+      },
+      "published_at": "2026-10-03T20:12:02.717Z",
+      "captured_at": "2026-10-04T08:43:32.289664+00:00",
+      "prompt": "captures/claude-code/2.1.289/variants/default/prompt.md",
+      "trace": "captures/claude-code/2.1.289/variants/default/trace.jsonl",
+      "meta": "captures/claude-code/2.1.289/variants/default/meta.json"
+    },
     {
       "agent_id": "claude-code",
       "agent": "Claude Code",
@@ -22412,6 +22429,23 @@
     {
       "agent_id": "pi",
       "agent": "Pi",
+      "version": "1.0.2",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 4
+      },
+      "published_at": "2026-10-04T00:56:19.486Z",
+      "captured_at": "2026-10-04T08:49:48.752709+00:00",
+      "prompt": "captures/pi/1.0.2/variants/default/prompt.md",
+      "trace": "captures/pi/1.0.2/variants/default/trace.jsonl",
+      "meta": "captures/pi/1.0.2/variants/default/meta.json"
+    },
+    {
+      "agent_id": "pi",
+      "agent": "Pi",
       "version": "1.0.0",
       "variant_id": "default",
       "variant_label": "Default",
@@ -23292,6 +23326,23 @@
       "prompt": "captures/pi/0.74.0/variants/default/prompt.md",
       "trace": "captures/pi/0.74.0/variants/default/trace.jsonl",
       "meta": "captures/pi/0.74.0/variants/default/meta.json"
+    },
+    {
+      "agent_id": "omp",
+      "agent": "Oh My Pi",
+      "version": "18.6.0",
+      "variant_id": "default",
+      "variant_label": "Default",
+      "variant_dimensions": {},
+      "observed": {
+        "model": "gpt-4.1",
+        "tool_count": 11
+      },
+      "published_at": "2026-10-03T22:15:10.175Z",
+      "captured_at": "2026-10-04T08:49:53.386329+00:00",
+      "prompt": "captures/omp/18.6.0/variants/default/prompt.md",
+      "trace": "captures/omp/18.6.0/variants/default/trace.jsonl",
+      "meta": "captures/omp/18.6.0/variants/default/meta.json"
     },
     {
       "agent_id": "omp",
