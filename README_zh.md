@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-10-03 12:41 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-10-04 02:50 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -74,11 +74,11 @@ python -m http.server --directory .phistory-cache/site
 
 ## 抓取状态
 
-最近抓取更新：2026-10-03 12:41 UTC
+最近抓取更新：2026-10-04 02:50 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.288 - 2026-10-02](captures/claude-code/2.1.288/variants/default/prompt.md) | 432 | 744 | 2026-10-02 20:54 UTC |
+| Claude Code | [2.1.289 - 2026-10-03](captures/claude-code/2.1.289/variants/default/prompt.md) | 433 | 746 | 2026-10-03 23:17 UTC |
 | Codex CLI | [0.160.0 - 2026-10-01](captures/codex/0.160.0/variants/default/prompt.md) | 100 | 161 | 2026-10-01 21:58 UTC |
 | DeepSeek Harness | [0.2.0-rc.2 - 2026-09-29](captures/dsh/0.2.0-rc.2/variants/default/prompt.md) | 14 | 75 | 2026-09-29 16:06 UTC |
 | Antigravity CLI | [1.2.16 - 2026-10-03](captures/antigravity/1.2.16/variants/default/prompt.md) | 59 | 59 | 2026-10-03 07:01 UTC |
@@ -91,8 +91,8 @@ python -m http.server --directory .phistory-cache/site
 | Hermes Agent | [v2026.9.24 - 2026-09-24](captures/hermes/v2026.9.24/variants/default/prompt.md) | 34 | 34 | 2026-09-24 10:27 UTC |
 | Kimi CLI | [1.51.0 - 2026-09-21](captures/kimi/1.51.0/variants/default/prompt.md) | 23 | 23 | 2026-09-21 17:12 UTC |
 | opencode | [1.18.34 - 2026-09-30](captures/opencode/1.18.34/variants/default/prompt.md) | 118 | 118 | 2026-09-30 23:11 UTC |
-| Pi | [1.0.1 - 2026-10-03](captures/pi/1.0.1/variants/default/prompt.md) | 53 | 53 | 2026-10-03 12:41 UTC |
-| Oh My Pi | [18.5.1 - 2026-10-03](captures/omp/18.5.1/variants/default/prompt.md) | 125 | 125 | 2026-10-03 12:41 UTC |
+| Pi | [1.0.2 - 2026-10-04](captures/pi/1.0.2/variants/default/prompt.md) | 54 | 54 | 2026-10-04 02:50 UTC |
+| Oh My Pi | [18.6.0 - 2026-10-03](captures/omp/18.6.0/variants/default/prompt.md) | 126 | 126 | 2026-10-03 23:17 UTC |
 
 ## 项目趋势
 
