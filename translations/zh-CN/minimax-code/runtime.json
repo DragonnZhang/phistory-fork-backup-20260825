@@ -448,6 +448,13 @@
       "text": "会话角色：根会话",
       "thinking_budget": 4096
     },
+    "0afdf69df23cc02cb16fbde446b830069363eca7a68fdacf4345f49bb99bb325": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "该 shell 是非交互式的：没有 TTY 或 stdin 提示。对于需要交互的命令，先查看 `--help` 中的非交互式选项，再请用户运行。物理授权（OAuth 同意、MFA、硬件密钥）留给用户完成。",
+      "thinking_budget": 4096
+    },
     "0b430fd89ebd743a7b6f37bff494d2740dcc221abc7ca69a3be6987b76ee3541": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1050,6 +1057,13 @@
       "text": "任务管理",
       "thinking_budget": 4096
     },
+    "16e6b31dba4eeac71684a05b72b2c33a648f95c45a17dd74c8b3449dcdf385a7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "转入后台和读取输出不会重置命令超时。",
+      "thinking_budget": 4096
+    },
     "17c82ad4a761fef221626d3a84b0cd9d2ad9f0a01a114e420a6f2ce58412b206": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1426,6 +1440,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如实报告结果：说明哪些成功、哪些失败、哪些被跳过以及哪些尚未验证。",
+      "thinking_budget": 4096
+    },
+    "2198eb7a02e110ab3a869b94e70355408c2aa3901e7cc7903be2f116bd55cb27": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "前台调用最多等待 60 秒，若未完成则返回 task_id。同一命令会在后台继续运行；不要再次启动它。",
       "thinking_budget": 4096
     },
     "21a0ed5b5b753169b7f0792a28f4e205c52ce6b6bf26ab1b362311e500025050": {
@@ -2024,6 +2045,13 @@
       "text": "<description>仅当用户在编辑或创建 opencode 自身的配置时使用：opencode.json、opencode.jsonc、.opencode/ 下的文件，或 ~/.config/opencode/ 下的文件。创建或修复 opencode 智能体、子智能体、技能、插件、MCP 服务器或权限规则时也应使用。不要用于用户自己的应用代码，或任何并非在配置 opencode 本身的项目。</description>",
       "thinking_budget": 4096
     },
+    "2e394f6c3570519dbac2b5cea60934045f0b01f73905a3a4d7739b4ce2f92c7e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每次调用都在会话工作区中开始。对工作目录和 shell 状态（变量和函数）的更改不会在调用之间保留。如果某个命令需要不同的工作目录，请在同一次调用内切换目录。",
+      "thinking_budget": 4096
+    },
     "2e5ac036f7e162857492b6627ea2f8d7908704d03240974c9a69812f38a0178a": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2213,6 +2241,13 @@
       "text": "“接下来，我会修补配置并更新相关测试。”",
       "thinking_budget": 4096
     },
+    "34828b6c7615c6e1f524da92fe77ef2ebe7515330cb2be331f528fd666190505": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "使用专用的 `read`、`write`、`edit`、`grep` 和 `glob` 工具进行文件操作。除非用户明确要求，或你已验证专用工具无法执行所需操作，否则不要使用 shell 命令读取、搜索或修改文件。使用 `bash` 处理进程、git、包管理器、构建、测试和流水线。",
+      "thinking_budget": 4096
+    },
     "34900a93f252aa1efd769d91244c8eb443c3ec24e9d290ce14f1129f1ce6d5b5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2358,6 +2393,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "如果技能未找到或无法读取，则它未被加载。不要声称已使用它。",
+      "thinking_budget": 4096
+    },
+    "375f92c7432f672aad1111d21d290c9acb288e3e08bca502a1a207b96407e415": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "命令的总超时时间，以秒为单位。前台并自动转入后台：默认/最大 3600 秒，包含前台时间。显式后台：使用指定的超时时间，若省略则采用 1 小时的运行时限。",
       "thinking_budget": 4096
     },
     "377873c93bd20fc0f959bfffc2967f04b909b46768c37bd34636d1ae30ab76b3": {
@@ -3418,6 +3460,13 @@
       "text": "从本地文件系统读取文件或目录。如果路径不存在，则返回错误。",
       "thinking_budget": 4096
     },
+    "51dc2c0c82bceb17965be08621858f8910ff5443e0a1c89667289ae8181b6b97": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "设置 run_in_background=true 可返回 task_id，而无需等待完成。",
+      "thinking_budget": 4096
+    },
     "520ac60e9e574fa4c390782e14e5f21bc49d57868778b2ada63e9c332661eae5": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3640,6 +3689,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在这三种情况下，**不要**只从当前会话的视角回答。",
+      "thinking_budget": 4096
+    },
+    "570053f6a438061022aea570c5b9446a0d44303245e7adead76ea388a3245f14": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "此命令功能的简短描述。",
       "thinking_budget": 4096
     },
     "571d6df16e2a03dff02dcca25dc4601aa079032616d163b114ae10a676f42bc9": {
@@ -3984,6 +4040,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "skill-creator：通过简短的评估驱动循环创建新的 Mavis 技能。当用户要求创建技能、把重复的工作流变成技能，或构建新的可复用流程时使用。不用于改进或修复现有技能（改用 skill-refiner），也不用于用户只想运行某个技能或了解有哪些技能的情况。",
+      "thinking_budget": 4096
+    },
+    "5e5ab24212b914650f184f5ddad85c36f004b1fb82561f540fa12a529acd8c8a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "主工作目录：$PHISTORY_HOME/.minimax-code/sessions/mvs_70d253f0d41f4fdcbd8a39514e5cff63/workspace",
       "thinking_budget": 4096
     },
     "5ebf8885956352c8f036be3e6ed90339b36572f5326eafcf325e2bd95d92c666": {
@@ -4544,6 +4607,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "工具使用",
+      "thinking_budget": 4096
+    },
+    "6dac2fcc289e703ce7eb07f49f0e38c70f4dc66547f180db399d0a351dcf0b97": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "后台完成时会自动通知你。继续处理独立的工作；使用 task_output 获取当前输出，并在可用时使用 task_stop 取消。",
       "thinking_budget": 4096
     },
     "6dc39414171117b58501a3c644831826af6a508d95b4f70f58c61db7de58c743": {
@@ -7466,6 +7536,13 @@
       "text": "读取起始的字节偏移量。传入上一次的 next_offset 以继续。",
       "thinking_budget": 4096
     },
+    "b940bdd5d2052496ee71e3e320dd154110399e19c3166faa1eff35747849fd2c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "执行 shell 命令并返回其输出。",
+      "thinking_budget": 4096
+    },
     "b9630bd82bd97ec1fbfd3b363745c9f2848ff5f0fecbd92486143051968e3399": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9672,6 +9749,13 @@
       "text": "三个持久层。选择仍能帮助未来工作的最窄一层；只写入其中一层。\n使用 `<memory-skill-reminder>` 块注入的同一套三问测试，最窄的优先\n（将 `<agent-name>` 替换为你在 `<agent-context>` 中的 `agentName`）：",
       "thinking_budget": 4096
     },
+    "e9bdac2a63f87270c8a2ceb783b063d302ed49ad4cd33d4c76af7f75b76be901": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当状态为 `complete` 时推荐使用：简要说明完成了什么以及证据位于何处。host 会将这条陈述作为不受信任的数据传递给独立的验证者；它不会展示给用户，也不会取代最终回复。",
+      "thinking_budget": 4096
+    },
     "e9c71c5b2286843a96838f31b08cc3ec0c0233e005e07b8801900d0f9cc97ca7": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9754,6 +9838,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "严重：如果已经推送到远程，除非用户明确要求，绝不 amend（需要强制推送）",
+      "thinking_budget": 4096
+    },
+    "eb2d112984bcaf1722f45cf65df4cffb646e97db1b25f18679356dc415e89afa": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "大型输出会保留开头和结尾。请按照结果中的说明读取被省略的输出。",
       "thinking_budget": 4096
     },
     "eb3204d29df97991086f04dbb19b04d7b2774a11d5fb903e8ebe11c134dd3efe": {
@@ -10050,6 +10141,13 @@
       "text": "工作区相对路径或绝对本地文件路径。",
       "thinking_budget": 4096
     },
+    "f1f8842d397bbf8e63e8fe180b05a7fdabe253505b4a83c31106170e77f3f75d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "选定的 shell：Bash。请使用 Bash 语法，包括在 Windows 上当 Bash 是选定的回退方案时。",
+      "thinking_budget": 4096
+    },
     "f209e1d54f8c0c9dc1d4c9f66b645d66de61abf736ea7a9849f5b95694e3d03b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -10111,6 +10209,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "<description>通过 `mavis browser tool` CLI 驱动用户真实的 Chrome 浏览器（登录状态、cookies、扩展）。当任务需要已有的浏览器会话时加载——已登录的站点（小红书/微博/Gmail/公司 SSO/SaaS 仪表盘）、保存的密码或持久 cookies。不要为公开/匿名页面加载（改用 playwright MCP）。</description>",
+      "thinking_budget": 4096
+    },
+    "f428d8cefb4028246955c598a90873b96f1f366b8a8ddcbe518ccced9fe94e79": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "为现有目标提议一个终态，或者——仅当用户明确要求时——更新其 token 预算。始终设置 `mode`，以便每次调用恰好选择一种操作；属于另一模式的字段会被忽略。\n终态模式（`mode: \"status\"`）：传入 `status` 和可选的 `summary`；遵循 `status` 字段中记录的规则。host 会在本轮之后对该提议作出定夺。被接受的 `blocked` 提议会结束本轮。在 `complete` 提议被接受后，不要再调用任何工具（这些调用会被拒绝）：在同一轮内向用户写一条最终回复，说明完成了什么、每个交付文件位于何处，以及在用法不明显时如何使用它；用交付标记（<deliver-assets> 内的 <media /> 标签）声明每个交付文件，并在正文中写出其路径；不要声称验证已通过或结果已通过验证，因为 host 会在本次回复之后进行验证；把你运行过的检查描述为检查，而不是验证。\n预算模式（`mode: \"token_budget\"`）：在 `update_goal` 之前立即调用 `get_goal`，然后只传入 `token_budget`、`expected_goal_id` 和 `expected_updated_at`。使用正整数的 token 数量，或使用 `null` 来清除上限。更新成功不会结束本轮，并且可能会重新激活受 token 限制的目标。\n不要将两种模式组合使用。此工具无法直接暂停、恢复或编辑目标。",
       "thinking_budget": 4096
     },
     "f5045181fd383f228c9daa91543e6151aaec474e90dc2e38ff560630e07859b6": {

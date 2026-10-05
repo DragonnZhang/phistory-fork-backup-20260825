@@ -8916,6 +8916,13 @@
       "text": "遇到过期标签被拒绝或任何意外结果时：停下，先重新 `read`，再进行后续编辑。",
       "thinking_budget": 4096
     },
+    "bed359dd19f7f217fe18580315a9167568903a0aaafb7ddcbe19dd33c5124626": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-04；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "bf49e94795d33eec9e252301b689c1a1280006f5729723cb77b5eae369552975": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
