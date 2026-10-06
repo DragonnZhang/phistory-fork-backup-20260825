@@ -9063,6 +9063,13 @@
       "text": "通过 stdin 驱动 REPL/调试器",
       "thinking_budget": 4096
     },
+    "c2db2f464de0a452366f4ec96d3f7ec774386f805e716f28c10adb3557d67db5": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-06；当前工作目录为 '$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "c2f9969bacbeec587f705ff74189a9fa55864bc34e105177db4c2cca76b1c107": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
