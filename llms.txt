@@ -13,7 +13,7 @@ Paths in `captures/index.json` are relative to the site root. Archived prompts a
 
 ## Latest prompts
 
-- [Claude Code 2.1.289 — Terminal](https://phistory.cc/captures/claude-code/2.1.289/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
+- [Claude Code 2.1.290 — Terminal](https://phistory.cc/captures/claude-code/2.1.290/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Codex CLI 0.160.1 — Default](https://phistory.cc/captures/codex/0.160.1/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [DeepSeek Harness 0.2.0-rc.2 — Default](https://phistory.cc/captures/dsh/0.2.0-rc.2/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.
 - [Antigravity CLI 1.2.17 — Default](https://phistory.cc/captures/antigravity/1.2.17/variants/default/prompt.md): Latest archived normalized prompt snapshot for this agent.

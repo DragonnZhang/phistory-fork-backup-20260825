@@ -4,6 +4,8 @@ Full generated index of archived prompt snapshots. The short project overview li
 
 | Agent | Version | Variant | Published | Captured | Snapshot | Trace |
 | --- | --- | --- | --- | --- | --- | --- |
+| Claude Code | `2.1.290` | `default` | 2026-10-05 18:12 UTC | 2026-10-06 03:17 UTC | [claude-code 2.1.290 [default], published 2026-10-05 18:12 UTC](../captures/claude-code/2.1.290/variants/default/prompt.md) | [trace.jsonl](../captures/claude-code/2.1.290/variants/default/trace.jsonl) |
+| Claude Code | `2.1.290` | `sdk` | 2026-10-05 18:12 UTC | 2026-10-06 03:17 UTC | [claude-code 2.1.290 [sdk], published 2026-10-05 18:12 UTC](../captures/claude-code/2.1.290/variants/sdk/prompt.md) | [trace.jsonl](../captures/claude-code/2.1.290/variants/sdk/trace.jsonl) |
 | Claude Code | `2.1.289` | `default` | 2026-10-03 20:12 UTC | 2026-10-03 23:17 UTC | [claude-code 2.1.289 [default], published 2026-10-03 20:12 UTC](../captures/claude-code/2.1.289/variants/default/prompt.md) | [trace.jsonl](../captures/claude-code/2.1.289/variants/default/trace.jsonl) |
 | Claude Code | `2.1.289` | `sdk` | 2026-10-03 20:12 UTC | 2026-10-03 23:17 UTC | [claude-code 2.1.289 [sdk], published 2026-10-03 20:12 UTC](../captures/claude-code/2.1.289/variants/sdk/prompt.md) | [trace.jsonl](../captures/claude-code/2.1.289/variants/sdk/trace.jsonl) |
 | Claude Code | `2.1.288` | `default` | 2026-10-02 18:30 UTC | 2026-10-02 20:54 UTC | [claude-code 2.1.288 [default], published 2026-10-02 18:30 UTC](../captures/claude-code/2.1.288/variants/default/prompt.md) | [trace.jsonl](../captures/claude-code/2.1.288/variants/default/trace.jsonl) |

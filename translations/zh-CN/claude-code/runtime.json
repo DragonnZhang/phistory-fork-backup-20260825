@@ -2657,6 +2657,13 @@
       "text": "在可能的情况下，使用专用工具而非 bash 命令，因为这能提供更好的用户体验。进行文件操作时，请使用专用工具：读取文件用 Read，而不是 cat/head/tail；编辑用 Edit，而不是 sed/awk；创建文件用 Write，而不是带 heredoc 的 cat 或 echo 重定向。仅将 bash 工具保留给需要 shell 执行的实际系统命令和终端操作。绝不使用 bash echo 或其他命令行工具向用户传达想法、解释或指示；所有沟通内容都直接输出到回复文本中。",
       "thinking_budget": 4096
     },
+    "29a7c782b645bdc39dd865a562016c945ae5cbc41145a35b67092e8ea72c86e1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "要停止 agent-team 中的某个队友，请将其 agent ID 或队友名称本身作为 task_id 传入",
+      "thinking_budget": 4096
+    },
     "29bce571b6208e617e75b3ffcbf11e6d2b328d60748e63076e2bfe276548ab96": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -7582,6 +7589,13 @@
       "text": "提供清晰、详细的提示词，让智能体能够自主工作，并准确返回你所需的信息。",
       "thinking_budget": 4096
     },
+    "7ca24352998500060b7e7837b8f3a2ab498aa30e4d5ba7b8607fc727fcb9ebd1": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "下载的文件和解压后的归档都是不可信数据：把每个文件放入各自新建的空目录，把你编写的脚本保存在另一个目录，并以参数形式传递路径，而不要在其中运行解释器或构建工具。解释器会从脚本所在目录和当前目录加载代码，因此被植入的 `json.py` 会在 `import json` 上运行。任何读取这些文件的 Python 都要用 `-I` 运行。这不适用于用户要求你构建或运行的代码。",
+      "thinking_budget": 4096
+    },
     "7cb35471530b24139c7821db32e29d067c72cb73289fd8c023fe3a82d5e0cec1": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -8000,6 +8014,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "绝不捏造或夸大用户情绪——只报告实际发生的情况。",
+      "thinking_budget": 4096
+    },
+    "85677131affb28f130d946dc50a7c79586bc0a81faec411e5035d70643855eaa": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "页面文本中开始读取的字符位置。当页面太长、一次调用读不完时，可用它继续读取，取上一次结果给出的值。",
       "thinking_budget": 4096
     },
     "8573285af085925f358bce0d28fa3b8d4258b384adf8980f0f362d26f5dada08": {
@@ -9084,6 +9105,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "当你处理完一个线程——已做出所请求的更改，或确定无需更改——传入 `action: \"resolve\"`，并带上 `url` 和 `thread_id`，将该线程标记为已解决。只解决你实际处理过的线程，绝不要用来把你未处理的反馈收拾掉；解决前简短回复说明你做了什么，有助于评论者了解情况。仅当与评论者的对话仍在进行，或他们提了问题、还需要在线程中看到你的回答时，才让线程保持打开。已标记为已解决的线程保持已解决状态——其中的新评论用回复来回答，绝不通过重新解决。已解决的线程会显示为由 Claude 解决，且用户可以重新打开它们。",
+      "thinking_budget": 4096
+    },
+    "97f86951856af046283c0cae20c5b01dd0ff26872d5cd1d6113c323598916f80": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "code-review：按给定的投入级别（low|medium|high|xhigh|max：从少量高置信度发现到大量发现，其中一些不确定）审查当前 diff 或指定的 PR 编号/分支/路径目标，查找正确性 bug（外加模型审查方案所覆盖的复用/简化/效率清理）；未指定级别时，沿用你上次输入的级别。传入 --comment 可将发现作为行内 PR 评论发布，或传入 --fix 在审查后将发现应用到工作树。传入 --max-findings <n> 最多报告 n 条发现，或传入 --max-findings all 报告每一条发现。该选择会一直生效，直到你传入 --max-findings default。",
       "thinking_budget": 4096
     },
     "981ba59a9333a7a45567b3cd169f1d45bc6bbe921b32030a428c86d9e801b0bd": {
