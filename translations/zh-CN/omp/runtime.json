@@ -1381,6 +1381,13 @@
       "text": "Target       ← 确切的文件和符号；明确的非目标",
       "thinking_budget": 4096
     },
+    "1bcd4e066f3f8c8c88e1587e774d685be1696116a9342f538b29b48052cfcdee": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "JSON/JSONL/NDJSON：file.json?q=<jq filter>；&raw=true 输出不加引号的字符串，&compact=true 输出单行值，&offset=&limit= 对结果分页；过滤器内出现 `&` → %26。",
+      "thinking_budget": 4096
+    },
     "1c25b33e037bda40876e4d02dbc872febc2648cf5daca45f5507abcff64f7a01": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -2977,6 +2984,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "在已打开的标签页中读取结构化页面数据",
+      "thinking_budget": 4096
+    },
+    "3f4a06d1990c5cda47e47daaba2e83559157eb2ba6a80393122e089546b85d23": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "路径后缀：:50 或 :50- 从第 50 行开始；:50-200 含两端；:50+150 按行数计；:-60 为最后 60 行；逗号连接多个范围（:5-16,960-973）或多个单独行（:19,59）。单个非 raw 范围还会显示前 1 行和后 3 行（例如 :50-80 会显示 49-83）；非 raw 读取（包括逗号列表）可能会补充被截取块的开头行/结尾行；只有 :raw 保持精确。:raw 逐字输出，不带锚点/前缀；组合 :2-4:raw 或 :raw:2-4 可精确获取这些行。:conflicts 为每个未解决的合并块列出一行。SVG/SVGZ 默认以文本显示；:img 为 PNG，:raw 为原始文件。视频需要 ffmpeg/ffprobe：裸路径显示预览网格+元数据，:412 显示帧，:1h5m42s/:90s/:01:23 指定时间。",
       "thinking_budget": 4096
     },
     "3f51b110fe5e411f126985cba0178e2de8e45df8046d86b4c322c74e19483f7f": {
@@ -5141,6 +5155,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`PUT N*:` 精确解析位于 N 的节点：前置的装饰器/属性/文档注释是独立节点——将 N 指向第一个装饰器即可同时覆盖两者；独立的行注释永远不会被覆盖（使用 `PUT N.=M:`）。",
+      "thinking_budget": 4096
+    },
+    "6f0b329a72f1d6296de810723fbab66c8626001c6ea88b255e5e519461c77a63": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "每次调用一个单元格；顶层状态会保留，包括跨压缩时也是如此。子智能体拥有独立的内核。\n对于 2 个及以上独立事项，使用命名的 `workpool()`；结果会自动送达。如果被阻塞，留下 `eval` 并调用 `wait`。\nPython：普通 Python 子进程，而非 IPython（没有 `get_ipython()`、`obj?` 或 `%matplotlib`）。像 `%pip`、`%load`、`%time` 和 `!cmd` 这样的魔法命令会被改写为 Python。顶层 `await` 可用；`asyncio.run(…)` 会失败。\nJS：Bun（`Bun.file`、`Bun.write`、`Bun.$`）；顶层 `await`/`return` 可用。\n出错时，仅重试失败的步骤；之前的步骤可能已生效。",
       "thinking_budget": 4096
     },
     "6f2fbdca6110e1141df4618b3380b7ac62b5ce8c15cbda1ef70cab5cf2babab3": {
@@ -7817,6 +7838,13 @@
       "text": "消息",
       "thinking_budget": 4096
     },
+    "a743d02811354a654c99a059ac4f6764c518f7b379371c7515bbf9455056d05b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "把行范围放在 `path` 中，绝不要用单独的 range/offset/limit 参数：`{\"path\":\"notes.txt:450-455\"}` 读取第 450-455 行；`{\"path\":\"notes.txt:-5\"}` 读取最后 5 行。每次带范围的调用都要包含选择器；重复使用裸路径不会在文件中推进读取位置。",
+      "thinking_budget": 4096
+    },
     "a775ba074c64d55b80b6afcb68b64f2fe3cd513e90e382c28a3d824183105fa0": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7941,6 +7969,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`logs` 与 `follow: true` 配合使用时，会等待 `cursor` 之后的输出；下次调用时复用返回的游标。",
+      "thinking_budget": 4096
+    },
+    "a95aa95b846bea451fe1cb296b4daf7b17d45df5fb265e132379c6fd265292ef": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "持久 shell：一次一条实际命令/管道；依赖关系使用 `&&`。\n脚本/heredoc/`$(…)`/complex 管道 → `eval`。\n`cwd`，而非 `cd`；`pty` 仅用于交互。\n内部 URI 可作为路径用于内建命令/coreutils、重定向和 glob。\n`async` 会推迟有限结果，但保留截止时间（默认 300s）；`timeout: 0` 用于监视器和长任务。\n没有 `head`/`tail`/redirection；输出默认截断，完整结果位于 `artifact://<id>`。\n长驻服务：名称唯一；ready 需要 name；无 async/timeout；pty 默认为 true。ready 需要 log 正则或 port（若都给出则两者都用）；host 默认 127.0.0.1，ready.timeout 为 30s。\n非 `pty` 调用在运行 60s 后（或早于 `timeout` 前 1s，以先到者为准）通常会转入后台作业 `bg_N` 并继续运行至 `timeout`（当客户端终端运行该命令或达到作业上限时除外）；结果会作为后续消息自动送达。绝不轮询。",
       "thinking_budget": 4096
     },
     "a96ac23ea950105efd1971bfb9f52852f4ae2d4ad095f73c052c678ce5b951b6": {
@@ -9887,6 +9922,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "今天是 2026-09-14；当前工作目录：'$PHISTORY_WORKSPACE'。请勿在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
+    "d54203484c01b3e1a7b2776419abacad71208e591c4a36d3b29c7985d3d3ab7c": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "\"py\"：带 IPython 风格魔法命令的 Python（不是 IPython）；\"js\"：Bun",
       "thinking_budget": 4096
     },
     "d54406eb1529dea5220d63c7e40aab270c263099cac19196f836332c71032713": {
