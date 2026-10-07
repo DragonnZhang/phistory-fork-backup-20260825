@@ -2102,6 +2102,13 @@
       "text": "未达到此标准的既有测试（固定了措辞、实现、附带行为）→ 必须删除；绝不要将其重新固定到新文本。无论作者是谁，都在处理范围内。",
       "thinking_budget": 4096
     },
+    "2ad96ba574a07d0b2f34fbac2efd39fc8bdefb2933bd5a05c1cb81a9f2b46d45": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-10-07；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "2b05cc0d59aede7237a720a33bf5b88656d9a7b6203c11aaed9c1515a49ba145": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
