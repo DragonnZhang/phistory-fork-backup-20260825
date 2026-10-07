@@ -819,6 +819,13 @@
       "text": "慢慢来，把每一步都想清楚——记得严格检查你的解决方案，并留意边界情况，尤其是针对你所做的改动。如果有 sequential thinking 工具，就使用它。你的解决方案必须完美。如果不完美，就继续完善。最后，你必须使用所提供的工具严格测试你的代码，并且反复多次测试，以捕获所有边界情况。如果它不够健壮，就继续迭代，把它做到完美。测试不够严格是这类任务中的头号失败模式；务必处理所有边界情况，如果提供了现有测试，请运行它们。",
       "thinking_budget": 4096
     },
+    "3bcf2b180b4856138ea485fbd5b506ba17a9d421c1ada4e870bba8465d3750d7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工作目录：$PHISTORY_WORKSPACE\n  工作区根目录：/\n  目录是否为 git 仓库：否\n  平台：linux\n  今天的日期：2026 年 10 月 06 日（星期二）",
+      "thinking_budget": 4096
+    },
     "3c8fafaf7e3e861670f8e27df39475de1738e780022f77149d6240e1424d2f64": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
