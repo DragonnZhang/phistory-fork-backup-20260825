@@ -147,6 +147,13 @@
       "text": "替换 old_string 的所有出现位置（默认为 false）",
       "thinking_budget": 4096
     },
+    "05a1d4a31a95edd4c70b3087cdf0722db03e2780d33045b863524d08edb2ed95": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当改动可能影响重要的边缘状态时，探测这些状态。",
+      "thinking_budget": 4096
+    },
     "06584680ae3624d383983c83a8c76ddaec8ad4eb382b8e0e293d46b02db802e8": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -1062,6 +1069,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "任务是重复执行（true）还是仅触发一次（false）。默认值：true",
+      "thinking_budget": 4096
+    },
+    "1f50dbb8ef1006545e228fa36d329ced10c825fd8f57dbe74f78930d35e3b1a4": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "deep-research：以受限的并行度研究一个查询，交叉核对证据，并撰写带引用的报告\n  使用时机：比较、调查或研究一个需要带来源论断的问题。/deep-research，研究这个问题，撰写一份带引用的报告。\n  绝对路径：/buildkite/builds/buildkite-agent-ci-cpu-cuda-xlarge-689bfdbf7f-ctxb8-1/xai/spacexai-checks/crates/codegen/xai-grok-shell/src/session/workflows/deep_research.rhai",
       "thinking_budget": 4096
     },
     "1f8c6bcb4c35fff0bb3dbf1b67349a9b6cb8a6e1261c0975aebcc3c112ef02c6": {
@@ -2437,6 +2451,13 @@
       "text": "用于限制搜索范围的域名。",
       "thinking_budget": 4096
     },
+    "480836ab8bd8aee8043b136151cee58dbb36d7ee0c77d4a0e4de8f76364f5d0b": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "在 content 模式下将输出限制为前 N 个匹配行，在其他模式下限制为前 N 条条目。默认值为 200 行或 500 条条目。",
+      "thinking_budget": 4096
+    },
     "4842a4ac28318e560d1121885fa93021245c37b056926e8881addc7b56bb3570": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -3053,6 +3074,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "周期性任务会在 7 天后自动过期",
+      "thinking_budget": 4096
+    },
+    "59fc5003ee2ad554fd73f51019617a264c4b09bde2dc4e745963f07a045185a3": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "端到端地演练受影响的主要交互或流程。",
       "thinking_budget": 4096
     },
     "5a8325576c7787d22ffa539cc132e19b671e2e01792519210c1b163b8ee96c6e": {
@@ -3791,6 +3819,13 @@
       "text": "本次会话的草稿及其 ID 位于 $PHISTORY_HOME/.grok/sessions/%2Ftmp%2Fphistory-work-goznabl5/01a0f542-a82c-7933-8f88-61c64d2298a2/feedback_drafts.json 中。",
       "thinking_budget": 4096
     },
+    "6df89257f0d15ef248ab97c0b9570e3c9b5f63807d935da61d7ae2bcea584315": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当相关路由共享被更改的状态、数据或组件时，检查这些路由。",
+      "thinking_budget": 4096
+    },
     "6e4b46171f860411a606a9c8e17e1d225bc998aaee9f52089724a15dc41d1800": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -4090,6 +4125,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "`ExitPlanMode` 工具的输入。",
+      "thinking_budget": 4096
+    },
+    "7825defb5185433473d9e92ecd8e23dc6862a3041837da8e9e3d6b4a12ce8c5d": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "对于响应式布局改动，检查有代表性的桌面和移动视口。",
       "thinking_budget": 4096
     },
     "782e09e561b22db13ccb98fe98042d3f6e5f82f987016eb6455d4ad5a5406405": {
@@ -4419,6 +4461,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "创建时是立即触发（true）还是等待第一个间隔（false）。默认值：false。仅创建时生效：使用 task_id 时被忽略",
+      "thinking_budget": 4096
+    },
+    "817a27e115d355b99d81612b70daf8bce82d88e86cb2c2f93233227476849507": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果输出超过 20000 个字符，中间部分会被截去。结果会保留开头和结尾，并给出包含完整输出的日志文件路径。",
       "thinking_budget": 4096
     },
     "81ce934271da36cee62683adc8d56a61eac2fa7c88056797bd1d0d4f8e7e8756": {
@@ -6557,6 +6606,13 @@
       "text": "将 pattern 作为原始正则表达式传入，两侧不加引号。",
       "thinking_budget": 4096
     },
+    "ba6ad46ff8f8d9d8e6aa4c89718533738a3fb4a40447d7e351bfb2e5abc0ed22": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当你的工作实质性改变了 Web 应用对用户可见的行为或布局时，如果浏览器工具可用，请在结束前在浏览器中验证受影响的流程。验证应保持适度：琐碎的文案改动或孤立的样式改动不需要详尽的浏览器检查。",
+      "thinking_budget": 4096
+    },
     "ba6eea73b2e73336e354fbcc4f662c7c5d4c364418edd00cbd7160a3df1c4c27": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7439,6 +7495,13 @@
       "text": "用户：\"run /commit\"\n助手：[调用 skill 工具，skill: \"commit\"]",
       "thinking_budget": 4096
     },
+    "d2cfe29dd679797bd99d08939a58c0cb5a553c030f8b1f29c614d9b8ded583b8": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "重点关注实际可能出问题的部分：",
+      "thinking_budget": 4096
+    },
     "d2ee86759e7129f92e893ba85319384f9ba7fa96cdc4bdcc4444b42cb3cd5940": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -7528,6 +7591,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "\"none\"（默认）：子智能体直接在父工作区中操作。文件编辑立即可见。",
+      "thinking_budget": 4096
+    },
+    "d46cfdc31d5e173259e14068a13b4ec476250987902d71ebe9bf7641c2f3d0fc": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "如果发现问题，请修复并在结束前重新检查。",
       "thinking_budget": 4096
     },
     "d4ca2f9b8b5509203933793132a6c4d8071ee8e6dab83109bdb958dfc8ea11d0": {
@@ -8592,6 +8662,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "更新现有组件以支持主题切换",
+      "thinking_budget": 4096
+    },
+    "f1da7b28fcd2a7168e906a430d1d8a92348a80a456f5d983f9cf27174d496830": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当布局或样式发生改动时，考虑是否需要同时验证桌面和移动视口。",
       "thinking_budget": 4096
     },
     "f1e9bece9b279199013912fc134ff7e3b6e29ed8effbd90a78b1413f673a423e": {
