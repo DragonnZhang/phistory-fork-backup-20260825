@@ -9419,6 +9419,13 @@
       "text": "如果你想读取特定的文件路径，请使用 Read 工具或 Glob 工具，而不是 Agent 工具，以便更快地找到匹配项。",
       "thinking_budget": 4096
     },
+    "9bb73d55849319a23a28d4f9492ffe87726e6ecbafc80cdb4d17d6daaafa2b19": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "你是一个智能体，与用户一起朝他们的目标推进，并在此过程中运用自己的判断。",
+      "thinking_budget": 4096
+    },
     "9be590190314dc4238bcee707fa922adcac2599b9e466312f0937ad691654090": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -13506,6 +13513,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "自定义斜杠命令是以 / 开头的提示词，用于运行保存为 Markdown 文件的扩展提示词，例如 /compact。如果收到执行某个斜杠命令的指示，就使用 Task 工具，并将该斜杠命令的调用作为整个提示词。斜杠命令可以接受参数；以用户指示为准。",
+      "thinking_budget": 4096
+    },
+    "dec7b64616551cb008dc360fc61135b751181eaf111178d94eba501225632645": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "plugin-authoring：制作 mod：即对 Claude 自身界面或行为的更改，例如实时窗格或面板、提示词上方的横条、状态栏、toast 通知、斜杠命令，或挂在工具调用或提示词上的钩子。用于制作、更改或调试 mod 或其 hooks 模块。",
       "thinking_budget": 4096
     },
     "dec9b2df548e40c680aea62def997ef572afc44ee0ecbe812a9339d52b0ca50d": {
