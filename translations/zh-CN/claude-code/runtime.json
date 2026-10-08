@@ -6225,6 +6225,13 @@
       "text": "使用此工具之前：",
       "thinking_budget": 4096
     },
+    "62fc23481d341c43ccc1983259a9fc4b8c6e897e8ceadd93dc88b61f580b3d09": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "最新的 Claude 模型是 Claude 5 系列。模型 ID —— Fable 5.1：'claude-fable-5-1'，Opus 5.5：'claude-opus-5-5'，Sonnet 5.5：'claude-sonnet-5-5'，Haiku 5.5：'claude-haiku-5-5'。构建 AI 应用时，默认使用最新且能力最强的 Claude 模型。",
+      "thinking_budget": 4096
+    },
     "631900aa172c11b9e647e24a1c8fa3b9c95ae231c8dad8745439024b37f37b2f": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
@@ -13026,6 +13033,13 @@
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",
       "text": "循环任务在 3 天后自动过期——它们会最后触发一次，然后被删除。这为会话的生命周期设定了上限。在安排循环任务时，告知用户 3 天的限制。",
+      "thinking_budget": 4096
+    },
+    "d701620dfb3d106664e18e888f5e99c050d5ed09f7c11e1fb9c6ec079569774e": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "**如果 Claude 在该技能加载之前就编写了页面**，该技能的契约仍然适用。Claude 给页面一个 `<title>`，即由两到四个词组成的名称，绝不写成 \"Name: explainer\"，并把解释放在 `description` 中。Claude 将颜色定义为 `:root` 上的令牌，在 `:root:not([data-theme=\"light\"])` 保护下的 `@media (prefers-color-scheme: dark)` 中为暗色模式重新定义它们，并在 `:root[data-theme=\"dark\"]` 下再次重新定义，还为 `body` 设置显式背景。Claude 只从 cdnjs.cloudflare.com（首选）、cdn.jsdelivr.net/npm/、unpkg.com、cdn.tailwindcss.com 或 code.jquery.com 加载外部脚本，只从 Google Fonts 加载样式表，其余内容全部内联。每个脚本 URL 都指明一个至少已有两周的确切版本，例如 `react@18.3.1`，绝不使用 `react` 或 `react@18`；Claude 在本次对话之前知道的任何版本都足够旧。Claude 让布局在手机宽度下正常工作，留有 16px 的侧边间距，页面不出现水平滚动。",
       "thinking_budget": 4096
     },
     "d70b23627d430ea704a685ef41c02cabb3b02738c823db1efcd4ffd9a7b7a19a": {
