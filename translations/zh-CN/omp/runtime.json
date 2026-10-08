@@ -1990,6 +1990,13 @@
       "text": "读取区段，而不是零散片段。你必须复用现有模式；在已有惯例之外另立一套惯例是被禁止的。",
       "thinking_budget": 4096
     },
+    "289b63ea31dcc3f50bffe327744d7c936e82cca9ccd0fc4d891c5fb89e518366": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天：2026-10-08；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "28fbfb678476f0543bc3d0194b29c6b1855605cd5e62d6f8a027a8494e8879d3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
