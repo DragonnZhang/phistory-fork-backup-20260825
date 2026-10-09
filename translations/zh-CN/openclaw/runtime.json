@@ -1267,6 +1267,13 @@
       "text": "任务模式（用于 add 操作）：\n{\n  \"name\": \"string (optional)\",\n  \"schedule\": { ... },      // 必需：何时运行\n  \"payload\": { ... },       // 必需：执行什么\n  \"delivery\": { ... },      // 可选：播报摘要或 webhook POST\n  \"sessionTarget\": \"main\" | \"isolated\",  // 必需\n  \"enabled\": true | false   // 可选，默认 true\n}",
       "thinking_budget": 4096
     },
+    "1755c72bb6905193d529e49130930dc4feb2ed2a733aafc951946627457a73c7": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "[Thu 2026-10-08 16:51 UTC] 请用一句简短的话回复。",
+      "thinking_budget": 4096
+    },
     "177cc1009e1969b0b28666bca26554670d259a1ffbc410f2f27d99143c44945b": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -9047,6 +9054,13 @@
       "text": "batch 使用 actions。",
       "thinking_budget": 4096
     },
+    "a62d0a5633eee2e3fcee61a3aabe1af0a3171a2c6f5fcd397a4a02b3610b44c2": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "运行时：agent=main | session=agent:main:main | host=runnervmmprz5 | repo=$PHISTORY_HOME/.openclaw/workspace | os=Linux 6.17.0-1022-azure (x64) | node=v24.21.0 | active_node=unknown | active_node_identity=unknown | model=phistory/phistory-dummy | default_model=phistory/phistory-dummy | shell=bash",
+      "thinking_budget": 4096
+    },
     "a63af75cf3369c4620fa9f1eadae05f090ba49a51773ce498ffc1817961d6d40": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
@@ -11142,6 +11156,13 @@
       "prompt_version": "zh-CN-11",
       "status": "translated",
       "text": "仅在没有面向用户的回复必要时才使用 NO_REPLY。\n⚠️ 规则：",
+      "thinking_budget": 4096
+    },
+    "cdbcc6415e35eaff20ccaa7837c7799554dfceb3e47fa55fb682aa5d73bc9dc0": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "当前日期：2026-10-08\n时区：UTC\n如需确切的当前时间，请使用 `session_status`。",
       "thinking_budget": 4096
     },
     "cddd1fbe837fb4b6e86fd60ceed2a4ac5c0a130b99b36240cf72db310b9083c0": {

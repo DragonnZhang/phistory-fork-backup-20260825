@@ -2530,6 +2530,13 @@
       "text": "本次 wait 调用的输出 token 预算。默认为 10000 tokens。",
       "thinking_budget": 4096
     },
+    "60676f69f5d15581c1d35bac243d0f627d552fc580c12dc9e79b7c00ca36262f": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "共享 MCP 类型：",
+      "thinking_budget": 4096
+    },
     "615e6eebf323b812c124e398ee17c6b24ecabb478e0e09ed4707389226bc4eb3": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -3784,6 +3791,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "当 `SKILL.md` 引用相对路径（例如 `scripts/foo.py`）时，先相对于上面列出的技能目录进行解析，仅在需要时才考虑其他路径。",
+      "thinking_budget": 4096
+    },
+    "8d1c69b210568c8a39da33fcafeb62e0432286eec6f34f31908cb9fa5c3a8969": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "全历史分叉（`fork_turns` 省略或 `\"all\"`）会继承父级的模型和推理力度，且不接受覆盖。仅当用户、适用的 `AGENTS.md` 指令或技能指令明确要求时，才设置 `model` 或 `reasoning_effort`；此时应将 `fork_turns` 设为 `\"none\"`。</multi_agent_role>",
       "thinking_budget": 4096
     },
     "8d2e433d73881a9b296b7988a0100f7ca1468a2db83f8da4d045ba427bb166f1": {
@@ -5129,6 +5143,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "手动编辑代码时，始终使用 apply_patch。创建或编辑文件时，不要使用 cat 或任何其他命令。格式化命令或批量编辑无需通过 apply_patch 完成。",
+      "thinking_budget": 4096
+    },
+    "bd8ef2804def10e556b40b5ac7e25dc4a7aff07d4706dbea215a3018de40ab50": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "要继承的父级历史。默认为 `all`；使用 `none` 可在无父级历史的情况下启动。仅支持 `all` 和 `none`。",
       "thinking_budget": 4096
     },
     "bd9e799989643de9b49ece28b646795d132c200819dd626af9bb19297a7fb65a": {
@@ -6685,6 +6706,13 @@
       "text": "gpt-5.4 (`gpt-5.4`)：面向日常编码的强大模型。默认推理力度：xhigh。支持的推理力度：low（响应快速，推理较轻量）、medium（为日常任务平衡速度与推理深度）、high（针对复杂问题提供更大的推理深度）、xhigh（针对复杂问题提供极高的推理深度）。",
       "thinking_budget": 4096
     },
+    "f3cc0015c76457614b8091e435a8fa42864f861d401a957db5d2c0868c9dbc7a": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "工具的可用性可能会在不同调用之间发生变化。",
+      "thinking_budget": 4096
+    },
     "f3ea1a1b68499ae99a1c032ecff7b5e28f543a5f97b85f66d635c981f8873010": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-10",
@@ -6884,6 +6912,13 @@
       "prompt_version": "zh-CN-10",
       "status": "translated",
       "text": "Codex CLI harness 支持多种不同的沙箱和升级审批配置，供用户选择。",
+      "thinking_budget": 4096
+    },
+    "fadc841e8838b7a4b62cf3509790a302074a4aaca3b795822bdb840dab723c56": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "部分延迟加载的嵌套工具可能未包含在此描述中。它们仍可在全局 `tools` 对象上使用，并列于 `ALL_TOOLS` 中。\n要查找其中某个工具，可在 `ALL_TOOLS` 中按 `name` 和 `description` 进行筛选。",
       "thinking_budget": 4096
     },
     "faee27f649f8d5347869a7f197852636660b629cf26b19e773d4e10c06fe300b": {
