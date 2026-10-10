@@ -8,7 +8,7 @@ Phistory 追踪 Claude Code、Codex、DeepSeek Harness、Antigravity、Grok Buil
 
 **从这里开始：** [phistory.cc](https://phistory.cc/)
 
-> 每小时自动检查新版本，归档最近更新于 **2026-10-09 02:28 UTC**。
+> 每小时自动检查新版本，归档最近更新于 **2026-10-09 21:10 UTC**。
 
 ![Phistory prompt diff viewer](docs/screenshot.png)
 
@@ -74,12 +74,12 @@ python -m http.server --directory .phistory-cache/site
 
 ## 抓取状态
 
-最近抓取更新：2026-10-09 02:28 UTC
+最近抓取更新：2026-10-09 21:10 UTC
 
 | Agent | 最新版本 | 版本数 | 快照数 | 最近抓取 |
 | --- | --- | ---: | ---: | --- |
-| Claude Code | [2.1.295 - 2026-10-08](captures/claude-code/2.1.295/variants/default/prompt.md) | 438 | 756 | 2026-10-08 22:21 UTC |
-| Codex CLI | [0.162.0 - 2026-10-08](captures/codex/0.162.0/variants/default/prompt.md) | 103 | 170 | 2026-10-08 22:21 UTC |
+| Claude Code | [2.1.296 - 2026-10-09](captures/claude-code/2.1.296/variants/default/prompt.md) | 439 | 758 | 2026-10-09 21:10 UTC |
+| Codex CLI | [0.162.1 - 2026-10-09](captures/codex/0.162.1/variants/default/prompt.md) | 104 | 173 | 2026-10-09 21:10 UTC |
 | DeepSeek Harness | [0.2.0-rc.2 - 2026-09-29](captures/dsh/0.2.0-rc.2/variants/default/prompt.md) | 14 | 75 | 2026-09-29 16:06 UTC |
 | Antigravity CLI | [1.3.2 - 2026-10-08](captures/antigravity/1.3.2/variants/default/prompt.md) | 63 | 63 | 2026-10-09 02:28 UTC |
 | Claude Tag | [2026-10-07 - 2026-10-06](captures/claude-tag/2026-10-07/variants/default/prompt.md) | 3 | 3 | 2026-10-06 18:05 UTC |
@@ -92,7 +92,7 @@ python -m http.server --directory .phistory-cache/site
 | Kimi CLI | [1.51.0 - 2026-09-21](captures/kimi/1.51.0/variants/default/prompt.md) | 23 | 23 | 2026-09-21 17:12 UTC |
 | opencode | [1.18.35 - 2026-10-06](captures/opencode/1.18.35/variants/default/prompt.md) | 119 | 119 | 2026-10-06 21:52 UTC |
 | Pi | [1.1.0 - 2026-10-07](captures/pi/1.1.0/variants/default/prompt.md) | 57 | 57 | 2026-10-08 02:14 UTC |
-| Oh My Pi | [18.8.6 - 2026-10-08](captures/omp/18.8.6/variants/default/prompt.md) | 134 | 134 | 2026-10-08 22:22 UTC |
+| Oh My Pi | [18.8.7 - 2026-10-09](captures/omp/18.8.7/variants/default/prompt.md) | 135 | 135 | 2026-10-09 16:29 UTC |
 
 ## 项目趋势
 
