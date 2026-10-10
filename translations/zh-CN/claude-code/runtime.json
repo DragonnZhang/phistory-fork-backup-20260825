@@ -2030,6 +2030,13 @@
       "text": "获取 URL 内容，将 HTML 转换为 markdown",
       "thinking_budget": 4096
     },
+    "1f8386fb022115683325d33443cef6060ee9dc0958a9e80261bf919db8342d11": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "设为 true 可读取超出常规大小限制的文本文件或其中的某个行范围，上限以仍能放入你的上下文为准。仅当你确实需要全部内容或用户要求读取整个文件时才使用此选项；否则请使用 offset 和 limit 分段读取，或对其进行搜索。",
+      "thinking_budget": 4096
+    },
     "1fc874f128346eb24d3552eced2f6662ac359bcd2d81cb05531c4651abd91648": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-9",

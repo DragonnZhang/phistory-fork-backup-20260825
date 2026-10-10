@@ -10155,6 +10155,13 @@
       "text": "`write xd://report_issue` 为自动化 QA 提供支持。如果任何工具在你提供的参数下返回的输出与其描述的行为不一致，请将 `<tool>: <concise description>` 以纯文本形式写入 `xd://report_issue`。不要犹豫——出现误报也没关系。",
       "thinking_budget": 4096
     },
+    "dc2685ea6869de4dd2a3e7dd40624f2fb1c378b998e06cd77b909727aabd6397": {
+      "model": "zai-org/GLM-5.3",
+      "prompt_version": "zh-CN-11",
+      "status": "translated",
+      "text": "今天是 2026-10-09；当前工作目录：'$PHISTORY_WORKSPACE'。不要在回复中重复此信息。",
+      "thinking_budget": 4096
+    },
     "dc3931c6680d243bc65b51e41b012206019abdb5f1ac078abb0c6b099a66411c": {
       "model": "zai-org/GLM-5.3",
       "prompt_version": "zh-CN-11",
